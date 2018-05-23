@@ -9,7 +9,7 @@
     "start": "node server.js"
   },
   "engines": {
-    "node": "8.11.x"
+    "node": "10.1.0"
   },
   "keywords": [
     "currency",
