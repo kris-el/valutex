@@ -3,6 +3,9 @@ var express = require('express');
 var bodyParser = require('body-parser');
 
 var {mongoose} = require('./app/mongoose');
+var {User} = require('./app/models/user');
+var {Exchange} = require('./app/models/exchange');
+var {Notes} = require('./app/models/note');
 
 const port = process.env.PORT || 3000;
 var app = express();
