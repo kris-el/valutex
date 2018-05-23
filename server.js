@@ -1,6 +1,7 @@
 var env = process.env.NODE_ENV || 'development';
 var express = require('express');
 
+var {mongoose} = require('./app/mongoose');
 
 const port = process.env.PORT || 3000;
 var app = express();
