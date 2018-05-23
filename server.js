@@ -13,6 +13,30 @@ var app = express();
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
 
+app.get('/test-plain', (req, res) => {
+  res.send('Hello');
+});
+
+app.post('/test-json', (req, res) => {
+  var inputText = req.body.input || "some data";
+  var response = {
+    output: inputText
+  };
+  res.send(response);
+});
+
+// app.get('/addnote', (req, res) => {
+//   var inputText = req.body.input || "some data";
+//   var note = new Note({
+//     text: inputText
+//   });
+//   note.save().then((doc) => {
+//     res.send(doc);
+//   }, (e) => {
+//     res.status(400).send(e);
+//   });
+// });
+
 
 app.listen(port, () => {
   console.log(`Server is up on port ${port}`);
