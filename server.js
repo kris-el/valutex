@@ -25,6 +25,10 @@ app.post('/test-json', (req, res) => {
   res.send(response);
 });
 
+app.get('/getenv', (req, res) => {
+  res.send('environment = ' + env);
+});
+
 app.post('/addnote', (req, res) => {
   var inputText = req.body.input || "some data";
   var note = new Note({
