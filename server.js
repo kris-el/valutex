@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 var {mongoose} = require('./app/mongoose');
 var {User} = require('./app/models/user');
 var {Exchange} = require('./app/models/exchange');
-var {Notes} = require('./app/models/note');
+var {Note} = require('./app/models/note');
 
 const port = process.env.PORT || 3000;
 var app = express();
@@ -25,17 +25,25 @@ app.post('/test-json', (req, res) => {
   res.send(response);
 });
 
-// app.get('/addnote', (req, res) => {
-//   var inputText = req.body.input || "some data";
-//   var note = new Note({
-//     text: inputText
-//   });
-//   note.save().then((doc) => {
-//     res.send(doc);
-//   }, (e) => {
-//     res.status(400).send(e);
-//   });
-// });
+app.post('/addnote', (req, res) => {
+  var inputText = req.body.input || "some data";
+  var note = new Note({
+    text: inputText
+  });
+  note.save().then((doc) => {
+    res.send(doc);
+  }, (e) => {
+    res.status(400).send(e);
+  });
+});
+
+app.get('/getnotes', (req, res) => {
+  Note.find().then((notes) => {
+    res.send({notes});
+  }, (e) => {
+    res.status(400).send(e);
+  });
+});
 
 
 app.listen(port, () => {

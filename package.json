@@ -2,6 +2,10 @@
   "name": "valuta-collector",
   "version": "1.0.0",
   "description": "Get currencies",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kris7b7d/valuta-collector.git"
+  },
   "main": "server.js",
   "scripts": {
     "dev": "nodemon server.js",
@@ -21,6 +25,7 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "mongoose": "^5.1.2",
+    "nodemon": "^1.17.5",
     "npm": "^5.6.0",
     "request": "^2.87.0"
   }
