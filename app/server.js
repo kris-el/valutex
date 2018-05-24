@@ -51,12 +51,66 @@ app.get('/getnotes', (req, res) => {
   });
 });
 
+// hour  min  sec  msec
+var twelveHoursAgo = new Date().getTime() - (12 * 60 * 60 * 1000);
+var oneHoursAgo = new Date().getTime() - (1 * 60 * 60 * 1000);
 app.get('/getrates', (req, res) => {
-  currency.getData(config.fixer.api_key).then((data) => {
-    // Save data into db
-    res.send(data);
-  }, (errorMessage) => {
-    res.send(errorMessage);
+  // Get the most recent document
+  Exchange.findOne().sort({age: -1}).then((recentExchange) => {
+    if(recentExchange) {
+      // Found at least one document
+      console.log('Retrived exchange rate from history!');
+      var documentTimestamp = (new Date(recentExchange.age).getTime());
+      // If the document is less than one hour old
+      if(documentTimestamp > oneHoursAgo) {
+        console.log('The exchange rates are <1h old!');
+        res.send(recentExchange);
+      } else /*if (documentTimestamp > twelveHoursAgo) {
+        console.log('The exchange rates are <12h >1h old!');
+        res.send(recentExchange);
+      } else {
+        console.log('The exchange rates are >12h old!');*/
+      {
+        console.log('The exchange rates are >1h old!');
+        currency.getData(config.fixer.api_key).then((data) => {
+          var newExchange = new Exchange(data);
+          newExchange.save().then((doc) => {
+            // Add decoration to added document if necessary
+            //...
+            console.log('New exchange rate added and sent back!');
+            res.send(doc);
+          }, (e) => {
+            console.log('Error saving the new exchange rates!');
+            res.status(400).send(e);
+          });
+        }, (errorMessage) => {
+          console.log('Error getting exchange rates. Old value is returned!');
+          console.log(errorMessage);
+          res.send(recentExchange);
+          //res.send(errorMessage);
+        });
+      }
+    } else {
+      currency.getData(config.fixer.api_key).then((data) => {
+        var newExchange = new Exchange(data);
+        newExchange.save().then((doc) => {
+          // Add decoration to added document if necessary
+          //...
+          console.log('First exchange rate added!');
+          res.send(doc);
+        }, (e) => {
+          console.log('Error saving the first exchange rates!');
+          res.status(400).send(e);
+        });
+      }, (errorMessage) => {
+        // Respond with appropriate error message
+        //...
+        console.log('Error getting the first exchange rates!');
+        res.status(400).send(errorMessage);
+      });
+    }
+  }, (e) => {
+    res.status(404).send(e);
   });
 });
 
