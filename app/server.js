@@ -1,5 +1,4 @@
-var env = process.env.NODE_ENV || 'development';
-var config = require('./config')[env];
+var config = require('./config');
 var express = require('express');
 var bodyParser = require('body-parser');
 const currency = require('./currency');
@@ -9,7 +8,6 @@ var {User} = require('./models/user');
 var {Exchange} = require('./models/exchange');
 var {Note} = require('./models/note');
 
-const port = process.env.PORT || 3000;
 var app = express();
 
 app.use(express.static(__dirname + '/public'));
@@ -72,7 +70,7 @@ app.get('/getrates', (req, res) => {
         console.log('The exchange rates are >12h old!');*/
       {
         console.log('The exchange rates are >1h old!');
-        currency.getData(config.fixer.api_key).then((data) => {
+        currency.getData(process.env.FIXER_KEY).then((data) => {
           var newExchange = new Exchange(data);
           newExchange.save().then((doc) => {
             // Add decoration to added document if necessary
@@ -91,7 +89,7 @@ app.get('/getrates', (req, res) => {
         });
       }
     } else {
-      currency.getData(config.fixer.api_key).then((data) => {
+      currency.getData(process.env.FIXER_KEY).then((data) => {
         var newExchange = new Exchange(data);
         newExchange.save().then((doc) => {
           // Add decoration to added document if necessary
@@ -114,6 +112,6 @@ app.get('/getrates', (req, res) => {
   });
 });
 
-app.listen(port, () => {
-  console.log(`Server is up on port ${port}`);
+app.listen(process.env.PORT, () => {
+  console.log(`Server is up on port ${process.env.PORT}`);
 });
