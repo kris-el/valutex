@@ -1,11 +1,13 @@
 var env = process.env.NODE_ENV || 'development';
+var config = require('./config')[env];
 var express = require('express');
 var bodyParser = require('body-parser');
+const currency = require('./currency');
 
-var {mongoose} = require('./app/mongoose');
-var {User} = require('./app/models/user');
-var {Exchange} = require('./app/models/exchange');
-var {Note} = require('./app/models/note');
+var {mongoose} = require('./mongoose');
+var {User} = require('./models/user');
+var {Exchange} = require('./models/exchange');
+var {Note} = require('./models/note');
 
 const port = process.env.PORT || 3000;
 var app = express();
@@ -30,7 +32,7 @@ app.get('/getenv', (req, res) => {
 });
 
 app.post('/addnote', (req, res) => {
-  var inputText = req.body.input || "some data";
+  var inputText = req.body.input;
   var note = new Note({
     text: inputText
   });
@@ -49,6 +51,14 @@ app.get('/getnotes', (req, res) => {
   });
 });
 
+app.get('/getrates', (req, res) => {
+  currency.getData(config.fixer.api_key).then((data) => {
+    // Save data into db
+    res.send(data);
+  }, (errorMessage) => {
+    res.send(errorMessage);
+  });
+});
 
 app.listen(port, () => {
   console.log(`Server is up on port ${port}`);
