@@ -1,4 +1,6 @@
 var config = require('./config');
+
+const _ = require('lodash');
 var express = require('express');
 var bodyParser = require('body-parser');
 const currency = require('./currency');
@@ -47,6 +49,17 @@ app.get('/getnotes', (req, res) => {
   }, (e) => {
     res.status(400).send(e);
   });
+});
+
+app.post('/adduser', (req, res) => {
+  var body = _.pick(req.body, ['email', 'password']);
+  var user = new User(body);
+
+  user.save().then((user) => {
+    res.send(user);
+  }).catch((e) => {
+    res.status(400).send(e);
+  })
 });
 
 // hour  min  sec  msec
