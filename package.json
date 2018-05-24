@@ -30,6 +30,6 @@
     "request": "^2.87.0"
   },
   "devDependencies": {
-    "nodemon": "^1.17.5",
+    "nodemon": "^1.17.5"
   }
 }
