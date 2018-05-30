@@ -1,4 +1,4 @@
-module.exports = function(app, debug, Exchange) {
+module.exports = function(app, debug, currency, Exchange) {
 
   // hour  min  sec  msec
   var twelveHoursAgo = new Date().getTime() - (12 * 60 * 60 * 1000);

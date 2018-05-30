@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 require('./routes/sample')(app);
 require('./routes/note')(app, debug, Note);
 require('./routes/user')(app, debug, User);
-require('./routes/exchange')(app, debug, Exchange);
+require('./routes/exchange')(app, debug, currency, Exchange);
 
 app.listen(process.env.PORT, () => {
   console.log(`Server is up on port ${process.env.PORT}`);
