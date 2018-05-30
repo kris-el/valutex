@@ -1,3 +1,5 @@
+var emoji = require('node-emoji');
+
 var debug = {
   status: true,
   msg: [{relevance: 10, text: ''}],
@@ -6,13 +8,14 @@ var debug = {
       //console.log('\x1b[33m%s\x1b[0m', this.msg);
       for (i=0;i<this.msg.length;i++) {
         if(this.msg[i].relevance == 1) {
-          var dec1 = '*** ';
-          var dec2 = ' ***';
-          console.log('\x1b[35m%s\x1b[0m', '    '+dec1 + this.msg[i].text + dec2);
-        }
-        else {
-          var dec1 = String.fromCharCode(171);
-          console.log('\x1b[35m%s\x1b[0m', '    - ' + this.msg[i].text);
+          var dec1 = emoji.emojify(':zap:') + '  ';
+          console.log('\x1b[35m%s\x1b[0m','    ' + dec1 + this.msg[i].text);
+        } else if(this.msg[i].relevance == 9){
+          var dec1 = emoji.emojify(':bangbang:') + '   ';
+          console.log('\x1b[35m%s\x1b[0m', '    ' + dec1 + this.msg[i].text);
+        } else if(this.msg[i].relevance == 10){
+          var dec1 = emoji.emojify(':point_right:') + '  ';
+          console.log('\x1b[35m%s\x1b[0m', '    ' + dec1 + this.msg[i].text);
         }
       }
     }
@@ -21,6 +24,7 @@ var debug = {
     this.msg.push({relevance:1, text});
   },
   add: function(text) { this.msg.push({relevance:10, text}); },
+  addError: function(text) { this.msg.push({relevance:9, text}); },
   reset: function() { this.msg = []; }
 }
 

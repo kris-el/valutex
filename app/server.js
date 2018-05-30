@@ -93,11 +93,11 @@ app.get('/getrates', (req, res) => {
             debug.add('New exchange rate added and sent back!');
             res.send(doc);
           }, (e) => {
-            debug.add('Error saving the new exchange rates!');
+            debug.addError('Error saving the new exchange rates!');
             res.status(400).send(e);
           });
         }, (errorMessage) => {
-          debug.add('Error getting exchange rates. Old value is returned!');
+          debug.addError('Error getting exchange rates. Old value is returned!');
           debug.add(errorMessage);
           res.send(recentExchange);
           //res.send(errorMessage);
@@ -112,13 +112,13 @@ app.get('/getrates', (req, res) => {
           debug.add('First exchange rate added!');
           res.send(doc);
         }, (e) => {
-          debug.add('Error saving the first exchange rates!');
+          debug.addError('Error saving the first exchange rates!');
           res.status(400).send(e);
         });
       }, (errorMessage) => {
         // Respond with appropriate error message
         //...
-        debug.add('Error getting the first exchange rates!');
+        debug.addError('Error getting the first exchange rates!');
         res.status(400).send(errorMessage);
       });
     }
