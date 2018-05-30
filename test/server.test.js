@@ -116,7 +116,8 @@ describe('GET /getrates', () => {
       .end(done);
   });
 
-  it('should get the rates from API (because db is empty)', (done) => {
+  // Normaly disable for not consuming API request
+  xit('should get the rates from API (because db is empty)', (done) => {
     request(app)
       .get('/getrates')
       .expect(200)
@@ -126,7 +127,8 @@ describe('GET /getrates', () => {
       .end(done);
   });
 
-  it('should get the rates from API (because values are not recent)', (done) => {
+  // Normaly disable for not consuming API request
+  xit('should get the rates from API (because values are not recent)', (done) => {
     addRatesAsOld();
 
     request(app)
@@ -149,6 +151,5 @@ describe('GET /getrates', () => {
         }).catch((e) => done(e))
       });
   });
-
 
 });

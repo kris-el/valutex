@@ -9,7 +9,7 @@
   "main": "server.js",
   "scripts": {
     "dev": "nodemon app/server.js",
-    "test": "export NODE_ENV=test || SET \"NODE_ENV=test\" && mocha test/*.test.js",
+    "test": "export NODE_ENV=test || SET \"NODE_ENV=test\" && mocha test/*.test.js --exit",
     "test-watch": "nodemon --exec \"npm test\"",
     "start": "node app/server.js"
   },
