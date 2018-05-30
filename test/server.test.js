@@ -2,7 +2,7 @@ var fs = require('fs');
 const expect = require('expect');
 const request = require('supertest');
 
-const {app} = require('./../app/server');
+const {app, debug} = require('./../app/server');
 const {Exchange} = require('./../app/models/exchange');
 const {Note} = require('./../app/models/note');
 

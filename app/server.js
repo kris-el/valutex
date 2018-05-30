@@ -130,4 +130,4 @@ app.listen(process.env.PORT, () => {
   console.log(`Server is up on port ${process.env.PORT}`);
 });
 
-module.exports = {app};
+module.exports = {app, debug};
