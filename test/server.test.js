@@ -12,6 +12,10 @@ const initNotes = [{
   text: 'Second test note'
 }];
 
+afterEach((done) => {
+  debug.reset();
+  done();
+});
 beforeEach((done) => {
   Exchange.remove({}).then(() => done());
 });
@@ -113,7 +117,13 @@ describe('GET /getrates', () => {
       .expect((res) => {
         expect(res.body.source).toBe('test')
       })
-      .end(done);
+      .end((err, res) => {
+        if(err) {
+          return done(err);
+        }
+        debug.show();
+        done();
+      });
   });
 
   // Normaly disable for not consuming API request
@@ -124,7 +134,13 @@ describe('GET /getrates', () => {
       .expect((res) => {
         expect(res.body.source).toBe('api')
       })
-      .end(done);
+      .end((err, res) => {
+        if(err) {
+          return done(err);
+        }
+        debug.show();
+        done();
+      });
   });
 
   // Normaly disable for not consuming API request
@@ -141,6 +157,7 @@ describe('GET /getrates', () => {
         if(err) {
           return done(err);
         }
+        debug.show();
 
         Exchange.find().then((exchanges) => {
           // Expected to exchange rates:
