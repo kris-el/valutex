@@ -91,6 +91,7 @@ describe('GET /getrates', () => {
   function addRatesAsRecent() {
     var inputExchange = JSON.parse(fs.readFileSync(__dirname + '/dummy-data/rates.json', 'utf8'));
     inputExchange.source = "test";
+    // Removing age will taken the current time
     delete inputExchange.age;
     var exchange = new Exchange(inputExchange);
     exchange.save();
