@@ -11,6 +11,7 @@ var {Exchange} = require('./models/exchange');
 var {Note} = require('./models/note');
 
 var app = express();
+var debug = false;
 
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
@@ -70,11 +71,11 @@ app.get('/getrates', (req, res) => {
   Exchange.findOne().sort({age: -1}).then((recentExchange) => {
     if(recentExchange) {
       // Found at least one document
-      console.log('Retrived exchange rate from history!');
+      if(debug) console.log('Retrived exchange rate from history!');
       var documentTimestamp = (new Date(recentExchange.age).getTime());
       // If the document is less than one hour old
       if(documentTimestamp > oneHoursAgo) {
-        console.log('The exchange rates are <1h old!');
+        if(debug) console.log('The exchange rates are <1h old!');
         res.send(recentExchange);
       } else /*if (documentTimestamp > twelveHoursAgo) {
         console.log('The exchange rates are <12h >1h old!');
@@ -82,21 +83,21 @@ app.get('/getrates', (req, res) => {
       } else {
         console.log('The exchange rates are >12h old!');*/
       {
-        console.log('The exchange rates are >1h old!');
+        if(debug) console.log('The exchange rates are >1h old!');
         currency.getData(process.env.FIXER_KEY).then((data) => {
           var newExchange = new Exchange(data);
           newExchange.save().then((doc) => {
             // Add decoration to added document if necessary
             //...
-            console.log('New exchange rate added and sent back!');
+            if(debug) console.log('New exchange rate added and sent back!');
             res.send(doc);
           }, (e) => {
-            console.log('Error saving the new exchange rates!');
+            if(debug) console.log('Error saving the new exchange rates!');
             res.status(400).send(e);
           });
         }, (errorMessage) => {
-          console.log('Error getting exchange rates. Old value is returned!');
-          console.log(errorMessage);
+          if(debug) console.log('Error getting exchange rates. Old value is returned!');
+          if(debug) console.log(errorMessage);
           res.send(recentExchange);
           //res.send(errorMessage);
         });
@@ -107,16 +108,16 @@ app.get('/getrates', (req, res) => {
         newExchange.save().then((doc) => {
           // Add decoration to added document if necessary
           //...
-          console.log('First exchange rate added!');
+          if(debug) console.log('First exchange rate added!');
           res.send(doc);
         }, (e) => {
-          console.log('Error saving the first exchange rates!');
+          if(debug) console.log('Error saving the first exchange rates!');
           res.status(400).send(e);
         });
       }, (errorMessage) => {
         // Respond with appropriate error message
         //...
-        console.log('Error getting the first exchange rates!');
+        if(debug) console.log('Error getting the first exchange rates!');
         res.status(400).send(errorMessage);
       });
     }

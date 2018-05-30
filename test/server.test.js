@@ -1,7 +1,9 @@
+var fs = require('fs');
 const expect = require('expect');
 const request = require('supertest');
 
 const {app} = require('./../app/server');
+const {Exchange} = require('./../app/models/exchange');
 const {Note} = require('./../app/models/note');
 
 const initNotes = [{
@@ -10,6 +12,9 @@ const initNotes = [{
   text: 'Second test note'
 }];
 
+beforeEach((done) => {
+  Exchange.remove({}).then(() => done());
+});
 beforeEach((done) => {
   Note.remove({}).then(() => {
     return Note.insertMany(initNotes);
@@ -82,10 +87,67 @@ describe('GET /getnotes', () => {
 //
 // });
 
-// describe('GET /getrates', () => {
-//
-//   it('should get the rates either db or api', (done) => {
-//     done();
-//   });
-//
-// });
+describe('GET /getrates', () => {
+  function addRatesAsRecent() {
+    var inputExchange = JSON.parse(fs.readFileSync(__dirname + '/dummy-data/rates.json', 'utf8'));
+    inputExchange.source = "test";
+    delete inputExchange.age;
+    var exchange = new Exchange(inputExchange);
+    exchange.save();
+  }
+
+  function addRatesAsOld() {
+    var inputExchange = JSON.parse(fs.readFileSync(__dirname + '/dummy-data/rates.json', 'utf8'));
+    inputExchange.source = "test";
+    var exchange = new Exchange(inputExchange);
+    exchange.save();
+  }
+
+  it('should get the rates from db history', (done) => {
+    addRatesAsRecent();
+
+    request(app)
+      .get('/getrates')
+      .expect(200)
+      .expect((res) => {
+        expect(res.body.source).toBe('test')
+      })
+      .end(done);
+  });
+
+  it('should get the rates from API (because db is empty)', (done) => {
+    request(app)
+      .get('/getrates')
+      .expect(200)
+      .expect((res) => {
+        expect(res.body.source).toBe('api')
+      })
+      .end(done);
+  });
+
+  it('should get the rates from API (because values are not recent)', (done) => {
+    addRatesAsOld();
+
+    request(app)
+      .get('/getrates')
+      .expect(200)
+      .expect((res) => {
+        expect(res.body.source).toBe('api')
+      })
+      .end((err, res) => {
+        if(err) {
+          return done(err);
+        }
+
+        Exchange.find().then((exchanges) => {
+          // Expected to exchange rates:
+          //   First set by test
+          //   Second added by API
+          expect(exchanges.length).toBe(2);
+          done();
+        }).catch((e) => done(e))
+      });
+  });
+
+
+});
