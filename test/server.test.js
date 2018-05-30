@@ -73,3 +73,19 @@ describe('GET /getnotes', () => {
   });
 
 });
+
+// describe('POST /adduser', () => {
+//
+//   it('should create a new user', (done) => {
+//     done();
+//   });
+//
+// });
+
+// describe('GET /getrates', () => {
+//
+//   it('should get the rates either db or api', (done) => {
+//     done();
+//   });
+//
+// });
