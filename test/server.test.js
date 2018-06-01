@@ -3,6 +3,7 @@ const expect = require('expect');
 const request = require('supertest');
 
 const {app, debug} = require('./../app/server');
+const {User} = require('./../app/models/user');
 const {Exchange} = require('./../app/models/exchange');
 const {Note} = require('./../app/models/note');
 
@@ -15,6 +16,9 @@ const initNotes = [{
 afterEach((done) => {
   debug.reset();
   done();
+});
+beforeEach((done) => {
+  User.remove({}).then(() => done());
 });
 beforeEach((done) => {
   Exchange.remove({}).then(() => done());
