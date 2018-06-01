@@ -9,6 +9,7 @@ var {mongoose} = require('./mongoose');
 var {User} = require('./models/user');
 var {Exchange} = require('./models/exchange');
 var {Note} = require('./models/note');
+var {authenticate} = require('./middleware/authenticate');
 
 var app = express();
 
@@ -17,7 +18,7 @@ app.use(bodyParser.json());
 
 //require('./routes/sample')(app);
 require('./routes/note')(app, debug, Note);
-require('./routes/user')(app, debug, User);
+require('./routes/user')(app, debug, authenticate, User);
 require('./routes/exchange')(app, debug, currency, Exchange);
 
 app.listen(process.env.PORT, () => {

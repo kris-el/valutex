@@ -1,4 +1,4 @@
-module.exports = function(app, debug, User) {
+module.exports = function(app, debug, authenticate, User) {
   const _ = require('lodash');
 
   app.post('/adduser', (req, res) => {
@@ -12,6 +12,10 @@ module.exports = function(app, debug, User) {
     }).catch((e) => {
       res.status(400).send(e);
     })
+  });
+
+  app.get('/users/me', authenticate, (req, res) => {
+    res.send(req.user);
   });
 
 }
