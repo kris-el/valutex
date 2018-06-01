@@ -1,4 +1,3 @@
-var fs = require('fs');
 const expect = require('expect');
 const request = require('supertest');
 
@@ -7,27 +6,16 @@ const {User} = require('./../app/models/user');
 const {Exchange} = require('./../app/models/exchange');
 const {Note} = require('./../app/models/note');
 
-const initNotes = [{
-  text: 'First test note'
-}, {
-  text: 'Second test note'
-}];
+const {populateNotes, populateUsers, clearExchangeRates, populateExchangeWithFreshRates, populateExchangeWithExpiredRates} = require('./seed');
 
-afterEach((done) => {
+
+beforeEach(populateUsers);
+beforeEach(clearExchangeRates);
+beforeEach(populateNotes);
+afterEach(() => {
   debug.reset();
-  done();
 });
-beforeEach((done) => {
-  User.remove({}).then(() => done());
-});
-beforeEach((done) => {
-  Exchange.remove({}).then(() => done());
-});
-beforeEach((done) => {
-  Note.remove({}).then(() => {
-    return Note.insertMany(initNotes);
-  }).then(() => done());
-});
+
 
 describe('POST /addnote', () => {
 
@@ -96,24 +84,9 @@ describe('GET /getnotes', () => {
 // });
 
 describe('GET /getrates', () => {
-  function addRatesAsRecent() {
-    var inputExchange = JSON.parse(fs.readFileSync(__dirname + '/dummy-data/rates.json', 'utf8'));
-    inputExchange.source = "test";
-    // Removing age will taken the current time
-    delete inputExchange.age;
-    var exchange = new Exchange(inputExchange);
-    exchange.save();
-  }
-
-  function addRatesAsOld() {
-    var inputExchange = JSON.parse(fs.readFileSync(__dirname + '/dummy-data/rates.json', 'utf8'));
-    inputExchange.source = "test";
-    var exchange = new Exchange(inputExchange);
-    exchange.save();
-  }
 
   it('should get the rates from db history', (done) => {
-    addRatesAsRecent();
+    populateExchangeWithFreshRates();
 
     request(app)
       .get('/getrates')
@@ -149,7 +122,7 @@ describe('GET /getrates', () => {
 
   // Normaly disable for not consuming API request
   xit('should get the rates from API (because values are not recent)', (done) => {
-    addRatesAsOld();
+    populateExchangeWithExpiredRates();
 
     request(app)
       .get('/getrates')
