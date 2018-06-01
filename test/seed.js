@@ -1,5 +1,5 @@
-var fs = require('fs');
-
+const fs = require('fs');
+const jwt = require('jsonwebtoken');
 const {ObjectID} = require ('mongodb');
 
 const {Exchange} = require('./../app/models/exchange');
@@ -12,6 +12,23 @@ const initNotes = [{
   text: 'Second test note'
 }];
 
+const userId = [new ObjectID(), new ObjectID()];
+
+const initUsers = [{
+  _id: userId[0],
+  email: 'validuser@domain.com',
+  password: 'validUser12345',
+  tokens: [{
+    access: 'auth',
+    token: jwt.sign({_id: userId[0], access: 'auth'}, 'abc123').toString()
+  }]
+}, {
+  _id: userId[1],
+  email: 'brokenuser@domain.com',
+  password: 'brokenUser12345'
+}];
+
+
 const populateNotes = (done) => {
   Note.remove({}).then(() => {
     return Note.insertMany(initNotes);
@@ -19,7 +36,14 @@ const populateNotes = (done) => {
 };
 
 const populateUsers = (done) => {
-  User.remove({}).then(() => done());
+  User.remove({}).then(() => {
+    var userList = [];
+    initUsers.forEach(function(userToSave) {
+      userList.push(new User(userToSave).save());
+    });
+
+    return Promise.all(userList);
+  }).then(() => done());
 };
 
 const clearExchangeRates = (done) => {
