@@ -1,10 +1,11 @@
-const fs = require('fs');
 const jwt = require('jsonwebtoken');
 const {ObjectID} = require ('mongodb');
 
 const {Exchange} = require('./../app/models/exchange');
 const {User} = require('./../app/models/user');
 const {Note} = require('./../app/models/note');
+
+var inputExchange = require('./dummy-data/rates.json');
 
 const initNotes = [{
   text: 'First test note'
@@ -28,7 +29,6 @@ const initUsers = [{
   password: 'brokenUser12345'
 }];
 
-
 const populateNotes = (done) => {
   Note.remove({}).then(() => {
     return Note.insertMany(initNotes);
@@ -51,18 +51,17 @@ const clearExchangeRates = (done) => {
 };
 
 const populateExchangeWithFreshRates = () => {
-  var inputExchange = JSON.parse(fs.readFileSync(__dirname + '/dummy-data/rates.json', 'utf8'));
-  inputExchange.source = "test";
-  // Removing age will taken the current time
-  delete inputExchange.age;
-  var exchange = new Exchange(inputExchange);
+  var inputExchangeFresh = Object.assign({}, inputExchange);
+  inputExchangeFresh.source = "test";
+  delete inputExchangeFresh.age;
+  var exchange = new Exchange(inputExchangeFresh);
   exchange.save();
 };
 
 const populateExchangeWithExpiredRates = () => {
-  var inputExchange = JSON.parse(fs.readFileSync(__dirname + '/dummy-data/rates.json', 'utf8'));
-  inputExchange.source = "test";
-  var exchange = new Exchange(inputExchange);
+  var inputExchangeExpired = Object.assign({}, inputExchange);
+  inputExchangeExpired.source = "test";
+  var exchange = new Exchange(inputExchangeExpired);
   exchange.save();
 };
 
