@@ -66,4 +66,4 @@ const populateExchangeWithExpiredRates = () => {
   exchange.save();
 };
 
-module.exports = {populateNotes, populateUsers, clearExchangeRates, populateExchangeWithFreshRates, populateExchangeWithExpiredRates};
+module.exports = {populateNotes, initUsers, populateUsers, clearExchangeRates, populateExchangeWithFreshRates, populateExchangeWithExpiredRates};
