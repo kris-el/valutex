@@ -20,7 +20,7 @@ const initUsers = [{
   password: 'validUser12345',
   tokens: [{
     access: 'auth',
-    token: jwt.sign({_id: userId[0], access: 'auth'}, 'abc123').toString()
+    token: jwt.sign({_id: userId[0], access: 'auth'}, process.env.JWT_SECRET).toString()
   }]
 }, {
   _id: userId[1],

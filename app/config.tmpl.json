@@ -1,0 +1,14 @@
+{
+  "test": {
+    "PORT": 3001,
+    "MONGODB_URI": "mongodb://localhost:27017/TodoAppTest",
+    "FIXER_KEY": "!!!",
+    "JWT_SECRET": "!!!"
+  },
+  "development": {
+    "PORT": 3000,
+    "MONGODB_URI": "mongodb://localhost:27017/TodoApp",
+    "FIXER_KEY": "!!!",
+    "JWT_SECRET": "!!!"
+  }
+}
