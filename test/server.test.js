@@ -137,7 +137,7 @@ describe('POST /adduser', () => {
           expect(user).toBeTruthy();
           expect(user.password).not.toBe(password);
           done();
-        });
+        }).catch((e) => done(e));
       });
   });
 
@@ -153,7 +153,7 @@ describe('POST /adduser', () => {
         if (err) {
           return done(err);
         }
-        debug.show();
+        //debug.show();
         done();
       });
   });
@@ -170,8 +170,61 @@ describe('POST /adduser', () => {
         if (err) {
           return done(err);
         }
-        debug.show();
+        //debug.show();
         done();
+      });
+  });
+
+});
+
+describe('POST /login', () => {
+
+  it('should login and return token', (done) => {
+    var userId = initUsers[1]._id;
+    var email = initUsers[1].email;
+    var password = initUsers[1].password;
+
+    request(app)
+      .post('/login')
+      .send({email, password})
+      .expect(200)
+      .expect((res) => {
+        expect(res.headers['x-auth']).toBeTruthy();
+      })
+      .end((err, res) => {
+        if (err) {
+          return done(err);
+        }
+
+        User.findById(userId).then((user) => {
+          expect(user.tokens[0]).toHaveProperty('access', 'auth');
+          expect(user.tokens[0]).toHaveProperty('token', res.headers['x-auth']);
+          done();
+        }).catch((e) => done(e));
+      });
+  });
+
+  it('should reject login invalid credentials', (done) => {
+    var userId = initUsers[1]._id;
+    var email = initUsers[1].email;
+    var password = initUsers[1].password + '!';
+
+    request(app)
+      .post('/login')
+      .send({email, password})
+      .expect(400)
+      .expect((res) => {
+        expect(res.headers['x-auth']).not.toBeTruthy();
+      })
+      .end((err, res) => {
+        if (err) {
+          return done(err);
+        }
+
+        User.findById(userId).then((user) => {
+          expect(user.tokens.length).toBe(0);
+          done();
+        }).catch((e) => done(e));
       });
   });
 

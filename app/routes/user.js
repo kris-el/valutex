@@ -11,7 +11,7 @@ module.exports = function(app, debug, authenticate, User) {
     }).then((token) => {
       res.header('x-auth', token).send(user);
     }).catch((e) => {
-      debug.add(e.message);
+      debug.add(e);
       res.status(400).send(e);
     })
   });
@@ -24,7 +24,7 @@ module.exports = function(app, debug, authenticate, User) {
         res.header('x-auth', token).send(user);
       });
     }).catch((e) => {
-      //debug.add(e.message);
+      debug.add(e);
       res.status(400).send();
     });
   });
