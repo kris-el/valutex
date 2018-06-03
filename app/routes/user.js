@@ -2,6 +2,7 @@ module.exports = function(app, debug, authenticate, User) {
   const _ = require('lodash');
 
   app.post('/adduser', (req, res) => {
+    debug.addTitle('POST /adduser');
     var body = _.pick(req.body, ['email', 'password']);
     var user = new User(body);
 
@@ -10,6 +11,7 @@ module.exports = function(app, debug, authenticate, User) {
     }).then((token) => {
       res.header('x-auth', token).send(user);
     }).catch((e) => {
+      debug.add(e.message);
       res.status(400).send(e);
     })
   });

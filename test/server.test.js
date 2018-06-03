@@ -115,16 +115,64 @@ describe('GET /users/me', () => {
 
 describe('POST /adduser', () => {
 
-  xit('should create a new user', (done) => {
-    done();
+  it('should create a new user', (done) => {
+    var email = 'testaccount@server.com';
+    var password = '123Test!'
+
+    request(app)
+      .post('/adduser')
+      .send({email, password})
+      .expect(200)
+      .expect((res) => {
+        expect(res.headers['x-auth']).toBeTruthy();
+        expect(res.body._id).toBeTruthy();
+        expect(res.body.email).toBe(email);
+      })
+      .end((err) => {
+        if (err) {
+          return done(err);
+        }
+        debug.show();
+        User.findOne({email}).then((user) => {
+          expect(user).toBeTruthy();
+          expect(user.password).not.toBe(password);
+          done();
+        });
+      });
   });
 
-  xit('should return validation errors if request is ivalid', (done) => {
-    done();
+  it('should return validation errors if request is ivalid', (done) => {
+    var email = 'testinvalid$server:com';
+    var password = '!!!';
+
+    request(app)
+      .post('/adduser')
+      .send({email, password})
+      .expect(400)
+      .end((err) => {
+        if (err) {
+          return done(err);
+        }
+        debug.show();
+        done();
+      });
   });
 
-  xit('should not create user if email is in use', (done) => {
-    done();
+  it('should not create user if email is in use', (done) => {
+    var email = initUsers[0].email;
+    var password = '123Test!';
+
+    request(app)
+      .post('/adduser')
+      .send({email, password})
+      .expect(400)
+      .end((err) => {
+        if (err) {
+          return done(err);
+        }
+        debug.show();
+        done();
+      });
   });
 
 });
