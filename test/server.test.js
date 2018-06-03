@@ -230,6 +230,26 @@ describe('POST /login', () => {
 
 });
 
+describe('GET /logout', () => {
+
+  it('should remove auth token on logout', (done) => {
+    request(app)
+      .get('/logout')
+        .set('x-auth', initUsers[0].tokens[0].token)
+        .expect(200)
+        .end((err, res) => {
+          if (err) {
+            return done(err);
+          }
+
+          User.findById(initUsers[0]._id).then((user) => {
+            expect(user.tokens.length).toBe(0);
+            done();
+          }).catch((e) => done(e));
+        });
+  });
+});
+
 describe('GET /getrates', () => {
 
   it('should get the rates from db history', (done) => {

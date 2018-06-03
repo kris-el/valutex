@@ -16,7 +16,7 @@ const userId = [new ObjectID(), new ObjectID()];
 
 const initUsers = [{
   _id: userId[0],
-  email: 'validuser@domain.com',
+  email: 'validuser1@domain.com',
   password: 'validUser12345',
   tokens: [{
     access: 'auth',
@@ -24,7 +24,7 @@ const initUsers = [{
   }]
 }, {
   _id: userId[1],
-  email: 'brokenuser@domain.com',
+  email: 'validuser2@domain.com',
   password: 'brokenUser12345'
 }];
 
