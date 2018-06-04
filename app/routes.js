@@ -58,11 +58,12 @@ module.exports = (function(debug, authenticate) {
   // notes
   //--------
 
-  routes.post('/addnote', (req, res) => {
-    var inputText = req.body.input;
+  routes.post('/addnote', authenticate, (req, res) => {
     var note = new Note({
-      text: inputText
+      text: req.body.input,
+      _creator: req.user._id
     });
+
     note.save().then((doc) => {
       res.send(doc);
     }, (e) => {
@@ -70,8 +71,8 @@ module.exports = (function(debug, authenticate) {
     });
   });
 
-  routes.get('/getnotes', (req, res) => {
-    Note.find().then((notes) => {
+  routes.get('/getnotes', authenticate, (req, res) => {
+    Note.find({_creator: req.user._id}).then((notes) => {
       res.send({notes});
     }, (e) => {
       res.status(400).send(e);

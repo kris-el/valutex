@@ -10,10 +10,10 @@ var {authenticate} = require('./middleware/authenticate');
 var routes = require('./routes')(debug, authenticate);
 
 
-
 app.use(express.static(__dirname + '/../public'));
 app.use(bodyParser.json());
 app.use('/api', routes);
+
 
 app.listen(process.env.PORT, () => {
   console.log(`Server is up on port ${process.env.PORT}`);

@@ -7,13 +7,15 @@ const {Note} = require('./../app/models/note');
 
 var inputExchange = require('./dummy-data/rates.json');
 
-const initNotes = [{
-  text: 'First test note'
-}, {
-  text: 'Second test note'
-}];
-
 const userId = [new ObjectID(), new ObjectID()];
+
+const initNotes = [{
+  text: 'First test note',
+  _creator: userId[0]
+}, {
+  text: 'Second test note',
+  _creator: userId[1]
+}];
 
 const initUsers = [{
   _id: userId[0],

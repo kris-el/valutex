@@ -24,7 +24,8 @@ describe('POST /api/addnote', () => {
 
     request(app)
       .post('/api/addnote')
-      .send({input})
+      .set('x-auth', initUsers[0].tokens[0].token)
+      .send({input: input})
       .expect(200)
       .expect((res) => {
         expect(res.body.text).toBe(input)
@@ -45,6 +46,7 @@ describe('POST /api/addnote', () => {
   it('should not create note with invalid body data', (done) => {
     request(app)
       .post('/api/addnote')
+      .set('x-auth', initUsers[0].tokens[0].token)
       .send({})
       .expect(400)
       .end((err, res) => {
@@ -66,9 +68,10 @@ describe('GET /getnotes', () => {
   it('should get all the notes', (done) => {
     request(app)
       .get('/api/getnotes')
+      .set('x-auth', initUsers[0].tokens[0].token)
       .expect(200)
       .expect((res) => {
-        expect(res.body.notes.length).toBe(2);
+        expect(res.body.notes.length).toBe(1);
       })
       .end(done);
   });

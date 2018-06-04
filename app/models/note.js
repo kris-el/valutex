@@ -6,6 +6,10 @@ var Note = mongoose.model('Note', {
     required: true,
     trim: true,
     minlength: 1
+  },
+  _creator: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: true
   }
 });
 
