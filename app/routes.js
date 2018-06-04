@@ -1,7 +1,11 @@
-module.exports = (function(debug, authenticate, currency, User, Exchange, Note) {
+module.exports = (function(debug, authenticate) {
   'use strict';
   const _ = require('lodash');
   const routes = require('express').Router();
+  var {User} = require('./models/user');
+  var {Exchange} = require('./models/exchange');
+  var {Note} = require('./models/note');
+  const currency = require('./currency');
 
   var twelveHoursAgo = new Date().getTime() - (12 * 60 * 60 * 1000);
   var oneHoursAgo = new Date().getTime() - (1 * 60 * 60 * 1000);
