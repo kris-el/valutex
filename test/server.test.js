@@ -17,13 +17,13 @@ afterEach(() => {
 });
 
 
-describe('POST /addnote', () => {
+describe('POST /api/addnote', () => {
 
   it('should create a new note', (done) => {
     var input = 'Test note input';
 
     request(app)
-      .post('/addnote')
+      .post('/api/addnote')
       .send({input})
       .expect(200)
       .expect((res) => {
@@ -44,7 +44,7 @@ describe('POST /addnote', () => {
 
   it('should not create note with invalid body data', (done) => {
     request(app)
-      .post('/addnote')
+      .post('/api/addnote')
       .send({})
       .expect(400)
       .end((err, res) => {
@@ -65,7 +65,7 @@ describe('GET /getnotes', () => {
 
   it('should get all the notes', (done) => {
     request(app)
-      .get('/getnotes')
+      .get('/api/getnotes')
       .expect(200)
       .expect((res) => {
         expect(res.body.notes.length).toBe(2);
@@ -75,11 +75,11 @@ describe('GET /getnotes', () => {
 
 });
 
-describe('GET /users/me', () => {
+describe('GET /api/myself', () => {
 
   it('should return user if authenticated', (done) => {
     request(app)
-      .get('/users/me')
+      .get('/api/myself')
       .set('x-auth', initUsers[0].tokens[0].token)
       .expect(200)
       .expect((res) => {
@@ -97,7 +97,7 @@ describe('GET /users/me', () => {
 
   it('should return 401 if not authenticated', (done) => {
     request(app)
-      .get('/users/me')
+      .get('/api/myself')
       .expect(401)
       .expect((res) => {
         expect(res.body).toEqual({});
@@ -113,14 +113,14 @@ describe('GET /users/me', () => {
 
 });
 
-describe('POST /adduser', () => {
+describe('POST /api/adduser', () => {
 
   it('should create a new user', (done) => {
     var email = 'testaccount@server.com';
     var password = '123Test!'
 
     request(app)
-      .post('/adduser')
+      .post('/api/adduser')
       .send({email, password})
       .expect(200)
       .expect((res) => {
@@ -146,7 +146,7 @@ describe('POST /adduser', () => {
     var password = '!!!';
 
     request(app)
-      .post('/adduser')
+      .post('/api/adduser')
       .send({email, password})
       .expect(400)
       .end((err) => {
@@ -163,7 +163,7 @@ describe('POST /adduser', () => {
     var password = '123Test!';
 
     request(app)
-      .post('/adduser')
+      .post('/api/adduser')
       .send({email, password})
       .expect(400)
       .end((err) => {
@@ -177,7 +177,7 @@ describe('POST /adduser', () => {
 
 });
 
-describe('POST /login', () => {
+describe('POST /api/login', () => {
 
   it('should login and return token', (done) => {
     var userId = initUsers[1]._id;
@@ -185,7 +185,7 @@ describe('POST /login', () => {
     var password = initUsers[1].password;
 
     request(app)
-      .post('/login')
+      .post('/api/login')
       .send({email, password})
       .expect(200)
       .expect((res) => {
@@ -210,7 +210,7 @@ describe('POST /login', () => {
     var password = initUsers[1].password + '!';
 
     request(app)
-      .post('/login')
+      .post('/api/login')
       .send({email, password})
       .expect(400)
       .expect((res) => {
@@ -230,11 +230,11 @@ describe('POST /login', () => {
 
 });
 
-describe('GET /logout', () => {
+describe('GET /api/logout', () => {
 
   it('should remove auth token on logout', (done) => {
     request(app)
-      .get('/logout')
+      .get('/api/logout')
         .set('x-auth', initUsers[0].tokens[0].token)
         .expect(200)
         .end((err, res) => {
@@ -250,13 +250,13 @@ describe('GET /logout', () => {
   });
 });
 
-describe('GET /getrates', () => {
+describe('GET /api/getrates', () => {
 
   it('should get the rates from db history', (done) => {
     populateExchangeWithFreshRates();
 
     request(app)
-      .get('/getrates')
+      .get('/api/getrates')
       .expect(200)
       .expect((res) => {
         expect(res.body.source).toBe('test')
@@ -273,7 +273,7 @@ describe('GET /getrates', () => {
   // Normaly disable for not consuming API request
   xit('should get the rates from API (because db is empty)', (done) => {
     request(app)
-      .get('/getrates')
+      .get('/api/getrates')
       .expect(200)
       .expect((res) => {
         expect(res.body.source).toBe('api')
@@ -292,7 +292,7 @@ describe('GET /getrates', () => {
     populateExchangeWithExpiredRates();
 
     request(app)
-      .get('/getrates')
+      .get('/api/getrates')
       .expect(200)
       .expect((res) => {
         expect(res.body.source).toBe('api')

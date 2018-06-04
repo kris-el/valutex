@@ -1,4 +1,4 @@
-var config = require('./config');
+var config = require('./config/config');
 
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -10,16 +10,17 @@ var {User} = require('./models/user');
 var {Exchange} = require('./models/exchange');
 var {Note} = require('./models/note');
 var {authenticate} = require('./middleware/authenticate');
+var routes = require('./routes')(debug, authenticate, currency, User, Exchange, Note);
 
 var app = express();
 
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
+app.use('/api', routes);
 
-//require('./routes/sample')(app);
-require('./routes/note')(app, debug, Note);
-require('./routes/user')(app, debug, authenticate, User);
-require('./routes/exchange')(app, debug, currency, Exchange);
+//require('./routes/note')(app, debug, Note);
+//require('./routes/user')(app, debug, authenticate, User);
+//require('./routes/exchange')(app, debug, currency, Exchange);
 
 app.listen(process.env.PORT, () => {
   console.log(`Server is up on port ${process.env.PORT}`);

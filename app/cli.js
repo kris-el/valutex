@@ -1,4 +1,4 @@
-var config = require('./config');
+var config = require('./config/config');
 const currency = require('./currency');
 var {mongoose} = require('./mongoose');
 var {Exchange} = require('./models/exchange');
