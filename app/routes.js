@@ -7,8 +7,7 @@ module.exports = (function(debug, authenticate) {
   var {Note} = require('./models/note');
   const currency = require('./currency');
 
-  var twelveHoursAgo = new Date().getTime() - (12 * 60 * 60 * 1000);
-  var oneHoursAgo = new Date().getTime() - (1 * 60 * 60 * 1000);
+  var oneHoursAndHalfAgo = new Date().getTime() - Math.floor(1.5 * 60 * 60 * 1000);
 
 
   // user
@@ -92,16 +91,11 @@ module.exports = (function(debug, authenticate) {
         //debug.add('Retrived exchange rate from history!');
         var documentTimestamp = (new Date(recentExchange.age).getTime());
         // If the document is less than one hour old
-        if(documentTimestamp > oneHoursAgo) {
-          debug.add('The exchange rates are <1h old!');
-          res.send(recentExchange);
-        } else /*if (documentTimestamp > twelveHoursAgo) {
-          console.log('The exchange rates are <12h >1h old!');
+        if(documentTimestamp > oneHoursAndHalfAgo) {
+          debug.add('The exchange rates are <1.5h old!');
           res.send(recentExchange);
         } else {
-          console.log('The exchange rates are >12h old!');*/
-        {
-          debug.add('The exchange rates are >1h old!');
+          debug.add('The exchange rates are >1.5h old!');
           currency.getData(process.env.FIXER_KEY).then((data) => {
             var newExchange = new Exchange(data);
             newExchange.save().then((doc) => {
