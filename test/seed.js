@@ -1,9 +1,9 @@
 const jwt = require('jsonwebtoken');
 const {ObjectID} = require ('mongodb');
 
-const {Exchange} = require('./../app/models/exchange');
-const {User} = require('./../app/models/user');
-const {Note} = require('./../app/models/note');
+const {Exchange} = require('./../server/models/exchange');
+const {User} = require('./../server/models/user');
+const {Note} = require('./../server/models/note');
 
 var inputExchange = require('./dummy-data/rates.json');
 

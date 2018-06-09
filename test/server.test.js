@@ -1,10 +1,10 @@
 const expect = require('expect');
 const request = require('supertest');
 
-const {app, debug} = require('./../app/server');
-const {User} = require('./../app/models/user');
-const {Exchange} = require('./../app/models/exchange');
-const {Note} = require('./../app/models/note');
+const {app, debug} = require('./../server/server');
+const {User} = require('./../server/models/user');
+const {Exchange} = require('./../server/models/exchange');
+const {Note} = require('./../server/models/note');
 
 const {populateNotes, initUsers, populateUsers, clearExchangeRates, populateExchangeWithFreshRates, populateExchangeWithExpiredRates} = require('./seed');
 
