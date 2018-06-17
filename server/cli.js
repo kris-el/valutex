@@ -138,6 +138,7 @@ if (command === 'rates') {
   Promise.all([promiseRates, promiseCountries]).then(function(values) {
     rates = values[0];
     countries = values[1];
+    mongoose.connection.close();
 
     if(rates && countries) {
       countries.forEach((country) => {
@@ -156,7 +157,7 @@ if (command === 'rates') {
       });
       Promise.all(downloadList).then(() => {
         console.log(".");
-        mongoose.connection.close();
+        // END all promises
       });
     }
   });
