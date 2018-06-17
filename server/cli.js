@@ -84,6 +84,12 @@ if (command === 'rates') {
   Promise.all([promiseRates, promiseCountries]).then(function(values) {
     var rates = values[0];
     var countries = values[1];
+    countries.push({
+        "name": "Europe",
+        "flagCode": "EU",
+        "currency": "Euro",
+        "currencyCode": "EUR"
+    });
 
     if(rates && countries) {
       var deleted = false;
@@ -135,7 +141,13 @@ if (command === 'rates') {
     rates = values[0];
     countries = values[1];
     mongoose.connection.close();
-
+    countries.push({
+        "name": "Europe",
+        "flagCode": "EU",
+        "currency": "Euro",
+        "currencyCode": "EUR"
+    });
+    
     if(rates && countries) {
       countries.forEach((country) => {
         if (! _.has(rates.rates, country.currencyCode)) {
@@ -144,7 +156,7 @@ if (command === 'rates') {
       });
       var downloadList = [];
       countries.forEach((countryFlag) => {
-        var flag = countryFlag.flagCode;
+        var flag = countryFlag.flagCode.toLowerCase();
         var size = 64;
         downloadList.push(download(`http://www.countryflags.io/${flag}/flat/${size}.png`, __dirname+`/../offline/flags/country_${flag}_${size}.png`)
         .then(() => {
