@@ -58,7 +58,7 @@ if (command === 'rates') {
     mongoose.connection.close();
   });
 
-} if (command === 'countries') {
+} else if (command === 'countries') {
 
   var promiseRates = new Promise(function(resolve, reject) {
     Exchange.findOne().sort({age: -1}).then((lastExchange) => {
@@ -106,11 +106,7 @@ if (command === 'rates') {
     mongoose.connection.close();
   });
 
-} if (command === 'clear') {
-
-  console.log('clear');
-
-} if (command === 'flags') {
+} else if (command === 'flags') {
 
   var promiseRates = new Promise(function(resolve, reject) {
     Exchange.findOne().sort({age: -1}).then((lastExchange) => {
@@ -161,6 +157,18 @@ if (command === 'rates') {
       });
     }
   });
+
+} else if (command === 'clear') {
+
+/*
+cli command: selectevly delete records
+- Dal più vecchio al più recente mantieni solo un record al giorno
+- Quando cambia il giorno skip cancella tutti gli altri eccetto primo e ultimo
+*/
+
+  //...
+  console.log('clear');
+  mongoose.connection.close();
 
 } else {
 
