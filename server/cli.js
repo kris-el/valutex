@@ -10,6 +10,7 @@ var {Exchange} = require('./models/exchange');
 
 const argv = yargs
   .command('rates', 'Update the exchange rates')
+  .command('countries', 'Get a json file with all the countries of available currencies')
   .help()
   .argv;
 var command = argv._[0];
@@ -34,7 +35,7 @@ if (command === 'rates') {
   });
 
 } if (command === 'countries') {
-  
+
   var promiseRates = new Promise(function(resolve, reject) {
     Exchange.findOne().sort({age: -1}).then((lastExchange) => {
       if(lastExchange) {
