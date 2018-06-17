@@ -1,16 +1,40 @@
 var config = require('./config/config');
 const _ = require('lodash');
 const fs = require("fs");
+const request = require('request');
 const yargs = require('yargs');
 const currency = require('./currency');
 const country = require('./country');
 var {mongoose} = require('./mongoose');
 var {Exchange} = require('./models/exchange');
 
+var dirs = ['./offline', './offline/flags', 'public', 'playground'];
+
+dirs.forEach((dir) => {
+  if (! fs.existsSync(dir)) {
+      fs.mkdirSync(dir);
+  }
+});
+
+var download = (uri, filename) => {
+  return new Promise((resolve, reject) => {
+    request.head(uri, (error, response, body) => {
+      //console.log('content-type:', response.headers['content-type']);
+      //console.log('content-length:', response.headers['content-length']);
+      if (error) {
+        reject('Unable to connect to the source! ' + uri);
+      } else {
+        resolve(request(uri).pipe(fs.createWriteStream(filename)));
+      }
+    });
+  });
+};
 
 const argv = yargs
   .command('rates', 'Update the exchange rates')
   .command('countries', 'Get a json file with all the countries of available currencies')
+  .command('flags', 'Download the flags of all the countries of available currencies')
+  .command('clear', 'Clean DB historical data')
   .help()
   .argv;
 var command = argv._[0];
@@ -80,6 +104,61 @@ if (command === 'rates') {
       });
     }
     mongoose.connection.close();
+  });
+
+} if (command === 'clear') {
+
+  console.log('clear');
+
+} if (command === 'flags') {
+
+  var promiseRates = new Promise(function(resolve, reject) {
+    Exchange.findOne().sort({age: -1}).then((lastExchange) => {
+      if(lastExchange) {
+        resolve(lastExchange);
+      } else {
+        // Database empty make a request
+        console.log('Rates: No data into db, get rates first...');
+        reject();
+      }
+    });
+  });
+  var promiseCountries = new Promise(function(resolve, reject) {
+    country.getData().then((data) => {
+      resolve(data);
+    }, (errorMessage) => {
+      console.log('Error getting the country list!');
+      reject();
+      mongoose.connection.close();
+    });
+  });
+
+  var rates;
+  var countries;
+  Promise.all([promiseRates, promiseCountries]).then(function(values) {
+    rates = values[0];
+    countries = values[1];
+
+    if(rates && countries) {
+      countries.forEach((country) => {
+        if (! _.has(rates.rates, country.currencyCode)) {
+          countries.splice( countries.indexOf(country), 1 );
+        }
+      });
+      var downloadList = [];
+      countries.forEach((countryFlag) => {
+        var flag = countryFlag.flagCode;
+        var size = 64;
+        downloadList.push(download(`http://www.countryflags.io/${flag}/flat/${size}.png`, __dirname+`/../offline/flags/country_${flag}_${size}.png`)
+        .then(() => {
+          process.stdout.write(".");
+        }));
+      });
+      Promise.all(downloadList).then(() => {
+        console.log(".");
+        mongoose.connection.close();
+      });
+    }
   });
 
 } else {
