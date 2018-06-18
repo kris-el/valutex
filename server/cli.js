@@ -30,6 +30,12 @@ var download = (uri, filename) => {
   });
 };
 
+function areInTheSameDay(d1, d2) {
+  return d1.getFullYear() === d2.getFullYear() &&
+    d1.getMonth() === d2.getMonth() &&
+    d1.getDate() === d2.getDate();
+}
+
 const argv = yargs
   .command('rates', 'Update the exchange rates')
   .command('countries', 'Get a json file with all the countries of available currencies')
@@ -147,7 +153,7 @@ if (command === 'rates') {
         "currency": "Euro",
         "currencyCode": "EUR"
     });
-    
+
     if(rates && countries) {
       countries.forEach((country) => {
         if (! _.has(rates.rates, country.currencyCode)) {
@@ -172,15 +178,29 @@ if (command === 'rates') {
 
 } else if (command === 'clear') {
 
-/*
-cli command: selectevly delete records
-- Dal più vecchio al più recente mantieni solo un record al giorno
-- Quando cambia il giorno skip cancella tutti gli altri eccetto primo e ultimo
-*/
-
-  //...
-  console.log('clear');
-  mongoose.connection.close();
+  Exchange.find().sort({age: 1}).then((rates) => {
+    if(rates.length <= 2) {
+      mongoose.connection.close();
+      return;
+    }
+    for(var i=0; i<rates.length-1; i++) {
+      console.log(rates[i].age);
+    }
+    console.log('Marked to delete: ');
+    var prev = null;
+    var idDeleteList = [];
+    for(var i=0; i<rates.length-2; i++) {
+      if(prev && areInTheSameDay(rates[i].age, prev.age)) {
+        console.log(rates[i].age);
+        idDeleteList.push(rates[i]._id);
+      }
+      prev = rates[i];
+    }
+    Exchange.deleteMany({_id: {$in: idDeleteList}}, function(err) {
+      console.log('Documents deleted!');
+      mongoose.connection.close();
+    });
+  });
 
 } else {
 
