@@ -36,10 +36,12 @@ class CurrencyState extends State<Currency> {
   @override
   Widget build(BuildContext context) {
     final countryBox = Padding(
-      padding: EdgeInsets.all(8.0),
+      padding: EdgeInsets.all(0.0),
       child: Container(
-        color: Colors.red[200],
-        child: Image.asset("assets/images/flags/country_${widget.flagCode.toLowerCase()}_64.png"),
+        color: Colors.transparent,
+        child: Image.asset(
+            "assets/images/flags/country_${widget.flagCode.toLowerCase()}_64.png",
+            fit: BoxFit.fitHeight),
       ),
     );
 
@@ -47,11 +49,27 @@ class CurrencyState extends State<Currency> {
       child: Padding(
         padding: EdgeInsets.all(8.0),
         child: Container(
-            color: Colors.blue,
+            color: Colors.transparent,
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
-                Text('${widget.countryName}'),
-                Text('${widget.currencyName}')
+                Expanded(
+                    child: Align(
+                        alignment: Alignment.bottomLeft,
+                        child: Text(
+                          '${widget.countryName}',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20.0),
+                          textAlign: TextAlign.left,
+                        ))),
+                        Container(height: 6.0,),
+                Expanded(
+                    child: Align(
+                        alignment: Alignment.topLeft,
+                        child: Text(
+                          '${widget.currencyName}',
+                          style: TextStyle(fontSize: 18.0),
+                        )))
               ],
             )
             //Text('${widget.countryName}'),
@@ -64,13 +82,17 @@ class CurrencyState extends State<Currency> {
       child: Container(
         color: Colors.transparent,
         child: Center(
-            child: Text("${widget.currencySymbol} $currentAmount",
-                textAlign: TextAlign.right)),
+          child: Text(
+            "${widget.currencySymbol} $currentAmount",
+            style: TextStyle(fontSize: 20.0),
+            textAlign: TextAlign.right,
+          ),
+        ),
       ),
     );
 
     return Material(
-      color: Colors.black87,
+      color: Colors.transparent,
       child: Container(
         height: _rowHeight,
         child: InkWell(
@@ -79,7 +101,7 @@ class CurrencyState extends State<Currency> {
             padding: EdgeInsets.all(0.0),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: <Widget>[countryBox, detailsBox, exchangeBox],
+              children: <Widget>[Container(width: 8.0), countryBox, Container(width: 8.0), detailsBox, exchangeBox],
             ),
           ),
           onTap: () {
