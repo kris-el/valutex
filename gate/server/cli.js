@@ -91,18 +91,19 @@ if (command === 'rates') {
     var rates = values[0];
     var countries = values[1];
     countries.push({
-        "name": "Europe",
-        "flagCode": "EU",
-        "currency": "Euro",
-        "currencyCode": "EUR"
-    });
+      "countryName": "Europe",
+      "flagCode": "EU",
+      "currencyName": "Euro",
+      "currencyCode": "EUR",
+      "currencySymbol": "€"
+  });
 
     if(rates && countries) {
       var deleted = false;
       countries.forEach((country) => {
         if (! _.has(rates.rates, country.currencyCode)) {
           if (! deleted) console.log('- Countries removed: ');
-          console.log(country.name);
+          console.log(country.countryName);
           countries.splice( countries.indexOf(country), 1 );
           deleted = true;
         }
@@ -148,10 +149,11 @@ if (command === 'rates') {
     countries = values[1];
     mongoose.connection.close();
     countries.push({
-        "name": "Europe",
+        "countryName": "Europe",
         "flagCode": "EU",
-        "currency": "Euro",
-        "currencyCode": "EUR"
+        "currencyName": "Euro",
+        "currencyCode": "EUR",
+        "currencySymbol": "€"
     });
 
     if(rates && countries) {

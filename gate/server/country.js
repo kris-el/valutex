@@ -13,10 +13,11 @@ var getData = () => {
         //console.log('body');
         for (entity of body) {
           countries.push({
-            name: entity.name,
+            countryName: entity.name,
             flagCode: entity.alpha2Code,
-            currency: entity.currencies[0].name,
-            currencyCode: entity.currencies[0].code
+            currencyName: entity.currencies[0].name,
+            currencyCode: entity.currencies[0].code,
+            currencySymbol: entity.currencies[0].symbol
           });
         }
         resolve(countries);
