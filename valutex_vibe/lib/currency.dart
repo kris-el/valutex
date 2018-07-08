@@ -5,7 +5,6 @@ final _rowHeight = 100.0;
 final _borderRadius = BorderRadius.circular(_rowHeight / 10);
 String currentAmount = '1500.50';
 
-
 class Currency extends StatefulWidget {
   final String countryName;
   final String flagCode;
@@ -38,16 +37,25 @@ class CurrencyState extends State<Currency> {
   Widget build(BuildContext context) {
     final countryBox = Padding(
       padding: EdgeInsets.all(8.0),
-      child: Container(color: Colors.red[200], child: Icon(Icons.photo_album, size: 60.0)),
+      child: Container(
+        color: Colors.red[200],
+        child: Image.asset("assets/images/flags/country_${widget.flagCode.toLowerCase()}_64.png"),
+      ),
     );
 
     final detailsBox = Expanded(
-        child: Padding(
-      padding: EdgeInsets.all(8.0),
-      child: Container(
-          color: Colors.blue,
-          child: Text('Details'),
-        ),
+      child: Padding(
+        padding: EdgeInsets.all(8.0),
+        child: Container(
+            color: Colors.blue,
+            child: Column(
+              children: <Widget>[
+                Text('${widget.countryName}'),
+                Text('${widget.currencyName}')
+              ],
+            )
+            //Text('${widget.countryName}'),
+            ),
       ),
     );
 
@@ -55,7 +63,9 @@ class CurrencyState extends State<Currency> {
       padding: EdgeInsets.all(8.0),
       child: Container(
         color: Colors.transparent,
-        child: Center(child: Text("${widget.currencySymbol} $currentAmount", textAlign: TextAlign.right)),
+        child: Center(
+            child: Text("${widget.currencySymbol} $currentAmount",
+                textAlign: TextAlign.right)),
       ),
     );
 
