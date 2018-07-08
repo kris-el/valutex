@@ -5,7 +5,8 @@ final _rowHeight = 100.0;
 final _borderRadius = BorderRadius.circular(_rowHeight / 10);
 String currentAmount = '1500.50';
 
-class Currency extends StatelessWidget {
+
+class Currency extends StatefulWidget {
   final String countryName;
   final String flagCode;
   final String currencyName;
@@ -25,6 +26,13 @@ class Currency extends StatelessWidget {
         assert(currencyCode != null),
         assert(currencySymbol != null),
         super(key: key);
+
+  @override
+  createState() => CurrencyState();
+}
+
+class CurrencyState extends State<Currency> {
+  String currentAmount = '1500.50';
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +55,7 @@ class Currency extends StatelessWidget {
       padding: EdgeInsets.all(8.0),
       child: Container(
         color: Colors.transparent,
-        child: Center(child: Text("$currencySymbol $currentAmount", textAlign: TextAlign.right)),
+        child: Center(child: Text("${widget.currencySymbol} $currentAmount", textAlign: TextAlign.right)),
       ),
     );
 
