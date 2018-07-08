@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'currency.dart';
 
 class HomeRoute extends StatelessWidget {
-  final localCurrencies = null;//<Currency>[];
+  final localCurrencies = null; //<Currency>[];
 
   // Widget _buildCategoryWidgets(List<Widget> categories) {
   //   return ListView.builder(
@@ -19,16 +20,16 @@ class HomeRoute extends StatelessWidget {
     final appBar = AppBar(
       title: Text('Currency converter'),
       actions: <Widget>[
-          new IconButton(
-              icon: new Icon(Icons.playlist_add),
-              onPressed: () => debugPrint("Add element!")),
-          new IconButton(
-              icon: new Icon(Icons.wrap_text),
-              onPressed: () => debugPrint("Sort element!")),
-          new IconButton(
-              icon: new Icon(Icons.refresh),
-              onPressed: () => debugPrint('Refresh'))
-        ],
+        new IconButton(
+            icon: new Icon(Icons.playlist_add),
+            onPressed: () => debugPrint("Add element!")),
+        new IconButton(
+            icon: new Icon(Icons.wrap_text),
+            onPressed: () => debugPrint("Sort element!")),
+        new IconButton(
+            icon: new Icon(Icons.refresh),
+            onPressed: () => debugPrint('Refresh'))
+      ],
     );
 
     //final listView = _buildCategoryWidgets(localCurrencies);
@@ -36,7 +37,15 @@ class HomeRoute extends StatelessWidget {
 
     return Scaffold(
       appBar: appBar,
-      body: listView,
+      body: Container(
+        child: Currency(
+          countryName: 'Italy',
+          flagCode: 'IT',
+          currencyName: 'Euro',
+          currencyCode: 'EUR',
+          currencySymbol: '€',
+        ),
+      ),
     );
   }
 }
