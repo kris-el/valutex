@@ -1,3 +1,5 @@
+import 'dart:async';
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'currency.dart';
 
@@ -17,13 +19,22 @@ class HomeRoute extends StatelessWidget {
         final index = i ~/ 2;
         return currencies[index];
       },
-      itemCount: currencies.length * 2 - 1,
+      itemCount: currencies.length * 2,
     );
   }
 
   @override
   Widget build(BuildContext context) {
     List<Currency> _activeCountryCurrencyWidgets = <Currency>[];
+
+    // Future<void> _retriveCoutryDetails() async {
+    //   final json = DefaultAssetBundle
+    //       .of(context)
+    //       .loadString('assets/data/countries.json');
+    //   final data = JsonDecoder().convert(await json);
+    // }
+
+    // await _retriveCoutryDetails();
 
     for (var i = 0; i < activeCountryCurrencyNames.length; i++) {
       _activeCountryCurrencyWidgets.add(Currency(

@@ -105,7 +105,7 @@ class CurrencyState extends State<Currency> {
               children: <Widget>[
                 Container(width: 8.0),
                 countryBox,
-                Container(width: 8.0),
+                Container(width: 10.0),
                 detailsBox,
                 exchangeBox
               ],
