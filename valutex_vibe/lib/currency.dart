@@ -47,29 +47,30 @@ class CurrencyState extends State<Currency> {
 
     final detailsBox = Expanded(
       child: Padding(
-        padding: EdgeInsets.all(8.0),
+        padding: EdgeInsets.all(4.0),
         child: Container(
             color: Colors.transparent,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Expanded(
-                    child: Align(
-                        alignment: Alignment.bottomLeft,
-                        child: Text(
-                          '${widget.countryName}',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 20.0),
-                          textAlign: TextAlign.left,
-                        ))),
-                        Container(height: 6.0,),
-                Expanded(
-                    child: Align(
-                        alignment: Alignment.topLeft,
-                        child: Text(
-                          '${widget.currencyName}',
-                          style: TextStyle(fontSize: 18.0),
-                        )))
+                Container(
+                    color: Colors.transparent,
+                    child: Text(
+                      '${widget.countryName}',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold, fontSize: 20.0),
+                      textAlign: TextAlign.left,
+                    )),
+                Container(
+                  height: 6.0,
+                ),
+                Container(
+                    color: Colors.transparent,
+                    child: Text(
+                      '${widget.currencyName}',
+                      style: TextStyle(fontSize: 18.0),
+                    ))
               ],
             )
             //Text('${widget.countryName}'),
@@ -101,7 +102,13 @@ class CurrencyState extends State<Currency> {
             padding: EdgeInsets.all(0.0),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: <Widget>[Container(width: 8.0), countryBox, Container(width: 8.0), detailsBox, exchangeBox],
+              children: <Widget>[
+                Container(width: 8.0),
+                countryBox,
+                Container(width: 8.0),
+                detailsBox,
+                exchangeBox
+              ],
             ),
           ),
           onTap: () {
