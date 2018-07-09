@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 
-final _rowHeight = 100.0;
+final _rowHeight = 88.0;
 final _borderRadius = BorderRadius.circular(_rowHeight / 10);
 String currentAmount = '1500.50';
 
@@ -32,6 +32,7 @@ class Currency extends StatefulWidget {
 
 class CurrencyState extends State<Currency> {
   String currentAmount = '1500.50';
+  String countryCurrencyInput = 'Europe';
 
   @override
   Widget build(BuildContext context) {

@@ -9,13 +9,33 @@ class HomeRoute extends StatefulWidget {
 }
 
 class HomeRouteState extends State<HomeRoute> {
+  List currencyCountries = [];
+  List<Currency> _activeCountryCurrencyWidgets = <Currency>[];
   List<String> activeCountryCurrencyNames = <String>[
     'Europe',
     'United States of America',
     'Thailand',
-    'Vietnam',
+    'Viet Nam',
   ];
   double baseValue = 1.0;
+
+  void addCountryCurrencyWidget() {
+    print('addCountryCurrencyWidget');
+  }
+
+  Future<void> _loadCountriesAsset(BuildContext context) async {
+    if (currencyCountries.isNotEmpty) return;
+    final jsonCountries =
+        DefaultAssetBundle.of(context).loadString('assets/data/countries.json');
+    final dataCountries = JsonDecoder().convert(await jsonCountries);
+
+    if (dataCountries is! List) {
+      throw ('Data retrieved is not a List');
+    }
+    setState(() {
+      currencyCountries = dataCountries;
+    });
+  }
 
   Widget _buildCurrencyWidgets(List<Widget> currencies) {
     return ListView.builder(
@@ -30,25 +50,25 @@ class HomeRouteState extends State<HomeRoute> {
 
   @override
   Widget build(BuildContext context) {
-    List<Currency> _activeCountryCurrencyWidgets = <Currency>[];
+    _loadCountriesAsset(context);
 
-    // Future<void> _retriveCoutryDetails() async {
-    //   final json = DefaultAssetBundle
-    //       .of(context)
-    //       .loadString('assets/data/countries.json');
-    //   final data = JsonDecoder().convert(await json);
-    // }
+    if (currencyCountries.isNotEmpty) {
+      _activeCountryCurrencyWidgets.clear();
 
-    // await _retriveCoutryDetails();
-
-    for (var i = 0; i < activeCountryCurrencyNames.length; i++) {
-      _activeCountryCurrencyWidgets.add(Currency(
-        countryName: activeCountryCurrencyNames[i],
-        flagCode: 'eu',
-        currencyName: 'euro',
-        currencyCode: 'eur',
-        currencySymbol: '€',
-      ));
+      var filteredCurrencyCountries = currencyCountries
+          .where((country) =>
+              activeCountryCurrencyNames.indexOf(country['countryName']) != -1)
+          .toList();
+      filteredCurrencyCountries.forEach((element) {
+        print(element['countryName']);
+        _activeCountryCurrencyWidgets.add(Currency(
+          countryName: element['countryName'],
+          flagCode: element['flagCode'],
+          currencyName: element['currencyName'],
+          currencyCode: element['currencyCode'],
+          currencySymbol: element['currencySymbol'],
+        ));
+      });
     }
 
     final appBar = AppBar(
@@ -56,7 +76,7 @@ class HomeRouteState extends State<HomeRoute> {
       actions: <Widget>[
         new IconButton(
             icon: new Icon(Icons.playlist_add),
-            onPressed: () => debugPrint("Add element!")),
+            onPressed: addCountryCurrencyWidget),
         new IconButton(
             icon: new Icon(Icons.wrap_text),
             onPressed: () => debugPrint("Sort element!")),
@@ -67,16 +87,6 @@ class HomeRouteState extends State<HomeRoute> {
     );
 
     final listView = _buildCurrencyWidgets(_activeCountryCurrencyWidgets);
-
-    /*final body = Container(
-      child: Currency(
-        countryName: 'Italy',
-        flagCode: 'IT',
-        currencyName: 'Euro',
-        currencyCode: 'EUR',
-        currencySymbol: '€',
-      ),
-    );*/
 
     return Scaffold(
       appBar: appBar,
