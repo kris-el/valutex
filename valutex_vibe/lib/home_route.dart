@@ -3,13 +3,18 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'currency.dart';
 
-class HomeRoute extends StatelessWidget {
-  final activeCountryCurrencyNames = <String>[
+class HomeRoute extends StatefulWidget {
+  @override
+  createState() => HomeRouteState();
+}
+
+class HomeRouteState extends State<HomeRoute> {
+  List<String> activeCountryCurrencyNames = <String>[
     'Europe',
     'United States of America',
     'Thailand',
     'Vietnam',
-  ]; //<Currency>[];
+  ];
   double baseValue = 1.0;
 
   Widget _buildCurrencyWidgets(List<Widget> currencies) {
