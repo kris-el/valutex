@@ -3,14 +3,15 @@ import 'package:meta/meta.dart';
 
 final _rowHeight = 88.0;
 final _borderRadius = BorderRadius.circular(_rowHeight / 10);
-String currentAmount = '1500.50';
 
-class Currency extends StatefulWidget {
+
+class Currency extends StatelessWidget {
   final String countryName;
   final String flagCode;
   final String currencyName;
   final String currencyCode;
   final String currencySymbol;
+  final double currentAmount;
 
   const Currency({
     Key key,
@@ -19,20 +20,14 @@ class Currency extends StatefulWidget {
     @required this.currencyName,
     @required this.currencyCode,
     @required this.currencySymbol,
+    @required this.currentAmount,
   })  : assert(countryName != null),
         assert(flagCode != null),
         assert(currencyName != null),
         assert(currencyCode != null),
         assert(currencySymbol != null),
+        assert(currentAmount != null),
         super(key: key);
-
-  @override
-  createState() => CurrencyState();
-}
-
-class CurrencyState extends State<Currency> {
-  String currentAmount = '1500.50';
-  String countryCurrencyInput = 'Europe';
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +36,7 @@ class CurrencyState extends State<Currency> {
       child: Container(
         color: Colors.transparent,
         child: Image.asset(
-            "assets/images/flags/country_${widget.flagCode.toLowerCase()}_64.png",
+            "assets/images/flags/country_${flagCode.toLowerCase()}_64.png",
             fit: BoxFit.fitHeight),
       ),
     );
@@ -58,9 +53,9 @@ class CurrencyState extends State<Currency> {
                 Container(
                     color: Colors.transparent,
                     child: Text(
-                      '${widget.countryName}',
+                      '$countryName',
                       style: TextStyle(
-                          fontWeight: FontWeight.bold, fontSize: 20.0),
+                          fontWeight: FontWeight.bold, fontSize: 18.0),
                       textAlign: TextAlign.left,
                     )),
                 Container(
@@ -69,8 +64,8 @@ class CurrencyState extends State<Currency> {
                 Container(
                     color: Colors.transparent,
                     child: Text(
-                      '${widget.currencyName}',
-                      style: TextStyle(fontSize: 18.0),
+                      '$currencyName',
+                      style: TextStyle(fontSize: 14.0),
                     ))
               ],
             )
@@ -85,8 +80,8 @@ class CurrencyState extends State<Currency> {
         color: Colors.transparent,
         child: Center(
           child: Text(
-            "${widget.currencySymbol} $currentAmount",
-            style: TextStyle(fontSize: 20.0),
+            "$currencySymbol $currentAmount",
+            style: TextStyle(fontSize: 18.0),
             textAlign: TextAlign.right,
           ),
         ),

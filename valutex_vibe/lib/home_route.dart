@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
+import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'currency.dart';
 
@@ -10,6 +11,8 @@ class HomeRoute extends StatefulWidget {
 
 class HomeRouteState extends State<HomeRoute> {
   List currencyCountries = [];
+  String currencySource = 'none';
+  Map currencyRates = {};
   List<Currency> _activeCountryCurrencyWidgets = <Currency>[];
   List<String> activeCountryCurrencyNames = <String>[
     'Europe',
@@ -18,6 +21,7 @@ class HomeRouteState extends State<HomeRoute> {
     'Vietnam',
   ];
   double baseValue = 1.0;
+  String currencyInput = 'eur';
 
   void addCountryCurrencyWidget() {
     print('addCountryCurrencyWidget');
@@ -37,6 +41,54 @@ class HomeRouteState extends State<HomeRoute> {
     });
   }
 
+  Future<void> _loadRatesAsset(BuildContext context) async {
+    if (currencySource != 'none') return;
+    currencySource = 'json';
+    final jsonRates =
+        DefaultAssetBundle.of(context).loadString('assets/data/rates.json');
+    final dataRates = JsonDecoder().convert(await jsonRates);
+    if (dataRates is! Map) {
+      throw ('Data retrieved is not a Map');
+    }
+    setState(() {
+      currencySource = 'json';
+      currencyRates = dataRates['rates'];
+      print('currencySource: $currencySource');
+    });
+  }
+
+  Future<void> _getRatesFromApi() async {
+    if (currencySource == 'api') {
+      debugPrint('Api request refused');
+      return;
+    }
+    currencySource = 'api';
+    String apiUrl = 'https://valutex.herokuapp.com/api/getrates';
+
+    http.Response response = await http.get(apiUrl);
+    var dataRates = JsonDecoder().convert(response.body);
+
+    if (dataRates is! Map) {
+      throw ('Data retrieved is not a Map');
+    }
+    setState(() {
+      currencySource = 'api';
+      currencyRates = dataRates['rates'];
+      print('currencySource: $currencySource');
+    });
+  }
+
+  void refreshRates() {
+    currencySource = 'old';
+    _getRatesFromApi();
+  }
+
+  double getCurrentAmount(String currency) {
+    currency = currency.toUpperCase();
+    if (currency.toUpperCase() == 'EUR') return 1.0;
+    return currencyRates[currency];
+  }
+
   Widget _buildCurrencyWidgets(List<Widget> currencies) {
     return ListView.builder(
       itemBuilder: (BuildContext context, int i) {
@@ -50,7 +102,9 @@ class HomeRouteState extends State<HomeRoute> {
 
   @override
   Widget build(BuildContext context) {
+    _loadRatesAsset(context);
     _loadCountriesAsset(context);
+    _getRatesFromApi();
 
     if (currencyCountries.isNotEmpty) {
       _activeCountryCurrencyWidgets.clear();
@@ -60,13 +114,13 @@ class HomeRouteState extends State<HomeRoute> {
               activeCountryCurrencyNames.indexOf(country['countryName']) != -1)
           .toList();
       filteredCurrencyCountries.forEach((element) {
-        print(element['countryName']);
         _activeCountryCurrencyWidgets.add(Currency(
           countryName: element['countryName'],
           flagCode: element['flagCode'],
           currencyName: element['currencyName'],
           currencyCode: element['currencyCode'],
           currencySymbol: element['currencySymbol'],
+          currentAmount: getCurrentAmount(element['currencyCode']),
         ));
       });
     }
@@ -82,7 +136,7 @@ class HomeRouteState extends State<HomeRoute> {
             onPressed: () => debugPrint("Sort element!")),
         new IconButton(
             icon: new Icon(Icons.refresh),
-            onPressed: () => debugPrint('Refresh'))
+            onPressed: refreshRates)
       ],
     );
 
