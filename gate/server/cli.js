@@ -5,14 +5,14 @@ const request = require('request');
 const yargs = require('yargs');
 const currency = require('./currency');
 const country = require('./country');
-var {mongoose} = require('./mongoose');
-var {Exchange} = require('./models/exchange');
+var { mongoose } = require('./mongoose');
+var { Exchange } = require('./models/exchange');
 
 var dirs = ['./offline', './offline/flags', 'public', 'playground'];
 
 dirs.forEach((dir) => {
-  if (! fs.existsSync(dir)) {
-      fs.mkdirSync(dir);
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir);
   }
 });
 
@@ -66,9 +66,9 @@ if (command === 'rates') {
 
 } else if (command === 'countries') {
 
-  var promiseRates = new Promise(function(resolve, reject) {
-    Exchange.findOne().sort({age: -1}).then((lastExchange) => {
-      if(lastExchange) {
+  var promiseRates = new Promise(function (resolve, reject) {
+    Exchange.findOne().sort({ age: -1 }).then((lastExchange) => {
+      if (lastExchange) {
         resolve(lastExchange);
       } else {
         // Database empty make a request
@@ -77,7 +77,7 @@ if (command === 'rates') {
       }
     });
   });
-  var promiseCountries = new Promise(function(resolve, reject) {
+  var promiseCountries = new Promise(function (resolve, reject) {
     country.getData().then((data) => {
       resolve(data);
     }, (errorMessage) => {
@@ -87,7 +87,7 @@ if (command === 'rates') {
     });
   });
 
-  Promise.all([promiseRates, promiseCountries]).then(function(values) {
+  Promise.all([promiseRates, promiseCountries]).then(function (values) {
     var rates = values[0];
     var countries = values[1];
     countries.push({
@@ -96,24 +96,24 @@ if (command === 'rates') {
       "currencyName": "Euro",
       "currencyCode": "EUR",
       "currencySymbol": "€"
-  });
+    });
 
-    if(rates && countries) {
+    if (rates && countries) {
       var deleted = false;
       countries.forEach((country) => {
-        if (! _.has(rates.rates, country.currencyCode)) {
-          if (! deleted) console.log('- Countries removed: ');
+        if (!_.has(rates.rates, country.currencyCode)) {
+          if (!deleted) console.log('- Countries removed: ');
           console.log(country.countryName);
-          countries.splice( countries.indexOf(country), 1 );
+          countries.splice(countries.indexOf(country), 1);
           deleted = true;
         }
       });
-      fs.writeFile(__dirname+"/../offline/countries.json", JSON.stringify(countries, undefined, 4), (err) => {
-          if (err) {
-              console.error(err);
-              return;
-          };
-          console.log("- File has been created");
+      fs.writeFile(__dirname + "/../offline/countries.json", JSON.stringify(countries, undefined, 4), (err) => {
+        if (err) {
+          console.error(err);
+          return;
+        };
+        console.log("- File has been created");
       });
     }
     mongoose.connection.close();
@@ -121,9 +121,9 @@ if (command === 'rates') {
 
 } else if (command === 'flags') {
 
-  var promiseRates = new Promise(function(resolve, reject) {
-    Exchange.findOne().sort({age: -1}).then((lastExchange) => {
-      if(lastExchange) {
+  var promiseRates = new Promise(function (resolve, reject) {
+    Exchange.findOne().sort({ age: -1 }).then((lastExchange) => {
+      if (lastExchange) {
         resolve(lastExchange);
       } else {
         // Database empty make a request
@@ -132,7 +132,7 @@ if (command === 'rates') {
       }
     });
   });
-  var promiseCountries = new Promise(function(resolve, reject) {
+  var promiseCountries = new Promise(function (resolve, reject) {
     country.getData().then((data) => {
       resolve(data);
     }, (errorMessage) => {
@@ -144,32 +144,32 @@ if (command === 'rates') {
 
   var rates;
   var countries;
-  Promise.all([promiseRates, promiseCountries]).then(function(values) {
+  Promise.all([promiseRates, promiseCountries]).then(function (values) {
     rates = values[0];
     countries = values[1];
     mongoose.connection.close();
     countries.push({
-        "countryName": "Europe",
-        "flagCode": "EU",
-        "currencyName": "Euro",
-        "currencyCode": "EUR",
-        "currencySymbol": "€"
+      "countryName": "Europe",
+      "flagCode": "EU",
+      "currencyName": "Euro",
+      "currencyCode": "EUR",
+      "currencySymbol": "€"
     });
 
-    if(rates && countries) {
+    if (rates && countries) {
       countries.forEach((country) => {
-        if (! _.has(rates.rates, country.currencyCode)) {
-          countries.splice( countries.indexOf(country), 1 );
+        if (!_.has(rates.rates, country.currencyCode)) {
+          countries.splice(countries.indexOf(country), 1);
         }
       });
       var downloadList = [];
       countries.forEach((countryFlag) => {
         var flag = countryFlag.flagCode.toLowerCase();
         var size = 64;
-        downloadList.push(download(`http://www.countryflags.io/${flag}/flat/${size}.png`, __dirname+`/../offline/flags/country_${flag}_${size}.png`)
-        .then(() => {
-          process.stdout.write(".");
-        }));
+        downloadList.push(download(`http://www.countryflags.io/${flag}/flat/${size}.png`, __dirname + `/../offline/flags/country_${flag}_${size}.png`)
+          .then(() => {
+            process.stdout.write(".");
+          }));
       });
       Promise.all(downloadList).then(() => {
         console.log(".");
@@ -180,25 +180,25 @@ if (command === 'rates') {
 
 } else if (command === 'clear') {
 
-  Exchange.find().sort({age: 1}).then((rates) => {
-    if(rates.length <= 2) {
+  Exchange.find().sort({ age: 1 }).then((rates) => {
+    if (rates.length <= 2) {
       mongoose.connection.close();
       return;
     }
-    for(var i=0; i<rates.length-1; i++) {
+    for (var i = 0; i < rates.length - 1; i++) {
       console.log(rates[i].age);
     }
     console.log('Marked to delete: ');
     var prev = null;
     var idDeleteList = [];
-    for(var i=0; i<rates.length-2; i++) {
-      if(prev && areInTheSameDay(rates[i].age, prev.age)) {
+    for (var i = 0; i < rates.length - 2; i++) {
+      if (prev && areInTheSameDay(rates[i].age, prev.age)) {
         console.log(rates[i].age);
         idDeleteList.push(rates[i]._id);
       }
       prev = rates[i];
     }
-    Exchange.deleteMany({_id: {$in: idDeleteList}}, function(err) {
+    Exchange.deleteMany({ _id: { $in: idDeleteList } }, function (err) {
       console.log('Documents deleted!');
       mongoose.connection.close();
     });
