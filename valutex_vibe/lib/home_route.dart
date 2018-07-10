@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
+import 'package:intl/intl.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'currency.dart';
@@ -10,18 +11,21 @@ class HomeRoute extends StatefulWidget {
 }
 
 class HomeRouteState extends State<HomeRoute> {
-  List currencyCountries = [];
-  String currencySource = 'none';
-  Map currencyRates = {};
-  List<Currency> _activeCountryCurrencyWidgets = <Currency>[];
+  List currencyCountries = []; // Data countries details
+  Map currencyRates = {}; // Data exchange rates
+  String currencySource = 'none'; // Source of exchange rates
+  DateTime ratesUpdate = new DateTime.now();
+  List<Currency> _activeCountryCurrencyWidgets = <Currency>[]; // listview items
   List<String> activeCountryCurrencyNames = <String>[
+    // index of Items to show in listview
     'Europe',
     'United States',
     'Thailand',
     'Vietnam',
   ];
-  double baseValue = 1.0;
   String currencyInput = 'eur';
+  double amountInput = 1.0;
+  DateFormat formatter = new DateFormat('H:m E, d MMMM yyyy');
 
   void addCountryCurrencyWidget() {
     print('addCountryCurrencyWidget');
@@ -53,6 +57,7 @@ class HomeRouteState extends State<HomeRoute> {
     setState(() {
       currencySource = 'json';
       currencyRates = dataRates['rates'];
+      ratesUpdate = DateTime.parse(dataRates['age']);
       print('currencySource: $currencySource');
     });
   }
@@ -74,6 +79,7 @@ class HomeRouteState extends State<HomeRoute> {
     setState(() {
       currencySource = 'api';
       currencyRates = dataRates['rates'];
+      ratesUpdate = DateTime.parse(dataRates['age']);
       print('currencySource: $currencySource');
     });
   }
@@ -134,10 +140,21 @@ class HomeRouteState extends State<HomeRoute> {
         new IconButton(
             icon: new Icon(Icons.wrap_text),
             onPressed: () => debugPrint("Sort element!")),
-        new IconButton(
-            icon: new Icon(Icons.refresh),
-            onPressed: refreshRates)
+        new IconButton(icon: new Icon(Icons.refresh), onPressed: refreshRates)
       ],
+    );
+
+    final bottomBar = BottomAppBar(
+      child: Container(
+        color: Theme.of(context).primaryColor,
+        child: Padding(
+          padding: EdgeInsets.all(8.0),
+          child: Text(
+            'Updated: ${formatter.format(ratesUpdate)}',
+            textAlign: TextAlign.center,
+          ),
+        ),
+      ),
     );
 
     final listView = _buildCurrencyWidgets(_activeCountryCurrencyWidgets);
@@ -145,6 +162,7 @@ class HomeRouteState extends State<HomeRoute> {
     return Scaffold(
       appBar: appBar,
       body: listView,
+      bottomNavigationBar: bottomBar,
     );
   }
 }

@@ -1,11 +1,7 @@
 
+View: Input amount
 
-cli command: selectevly delete records
-- Dal più vecchio al più recente mantieni solo un record al giorno
-- Quando cambia il giorno skip cancella tutti gli altri eccetto primo e ultimo
+Currency display based on 3/4 significant digits
+- get in digits
 
-
-valuta_converter
-web
-
-Create a folder
+Sort listview items
