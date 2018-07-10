@@ -13,9 +13,9 @@ class HomeRouteState extends State<HomeRoute> {
   List<Currency> _activeCountryCurrencyWidgets = <Currency>[];
   List<String> activeCountryCurrencyNames = <String>[
     'Europe',
-    'United States of America',
+    'United States',
     'Thailand',
-    'Viet Nam',
+    'Vietnam',
   ];
   double baseValue = 1.0;
 

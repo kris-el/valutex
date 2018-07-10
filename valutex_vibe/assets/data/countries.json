@@ -1645,7 +1645,7 @@
         "currencySymbol": "£"
     },
     {
-        "countryName": "United States of America",
+        "countryName": "United States",
         "flagCode": "US",
         "currencyName": "United States dollar",
         "currencyCode": "USD",
@@ -1673,14 +1673,14 @@
         "currencySymbol": "Vt"
     },
     {
-        "countryName": "Venezuela (Bolivarian Republic of)",
+        "countryName": "Venezuela",
         "flagCode": "VE",
         "currencyName": "Venezuelan bolívar",
         "currencyCode": "VEF",
         "currencySymbol": "Bs F"
     },
     {
-        "countryName": "Viet Nam",
+        "countryName": "Vietnam",
         "flagCode": "VN",
         "currencyName": "Vietnamese đồng",
         "currencyCode": "VND",
