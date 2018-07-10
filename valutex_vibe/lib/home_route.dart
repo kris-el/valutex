@@ -89,10 +89,27 @@ class HomeRouteState extends State<HomeRoute> {
     _getRatesFromApi();
   }
 
-  double getCurrentAmount(String currency) {
-    currency = currency.toUpperCase();
-    if (currency.toUpperCase() == 'EUR') return 1.0;
-    return currencyRates[currency];
+  double getCurrentAmount(String currencyOutput) {
+    currencyOutput = currencyOutput.toUpperCase();
+    currencyInput = currencyInput.toUpperCase();
+    // if (currencyOutput.toUpperCase() == 'EUR') return 1.0;
+    // return currencyRates[currencyOutput];
+    double amountEuro;
+    double amountOutput;
+    // Convert amountInput currencyInput -> eur
+    if (currencyInput == 'EUR') {
+      amountEuro = amountInput;
+    } else {
+      // 40thb ?eur
+      amountEuro = amountInput / currencyRates[currencyInput];
+    }
+    // Convert amountEuro euro -> currencyOutput
+    if (currencyOutput == 'EUR') {
+      amountOutput = amountEuro;
+    } else {
+      amountOutput = amountEuro * currencyRates[currencyOutput];
+    }
+    return amountOutput;
   }
 
   Widget _buildCurrencyWidgets(List<Widget> currencies) {
