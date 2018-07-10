@@ -98,6 +98,22 @@ if (command === 'rates') {
       "currencySymbol": "€"
     });
 
+    console.log('- Fix country names:');
+    countries.forEach(function(obj) {
+      if (obj.countryName == "Viet Nam") {
+        console.log(obj.countryName);
+        obj.countryName = "Vietnam";
+      }
+      if (obj.countryName == "Venezuela (Bolivarian Republic of)") {
+        console.log(obj.countryName);
+        obj.countryName = "Venezuela";
+      }
+      if (obj.countryName == "United States of America") {
+        console.log(obj.countryName);
+        obj.countryName = "United States";
+      }
+  });
+
     if (rates && countries) {
       var deleted = false;
       countries.forEach((country) => {
