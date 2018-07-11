@@ -6,6 +6,10 @@ import 'package:flutter/material.dart';
 import 'currency.dart';
 
 class HomeRoute extends StatefulWidget {
+  final String title;
+
+  HomeRoute({Key key, this.title}) : super(key: key);
+
   @override
   createState() => HomeRouteState();
 }
@@ -149,7 +153,7 @@ class HomeRouteState extends State<HomeRoute> {
     }
 
     final appBar = AppBar(
-      title: Text('Currency converter'),
+      title: Text(widget.title),
       actions: <Widget>[
         new IconButton(
             icon: new Icon(Icons.playlist_add),
