@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
+import 'amout_route.dart';
 
 final _rowHeight = 88.0;
 final _borderRadius = BorderRadius.circular(_rowHeight / 10);
-
 
 class Currency extends StatelessWidget {
   final String countryName;
@@ -28,6 +28,14 @@ class Currency extends StatelessWidget {
         assert(currencySymbol != null),
         assert(currentAmount != null),
         super(key: key);
+
+  void openAmount(BuildContext context, String countryName) async {
+    final amount = await Navigator.of(context).push(MaterialPageRoute(
+        builder: (context) => AmountRoute(
+              countryName: countryName,
+            )));
+    Scaffold.of(context).showSnackBar(SnackBar(content: Text("$amount")));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -109,7 +117,7 @@ class Currency extends StatelessWidget {
           ),
           onTap: () {
             //_navigateToChangeAmount(context);
-            debugPrint('Currency Tapped');
+            openAmount(context, countryName);
           },
         ),
       ),

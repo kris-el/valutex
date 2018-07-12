@@ -96,8 +96,6 @@ class HomeRouteState extends State<HomeRoute> {
   double getCurrentAmount(String currencyOutput) {
     currencyOutput = currencyOutput.toUpperCase();
     currencyInput = currencyInput.toUpperCase();
-    // if (currencyOutput.toUpperCase() == 'EUR') return 1.0;
-    // return currencyRates[currencyOutput];
     double amountEuro;
     double amountOutput;
     // Convert amountInput currencyInput -> eur
