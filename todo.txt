@@ -3,5 +3,6 @@ Currency display based on 3/4 significant digits
 - get in digits
 
 Refine input amount screen
+- Add flag country and currency
 
 Sort listview items, feature

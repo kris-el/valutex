@@ -78,11 +78,30 @@ class _AmountScreenState extends State<AmountScreen> {
               onChanged: _updateAmoutValue,
             ),
           ),
-          RaisedButton(
-            child: Text('Ok'),
-            onPressed: () {
-              Navigator.pop(context, amountValue);
-            },
+          Container(
+            color: Colors.transparent,
+            child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Padding(
+                    padding: EdgeInsets.all(32.0),
+                    child: RaisedButton(
+                      child: Text('Clear'),
+                      onPressed: () {
+                        _controller.clear();
+                      },
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(32.0),
+                    child: RaisedButton(
+                      child: Text('Ok'),
+                      onPressed: () {
+                        Navigator.pop(context, amountValue);
+                      },
+                    ),
+                  ),
+                ]),
           ),
         ],
       ),
