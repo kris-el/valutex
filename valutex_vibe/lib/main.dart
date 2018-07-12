@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'home_route.dart';
+import 'home_screen.dart';
 
 void main() => runApp(ValutexApp());
 
@@ -9,7 +9,7 @@ class ValutexApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: true,
       title: 'Valutex',
-      home: HomeRoute(title: 'Currency converter'),
+      home: HomeScreen(title: 'Currency converter'),
       theme: ThemeData(
         brightness: Brightness.dark,
         primaryColor: Colors.orange[800],

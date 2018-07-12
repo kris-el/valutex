@@ -5,16 +5,16 @@ import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'currency.dart';
 
-class HomeRoute extends StatefulWidget {
+class HomeScreen extends StatefulWidget {
   final String title;
 
-  HomeRoute({Key key, this.title}) : super(key: key);
+  HomeScreen({Key key, this.title}) : super(key: key);
 
   @override
-  createState() => HomeRouteState();
+  createState() => _HomeScreenState();
 }
 
-class HomeRouteState extends State<HomeRoute> {
+class _HomeScreenState extends State<HomeScreen> {
   List currencyCountries = []; // Data countries details
   Map currencyRates = {}; // Data exchange rates
   String currencySource = 'none'; // Source of exchange rates

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class AmountRoute extends StatefulWidget {
+class AmountScreen extends StatefulWidget {
   final String countryName;
 
-  AmountRoute({Key key, this.countryName}) : super(key: key);
+  AmountScreen({Key key, this.countryName}) : super(key: key);
 
-  createState() => AmountRouteState();
+  createState() => _AmountScreenState();
 }
 
-class AmountRouteState extends State<AmountRoute> {
+class _AmountScreenState extends State<AmountScreen> {
 
   @override
   Widget build(BuildContext context) {

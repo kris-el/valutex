@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
-import 'amout_route.dart';
+import 'amount_screen.dart';
 
 final _rowHeight = 88.0;
 final _borderRadius = BorderRadius.circular(_rowHeight / 10);
