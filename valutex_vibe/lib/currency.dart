@@ -36,6 +36,7 @@ class Currency extends StatelessWidget {
     final amount = await Navigator.of(context).push(MaterialPageRoute(
         builder: (context) => AmountScreen(
               countryName: countryName,
+              initialAmount: (currentAmount == null) ? 1.0 : currentAmount
             )));
     callback(currencyCode, amount);
     //Scaffold.of(context).showSnackBar(SnackBar(content: Text("$amount")));

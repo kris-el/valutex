@@ -1,7 +1,7 @@
 
-View: Input amount
-
 Currency display based on 3/4 significant digits
 - get in digits
 
-Sort listview items
+Refine input amount screen
+
+Sort listview items, feature
