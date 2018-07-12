@@ -9,7 +9,6 @@ class AmountScreen extends StatefulWidget {
 }
 
 class _AmountScreenState extends State<AmountScreen> {
-
   @override
   Widget build(BuildContext context) {
     final appBar = AppBar(
@@ -17,12 +16,30 @@ class _AmountScreenState extends State<AmountScreen> {
     );
 
     final body = Center(
-      child: Text(widget.countryName),
+      child: Column(
+        children: <Widget>[
+          Padding(
+            padding: EdgeInsets.all(16.0),
+            child: Text(widget.countryName),
+          ),
+          Padding(
+            padding: EdgeInsets.all(16.0),
+            child: TextField(
+              autofocus: true,
+              keyboardType: TextInputType.number,
+              style: TextStyle(fontSize: 20.0),
+            ),
+          ),
+          RaisedButton(
+            child: Text('Ok'),
+            onPressed: () {
+              Navigator.pop(context, 15.0);
+            },
+          ),
+        ],
+      ),
     );
 
-    return Scaffold(
-      appBar: appBar,
-      body: body
-    );
+    return Scaffold(appBar: appBar, body: body);
   }
 }

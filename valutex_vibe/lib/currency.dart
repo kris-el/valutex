@@ -4,6 +4,7 @@ import 'amount_screen.dart';
 
 final _rowHeight = 88.0;
 final _borderRadius = BorderRadius.circular(_rowHeight / 10);
+typedef void InputCallback(String newCurrency, double newAmount);
 
 class Currency extends StatelessWidget {
   final String countryName;
@@ -12,6 +13,7 @@ class Currency extends StatelessWidget {
   final String currencyCode;
   final String currencySymbol;
   final double currentAmount;
+  final InputCallback callback;
 
   const Currency({
     Key key,
@@ -21,6 +23,7 @@ class Currency extends StatelessWidget {
     @required this.currencyCode,
     @required this.currencySymbol,
     @required this.currentAmount,
+    @required this.callback,
   })  : assert(countryName != null),
         assert(flagCode != null),
         assert(currencyName != null),
@@ -31,10 +34,11 @@ class Currency extends StatelessWidget {
 
   void openAmount(BuildContext context, String countryName) async {
     final amount = await Navigator.of(context).push(MaterialPageRoute(
-        builder: (context) => AmountRoute(
+        builder: (context) => AmountScreen(
               countryName: countryName,
             )));
-    Scaffold.of(context).showSnackBar(SnackBar(content: Text("$amount")));
+    callback(currencyCode, amount);
+    //Scaffold.of(context).showSnackBar(SnackBar(content: Text("$amount")));
   }
 
   @override

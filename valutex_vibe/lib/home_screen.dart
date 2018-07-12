@@ -146,6 +146,16 @@ class _HomeScreenState extends State<HomeScreen> {
           currencyCode: element['currencyCode'],
           currencySymbol: element['currencySymbol'],
           currentAmount: getCurrentAmount(element['currencyCode']),
+          // currencyInput = currency;
+          // amountInput = amount;
+          callback: (newCurrency, newAmount) {
+            if(newCurrency == null) return;
+            if(newAmount == null) return;
+            setState(() {
+              currencyInput = newCurrency;
+              amountInput = newAmount;
+            });
+          },
         ));
       });
     }
