@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 import 'amount_screen.dart';
-import 'currency_core.dart';
+import 'currency_draft.dart';
 
 typedef void InputCallback(String newCurrency, num newAmount);
 
-class Currency extends StatelessWidget {
+class CurrencyWidget extends StatelessWidget {
   final String countryName;
   final String flagCode;
   final String currencyName;
@@ -14,7 +14,7 @@ class Currency extends StatelessWidget {
   final String currentAmount;
   final InputCallback callback;
 
-  const Currency({
+  const CurrencyWidget({
     Key key,
     @required this.countryName,
     @required this.flagCode,
@@ -55,7 +55,7 @@ class Currency extends StatelessWidget {
     return Material(
       child: InkWell(
         borderRadius: BorderRadius.circular(18.0),
-        child: CurrencyCore(
+        child: CurrencyDraft(
           flagCode: flagCode,
           detail1: countryName,
           detail2: currencyName,

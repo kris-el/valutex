@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'currency_core.dart';
+import 'currency_draft.dart';
 
 class AmountScreen extends StatefulWidget {
   final String countryName;
@@ -71,7 +71,7 @@ class _AmountScreenState extends State<AmountScreen> {
 
     final upperBox = Padding(
       padding: EdgeInsets.all(16.0),
-      child: CurrencyCore(
+      child: CurrencyDraft(
         flagCode: widget.flagCode,
         detail1: widget.countryName,
         detail2: widget.currencyName,

@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:intl/intl.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
-import 'currency.dart';
+import 'currency_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   final String title;
@@ -19,7 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Map currencyRates = {}; // Data exchange rates
   String currencySource = 'none'; // Source of exchange rates
   DateTime ratesUpdate = new DateTime.now();
-  List<Currency> _activeCountryCurrencyWidgets = <Currency>[]; // listview items
+  List<CurrencyWidget> _activeCountryCurrencyWidgets = <CurrencyWidget>[]; // listview items
   List<String> activeCountryCurrencyNames = <String>[
     // index of Items to show in listview
     'Europe',
@@ -185,7 +185,7 @@ class _HomeScreenState extends State<HomeScreen> {
               activeCountryCurrencyNames.indexOf(country['countryName']) != -1)
           .toList();
       filteredCurrencyCountries.forEach((element) {
-        _activeCountryCurrencyWidgets.add(Currency(
+        _activeCountryCurrencyWidgets.add(CurrencyWidget(
           countryName: element['countryName'],
           flagCode: element['flagCode'],
           currencyName: element['currencyName'],

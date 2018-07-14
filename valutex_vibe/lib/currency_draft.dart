@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 
-class CurrencyCore extends StatelessWidget {
+class CurrencyDraft extends StatelessWidget {
   final String flagCode;
   final String detail1;
   final String detail2;
@@ -9,7 +9,7 @@ class CurrencyCore extends StatelessWidget {
   final String tail;
 
 
-  const CurrencyCore({
+  const CurrencyDraft({
     Key key,
     @required this.flagCode,
     @required this.detail1,
