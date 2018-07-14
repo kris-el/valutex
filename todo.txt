@@ -2,6 +2,10 @@
 Refine input amount screen
 - Add flag country and currency
 
+Fix max amount to number of digits 200,000euro
+
+Currency converter: Set european notation
+
 Add country currency
 
 Sort listview items, feature

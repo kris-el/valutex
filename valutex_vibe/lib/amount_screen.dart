@@ -2,11 +2,19 @@ import 'package:flutter/material.dart';
 
 class AmountScreen extends StatefulWidget {
   final String countryName;
-  final double initialAmount;
+  final String flagCode;
+  final String currencyName;
+  final String currencyCode;
+  final String currencySymbol;
+  final num initialAmount;
 
   AmountScreen({
     Key key,
     this.countryName,
+    this.flagCode,
+    this.currencyName,
+    this.currencyCode,
+    this.currencySymbol,
     this.initialAmount,
   })  : assert(countryName != null),
         assert(initialAmount != null),
@@ -16,9 +24,9 @@ class AmountScreen extends StatefulWidget {
 }
 
 class _AmountScreenState extends State<AmountScreen> {
-  TextEditingController _controller;
+  TextEditingController _inputTextFieldController;
   bool _showValidationError = false;
-  double amountValue;
+  num amountValue;
 
   _AmountScreenState() {
     //amountValue = widget.initAmount;
@@ -28,7 +36,7 @@ class _AmountScreenState extends State<AmountScreen> {
   void initState() {
     super.initState();
     amountValue = widget.initialAmount;
-    _controller = TextEditingController(text: amountValue.round().toString());
+    _inputTextFieldController = TextEditingController(text: amountValue.round().toString());
   }
 
   void _updateAmoutValue(input) {
@@ -65,7 +73,7 @@ class _AmountScreenState extends State<AmountScreen> {
           Padding(
             padding: EdgeInsets.all(16.0),
             child: TextField(
-              controller: _controller,
+              controller: _inputTextFieldController,
               decoration: InputDecoration(
                 hintText: 'Currency amount',
                 errorText:
@@ -88,7 +96,7 @@ class _AmountScreenState extends State<AmountScreen> {
                     child: RaisedButton(
                       child: Text('Clear'),
                       onPressed: () {
-                        _controller.clear();
+                        _inputTextFieldController.clear();
                       },
                     ),
                   ),

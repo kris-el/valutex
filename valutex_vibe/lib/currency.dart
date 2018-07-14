@@ -4,7 +4,7 @@ import 'amount_screen.dart';
 
 final _rowHeight = 88.0;
 final _borderRadius = BorderRadius.circular(_rowHeight / 10);
-typedef void InputCallback(String newCurrency, double newAmount);
+typedef void InputCallback(String newCurrency, num newAmount);
 
 class Currency extends StatelessWidget {
   final String countryName;
@@ -37,6 +37,10 @@ class Currency extends StatelessWidget {
           MaterialPageRoute(
             builder: (context) => AmountScreen(
                 countryName: countryName,
+                flagCode: flagCode,
+                currencyName: currencyName,
+                currencyCode: currencyCode,
+                currencySymbol: currencySymbol,
                 initialAmount: (currentAmount == null) ? 1.0 : double.parse(currentAmount)),
           ),
         );

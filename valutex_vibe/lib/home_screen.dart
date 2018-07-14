@@ -28,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
     'Vietnam',
   ];
   String currencyInput = 'eur';
-  double amountInput = 1.0;
+  num amountInput = 1.0;
   DateFormat formatter = new DateFormat('H:m E, d MMMM yyyy');
 
   void addCountryCurrencyWidget() {
@@ -93,52 +93,51 @@ class _HomeScreenState extends State<HomeScreen> {
     _getRatesFromApi();
   }
 
-  String normalizeAmount(double inRate, double inAmount) {
-    double rate = inRate;
-    double dblAmount = inAmount;
-    int intAmount;
+  String normalizeAmount(num inRate, num inAmount) {
+    num rate = inRate;
+    num amount = inAmount;
     String strAmount;
     int approx = 0;
 
     if (rate >= 1000) {
       while (rate >= 1000) {
         rate /= 10;
-        dblAmount /= 10;
+        amount /= 10;
         approx--;
       }
-      intAmount = dblAmount.round();
-      if (intAmount == 0) return '0';
+      amount = amount.round();
+      if (amount == 0) return '0';
       while (approx < 0) {
-        intAmount *= 10;
+        amount *= 10;
         approx++;
       }
-      return intAmount.toString();
+      return amount.toString();
     }
     if (rate < 1000) {
       while (rate < 1000) {
         rate *= 10;
-        dblAmount *= 10;
+        amount *= 10;
         approx++;
       }
-      dblAmount = dblAmount.round().toDouble();
+      amount = amount.round().toDouble();
       while (approx > 0) {
-        dblAmount /= 10.0;
+        amount /= 10.0;
         approx--;
       }
-      strAmount = dblAmount.toString();
+      strAmount = amount.toString();
       int pos = strAmount.indexOf('.') + 3;
       pos = (strAmount.length > pos) ? pos : strAmount.length;
       if (pos != -1) strAmount = strAmount.substring(0, pos);
       return strAmount;
     }
-    return dblAmount.round().toString();
+    return amount.round().toString();
   }
 
   String getCurrentAmount(String currencyOutput) {
     currencyOutput = currencyOutput.toUpperCase();
     currencyInput = currencyInput.toUpperCase();
-    double amountEuro;
-    double amountOutput;
+    num amountEuro;
+    num amountOutput;
 
     // Convert amountInput currencyInput -> eur
     if (currencyInput == 'EUR') {
@@ -152,7 +151,7 @@ class _HomeScreenState extends State<HomeScreen> {
     } else {
       amountOutput = amountEuro * currencyRates[currencyOutput];
     }
-    double rate = currencyRates[currencyOutput] * 1.0;
+    num rate = currencyRates[currencyOutput];
     return normalizeAmount(rate, amountOutput);
   }
 
