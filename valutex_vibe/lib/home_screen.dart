@@ -206,6 +206,8 @@ class _HomeScreenState extends State<HomeScreen> {
       });
     }
 
+    final drawer = Drawer();
+
     final appBar = AppBar(
       title: Text(widget.title),
       actions: <Widget>[
@@ -236,6 +238,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return Scaffold(
       appBar: appBar,
+      drawer: drawer,
       body: listView,
       bottomNavigationBar: bottomBar,
     );

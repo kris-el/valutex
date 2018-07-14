@@ -9,7 +9,7 @@ class ValutexApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: true,
       title: 'Valutex',
-      home: HomeScreen(title: 'Currency converter'),
+      home: HomeScreen(title: 'Valutex'), // Currency converter
       theme: ThemeData(
         brightness: Brightness.dark,
         primaryColor: Colors.orange[800],
