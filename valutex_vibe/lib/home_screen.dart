@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:intl/intl.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
+import 'home_drawer.dart';
 import 'currency_widget.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -206,8 +207,6 @@ class _HomeScreenState extends State<HomeScreen> {
       });
     }
 
-    final drawer = Drawer();
-
     final appBar = AppBar(
       title: Text(widget.title),
       actions: <Widget>[
@@ -238,7 +237,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return Scaffold(
       appBar: appBar,
-      drawer: drawer,
+      drawer: HomeDrawer(),
       body: listView,
       bottomNavigationBar: bottomBar,
     );

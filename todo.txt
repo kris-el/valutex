@@ -1,4 +1,4 @@
-Fix max amount to number of digits 200,000euro
+Fix max amount to number of digits 200.000 euro
 
 Currency converter: Set european notation 1.000.000,00
 
