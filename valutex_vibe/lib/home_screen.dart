@@ -93,16 +93,57 @@ class _HomeScreenState extends State<HomeScreen> {
     _getRatesFromApi();
   }
 
-  double getCurrentAmount(String currencyOutput) {
+  String normalizeAmount(double inRate, double inAmount) {
+    double rate = inRate;
+    double dblAmount = inAmount;
+    int intAmount;
+    String strAmount;
+    int approx = 0;
+
+    if (rate >= 1000) {
+      while (rate >= 1000) {
+        rate /= 10;
+        dblAmount /= 10;
+        approx--;
+      }
+      intAmount = dblAmount.round();
+      if (intAmount == 0) return '0';
+      while (approx < 0) {
+        intAmount *= 10;
+        approx++;
+      }
+      return intAmount.toString();
+    }
+    if (rate < 1000) {
+      while (rate < 1000) {
+        rate *= 10;
+        dblAmount *= 10;
+        approx++;
+      }
+      dblAmount = dblAmount.round().toDouble();
+      while (approx > 0) {
+        dblAmount /= 10.0;
+        approx--;
+      }
+      strAmount = dblAmount.toString();
+      int pos = strAmount.indexOf('.') + 3;
+      pos = (strAmount.length > pos) ? pos : strAmount.length;
+      if (pos != -1) strAmount = strAmount.substring(0, pos);
+      return strAmount;
+    }
+    return dblAmount.round().toString();
+  }
+
+  String getCurrentAmount(String currencyOutput) {
     currencyOutput = currencyOutput.toUpperCase();
     currencyInput = currencyInput.toUpperCase();
     double amountEuro;
     double amountOutput;
+
     // Convert amountInput currencyInput -> eur
     if (currencyInput == 'EUR') {
       amountEuro = amountInput;
     } else {
-      // 40thb ?eur
       amountEuro = amountInput / currencyRates[currencyInput];
     }
     // Convert amountEuro euro -> currencyOutput
@@ -111,7 +152,8 @@ class _HomeScreenState extends State<HomeScreen> {
     } else {
       amountOutput = amountEuro * currencyRates[currencyOutput];
     }
-    return amountOutput;
+    double rate = currencyRates[currencyOutput] * 1.0;
+    return normalizeAmount(rate, amountOutput);
   }
 
   Widget _buildCurrencyWidgets(List<Widget> currencies) {
@@ -149,8 +191,8 @@ class _HomeScreenState extends State<HomeScreen> {
           // currencyInput = currency;
           // amountInput = amount;
           callback: (newCurrency, newAmount) {
-            if(newCurrency == null) return;
-            if(newAmount == null) return;
+            if (newCurrency == null) return;
+            if (newAmount == null) return;
             setState(() {
               currencyInput = newCurrency;
               amountInput = newAmount;
@@ -179,7 +221,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Padding(
           padding: EdgeInsets.all(8.0),
           child: Text(
-            'Updated: ${formatter.format(ratesUpdate)}',
+            'Updated: ${formatter.format(ratesUpdate)} UTC',
             textAlign: TextAlign.center,
           ),
         ),

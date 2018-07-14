@@ -28,7 +28,7 @@ class _AmountScreenState extends State<AmountScreen> {
   void initState() {
     super.initState();
     amountValue = widget.initialAmount;
-    _controller = TextEditingController(text: amountValue.toString());
+    _controller = TextEditingController(text: amountValue.round().toString());
   }
 
   void _updateAmoutValue(input) {

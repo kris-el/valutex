@@ -12,7 +12,7 @@ class Currency extends StatelessWidget {
   final String currencyName;
   final String currencyCode;
   final String currencySymbol;
-  final double currentAmount;
+  final String currentAmount;
   final InputCallback callback;
 
   const Currency({
@@ -33,11 +33,13 @@ class Currency extends StatelessWidget {
         super(key: key);
 
   void openAmount(BuildContext context, String countryName) async {
-    final amount = await Navigator.of(context).push(MaterialPageRoute(
-        builder: (context) => AmountScreen(
-              countryName: countryName,
-              initialAmount: (currentAmount == null) ? 1.0 : currentAmount
-            )));
+    final amount = await Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => AmountScreen(
+                countryName: countryName,
+                initialAmount: (currentAmount == null) ? 1.0 : double.parse(currentAmount)),
+          ),
+        );
     callback(currencyCode, amount);
     //Scaffold.of(context).showSnackBar(SnackBar(content: Text("$amount")));
   }
