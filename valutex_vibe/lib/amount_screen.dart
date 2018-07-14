@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meta/meta.dart';
 import 'currency_draft.dart';
 
 class AmountScreen extends StatefulWidget {
@@ -11,12 +12,12 @@ class AmountScreen extends StatefulWidget {
 
   AmountScreen({
     Key key,
-    this.countryName,
-    this.flagCode,
-    this.currencyName,
-    this.currencyCode,
-    this.currencySymbol,
-    this.initialAmount,
+    @required this.countryName,
+    @required this.flagCode,
+    @required this.currencyName,
+    @required this.currencyCode,
+    @required this.currencySymbol,
+    @required this.initialAmount,
   })  : assert(countryName != null),
         assert(flagCode != null),
         assert(currencyName != null),

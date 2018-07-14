@@ -5,6 +5,7 @@ import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'home_drawer.dart';
 import 'currency_widget.dart';
+import 'selection_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   final String title;
@@ -20,7 +21,8 @@ class _HomeScreenState extends State<HomeScreen> {
   Map currencyRates = {}; // Data exchange rates
   String currencySource = 'none'; // Source of exchange rates
   DateTime ratesUpdate = new DateTime.now();
-  List<CurrencyWidget> _activeCountryCurrencyWidgets = <CurrencyWidget>[]; // listview items
+  List<CurrencyWidget> _activeCountryCurrencyWidgets =
+      <CurrencyWidget>[]; // listview items
   List<String> activeCountryCurrencyNames = <String>[
     // index of Items to show in listview
     'Europe',
@@ -172,6 +174,18 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
+  void openSelScreen(BuildContext context, List<String> currencyList) async {
+    final newCurrencyList = await Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => SelectionScreen(currencyList: currencyList),
+          ),
+        );
+    //callback(newCountryCurrencyName);
+    // Scaffold
+    //     .of(context)
+    //     .showSnackBar(SnackBar(content: Text("$newCurrencyList")));
+  }
+
   @override
   Widget build(BuildContext context) {
     _loadRatesAsset(context);
@@ -195,7 +209,7 @@ class _HomeScreenState extends State<HomeScreen> {
           currentAmount: getCurrentAmount(element['currencyCode']),
           // currencyInput = currency;
           // amountInput = amount;
-          callback: (newCurrency, newAmount) {
+          inputAmountCallBack: (newCurrency, newAmount) {
             if (newCurrency == null) return;
             if (newAmount == null) return;
             setState(() {
@@ -212,7 +226,9 @@ class _HomeScreenState extends State<HomeScreen> {
       actions: <Widget>[
         new IconButton(
             icon: new Icon(Icons.playlist_add),
-            onPressed: addCountryCurrencyWidget),
+            onPressed: () {
+              openSelScreen(context, activeCountryCurrencyNames);
+            }),
         new IconButton(
             icon: new Icon(Icons.wrap_text),
             onPressed: () => debugPrint("Sort element!")),

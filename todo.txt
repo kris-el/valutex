@@ -1,8 +1,10 @@
+Add country currency selection screen
+
+Implement HomeDrawer 
+
 Fix max amount to number of digits 200.000 euro
 
 Currency converter: Set european notation 1.000.000,00
-
-Add country currency widget
 
 Sort listview items widgets, feature
 

@@ -3,7 +3,7 @@ import 'package:meta/meta.dart';
 import 'amount_screen.dart';
 import 'currency_draft.dart';
 
-typedef void InputCallback(String newCurrency, num newAmount);
+typedef void InputAmountCallback(String newCurrency, num newAmount);
 
 class CurrencyWidget extends StatelessWidget {
   final String countryName;
@@ -12,7 +12,7 @@ class CurrencyWidget extends StatelessWidget {
   final String currencyCode;
   final String currencySymbol;
   final String currentAmount;
-  final InputCallback callback;
+  final InputAmountCallback inputAmountCallBack;
 
   const CurrencyWidget({
     Key key,
@@ -22,7 +22,7 @@ class CurrencyWidget extends StatelessWidget {
     @required this.currencyCode,
     @required this.currencySymbol,
     @required this.currentAmount,
-    @required this.callback,
+    @required this.inputAmountCallBack,
   })  : assert(countryName != null),
         assert(flagCode != null),
         assert(currencyName != null),
@@ -31,7 +31,7 @@ class CurrencyWidget extends StatelessWidget {
         assert(currentAmount != null),
         super(key: key);
 
-  void openAmount(BuildContext context, String countryName) async {
+  void openAmountScreen(BuildContext context, String countryName) async {
     final amount = await Navigator.of(context).push(
           MaterialPageRoute(
             builder: (context) => AmountScreen(
@@ -46,7 +46,7 @@ class CurrencyWidget extends StatelessWidget {
                 ),
           ),
         );
-    callback(currencyCode, amount);
+    inputAmountCallBack(currencyCode, amount);
     //Scaffold.of(context).showSnackBar(SnackBar(content: Text("$amount")));
   }
 
@@ -63,7 +63,7 @@ class CurrencyWidget extends StatelessWidget {
         ),
         onTap: () {
           //_navigateToChangeAmount(context);
-          openAmount(context, countryName);
+          openAmountScreen(context, countryName);
         },
       ),
     );
