@@ -4,11 +4,13 @@ Refine input amount screen
 
 Fix max amount to number of digits 200,000euro
 
-Currency converter: Set european notation
+Currency converter: Set european notation 1.000.000,00
 
-Add country currency
+Add country currency widget
 
-Sort listview items, feature
+Sort listview items widgets, feature
+
+on api-load show LinearProgressIndicator
 
 save rates into db
 

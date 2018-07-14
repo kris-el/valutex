@@ -158,7 +158,12 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget _buildCurrencyWidgets(List<Widget> currencies) {
     return ListView.builder(
       itemBuilder: (BuildContext context, int i) {
-        if (i.isOdd) return Divider();
+        if (i.isOdd)
+          return Divider(
+            color: Colors.grey,
+            indent: 0.0,
+            height: 2.0,
+          );
         final index = i ~/ 2;
         return currencies[index];
       },

@@ -41,7 +41,9 @@ class Currency extends StatelessWidget {
                 currencyName: currencyName,
                 currencyCode: currencyCode,
                 currencySymbol: currencySymbol,
-                initialAmount: (currentAmount == null) ? 1.0 : double.parse(currentAmount)),
+                initialAmount: (currentAmount == null)
+                    ? 1.0
+                    : double.parse(currentAmount)),
           ),
         );
     callback(currencyCode, amount);
@@ -50,81 +52,63 @@ class Currency extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final countryBox = Padding(
-      padding: EdgeInsets.all(0.0),
-      child: Container(
-        color: Colors.transparent,
-        child: Image.asset(
-            "assets/images/flags/country_${flagCode.toLowerCase()}_64.png",
-            fit: BoxFit.fitHeight),
-      ),
+    final countryBox = Container(
+      color: Colors.transparent,
+      child: Image.asset(
+          "assets/images/flags/country_${flagCode.toLowerCase()}_64.png",
+          fit: BoxFit.fitHeight),
     );
 
     final detailsBox = Expanded(
       child: Padding(
-        padding: EdgeInsets.all(4.0),
-        child: Container(
-            color: Colors.transparent,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Container(
-                    color: Colors.transparent,
-                    child: Text(
-                      '$countryName',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, fontSize: 18.0),
-                      textAlign: TextAlign.left,
-                    )),
-                Container(
-                  height: 6.0,
-                ),
-                Container(
-                    color: Colors.transparent,
-                    child: Text(
-                      '$currencyName',
-                      style: TextStyle(fontSize: 14.0),
-                    ))
-              ],
-            )
-            //Text('${widget.countryName}'),
-            ),
-      ),
+          padding: EdgeInsets.all(4.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                '$countryName',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0),
+                textAlign: TextAlign.left,
+              ),
+              Container(
+                height: 6.0,
+              ),
+              Text(
+                '$currencyName',
+                style: TextStyle(fontSize: 14.0),
+              ),
+            ],
+          )
+          //Text('${widget.countryName}'),
+          ),
     );
 
     final exchangeBox = Padding(
       padding: EdgeInsets.all(8.0),
-      child: Container(
-        color: Colors.transparent,
-        child: Center(
-          child: Text(
-            "$currencySymbol $currentAmount",
-            style: TextStyle(fontSize: 18.0),
-            textAlign: TextAlign.right,
-          ),
+      child: Center(
+        child: Text(
+          "$currencySymbol $currentAmount",
+          style: TextStyle(fontSize: 18.0),
+          textAlign: TextAlign.right,
         ),
       ),
     );
 
     return Material(
-      color: Colors.transparent,
       child: Container(
         height: _rowHeight,
         child: InkWell(
           borderRadius: _borderRadius,
-          child: Padding(
-            padding: EdgeInsets.all(0.0),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: <Widget>[
-                Container(width: 8.0),
-                countryBox,
-                Container(width: 10.0),
-                detailsBox,
-                exchangeBox
-              ],
-            ),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              Container(width: 8.0),
+              countryBox,
+              Container(width: 10.0),
+              detailsBox,
+              exchangeBox
+            ],
           ),
           onTap: () {
             //_navigateToChangeAmount(context);

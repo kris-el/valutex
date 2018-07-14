@@ -36,7 +36,8 @@ class _AmountScreenState extends State<AmountScreen> {
   void initState() {
     super.initState();
     amountValue = widget.initialAmount;
-    _inputTextFieldController = TextEditingController(text: amountValue.round().toString());
+    _inputTextFieldController =
+        TextEditingController(text: amountValue.round().toString());
   }
 
   void _updateAmoutValue(input) {
@@ -63,58 +64,67 @@ class _AmountScreenState extends State<AmountScreen> {
       title: Text('Set amount'),
     );
 
-    final body = Center(
-      child: Column(
+    final upperBox = Padding(
+      padding: EdgeInsets.all(16.0),
+      child: Text(widget.countryName),
+    );
+
+    final inputBox = Padding(
+      padding: EdgeInsets.all(16.0),
+      child: TextField(
+        controller: _inputTextFieldController,
+        decoration: InputDecoration(
+          hintText: 'Currency amount',
+          errorText: _showValidationError ? 'Invalid number entered' : null,
+        ),
+        autofocus: true,
+        autocorrect: true,
+        keyboardType: TextInputType.number,
+        style: TextStyle(fontSize: 20.0),
+        onChanged: _updateAmoutValue,
+      ),
+    );
+
+    final actionBox = Container(
+      color: Colors.transparent,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Padding(
-            padding: EdgeInsets.all(16.0),
-            child: Text(widget.countryName),
-          ),
-          Padding(
-            padding: EdgeInsets.all(16.0),
-            child: TextField(
-              controller: _inputTextFieldController,
-              decoration: InputDecoration(
-                hintText: 'Currency amount',
-                errorText:
-                    _showValidationError ? 'Invalid number entered' : null,
-              ),
-              autofocus: true,
-              autocorrect: true,
-              keyboardType: TextInputType.number,
-              style: TextStyle(fontSize: 20.0),
-              onChanged: _updateAmoutValue,
+            padding: EdgeInsets.all(32.0),
+            child: RaisedButton(
+              child: Text('Clear'),
+              onPressed: () {
+                _inputTextFieldController.clear();
+              },
             ),
           ),
-          Container(
-            color: Colors.transparent,
-            child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Padding(
-                    padding: EdgeInsets.all(32.0),
-                    child: RaisedButton(
-                      child: Text('Clear'),
-                      onPressed: () {
-                        _inputTextFieldController.clear();
-                      },
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(32.0),
-                    child: RaisedButton(
-                      child: Text('Ok'),
-                      onPressed: () {
-                        Navigator.pop(context, amountValue);
-                      },
-                    ),
-                  ),
-                ]),
+          Padding(
+            padding: EdgeInsets.all(32.0),
+            child: RaisedButton(
+              child: Text('Ok'),
+              onPressed: () {
+                Navigator.pop(context, amountValue);
+              },
+            ),
           ),
         ],
       ),
     );
 
-    return Scaffold(appBar: appBar, body: body);
+    final body = Center(
+      child: Column(
+        children: <Widget>[
+          upperBox,
+          inputBox,
+          actionBox,
+        ],
+      ),
+    );
+
+    return Scaffold(
+      appBar: appBar,
+      body: body,
+    );
   }
 }
