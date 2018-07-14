@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'currency_core.dart';
 
 class AmountScreen extends StatefulWidget {
   final String countryName;
@@ -17,6 +18,10 @@ class AmountScreen extends StatefulWidget {
     this.currencySymbol,
     this.initialAmount,
   })  : assert(countryName != null),
+        assert(flagCode != null),
+        assert(currencyName != null),
+        assert(currencyCode != null),
+        assert(currencySymbol != null),
         assert(initialAmount != null),
         super(key: key);
 
@@ -66,7 +71,12 @@ class _AmountScreenState extends State<AmountScreen> {
 
     final upperBox = Padding(
       padding: EdgeInsets.all(16.0),
-      child: Text(widget.countryName),
+      child: CurrencyCore(
+        flagCode: widget.flagCode,
+        detail1: widget.countryName,
+        detail2: widget.currencyName,
+        tail: '${widget.currencySymbol}    ${widget.currencyCode}',
+      ),
     );
 
     final inputBox = Padding(

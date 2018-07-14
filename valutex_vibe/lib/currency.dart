@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 import 'amount_screen.dart';
+import 'currency_core.dart';
 
-final _rowHeight = 88.0;
-final _borderRadius = BorderRadius.circular(_rowHeight / 10);
 typedef void InputCallback(String newCurrency, num newAmount);
 
 class Currency extends StatelessWidget {
@@ -36,14 +35,15 @@ class Currency extends StatelessWidget {
     final amount = await Navigator.of(context).push(
           MaterialPageRoute(
             builder: (context) => AmountScreen(
-                countryName: countryName,
-                flagCode: flagCode,
-                currencyName: currencyName,
-                currencyCode: currencyCode,
-                currencySymbol: currencySymbol,
-                initialAmount: (currentAmount == null)
-                    ? 1.0
-                    : double.parse(currentAmount)),
+                  countryName: countryName,
+                  flagCode: flagCode,
+                  currencyName: currencyName,
+                  currencyCode: currencyCode,
+                  currencySymbol: currencySymbol,
+                  initialAmount: (currentAmount == null)
+                      ? 1.0
+                      : double.parse(currentAmount),
+                ),
           ),
         );
     callback(currencyCode, amount);
@@ -52,69 +52,19 @@ class Currency extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final countryBox = Container(
-      color: Colors.transparent,
-      child: Image.asset(
-          "assets/images/flags/country_${flagCode.toLowerCase()}_64.png",
-          fit: BoxFit.fitHeight),
-    );
-
-    final detailsBox = Expanded(
-      child: Padding(
-          padding: EdgeInsets.all(4.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text(
-                '$countryName',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0),
-                textAlign: TextAlign.left,
-              ),
-              Container(
-                height: 6.0,
-              ),
-              Text(
-                '$currencyName',
-                style: TextStyle(fontSize: 14.0),
-              ),
-            ],
-          )
-          //Text('${widget.countryName}'),
-          ),
-    );
-
-    final exchangeBox = Padding(
-      padding: EdgeInsets.all(8.0),
-      child: Center(
-        child: Text(
-          "$currencySymbol $currentAmount",
-          style: TextStyle(fontSize: 18.0),
-          textAlign: TextAlign.right,
-        ),
-      ),
-    );
-
     return Material(
-      child: Container(
-        height: _rowHeight,
-        child: InkWell(
-          borderRadius: _borderRadius,
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
-              Container(width: 8.0),
-              countryBox,
-              Container(width: 10.0),
-              detailsBox,
-              exchangeBox
-            ],
-          ),
-          onTap: () {
-            //_navigateToChangeAmount(context);
-            openAmount(context, countryName);
-          },
+      child: InkWell(
+        borderRadius: BorderRadius.circular(18.0),
+        child: CurrencyCore(
+          flagCode: flagCode,
+          detail1: countryName,
+          detail2: currencyName,
+          tail: '$currencySymbol $currentAmount',
         ),
+        onTap: () {
+          //_navigateToChangeAmount(context);
+          openAmount(context, countryName);
+        },
       ),
     );
   }
