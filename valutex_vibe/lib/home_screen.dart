@@ -174,7 +174,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  void openSelScreen(BuildContext context, List<String> currencyList) async {
+  void openSelectionScreen(BuildContext context, List<String> currencyList) async {
     final newCurrencyList = await Navigator.of(context).push(
           MaterialPageRoute(
             builder: (context) => SelectionScreen(currencyList: currencyList),
@@ -227,7 +227,7 @@ class _HomeScreenState extends State<HomeScreen> {
         new IconButton(
             icon: new Icon(Icons.playlist_add),
             onPressed: () {
-              openSelScreen(context, activeCountryCurrencyNames);
+              openSelectionScreen(context, activeCountryCurrencyNames);
             }),
         new IconButton(
             icon: new Icon(Icons.wrap_text),

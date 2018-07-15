@@ -36,6 +36,20 @@ function areInTheSameDay(d1, d2) {
     d1.getDate() === d2.getDate();
 }
 
+var missingCountry = {
+  "countryName": "Europe",
+  "flagCode": "EU",
+  "currencyName": "Euro",
+  "currencyCode": "EUR",
+  "currencySymbol": "€"
+};
+
+function countryCompare(a, b) {
+  if (a.countryName.toLowerCase() < b.countryName.toLowerCase()) return -1;
+  if (a.countryName.toLowerCase() > b.countryName.toLowerCase()) return 1;
+  return 0;
+}
+
 const argv = yargs
   .command('rates', 'Update the exchange rates')
   .command('countries', 'Get a json file with all the countries of available currencies')
@@ -90,16 +104,11 @@ if (command === 'rates') {
   Promise.all([promiseRates, promiseCountries]).then(function (values) {
     var rates = values[0];
     var countries = values[1];
-    countries.push({
-      "countryName": "Europe",
-      "flagCode": "EU",
-      "currencyName": "Euro",
-      "currencyCode": "EUR",
-      "currencySymbol": "€"
-    });
+    countries.push(missingCountry);
+    countries.sort(countryCompare);
 
     console.log('- Fix country names:');
-    countries.forEach(function(obj) {
+    countries.forEach(function (obj) {
       if (obj.countryName == "Viet Nam") {
         console.log(obj.countryName);
         obj.countryName = "Vietnam";
@@ -112,7 +121,7 @@ if (command === 'rates') {
         console.log(obj.countryName);
         obj.countryName = "United States";
       }
-  });
+    });
 
     if (rates && countries) {
       var deleted = false;
@@ -164,13 +173,8 @@ if (command === 'rates') {
     rates = values[0];
     countries = values[1];
     mongoose.connection.close();
-    countries.push({
-      "countryName": "Europe",
-      "flagCode": "EU",
-      "currencyName": "Euro",
-      "currencyCode": "EUR",
-      "currencySymbol": "€"
-    });
+    countries.push(missingCountry);
+    countries.sort(countryCompare);
 
     if (rates && countries) {
       countries.forEach((country) => {
