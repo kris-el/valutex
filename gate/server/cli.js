@@ -44,9 +44,15 @@ var missingCountry = {
   "currencySymbol": "€"
 };
 
+function normalizeToLower(str) {
+  return str.countryName.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+}
+
 function countryCompare(a, b) {
-  if (a.countryName.toLowerCase() < b.countryName.toLowerCase()) return -1;
-  if (a.countryName.toLowerCase() > b.countryName.toLowerCase()) return 1;
+  var countryA = normalizeToLower(a);
+  var countryB = normalizeToLower(b);
+  if (countryA < countryB) return -1;
+  if (countryA > countryB) return 1;
   return 0;
 }
 

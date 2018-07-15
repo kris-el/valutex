@@ -231,20 +231,6 @@
         "currencySymbol": "$"
     },
     {
-        "countryName": "United States Minor Outlying Islands",
-        "flagCode": "UM",
-        "currencyName": "United States Dollar",
-        "currencyCode": "USD",
-        "currencySymbol": "$"
-    },
-    {
-        "countryName": "Virgin Islands (U.S.)",
-        "flagCode": "VI",
-        "currencyName": "United States dollar",
-        "currencyCode": "USD",
-        "currencySymbol": "$"
-    },
-    {
         "countryName": "Brunei Darussalam",
         "flagCode": "BN",
         "currencyName": "Brunei dollar",
@@ -273,6 +259,13 @@
         "currencySymbol": "Fr"
     },
     {
+        "countryName": "Cabo Verde",
+        "flagCode": "CV",
+        "currencyName": "Cape Verdean escudo",
+        "currencyCode": "CVE",
+        "currencySymbol": "Esc"
+    },
+    {
         "countryName": "Cambodia",
         "flagCode": "KH",
         "currencyName": "Cambodian riel",
@@ -292,13 +285,6 @@
         "currencyName": "Canadian dollar",
         "currencyCode": "CAD",
         "currencySymbol": "$"
-    },
-    {
-        "countryName": "Cabo Verde",
-        "flagCode": "CV",
-        "currencyName": "Cape Verdean escudo",
-        "currencyCode": "CVE",
-        "currencySymbol": "Esc"
     },
     {
         "countryName": "Cayman Islands",
@@ -390,6 +376,13 @@
         "currencyName": "Costa Rican colón",
         "currencyCode": "CRC",
         "currencySymbol": "₡"
+    },
+    {
+        "countryName": "Côte d'Ivoire",
+        "flagCode": "CI",
+        "currencyName": "West African CFA franc",
+        "currencyCode": "XOF",
+        "currencySymbol": "Fr"
     },
     {
         "countryName": "Croatia",
@@ -502,6 +495,13 @@
         "currencyName": "Ethiopian birr",
         "currencyCode": "ETB",
         "currencySymbol": "Br"
+    },
+    {
+        "countryName": "Europe",
+        "flagCode": "EU",
+        "currencyName": "Euro",
+        "currencyCode": "EUR",
+        "currencySymbol": "€"
     },
     {
         "countryName": "Falkland Islands (Malvinas)",
@@ -735,13 +735,6 @@
         "currencySymbol": "Rp"
     },
     {
-        "countryName": "Côte d'Ivoire",
-        "flagCode": "CI",
-        "currencyName": "West African CFA franc",
-        "currencyCode": "XOF",
-        "currencySymbol": "Fr"
-    },
-    {
         "countryName": "Iran (Islamic Republic of)",
         "flagCode": "IR",
         "currencyName": "Iranian rial",
@@ -831,6 +824,20 @@
         "currencyName": "Australian dollar",
         "currencyCode": "AUD",
         "currencySymbol": "$"
+    },
+    {
+        "countryName": "Korea (Democratic People's Republic of)",
+        "flagCode": "KP",
+        "currencyName": "North Korean won",
+        "currencyCode": "KPW",
+        "currencySymbol": "₩"
+    },
+    {
+        "countryName": "Korea (Republic of)",
+        "flagCode": "KR",
+        "currencyName": "South Korean won",
+        "currencyCode": "KRW",
+        "currencySymbol": "₩"
     },
     {
         "countryName": "Kuwait",
@@ -1141,13 +1148,6 @@
         "currencySymbol": "$"
     },
     {
-        "countryName": "Korea (Democratic People's Republic of)",
-        "flagCode": "KP",
-        "currencyName": "North Korean won",
-        "currencyCode": "KPW",
-        "currencySymbol": "₩"
-    },
-    {
         "countryName": "Northern Mariana Islands",
         "flagCode": "MP",
         "currencyName": "United States dollar",
@@ -1449,13 +1449,6 @@
         "currencySymbol": "£"
     },
     {
-        "countryName": "Korea (Republic of)",
-        "flagCode": "KR",
-        "currencyName": "South Korean won",
-        "currencyCode": "KRW",
-        "currencySymbol": "₩"
-    },
-    {
         "countryName": "Spain",
         "flagCode": "ES",
         "currencyName": "Euro",
@@ -1645,6 +1638,13 @@
         "currencySymbol": "£"
     },
     {
+        "countryName": "United States Minor Outlying Islands",
+        "flagCode": "UM",
+        "currencyName": "United States Dollar",
+        "currencyCode": "USD",
+        "currencySymbol": "$"
+    },
+    {
         "countryName": "United States",
         "flagCode": "US",
         "currencyName": "United States dollar",
@@ -1687,6 +1687,13 @@
         "currencySymbol": "₫"
     },
     {
+        "countryName": "Virgin Islands (U.S.)",
+        "flagCode": "VI",
+        "currencyName": "United States dollar",
+        "currencyCode": "USD",
+        "currencySymbol": "$"
+    },
+    {
         "countryName": "Wallis and Futuna",
         "flagCode": "WF",
         "currencyName": "CFP franc",
@@ -1720,12 +1727,5 @@
         "currencyName": "Botswana pula",
         "currencyCode": "BWP",
         "currencySymbol": "P"
-    },
-    {
-        "countryName": "Europe",
-        "flagCode": "EU",
-        "currencyName": "Euro",
-        "currencyCode": "EUR",
-        "currencySymbol": "€"
     }
 ]
