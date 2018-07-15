@@ -64,7 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
     setState(() {
       currencySource = 'json';
       currencyRates = dataRates['rates'];
-      ratesUpdate = DateTime.parse(dataRates['age']);
+      ratesUpdate = DateTime.parse(dataRates['age']).toLocal();
       print('currencySource: $currencySource');
     });
   }
@@ -86,7 +86,7 @@ class _HomeScreenState extends State<HomeScreen> {
     setState(() {
       currencySource = 'api';
       currencyRates = dataRates['rates'];
-      ratesUpdate = DateTime.parse(dataRates['age']);
+      ratesUpdate = DateTime.parse(dataRates['age']).toLocal();
       print('currencySource: $currencySource');
     });
   }
@@ -242,7 +242,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Padding(
           padding: EdgeInsets.all(8.0),
           child: Text(
-            'Updated: ${formatter.format(ratesUpdate)} UTC',
+            'Updated: ${formatter.format(ratesUpdate)}',
             textAlign: TextAlign.center,
           ),
         ),

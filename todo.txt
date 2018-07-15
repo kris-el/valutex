@@ -11,5 +11,3 @@ Sort listview items widgets, feature
 on api-load show LinearProgressIndicator
 
 save rates into db
-
-fix time zone
