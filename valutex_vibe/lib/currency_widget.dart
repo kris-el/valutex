@@ -59,7 +59,11 @@ class CurrencyWidget extends StatelessWidget {
           flagCode: flagCode,
           detail1: countryName,
           detail2: currencyName,
-          tail: '$currencySymbol $currentAmount',
+          tailWidget: Text(
+            '$currencySymbol $currentAmount',
+            style: TextStyle(fontSize: 18.0),
+            textAlign: TextAlign.right,
+          ),
         ),
         onTap: () {
           //_navigateToChangeAmount(context);

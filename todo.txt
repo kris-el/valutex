@@ -1,4 +1,7 @@
 Add country currency selection screen
+- navigator.pop
+- search country
+- verify missing assets
 
 Implement HomeDrawer 
 

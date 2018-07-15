@@ -3,12 +3,12 @@ import 'package:meta/meta.dart';
 import 'currency_draft.dart';
 
 class SelectionScreen extends StatefulWidget {
-  final List<String> currencyList;
+  final List currencyCountries;
 
   SelectionScreen({
     Key key,
-    @required this.currencyList,
-  })  : assert(currencyList != null),
+    @required this.currencyCountries,
+  })  : assert(currencyCountries != null),
         super(key: key);
 
   @override
@@ -16,15 +16,68 @@ class SelectionScreen extends StatefulWidget {
 }
 
 class _SelectionScreenState extends State<SelectionScreen> {
+  List countries = []; // Data countries details
+  List<CurrencyDraft> _currencyWidgets = <CurrencyDraft>[];
+
+  @override
+  void initState() {
+    super.initState();
+    countries = widget.currencyCountries;
+  }
+
+  void updateFav(country) {
+    setState(() {
+      country['fav'] = !country['fav'];
+    });
+  }
+
+  Widget _buildCurrencyWidgets(List<Widget> currencies) {
+    return ListView.builder(
+      itemBuilder: (BuildContext context, int i) {
+        if (i.isOdd)
+          return Divider(
+            color: Colors.grey,
+            indent: 0.0,
+            height: 2.0,
+          );
+        final index = i ~/ 2;
+        return currencies[index];
+      },
+      itemCount: currencies.length * 2,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    final appBar = AppBar();
+    if (_currencyWidgets != null) {
+      _currencyWidgets.clear();
+      countries.forEach((country) {
+        _currencyWidgets.add(CurrencyDraft(
+          flagCode: country['flagCode'],
+          detail1: country['countryName'],
+          detail2: country['currencyName'],
+          tailWidget: InkWell(
+            borderRadius: BorderRadius.circular(18.0),
+            onTap: () { updateFav(country); },
+            child: Container(
+              //color: Colors.red[200],
+              width: 64.0,
+              height: 64.0,
+              child: Icon(
+                country['fav'] ? Icons.favorite : Icons.favorite_border,
+                color: country['fav'] ? Colors.red : null,
+              ),
+            ),
+          ),
+        ));
+      });
+    }
 
-    final body = Container(child: Text('Select currency'),);
+    final appBar = AppBar();
 
     return Scaffold(
       appBar: appBar,
-      body: body,
+      body: _buildCurrencyWidgets(_currencyWidgets),
     );
   }
 }

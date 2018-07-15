@@ -76,7 +76,11 @@ class _AmountScreenState extends State<AmountScreen> {
         flagCode: widget.flagCode,
         detail1: widget.countryName,
         detail2: widget.currencyName,
-        tail: '${widget.currencySymbol}    ${widget.currencyCode}',
+        tailWidget: Text(
+          '${widget.currencySymbol}    ${widget.currencyCode}',
+          style: TextStyle(fontSize: 18.0),
+          textAlign: TextAlign.right,
+        ),
       ),
     );
 

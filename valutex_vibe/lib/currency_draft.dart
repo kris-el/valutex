@@ -7,7 +7,7 @@ class CurrencyDraft extends StatelessWidget {
   final String detail1;
   final String detail2;
   final String detail3;
-  final String tail;
+  final Widget tailWidget;
 
 
   const CurrencyDraft({
@@ -16,11 +16,11 @@ class CurrencyDraft extends StatelessWidget {
     @required this.detail1,
     @required this.detail2,
     this.detail3,
-    @required this.tail,
+    @required this.tailWidget,
   })  : assert(flagCode != null),
         assert(detail1 != null),
         assert(detail2 != null),
-        assert(tail != null),
+        assert(tailWidget != null),
         super(key: key);
 
   @override
@@ -60,11 +60,7 @@ class CurrencyDraft extends StatelessWidget {
     final exchangeBox = Padding(
       padding: EdgeInsets.all(8.0),
       child: Center(
-        child: Text(
-          tail,
-          style: TextStyle(fontSize: 18.0),
-          textAlign: TextAlign.right,
-        ),
+        child: tailWidget,
       ),
     );
 

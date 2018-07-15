@@ -190,11 +190,11 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  void openSelectionScreen(
-      BuildContext context, List<String> currencyList) async {
+  void openSelScreen(BuildContext context, List curCount) async {
     final newCurrencyList = await Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (context) => SelectionScreen(currencyList: currencyList),
+            builder: (context) =>
+                SelectionScreen(currencyCountries: curCount),
           ),
         );
     //callback(newCountryCurrencyName);
@@ -242,7 +242,7 @@ class _HomeScreenState extends State<HomeScreen> {
         new IconButton(
             icon: new Icon(Icons.playlist_add),
             onPressed: () {
-              openSelectionScreen(context, activeCountryCurrencyNames);
+              openSelScreen(context, currencyCountries);
             }),
         new IconButton(
             icon: new Icon(Icons.wrap_text),
@@ -264,12 +264,10 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
 
-    final listView = _buildCurrencyWidgets(_activeCountryCurrencyWidgets);
-
     return Scaffold(
       appBar: appBar,
       drawer: HomeDrawer(),
-      body: listView,
+      body: _buildCurrencyWidgets(_activeCountryCurrencyWidgets),
       bottomNavigationBar: bottomBar,
     );
   }
