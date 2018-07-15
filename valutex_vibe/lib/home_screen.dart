@@ -34,8 +34,23 @@ class _HomeScreenState extends State<HomeScreen> {
   num amountInput = 1.0;
   DateFormat formatter = new DateFormat('H:m E, d MMMM yyyy');
 
-  void addCountryCurrencyWidget() {
-    print('addCountryCurrencyWidget');
+  void updateFavourite(List countries, List<String> favs) {
+    countries.forEach((country) {
+      int sort = favs.indexOf(country['countryName']);
+      country.putIfAbsent('sort', () => sort);
+      country.putIfAbsent('fav', () => (sort != -1));
+    });
+    countries.sort((a, b) {
+      if (a['fav'] && !b['fav']) return -1;
+      if (!a['fav'] && b['fav']) return 1;
+      if (a['sort'] < b['sort']) return -1;
+      if (a['sort'] > b['sort']) return 1;
+      if (a['countryName'].toString().compareTo(b['countryName'].toString()) <
+          0) return -1;
+      if (a['countryName'].toString().compareTo(b['countryName'].toString()) >
+          0) return 1;
+      return 0;
+    });
   }
 
   Future<void> _loadCountriesAsset(BuildContext context) async {
@@ -49,6 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
     }
     setState(() {
       currencyCountries = dataCountries;
+      updateFavourite(currencyCountries, activeCountryCurrencyNames);
     });
   }
 
@@ -174,7 +190,8 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  void openSelectionScreen(BuildContext context, List<String> currencyList) async {
+  void openSelectionScreen(
+      BuildContext context, List<String> currencyList) async {
     final newCurrencyList = await Navigator.of(context).push(
           MaterialPageRoute(
             builder: (context) => SelectionScreen(currencyList: currencyList),
@@ -194,12 +211,10 @@ class _HomeScreenState extends State<HomeScreen> {
 
     if (currencyCountries.isNotEmpty) {
       _activeCountryCurrencyWidgets.clear();
-
-      var filteredCurrencyCountries = currencyCountries
-          .where((country) =>
-              activeCountryCurrencyNames.indexOf(country['countryName']) != -1)
-          .toList();
-      filteredCurrencyCountries.forEach((element) {
+      currencyCountries
+          .where((country) => country['fav'])
+          .toList()
+          .forEach((element) {
         _activeCountryCurrencyWidgets.add(CurrencyWidget(
           countryName: element['countryName'],
           flagCode: element['flagCode'],
