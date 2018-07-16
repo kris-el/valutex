@@ -1,6 +1,8 @@
 Implement HomeDrawer 
 
 Fix max amount to number of digits 200.000 euro
+? Define calculation in each Currency 
+- Implement check in amount screen
 
 Currency converter: Set european notation 1.000.000,00
 

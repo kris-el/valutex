@@ -152,26 +152,40 @@ class _HomeScreenState extends State<HomeScreen> {
     return amount.round().toString();
   }
 
-  String getCurrentAmount(String currencyOutput) {
-    currencyOutput = currencyOutput.toUpperCase();
-    currencyInput = currencyInput.toUpperCase();
-    num amountEuro;
-    num amountOutput;
+  num exchange(String cInput, num aInput, String cOutput) {
+    cOutput = cOutput.toUpperCase();
+    cInput = cInput.toUpperCase();
+    num aEuro;
+    num aOutput;
 
-    // Convert amountInput currencyInput -> eur
-    if (currencyInput == 'EUR') {
-      amountEuro = amountInput;
+    // Convert aInput cInput -> eur
+    if (cInput == 'EUR') {
+      aEuro = aInput;
     } else {
-      amountEuro = amountInput / currencyRates[currencyInput];
+      aEuro = aInput / currencyRates[cInput];
     }
-    // Convert amountEuro euro -> currencyOutput
-    if (currencyOutput == 'EUR') {
-      amountOutput = amountEuro;
+    // Convert amountEuro euro -> cOutput
+    if (cOutput == 'EUR') {
+      aOutput = aEuro;
     } else {
-      amountOutput = amountEuro * currencyRates[currencyOutput];
+      aOutput = aEuro * currencyRates[cOutput];
     }
-    num rate = currencyRates[currencyOutput];
-    return normalizeAmount(rate, amountOutput);
+    return aOutput;
+  }
+
+  String getCurrentAmount(String currencyOutput) {
+    num amountOutput = exchange(currencyInput, amountInput, currencyOutput);
+    return normalizeAmount(currencyRates[currencyOutput], amountOutput);
+  }
+
+  num getMaxAmount(String currencyOutput) {
+    num maxEuroAmount = 200000;
+    int digits = 0;
+    if(currencyOutput.toUpperCase() == 'EUR') return 1000000;
+    num maxAmount = exchange('EUR', maxEuroAmount, currencyOutput);
+    digits = maxAmount.round().toString().length+1;
+    maxAmount = int.parse(1.toString().padRight(digits, '0'));
+    return maxAmount;
   }
 
   Widget _buildCurrencyWidgets(List<Widget> currencies) {
@@ -191,7 +205,8 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   void openSelScreen(BuildContext context, List curCount) async {
-    final newCurrencyList = await Navigator.of(context).push(
+    //final newCurrencyList = 
+    await Navigator.of(context).push(
           MaterialPageRoute(
             builder: (context) =>
                 SelectionScreen(currencyCountries: curCount),
@@ -221,6 +236,7 @@ class _HomeScreenState extends State<HomeScreen> {
           currencyCode: element['currencyCode'],
           currencySymbol: element['currencySymbol'],
           currentAmount: getCurrentAmount(element['currencyCode']),
+          maxAmount: getMaxAmount(element['currencyCode']),
           // currencyInput = currency;
           // amountInput = amount;
           inputAmountCallBack: (newCurrency, newAmount) {

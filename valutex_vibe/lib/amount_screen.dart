@@ -9,6 +9,7 @@ class AmountScreen extends StatefulWidget {
   final String currencyCode;
   final String currencySymbol;
   final num initialAmount;
+  final num maxAmount;
 
   AmountScreen({
     Key key,
@@ -18,12 +19,14 @@ class AmountScreen extends StatefulWidget {
     @required this.currencyCode,
     @required this.currencySymbol,
     @required this.initialAmount,
+    @required this.maxAmount,
   })  : assert(countryName != null),
         assert(flagCode != null),
         assert(currencyName != null),
         assert(currencyCode != null),
         assert(currencySymbol != null),
         assert(initialAmount != null),
+        assert(maxAmount != null),
         super(key: key);
 
   createState() => _AmountScreenState();
