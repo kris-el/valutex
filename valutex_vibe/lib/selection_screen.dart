@@ -18,6 +18,7 @@ class SelectionScreen extends StatefulWidget {
 class _SelectionScreenState extends State<SelectionScreen> {
   List countries = []; // Data countries details
   List<CurrencyDraft> _currencyWidgets = <CurrencyDraft>[];
+  String searchText = '';
 
   @override
   void initState() {
@@ -28,6 +29,12 @@ class _SelectionScreenState extends State<SelectionScreen> {
   void updateFav(country) {
     setState(() {
       country['fav'] = !country['fav'];
+    });
+  }
+
+  void _updateSearchText(input) {
+    setState(() {
+      searchText = input;
     });
   }
 
@@ -51,14 +58,22 @@ class _SelectionScreenState extends State<SelectionScreen> {
   Widget build(BuildContext context) {
     if (_currencyWidgets != null) {
       _currencyWidgets.clear();
-      countries.forEach((country) {
+      countries.where((country) {
+        if(searchText == '') return country['fav'];
+        if (country['countryName'].toString().toLowerCase().contains(searchText.toLowerCase())) return true;
+        if (country['currencyName'].toString().toLowerCase().contains(searchText.toLowerCase())) return true;
+        if (country['currencyCode'].toString().toLowerCase().contains(searchText.toLowerCase())) return true;
+        return false;
+      }).forEach((country) {
         _currencyWidgets.add(CurrencyDraft(
           flagCode: country['flagCode'],
           detail1: country['countryName'],
           detail2: country['currencyName'],
           tailWidget: InkWell(
             borderRadius: BorderRadius.circular(18.0),
-            onTap: () { updateFav(country); },
+            onTap: () {
+              updateFav(country);
+            },
             child: Container(
               //color: Colors.red[200],
               width: 64.0,
@@ -73,7 +88,26 @@ class _SelectionScreenState extends State<SelectionScreen> {
       });
     }
 
-    final appBar = AppBar();
+    final appBar = AppBar(
+      title: TextField(
+        onChanged: _updateSearchText,
+        style: TextStyle(
+            //color: Colors.white,
+            ),
+        decoration: new InputDecoration(
+            prefixIcon: new Icon(Icons.search, color: Colors.white),
+            hintText: "Search...",
+            hintStyle: new TextStyle(color: Colors.white)),
+      ),
+      actions: <Widget>[
+        IconButton(
+          icon: Icon(Icons.send),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        )
+      ],
+    );
 
     return Scaffold(
       appBar: appBar,

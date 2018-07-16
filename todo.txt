@@ -1,8 +1,3 @@
-Add country currency selection screen
-- navigator.pop
-- search country
-- verify missing assets
-
 Implement HomeDrawer 
 
 Fix max amount to number of digits 200.000 euro

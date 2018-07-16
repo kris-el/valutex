@@ -213,7 +213,6 @@ class _HomeScreenState extends State<HomeScreen> {
       _activeCountryCurrencyWidgets.clear();
       currencyCountries
           .where((country) => country['fav'])
-          .toList()
           .forEach((element) {
         _activeCountryCurrencyWidgets.add(CurrencyWidget(
           countryName: element['countryName'],
