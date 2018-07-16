@@ -189,13 +189,6 @@
         "currencySymbol": "Bs."
     },
     {
-        "countryName": "Bonaire, Sint Eustatius and Saba",
-        "flagCode": "BQ",
-        "currencyName": "United States dollar",
-        "currencyCode": "USD",
-        "currencySymbol": "$"
-    },
-    {
         "countryName": "Bosnia and Herzegovina",
         "flagCode": "BA",
         "currencyName": "Bosnia and Herzegovina convertible mark",
@@ -210,25 +203,11 @@
         "currencySymbol": "P"
     },
     {
-        "countryName": "Bouvet Island",
-        "flagCode": "BV",
-        "currencyName": "Norwegian krone",
-        "currencyCode": "NOK",
-        "currencySymbol": "kr"
-    },
-    {
         "countryName": "Brazil",
         "flagCode": "BR",
         "currencyName": "Brazilian real",
         "currencyCode": "BRL",
         "currencySymbol": "R$"
-    },
-    {
-        "countryName": "British Indian Ocean Territory",
-        "flagCode": "IO",
-        "currencyName": "United States dollar",
-        "currencyCode": "USD",
-        "currencySymbol": "$"
     },
     {
         "countryName": "Brunei Darussalam",
@@ -539,13 +518,6 @@
         "currencySymbol": "€"
     },
     {
-        "countryName": "French Guiana",
-        "flagCode": "GF",
-        "currencyName": "Euro",
-        "currencyCode": "EUR",
-        "currencySymbol": "€"
-    },
-    {
         "countryName": "French Polynesia",
         "flagCode": "PF",
         "currencyName": "CFP franc",
@@ -623,13 +595,6 @@
         "currencySymbol": "$"
     },
     {
-        "countryName": "Guadeloupe",
-        "flagCode": "GP",
-        "currencyName": "Euro",
-        "currencyCode": "EUR",
-        "currencySymbol": "€"
-    },
-    {
         "countryName": "Guam",
         "flagCode": "GU",
         "currencyName": "United States dollar",
@@ -677,13 +642,6 @@
         "currencyName": "Haitian gourde",
         "currencyCode": "HTG",
         "currencySymbol": "G"
-    },
-    {
-        "countryName": "Heard Island and McDonald Islands",
-        "flagCode": "HM",
-        "currencyName": "Australian dollar",
-        "currencyCode": "AUD",
-        "currencySymbol": "$"
     },
     {
         "countryName": "Holy See",
@@ -1253,20 +1211,6 @@
         "currencySymbol": "ر.ق"
     },
     {
-        "countryName": "Republic of Kosovo",
-        "flagCode": "XK",
-        "currencyName": "Euro",
-        "currencyCode": "EUR",
-        "currencySymbol": "€"
-    },
-    {
-        "countryName": "Réunion",
-        "flagCode": "RE",
-        "currencyName": "Euro",
-        "currencyCode": "EUR",
-        "currencySymbol": "€"
-    },
-    {
         "countryName": "Romania",
         "flagCode": "RO",
         "currencyName": "Romanian leu",
@@ -1318,13 +1262,6 @@
     {
         "countryName": "Saint Martin (French part)",
         "flagCode": "MF",
-        "currencyName": "Euro",
-        "currencyCode": "EUR",
-        "currencySymbol": "€"
-    },
-    {
-        "countryName": "Saint Pierre and Miquelon",
-        "flagCode": "PM",
         "currencyName": "Euro",
         "currencyCode": "EUR",
         "currencySymbol": "€"
@@ -1475,13 +1412,6 @@
         "currencyName": "Surinamese dollar",
         "currencyCode": "SRD",
         "currencySymbol": "$"
-    },
-    {
-        "countryName": "Svalbard and Jan Mayen",
-        "flagCode": "SJ",
-        "currencyName": "Norwegian krone",
-        "currencyCode": "NOK",
-        "currencySymbol": "kr"
     },
     {
         "countryName": "Swaziland",
@@ -1636,13 +1566,6 @@
         "currencyName": "British pound",
         "currencyCode": "GBP",
         "currencySymbol": "£"
-    },
-    {
-        "countryName": "United States Minor Outlying Islands",
-        "flagCode": "UM",
-        "currencyName": "United States Dollar",
-        "currencyCode": "USD",
-        "currencySymbol": "$"
     },
     {
         "countryName": "United States",
