@@ -37,10 +37,29 @@ class CurrencyWidget extends StatelessWidget {
         assert(numberNotation != null),
         super(key: key);
 
-  String formatNotation(String input) {
-    numberNotation;
-    //...
-    return input;
+  String applyNotation(String number, String notation) {
+    String char;
+    String output = '';
+    bool startCount = number.indexOf('.') == -1;
+    int intpart = 0;
+
+    for (int i = number.length - 1; i >= 0; i--) {
+      char = number[i];
+      if (startCount) intpart++;
+      if ((char == '.')) {
+        if (notation == 'eu') char = ',';
+        startCount = true;
+      }
+      output = char + output;
+      if (notation == 'eu') {
+        if ((intpart % 3 == 0) && (i != 0) && (intpart > 0))
+          output = '.' + output;
+      } else {
+        if ((intpart % 3 == 0) && (i != 0) && (intpart > 0))
+          output = ',' + output;
+      }
+    }
+    return output;
   }
 
   void openAmountScreen(BuildContext context, String countryName) async {
@@ -73,7 +92,7 @@ class CurrencyWidget extends StatelessWidget {
           detail1: countryName,
           detail2: currencyName,
           tailWidget: Text(
-            '$currencySymbol ${formatNotation(currentAmount)}',
+            '$currencySymbol ${applyNotation(currentAmount, numberNotation)}',
             style: TextStyle(fontSize: 18.0),
             textAlign: TextAlign.right,
           ),
