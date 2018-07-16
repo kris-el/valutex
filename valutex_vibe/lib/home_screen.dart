@@ -32,6 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
   ];
   String currencyInput = 'eur';
   num amountInput = 1.0;
+  String numberNotation = 'eu';
   DateFormat formatter = new DateFormat('H:m E, d MMMM yyyy');
 
   void updateFavourite(List countries, List<String> favs) {
@@ -237,8 +238,7 @@ class _HomeScreenState extends State<HomeScreen> {
           currencySymbol: element['currencySymbol'],
           currentAmount: getCurrentAmount(element['currencyCode']),
           maxAmount: getMaxAmount(element['currencyCode']),
-          // currencyInput = currency;
-          // amountInput = amount;
+          numberNotation: numberNotation,
           inputAmountCallBack: (newCurrency, newAmount) {
             if (newCurrency == null) return;
             if (newAmount == null) return;

@@ -13,6 +13,7 @@ class CurrencyWidget extends StatelessWidget {
   final String currencySymbol;
   final String currentAmount;
   final num maxAmount;
+  final String numberNotation;
   final InputAmountCallback inputAmountCallBack;
 
   const CurrencyWidget({
@@ -24,6 +25,7 @@ class CurrencyWidget extends StatelessWidget {
     @required this.currencySymbol,
     @required this.currentAmount,
     @required this.maxAmount,
+    @required this.numberNotation,
     @required this.inputAmountCallBack,
   })  : assert(countryName != null),
         assert(flagCode != null),
@@ -32,7 +34,14 @@ class CurrencyWidget extends StatelessWidget {
         assert(currencySymbol != null),
         assert(currentAmount != null),
         assert(maxAmount != null),
+        assert(numberNotation != null),
         super(key: key);
+
+  String formatNotation(String input) {
+    numberNotation;
+    //...
+    return input;
+  }
 
   void openAmountScreen(BuildContext context, String countryName) async {
     final amount = await Navigator.of(context).push(
@@ -64,7 +73,7 @@ class CurrencyWidget extends StatelessWidget {
           detail1: countryName,
           detail2: currencyName,
           tailWidget: Text(
-            '$currencySymbol $currentAmount',
+            '$currencySymbol ${formatNotation(currentAmount)}',
             style: TextStyle(fontSize: 18.0),
             textAlign: TextAlign.right,
           ),

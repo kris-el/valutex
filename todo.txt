@@ -1,6 +1,8 @@
+Currency converter: Set european notation 1.000.000,00
+
 Implement HomeDrawer 
 
-Currency converter: Set european notation 1.000.000,00
+Set App icon
 
 Sort listview items widgets, feature
 
