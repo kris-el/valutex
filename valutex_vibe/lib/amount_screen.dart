@@ -34,7 +34,8 @@ class AmountScreen extends StatefulWidget {
 
 class _AmountScreenState extends State<AmountScreen> {
   TextEditingController _inputTextFieldController;
-  bool _showValidationError = false;
+  bool _isValidationError = false;
+  String _textValidationError = '';
   num amountValue;
 
   _AmountScreenState() {
@@ -58,10 +59,15 @@ class _AmountScreenState extends State<AmountScreen> {
         // for non-numerical input such as '5..0' or '6 -3'
         try {
           amountValue = double.parse(input);
-          _showValidationError = false;
+          _isValidationError = false;
         } on Exception catch (e) {
           print('Error: $e');
-          _showValidationError = true;
+          _isValidationError = true;
+          _textValidationError = 'Invalid number entered';
+        }
+        if(amountValue > widget.maxAmount) {
+          _isValidationError = true;
+          _textValidationError = 'Amount to high';
         }
       }
     });
@@ -93,7 +99,7 @@ class _AmountScreenState extends State<AmountScreen> {
         controller: _inputTextFieldController,
         decoration: InputDecoration(
           hintText: 'Currency amount',
-          errorText: _showValidationError ? 'Invalid number entered' : null,
+          errorText: _isValidationError ? _textValidationError : null,
         ),
         autofocus: true,
         autocorrect: true,
@@ -122,7 +128,7 @@ class _AmountScreenState extends State<AmountScreen> {
             child: RaisedButton(
               child: Text('Ok'),
               onPressed: () {
-                Navigator.pop(context, amountValue);
+                if(!_isValidationError) Navigator.pop(context, amountValue);
               },
             ),
           ),

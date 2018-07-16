@@ -179,9 +179,9 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   num getMaxAmount(String currencyOutput) {
-    num maxEuroAmount = 200000;
+    num maxEuroAmount = 2000000;
     int digits = 0;
-    if(currencyOutput.toUpperCase() == 'EUR') return 1000000;
+    if(currencyOutput.toUpperCase() == 'EUR') return 10000000;
     num maxAmount = exchange('EUR', maxEuroAmount, currencyOutput);
     digits = maxAmount.round().toString().length+1;
     maxAmount = int.parse(1.toString().padRight(digits, '0'));
