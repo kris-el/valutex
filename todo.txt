@@ -1,5 +1,7 @@
 Implement HomeDrawer 
 
+Amount screen: add action, clear search text
+
 Set App icon
 
 Sort listview items widgets, feature
@@ -7,3 +9,9 @@ Sort listview items widgets, feature
 on api-load show LinearProgressIndicator
 
 save rates into db
+
+Add fictional flags:
+- Kekistan: USD
+- Wakanda: Libyan
+- Klingon: Ruble
+- United federation of planets: euro
