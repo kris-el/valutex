@@ -60,7 +60,7 @@ class _SelectionScreenState extends State<SelectionScreen> {
       _currencyWidgets.clear();
       countries.where((country) {
         if(searchText == '') return country['fav'];
-        if (country['countryName'].toString().toLowerCase().contains(searchText.toLowerCase())) return true;
+        if (country['countryNormName'].toString().contains(searchText.toLowerCase())) return true;
         if (country['currencyName'].toString().toLowerCase().contains(searchText.toLowerCase())) return true;
         if (country['currencyCode'].toString().toLowerCase().contains(searchText.toLowerCase())) return true;
         return false;
