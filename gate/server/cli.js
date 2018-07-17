@@ -44,13 +44,26 @@ var missingCountry = {
   "currencySymbol": "€"
 };
 
+var countriesToRename = [
+  { from: "Viet Nam", to: "Vietnam" },
+  { from: "United Kingdom of Great Britain and Northern Ireland", to: "United Kingdom" },
+  { from: "Macedonia (the former Yugoslav Republic of)", to: "Macedonia" },
+  { from: "Lao People's Democratic Republic", to: "Laos" },
+  { from: "Venezuela (Bolivarian Republic of)", to: "Venezuela" },
+  { from: "United States of America", to: "United States" },
+  { from: "Korea (Democratic People's Republic of)", to: "North Korea" },
+  { from: "Korea (Republic of)", to: "South Korea" }
+];
+
+var flagsToRemove = ['BQ', 'BV', 'IO', 'GF', 'GP', 'HM', 'XK', 'RE', 'PM', 'SJ', 'UM'];
+
 function normalizeToLower(str) {
-  return str.countryName.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+  return str.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "");
 }
 
 function countryCompare(a, b) {
-  var countryA = normalizeToLower(a);
-  var countryB = normalizeToLower(b);
+  var countryA = normalizeToLower(a.countryName);
+  var countryB = normalizeToLower(b.countryName);
   if (countryA < countryB) return -1;
   if (countryA > countryB) return 1;
   return 0;
@@ -115,24 +128,20 @@ if (command === 'rates') {
 
     console.log('- Fix country names:');
     countries.forEach(function (obj) {
-      if (obj.countryName == "Viet Nam") {
-        console.log(obj.countryName);
-        obj.countryName = "Vietnam";
-      }
-      if (obj.countryName == "Venezuela (Bolivarian Republic of)") {
-        console.log(obj.countryName);
-        obj.countryName = "Venezuela";
-      }
-      if (obj.countryName == "United States of America") {
-        console.log(obj.countryName);
-        obj.countryName = "United States";
-      }
+      countriesToRename.forEach(function (ren) {
+        if (obj.countryName == ren.from) {
+          console.log(obj.countryName);
+          obj.countryName = ren.to;
+        }
+      });
+      obj.countryNormName = normalizeToLower(obj.countryName);
+
     });
 
     if (rates && countries) {
       var deleted = false;
       countries.forEach((country) => {
-        if (!_.has(rates.rates, country.currencyCode)) {
+        if (!_.has(rates.rates, country.currencyCode) || (flagsToRemove.indexOf(country.flagCode) != -1)) {
           if (!deleted) console.log('- Countries removed: ');
           console.log(country.countryName);
           countries.splice(countries.indexOf(country), 1);

@@ -1,8 +1,3 @@
-gate: fix code
-- add normalized name in countries, 
-- remove countries without flag
-- remove deprecated code
-
 Implement HomeDrawer 
 
 Set App icon
