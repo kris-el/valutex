@@ -38,9 +38,6 @@ class _AmountScreenState extends State<AmountScreen> {
   String _textValidationError = '';
   num amountValue;
 
-  _AmountScreenState() {
-    //amountValue = widget.initAmount;
-  }
 
   @override
   void initState() {

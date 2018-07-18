@@ -1,3 +1,6 @@
+Implement settings screen
+- Add Swtitch to ListTile
+
 Implement HomeDrawer 
 
 Amount screen: add action, clear search text

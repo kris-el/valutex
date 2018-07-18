@@ -23,6 +23,9 @@ class _HomeScreenState extends State<HomeScreen> {
   DateTime ratesUpdate = new DateTime.now();
   List<CurrencyWidget> _activeCountryCurrencyWidgets =
       <CurrencyWidget>[]; // listview items
+  Map settings = {
+    'numberNotation': 'eu'
+  };
   List<String> activeCountryCurrencyNames = <String>[
     // index of Items to show in listview
     'Europe',
@@ -32,8 +35,15 @@ class _HomeScreenState extends State<HomeScreen> {
   ];
   String currencyInput = 'eur';
   num amountInput = 1.0;
-  String numberNotation = 'eu';
   DateFormat formatter = new DateFormat('H:m E, d MMMM yyyy');
+
+  @override
+  void initState() {
+    super.initState();
+    _loadRatesAsset(context);
+    _loadCountriesAsset(context);
+    _getRatesFromApi();
+  }
 
   void updateFavourite(List countries, List<String> favs) {
     countries.forEach((country) {
@@ -182,9 +192,9 @@ class _HomeScreenState extends State<HomeScreen> {
   num getMaxAmount(String currencyOutput) {
     num maxEuroAmount = 2000000;
     int digits = 0;
-    if(currencyOutput.toUpperCase() == 'EUR') return 10000000;
+    if (currencyOutput.toUpperCase() == 'EUR') return 10000000;
     num maxAmount = exchange('EUR', maxEuroAmount, currencyOutput);
-    digits = maxAmount.round().toString().length+1;
+    digits = maxAmount.round().toString().length + 1;
     maxAmount = int.parse(1.toString().padRight(digits, '0'));
     return maxAmount;
   }
@@ -206,11 +216,10 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   void openSelScreen(BuildContext context, List curCount) async {
-    //final newCurrencyList = 
+    //final newCurrencyList =
     await Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (context) =>
-                SelectionScreen(currencyCountries: curCount),
+            builder: (context) => SelectionScreen(currencyCountries: curCount),
           ),
         );
     //callback(newCountryCurrencyName);
@@ -221,15 +230,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    _loadRatesAsset(context);
-    _loadCountriesAsset(context);
-    _getRatesFromApi();
-
     if (currencyCountries.isNotEmpty) {
       _activeCountryCurrencyWidgets.clear();
-      currencyCountries
-          .where((country) => country['fav'])
-          .forEach((element) {
+      currencyCountries.where((country) => country['fav']).forEach((element) {
         _activeCountryCurrencyWidgets.add(CurrencyWidget(
           countryName: element['countryName'],
           flagCode: element['flagCode'],
@@ -238,7 +241,7 @@ class _HomeScreenState extends State<HomeScreen> {
           currencySymbol: element['currencySymbol'],
           currentAmount: getCurrentAmount(element['currencyCode']),
           maxAmount: getMaxAmount(element['currencyCode']),
-          numberNotation: numberNotation,
+          numberNotation: settings['numberNotation'],
           inputAmountCallBack: (newCurrency, newAmount) {
             if (newCurrency == null) return;
             if (newAmount == null) return;
@@ -281,7 +284,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return Scaffold(
       appBar: appBar,
-      drawer: HomeDrawer(),
+      drawer: HomeDrawer(settings: settings),
       body: _buildCurrencyWidgets(_activeCountryCurrencyWidgets),
       bottomNavigationBar: bottomBar,
     );

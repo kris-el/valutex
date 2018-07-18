@@ -1,8 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-
+import 'settings_screen.dart';
 
 class HomeDrawer extends StatelessWidget {
+  final Map settings;
+
+  HomeDrawer({
+    Key key,
+    @required this.settings,
+  })  : assert(settings != null),
+        super(key: key);
+
+  void _openSettingsScreen(BuildContext context) async {
+    //final newCurrencyList =
+    await Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => SettingsScreen(settings: settings),
+          ),
+        );
+    //callback(newCountryCurrencyName);
+    // Scaffold
+    //     .of(context)
+    //     .showSnackBar(SnackBar(content: Text("$newCurrencyList")));
+  }
+
   _openEmailApp() async {
     String toAddress = 'valutex.pardut@gmail.com';
     String emailSubject = 'Valutex: About your app...';
@@ -44,8 +65,8 @@ class HomeDrawer extends StatelessWidget {
             leading: const Icon(Icons.settings),
             title: Text('Settings'),
             onTap: () {
-              // Update the state of the app
-              // ...
+              _openSettingsScreen(context);
+              Navigator.pop(context);
             },
           ),
           ListTile(
