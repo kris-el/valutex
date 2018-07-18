@@ -24,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
   List<CurrencyWidget> _activeCountryCurrencyWidgets =
       <CurrencyWidget>[]; // listview items
   Map settings = {
-    'numberNotation': 'eu'
+    'europeanNotation': true
   };
   List<String> activeCountryCurrencyNames = <String>[
     // index of Items to show in listview
@@ -241,7 +241,7 @@ class _HomeScreenState extends State<HomeScreen> {
           currencySymbol: element['currencySymbol'],
           currentAmount: getCurrentAmount(element['currencyCode']),
           maxAmount: getMaxAmount(element['currencyCode']),
-          numberNotation: settings['numberNotation'],
+          europeanNotation: settings['europeanNotation'],
           inputAmountCallBack: (newCurrency, newAmount) {
             if (newCurrency == null) return;
             if (newAmount == null) return;

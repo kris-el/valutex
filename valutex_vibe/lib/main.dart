@@ -14,6 +14,7 @@ class ValutexApp extends StatelessWidget {
         brightness: Brightness.dark,
         primaryColor: Colors.orange[800],
         accentColor: Colors.orange[600],
+        toggleableActiveColor: Colors.orange[600],
         scaffoldBackgroundColor: Color(0xFF292929),
       ),
     );

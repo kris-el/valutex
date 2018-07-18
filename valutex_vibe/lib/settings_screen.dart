@@ -14,13 +14,6 @@ class SettingsScreen extends StatefulWidget {
 }
 
 class SettingsScreenState extends State<SettingsScreen> {
-  static bool europeNotation = true;
-
-  @override
-  void initState() {
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
     final appBar = AppBar(
@@ -34,11 +27,10 @@ class SettingsScreenState extends State<SettingsScreen> {
           title: Text('European notation'),
           subtitle: Text('Apply european notation in amount'),
           trailing: Switch(
-            value: true,
-            onChanged: (input) {},
-            activeColor: Theme.of(context).accentColor,
-          ),
-        ),
+              value: widget.settings['europeanNotation'],
+              onChanged: (value) =>
+                  setState(() => widget.settings['europeanNotation'] = value)),
+        )
       ],
     );
 

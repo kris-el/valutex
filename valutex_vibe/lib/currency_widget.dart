@@ -13,7 +13,7 @@ class CurrencyWidget extends StatelessWidget {
   final String currencySymbol;
   final String currentAmount;
   final num maxAmount;
-  final String numberNotation;
+  final bool europeanNotation;
   final InputAmountCallback inputAmountCallBack;
 
   const CurrencyWidget({
@@ -25,7 +25,7 @@ class CurrencyWidget extends StatelessWidget {
     @required this.currencySymbol,
     @required this.currentAmount,
     @required this.maxAmount,
-    @required this.numberNotation,
+    @required this.europeanNotation,
     @required this.inputAmountCallBack,
   })  : assert(countryName != null),
         assert(flagCode != null),
@@ -34,10 +34,10 @@ class CurrencyWidget extends StatelessWidget {
         assert(currencySymbol != null),
         assert(currentAmount != null),
         assert(maxAmount != null),
-        assert(numberNotation != null),
+        assert(europeanNotation != null),
         super(key: key);
 
-  String applyNotation(String number, String notation) {
+  String applyNotation(String number, bool euNotation) {
     String char;
     String output = '';
     bool startCount = number.indexOf('.') == -1;
@@ -47,11 +47,11 @@ class CurrencyWidget extends StatelessWidget {
       char = number[i];
       if (startCount) intpart++;
       if ((char == '.')) {
-        if (notation == 'eu') char = ',';
+        if (euNotation) char = ',';
         startCount = true;
       }
       output = char + output;
-      if (notation == 'eu') {
+      if (euNotation) {
         if ((intpart % 3 == 0) && (i != 0) && (intpart > 0))
           output = '.' + output;
       } else {
@@ -92,7 +92,7 @@ class CurrencyWidget extends StatelessWidget {
           detail1: countryName,
           detail2: currencyName,
           tailWidget: Text(
-            '$currencySymbol ${applyNotation(currentAmount, numberNotation)}',
+            '$currencySymbol ${applyNotation(currentAmount, europeanNotation)}',
             style: TextStyle(fontSize: 18.0),
             textAlign: TextAlign.right,
           ),
