@@ -16,6 +16,7 @@ class SelectionScreen extends StatefulWidget {
 }
 
 class _SelectionScreenState extends State<SelectionScreen> {
+  TextEditingController _searchTextFieldController;
   List countries = []; // Data countries details
   List<CurrencyDraft> _currencyWidgets = <CurrencyDraft>[];
   String searchText = '';
@@ -24,9 +25,10 @@ class _SelectionScreenState extends State<SelectionScreen> {
   void initState() {
     super.initState();
     countries = widget.currencyCountries;
+    _searchTextFieldController = TextEditingController(text: '');
   }
 
-  void updateFav(country) {
+  void _updateFav(country) {
     setState(() {
       country['fav'] = !country['fav'];
     });
@@ -59,10 +61,18 @@ class _SelectionScreenState extends State<SelectionScreen> {
     if (_currencyWidgets != null) {
       _currencyWidgets.clear();
       countries.where((country) {
-        if(searchText == '') return country['fav'];
-        if (country['countryNormName'].toString().contains(searchText.toLowerCase())) return true;
-        if (country['currencyName'].toString().toLowerCase().contains(searchText.toLowerCase())) return true;
-        if (country['currencyCode'].toString().toLowerCase().contains(searchText.toLowerCase())) return true;
+        if (searchText == '') return country['fav'];
+        if (country['countryNormName']
+            .toString()
+            .contains(searchText.toLowerCase())) return true;
+        if (country['currencyName']
+            .toString()
+            .toLowerCase()
+            .contains(searchText.toLowerCase())) return true;
+        if (country['currencyCode']
+            .toString()
+            .toLowerCase()
+            .contains(searchText.toLowerCase())) return true;
         return false;
       }).forEach((country) {
         _currencyWidgets.add(CurrencyDraft(
@@ -72,7 +82,7 @@ class _SelectionScreenState extends State<SelectionScreen> {
           tailWidget: InkWell(
             borderRadius: BorderRadius.circular(18.0),
             onTap: () {
-              updateFav(country);
+              _updateFav(country);
             },
             child: Container(
               //color: Colors.red[200],
@@ -90,6 +100,7 @@ class _SelectionScreenState extends State<SelectionScreen> {
 
     final appBar = AppBar(
       title: TextField(
+        controller: _searchTextFieldController,
         onChanged: _updateSearchText,
         style: TextStyle(
             //color: Colors.white,
@@ -100,6 +111,10 @@ class _SelectionScreenState extends State<SelectionScreen> {
             hintStyle: new TextStyle(color: Colors.white)),
       ),
       actions: <Widget>[
+        /*IconButton(
+          icon: Icon(Icons.clear),
+          onPressed: () { _searchTextFieldController.clear(); },
+        ),*/
         IconButton(
           icon: Icon(Icons.send),
           onPressed: () {

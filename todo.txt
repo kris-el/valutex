@@ -1,7 +1,5 @@
 Implement HomeDrawer 
 
-Amount screen: add action, clear search text
-
 Set App icon
 
 Sort listview items widgets, feature
