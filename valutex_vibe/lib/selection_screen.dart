@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
+import 'package:flutter/material.dart';
 import 'currency_draft.dart';
 
 class SelectionScreen extends StatefulWidget {

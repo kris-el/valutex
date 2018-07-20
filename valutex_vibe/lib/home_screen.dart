@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'home_drawer.dart';
 import 'currency_widget.dart';
 import 'selection_screen.dart';
+import 'arrange_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   final String title;
@@ -23,9 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
   DateTime ratesUpdate = new DateTime.now();
   List<CurrencyWidget> _activeCountryCurrencyWidgets =
       <CurrencyWidget>[]; // listview items
-  Map settings = {
-    'europeanNotation': true
-  };
+  Map settings = {'europeanNotation': true};
   List<String> activeCountryCurrencyNames = <String>[
     // index of Items to show in listview
     'Europe',
@@ -228,6 +227,15 @@ class _HomeScreenState extends State<HomeScreen> {
     //     .showSnackBar(SnackBar(content: Text("$newCurrencyList")));
   }
 
+  void openArrScreen(BuildContext context, List curCount) async {
+    //final newCurrencyList =
+    await Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => ArrangeScreen(currencyCountries: curCount),
+          ),
+        );
+  }
+
   @override
   Widget build(BuildContext context) {
     if (currencyCountries.isNotEmpty) {
@@ -264,7 +272,9 @@ class _HomeScreenState extends State<HomeScreen> {
             }),
         new IconButton(
             icon: new Icon(Icons.wrap_text),
-            onPressed: () => debugPrint("Sort element!")),
+            onPressed: () {
+              openArrScreen(context, currencyCountries);
+            }),
         new IconButton(icon: new Icon(Icons.refresh), onPressed: refreshRates)
       ],
     );
