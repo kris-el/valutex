@@ -1,6 +1,16 @@
 ArrangeScreen reordablelist:
-- Define ItemData
 - Design Item
+
+Refactoring currencyCountries
+{
+    CurrencyDetail
+
+    ExchangeCurrency
+    - Load CountryDetails from assest
+    - Load ExchangeRates from assests
+    - Load ExchangeRates from api
+    - Sort CountryDetails
+}
 
 Implement HomeDrawer 
 
