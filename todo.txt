@@ -1,8 +1,10 @@
+ArrangeScreen reordablelist:
+- Define ItemData
+- Design Item
+
 Implement HomeDrawer 
 
 Set App icon
-
-Sort listview items widgets, feature
 
 on api-load show LinearProgressIndicator
 

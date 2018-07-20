@@ -238,7 +238,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    if (currencyCountries.isNotEmpty) {
+    if (currencyCountries.isNotEmpty && currencyRates.isNotEmpty) {
       _activeCountryCurrencyWidgets.clear();
       currencyCountries.where((country) => country['fav']).forEach((element) {
         _activeCountryCurrencyWidgets.add(CurrencyWidget(
