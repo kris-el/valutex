@@ -1,59 +1,33 @@
-import 'package:meta/meta.dart';
 import 'package:flutter/material.dart';
 import 'reorderable_list.dart';
+import 'exchange_currency.dart';
 
 class ArrangeScreen extends StatefulWidget {
-  final List currencyCountries;
-
-  ArrangeScreen({
-    Key key,
-    @required this.currencyCountries,
-  })  : assert(currencyCountries != null),
-        super(key: key);
   @override
   createState() => _ArrangeScreenState();
 }
 
-class ItemData {
-  final Key key;
-  final String countryName;
-  final String flagCode;
-  final String currencyName;
-  final String currencyCode;
-  final String currencySymbol;
-
-  const ItemData({
-    @required this.key,
-    @required this.countryName,
-    @required this.flagCode,
-    @required this.currencyName,
-    @required this.currencyCode,
-    @required this.currencySymbol,
-  })  : assert(countryName != null),
-        assert(flagCode != null),
-        assert(currencyName != null),
-        assert(currencyCode != null),
-        assert(currencySymbol != null);
-}
-
 class _ArrangeScreenState extends State<ArrangeScreen> {
-  List<ItemData> _items = [];
-  List countries = [];
+  ExchangeCurrency exchangeCurrency = ExchangeCurrency();
+  List<CountryDetails> _items = [];
 
   @override
   void initState() {
     super.initState();
     int i = 0;
-    countries = widget.currencyCountries;
-    countries.where((country) => country['fav']).forEach((country) {
+
+    exchangeCurrency.countryList
+        .where((country) => country.fav)
+        .forEach((country) {
       _items.add(
-        ItemData(
+        CountryDetails(
           key: ValueKey(i),
-          countryName: country['countryName'],
-          flagCode: country['flagCode'],
-          currencyName: country['currencyName'],
-          currencyCode: country['currencyCode'],
-          currencySymbol: country['currencySymbol'],
+          countryName: country.countryName,
+          countryNormName: country.countryNormName,
+          flagCode: country.flagCode,
+          currencyName: country.currencyName,
+          currencyCode: country.currencyCode,
+          currencySymbol: country.currencySymbol,
         ),
       );
       i++;
@@ -78,37 +52,12 @@ class _ArrangeScreenState extends State<ArrangeScreen> {
           "Reordering " + item.toString() + " -> " + newPosition.toString());
       _items.removeAt(draggingIndex);
       _items.insert(newPositionIndex, draggedItem);
-      int i = 0;
+
+      List<String> favList = [];
       _items.forEach((item) {
-        //debugPrint('${item.countryName} ${item.key}');
-        for (var j = 0; j < countries.length; j++) {
-          if (countries[j]['countryName'] == item.countryName) {
-            countries[j]['sort'] = i;
-            debugPrint('--- ${item.countryName} $i');
-          }
-        }
-        countries.sort((a, b) {
-          if (a['fav'] && !b['fav']) return -1;
-          if (!a['fav'] && b['fav']) return 1;
-          if (a['sort'] < b['sort']) return -1;
-          if (a['sort'] > b['sort']) return 1;
-          if (a['countryName']
-                  .toString()
-                  .compareTo(b['countryName'].toString()) <
-              0) return -1;
-          if (a['countryName']
-                  .toString()
-                  .compareTo(b['countryName'].toString()) >
-              0) return 1;
-          return 0;
-        });
-        /*
-        item.countryName;
-        var selectedCountry = widget.currencyCountries.firstWhere(
-            (country) => country['countryName'] == item.countryName);
-        selectedCountry['sort'] = i;*/
-        i++;
+        favList.add(item.countryName);
       });
+      exchangeCurrency.favourites = favList;
     });
     return true;
   }
@@ -146,7 +95,7 @@ class _ArrangeScreenState extends State<ArrangeScreen> {
 class Item extends StatelessWidget {
   Item({this.data, this.first, this.last});
 
-  final ItemData data;
+  final CountryDetails data;
   final bool first;
   final bool last;
 

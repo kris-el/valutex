@@ -12,12 +12,15 @@ Fav icons:
     wrap_text
     power_input
     
-Known Bugs: 
-Clear search in selection_screen.dart doesn't update the state
+--- Known Bugs ---
 
-
+#001 Low (non blocking)
 Armenian Dram has no symbol
 Bosnia and Herzegovina has no symbol
 Kazakhstan has no symbol
 Turkey has no symbol
 Uzbekistan has no symbol
+
+#003 High (Runtime error)
+Error loading RE flag
+Reproduce by loading

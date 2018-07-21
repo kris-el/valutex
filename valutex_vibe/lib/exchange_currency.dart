@@ -1,12 +1,5 @@
-import 'dart:async';
-import 'dart:convert';
-import 'package:intl/intl.dart';
-import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
-import 'home_drawer.dart';
-import 'currency_widget.dart';
-import 'selection_screen.dart';
-import 'arrange_screen.dart';
+
 
 class ExchangeCurrency {
   static final ExchangeCurrency _singleton = ExchangeCurrency._internal();
@@ -18,7 +11,6 @@ class ExchangeCurrency {
   List<CountryDetails> countryList = []; // Data countries details
   //Map currencyRates = {}; // Data exchange rates
   //String currencySource = 'none'; // Source of exchange rates
-
 
   set favourites(List<String> favs) {
     countryList.forEach((CountryDetails country) {
@@ -49,7 +41,8 @@ class ExchangeCurrency {
 
   set loadCountryList(List json) {
     json.forEach((entry) {
-      if(entry['currencySymbol'] == null) debugPrint('${entry['countryName']} has no symbol');
+      if (entry['currencySymbol'] == null)
+        debugPrint('${entry['countryName']} has no symbol');
       try {
         countryList.add(CountryDetails(
           countryName: entry['countryName'],
@@ -66,23 +59,19 @@ class ExchangeCurrency {
     });
   }
 
-  // List<CountryDetails> searchCountries(input) {
-  //   return countryList.where((country) {
-  //       if (input == '') return country.fav;
-  //       if (country.countryNormName
-  //           .contains(input.toLowerCase())) return true;
-  //       if (country.currencyName
-  //           .toString()
-  //           .toLowerCase()
-  //           .contains(input.toLowerCase())) return true;
-  //       if (country.currencyCode
-  //           .toString()
-  //           .toLowerCase()
-  //           .contains(input.toLowerCase())) return true;
-  //       return false;
-  //     });
-  // }
-  
+  List<CountryDetails> searchCountries(input) {
+    List<CountryDetails> result = countryList.where((country) {
+      if (input == '') return country.fav;
+      if (country.countryNormName.toString().contains(input.toLowerCase()))
+        return true;
+      if (country.currencyName.toLowerCase().contains(input.toLowerCase()))
+        return true;
+      if (country.currencyCode.toLowerCase().contains(input.toLowerCase()))
+        return true;
+      return false;
+    }).toList();
+    return result;
+  }
 }
 
 class CountryDetails {

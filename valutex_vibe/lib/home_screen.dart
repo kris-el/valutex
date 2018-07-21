@@ -7,6 +7,7 @@ import 'home_drawer.dart';
 import 'currency_widget.dart';
 import 'selection_screen.dart';
 import 'arrange_screen.dart';
+import 'exchange_currency.dart';
 
 class HomeScreen extends StatefulWidget {
   final String title;
@@ -18,7 +19,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  List currencyCountries = []; // Data countries details
+  ExchangeCurrency exchangeCurrency = ExchangeCurrency();
   Map currencyRates = {}; // Data exchange rates
   String currencySource = 'none'; // Source of exchange rates
   DateTime ratesUpdate = new DateTime.now();
@@ -64,7 +65,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Future<void> _loadCountriesAsset(BuildContext context) async {
-    if (currencyCountries.isNotEmpty) return;
+    if (exchangeCurrency.countryList.isNotEmpty) return;
     final jsonCountries =
         DefaultAssetBundle.of(context).loadString('assets/data/countries.json');
     final dataCountries = JsonDecoder().convert(await jsonCountries);
@@ -73,8 +74,8 @@ class _HomeScreenState extends State<HomeScreen> {
       throw ('Data retrieved is not a List');
     }
     setState(() {
-      currencyCountries = dataCountries;
-      updateFavourite(currencyCountries, activeCountryCurrencyNames);
+      exchangeCurrency.loadCountryList = dataCountries;
+      exchangeCurrency.favourites = activeCountryCurrencyNames;
     });
   }
 
@@ -214,41 +215,37 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  void openSelScreen(BuildContext context, List curCount) async {
-    //final newCurrencyList =
+  void openSelScreen(BuildContext context) async {
     await Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (context) => SelectionScreen(currencyCountries: curCount),
+            builder: (context) => SelectionScreen(),
           ),
         );
-    //callback(newCountryCurrencyName);
-    // Scaffold
-    //     .of(context)
-    //     .showSnackBar(SnackBar(content: Text("$newCurrencyList")));
   }
 
-  void openArrScreen(BuildContext context, List curCount) async {
-    //final newCurrencyList =
+  void openArrScreen(BuildContext context) async {
     await Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (context) => ArrangeScreen(currencyCountries: curCount),
+            builder: (context) => ArrangeScreen(),
           ),
         );
   }
 
   @override
   Widget build(BuildContext context) {
-    if (currencyCountries.isNotEmpty && currencyRates.isNotEmpty) {
+    if (exchangeCurrency.countryList.isNotEmpty && currencyRates.isNotEmpty) {
       _activeCountryCurrencyWidgets.clear();
-      currencyCountries.where((country) => country['fav']).forEach((element) {
+      exchangeCurrency.countryList
+          .where((country) => country.fav)
+          .forEach((element) {
         _activeCountryCurrencyWidgets.add(CurrencyWidget(
-          countryName: element['countryName'],
-          flagCode: element['flagCode'],
-          currencyName: element['currencyName'],
-          currencyCode: element['currencyCode'],
-          currencySymbol: element['currencySymbol'],
-          currentAmount: getCurrentAmount(element['currencyCode']),
-          maxAmount: getMaxAmount(element['currencyCode']),
+          countryName: element.countryName,
+          flagCode: element.flagCode,
+          currencyName: element.currencyName,
+          currencyCode: element.currencyCode,
+          currencySymbol: element.currencySymbol,
+          currentAmount: getCurrentAmount(element.currencyCode),
+          maxAmount: getMaxAmount(element.currencyCode),
           europeanNotation: settings['europeanNotation'],
           inputAmountCallBack: (newCurrency, newAmount) {
             if (newCurrency == null) return;
@@ -268,12 +265,12 @@ class _HomeScreenState extends State<HomeScreen> {
         new IconButton(
             icon: new Icon(Icons.playlist_add),
             onPressed: () {
-              openSelScreen(context, currencyCountries);
+              openSelScreen(context);
             }),
         new IconButton(
             icon: new Icon(Icons.wrap_text),
             onPressed: () {
-              openArrScreen(context, currencyCountries);
+              openArrScreen(context);
             }),
         new IconButton(icon: new Icon(Icons.refresh), onPressed: refreshRates)
       ],
