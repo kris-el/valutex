@@ -20,9 +20,8 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   ExchangeCurrency exchangeCurrency = ExchangeCurrency();
-  Map currencyRates = {}; // Data exchange rates
   String currencySource = 'none'; // Source of exchange rates
-  DateTime ratesUpdate = new DateTime.now();
+  DateTime ratesUpdate = DateTime.now();
   List<CurrencyWidget> _activeCountryCurrencyWidgets =
       <CurrencyWidget>[]; // listview items
   Map settings = {'europeanNotation': true};
@@ -33,8 +32,6 @@ class _HomeScreenState extends State<HomeScreen> {
     'Thailand',
     'Vietnam',
   ];
-  String currencyInput = 'eur';
-  num amountInput = 1.0;
   DateFormat formatter = new DateFormat('H:m E, d MMMM yyyy');
 
   @override
@@ -90,7 +87,7 @@ class _HomeScreenState extends State<HomeScreen> {
     }
     setState(() {
       currencySource = 'json';
-      currencyRates = dataRates['rates'];
+      exchangeCurrency.currencyRates = dataRates['rates'];
       ratesUpdate = DateTime.parse(dataRates['age']).toLocal();
       print('currencySource: $currencySource');
     });
@@ -112,7 +109,7 @@ class _HomeScreenState extends State<HomeScreen> {
     }
     setState(() {
       currencySource = 'api';
-      currencyRates = dataRates['rates'];
+      exchangeCurrency.currencyRates = dataRates['rates'];
       ratesUpdate = DateTime.parse(dataRates['age']).toLocal();
       print('currencySource: $currencySource');
     });
@@ -121,82 +118,6 @@ class _HomeScreenState extends State<HomeScreen> {
   void refreshRates() {
     currencySource = 'old';
     _getRatesFromApi();
-  }
-
-  String normalizeAmount(num inRate, num inAmount) {
-    num rate = inRate;
-    num amount = inAmount;
-    String strAmount;
-    int approx = 0;
-
-    if (rate >= 1000) {
-      while (rate >= 1000) {
-        rate /= 10;
-        amount /= 10;
-        approx--;
-      }
-      amount = amount.round();
-      if (amount == 0) return '0';
-      while (approx < 0) {
-        amount *= 10;
-        approx++;
-      }
-      return amount.toString();
-    }
-    if (rate < 1000) {
-      while (rate < 1000) {
-        rate *= 10;
-        amount *= 10;
-        approx++;
-      }
-      amount = amount.round().toDouble();
-      while (approx > 0) {
-        amount /= 10.0;
-        approx--;
-      }
-      strAmount = amount.toString();
-      int pos = strAmount.indexOf('.') + 3;
-      pos = (strAmount.length > pos) ? pos : strAmount.length;
-      if (pos != -1) strAmount = strAmount.substring(0, pos);
-      return strAmount;
-    }
-    return amount.round().toString();
-  }
-
-  num exchange(String cInput, num aInput, String cOutput) {
-    cOutput = cOutput.toUpperCase();
-    cInput = cInput.toUpperCase();
-    num aEuro;
-    num aOutput;
-
-    // Convert aInput cInput -> eur
-    if (cInput == 'EUR') {
-      aEuro = aInput;
-    } else {
-      aEuro = aInput / currencyRates[cInput];
-    }
-    // Convert amountEuro euro -> cOutput
-    if (cOutput == 'EUR') {
-      aOutput = aEuro;
-    } else {
-      aOutput = aEuro * currencyRates[cOutput];
-    }
-    return aOutput;
-  }
-
-  String getCurrentAmount(String currencyOutput) {
-    num amountOutput = exchange(currencyInput, amountInput, currencyOutput);
-    return normalizeAmount(currencyRates[currencyOutput], amountOutput);
-  }
-
-  num getMaxAmount(String currencyOutput) {
-    num maxEuroAmount = 2000000;
-    int digits = 0;
-    if (currencyOutput.toUpperCase() == 'EUR') return 10000000;
-    num maxAmount = exchange('EUR', maxEuroAmount, currencyOutput);
-    digits = maxAmount.round().toString().length + 1;
-    maxAmount = int.parse(1.toString().padRight(digits, '0'));
-    return maxAmount;
   }
 
   Widget _buildCurrencyWidgets(List<Widget> currencies) {
@@ -233,7 +154,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    if (exchangeCurrency.countryList.isNotEmpty && currencyRates.isNotEmpty) {
+    if (exchangeCurrency.countryList.isNotEmpty && exchangeCurrency.currencyRates.isNotEmpty) {
       _activeCountryCurrencyWidgets.clear();
       exchangeCurrency.countryList
           .where((country) => country.fav)
@@ -244,15 +165,15 @@ class _HomeScreenState extends State<HomeScreen> {
           currencyName: element.currencyName,
           currencyCode: element.currencyCode,
           currencySymbol: element.currencySymbol,
-          currentAmount: getCurrentAmount(element.currencyCode),
-          maxAmount: getMaxAmount(element.currencyCode),
+          currentAmount: exchangeCurrency.getCurrentAmount(element.currencyCode),
+          maxAmount: exchangeCurrency.getMaxAmount(element.currencyCode),
           europeanNotation: settings['europeanNotation'],
           inputAmountCallBack: (newCurrency, newAmount) {
             if (newCurrency == null) return;
             if (newAmount == null) return;
             setState(() {
-              currencyInput = newCurrency;
-              amountInput = newAmount;
+              exchangeCurrency.currencyInput = newCurrency;
+              exchangeCurrency.amountInput = newAmount;
             });
           },
         ));

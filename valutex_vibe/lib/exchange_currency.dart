@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class ExchangeCurrency {
   static final ExchangeCurrency _singleton = ExchangeCurrency._internal();
   factory ExchangeCurrency() {
@@ -8,9 +7,20 @@ class ExchangeCurrency {
   }
   ExchangeCurrency._internal();
 
-  List<CountryDetails> countryList = []; // Data countries details
-  //Map currencyRates = {}; // Data exchange rates
+  List<CountryDetails> countryList =
+      <CountryDetails>[]; // Data countries details
+  Map currencyRates = {}; // Data exchange rates
+  String _currencyInput = 'eur';
+  num _amountInput = 1.0;
   //String currencySource = 'none'; // Source of exchange rates
+
+  set currencyInput(String currency) {
+    _currencyInput = currency;
+  }
+
+  set amountInput(num amount) {
+    _amountInput = amount;
+  }
 
   set favourites(List<String> favs) {
     countryList.forEach((CountryDetails country) {
@@ -71,6 +81,82 @@ class ExchangeCurrency {
       return false;
     }).toList();
     return result;
+  }
+
+  num exchange(String cInput, num aInput, String cOutput) {
+    cOutput = cOutput.toUpperCase();
+    cInput = cInput.toUpperCase();
+    num aEuro;
+    num aOutput;
+
+    // Convert aInput cInput -> eur
+    if (cInput == 'EUR') {
+      aEuro = aInput;
+    } else {
+      aEuro = aInput / currencyRates[cInput];
+    }
+    // Convert amountEuro euro -> cOutput
+    if (cOutput == 'EUR') {
+      aOutput = aEuro;
+    } else {
+      aOutput = aEuro * currencyRates[cOutput];
+    }
+    return aOutput;
+  }
+
+  String normalizeAmount(num inRate, num inAmount) {
+    num rate = inRate;
+    num amount = inAmount;
+    String strAmount;
+    int approx = 0;
+
+    if (rate >= 1000) {
+      while (rate >= 1000) {
+        rate /= 10;
+        amount /= 10;
+        approx--;
+      }
+      amount = amount.round();
+      if (amount == 0) return '0';
+      while (approx < 0) {
+        amount *= 10;
+        approx++;
+      }
+      return amount.toString();
+    }
+    if (rate < 1000) {
+      while (rate < 1000) {
+        rate *= 10;
+        amount *= 10;
+        approx++;
+      }
+      amount = amount.round().toDouble();
+      while (approx > 0) {
+        amount /= 10.0;
+        approx--;
+      }
+      strAmount = amount.toString();
+      int pos = strAmount.indexOf('.') + 3;
+      pos = (strAmount.length > pos) ? pos : strAmount.length;
+      if (pos != -1) strAmount = strAmount.substring(0, pos);
+      return strAmount;
+    }
+    return amount.round().toString();
+  }
+
+  String getCurrentAmount(String currencyOutput) {
+    num amountOutput = exchange(_currencyInput, _amountInput, currencyOutput);
+    return normalizeAmount(currencyRates[currencyOutput], amountOutput);
+  }
+
+  num getMaxAmount(String currencyOutput) {
+    num maxEuroAmount = 2000000;
+    int digits = 0;
+    if (currencyOutput.toUpperCase() == 'EUR') return 10000000;
+    num maxAmount = exchange('EUR', maxEuroAmount, currencyOutput);
+    digits = maxAmount.round().toString().length + 1;
+    maxAmount = int.parse(1.toString().padRight(digits, '0'));
+    return maxAmount;
   }
 }
 

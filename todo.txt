@@ -18,12 +18,18 @@ Set App icon
 
 on api-load show LinearProgressIndicator
 
+save settings
+- european notation
+- approximation
+- fictional currencies
+
 save rates into db
 
 Add fictional flags:
-- Kekistan: USD
-- Wakanda: Libyan
-- Klingon: Ruble
-- United federation of planets: euro
+- Kekistan: BTC
+- Wakanda: bitcoin
+- Klingon: bitcoin
+- United federation of planets: bitcoin
+- Ferengi Alliance: gold XAU 
 
 Test no internet conncection
