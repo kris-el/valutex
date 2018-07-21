@@ -1,29 +1,18 @@
-ArrangeScreen reordablelist:
-- Design Item
+save data
+- preferences (favourite selection)
+- settings
+- rates
 
-Refactoring currencyCountries
-{
-    CurrencyDetail
+Prepare for test release android
+- Set App icon
+- App name
 
-    ExchangeCurrency
-    - Load CountryDetails from assest
-    - Load ExchangeRates from assests
-    - Load ExchangeRates from api
-    - Sort CountryDetails
-}
+Test no internet conncection
 
 Implement HomeDrawer 
-
-Set App icon
-
-on api-load show LinearProgressIndicator
-
-save settings
-- european notation
-- approximation
-- fictional currencies
-
-save rates into db
+- about app screen
+- rate on the store
+- share this app
 
 Add fictional flags:
 - Kekistan: BTC
@@ -32,4 +21,10 @@ Add fictional flags:
 - United federation of planets: bitcoin
 - Ferengi Alliance: gold XAU 
 
-Test no internet conncection
+settings
+- european notation
+- approximation
+- fictional currencies
+- remeber last input
+
+on api-load show LinearProgressIndicator

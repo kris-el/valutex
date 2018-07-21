@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'currency_draft.dart';
 import '../reorderable_list.dart';
 import '../exchange_currency.dart';
 
@@ -115,22 +116,25 @@ class Item extends StatelessWidget {
 
   Widget _buildChild(BuildContext context, bool dragging) {
     return Container(
-        // slightly transparent background white dragging (just like on iOS)
-        decoration:
-            BoxDecoration(color: dragging ? Color(0xD0FFFFFF) : Colors.grey),
-        child: SafeArea(
-            top: false,
-            bottom: false,
-            child: Row(
-              children: <Widget>[
-                Expanded(
-                    child: Text(data.countryName,
-                        style: Theme.of(context).textTheme.subhead)),
-                Icon(Icons.reorder,
-                    color: dragging ? Color(0xFF555555) : Color(0xFF888888)),
-              ],
-            )),
-        padding: new EdgeInsets.symmetric(vertical: 14.0, horizontal: 14.0));
+      // slightly transparent background white dragging (just like on iOS)
+      decoration: BoxDecoration(
+        color: dragging ? Colors.grey[800] : Color(0xFF303030),
+      ),
+      child: SafeArea(
+        top: false,
+        bottom: false,
+        child: CurrencyDraft(
+          flagCode: data.flagCode,
+          detail1: data.countryName,
+          detail2: data.currencyName,
+          tailWidget: Icon(
+            Icons.reorder,
+            size: 48.0,
+            color: dragging ? Colors.grey[200] : null,
+          ),
+        ),
+      ),
+    );
   }
 
   @override
