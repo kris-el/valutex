@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'currency_draft.dart';
 import '../exchange_currency.dart';
 
@@ -20,9 +21,11 @@ class _SelectionScreenState extends State<SelectionScreen> {
     _searchTextFieldController = TextEditingController(text: '');
   }
 
-  void _updateFav(CountryDetails country) {
+  void _updateFav(CountryDetails country) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {
       country.fav = !country.fav;
+      prefs.setStringList('favourites', exchangeCurrency.favourites);
     });
   }
 

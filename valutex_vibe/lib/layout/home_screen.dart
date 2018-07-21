@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:intl/intl.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'home_drawer.dart';
 import 'currency_widget.dart';
 import 'selection_screen.dart';
@@ -27,20 +28,15 @@ class _HomeScreenState extends State<HomeScreen> {
   DateTime ratesUpdate = DateTime.now();
   List<CurrencyWidget> _activeCountryCurrencyWidgets =
       <CurrencyWidget>[]; // listview items
-  List<String> activeCountryCurrencyNames = <String>[
-    // index of Items to show in listview
-    'Europe',
-    'United States',
-    'Thailand',
-    'Vietnam',
-  ];
+  List<String> selectedCountries =
+      <String>[]; // index of Items to show in listview
   DateFormat dateFormatter = new DateFormat('H:m E, d MMMM yyyy');
 
   @override
   void initState() {
     super.initState();
     _loadRatesFromAsset(context);
-    _loadCountriesFromAsset(context);
+    _loadCountryListAndFavs();
     _loadRatesFromApi();
   }
 
@@ -63,6 +59,16 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
+  _loadCountryListAndFavs() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      selectedCountries = (prefs.getStringList('favourites') ??
+          ['Europe', 'United States', 'Thailand', 'Vietnam']);
+      _loadCountriesFromAsset(context);
+      //prefs.setStringList('favourites', ['Italy', 'United States']);
+    });
+  }
+
   Future<void> _loadCountriesFromAsset(BuildContext context) async {
     if (exchangeCurrency.isCountryListLoaded()) return;
     final jsonCountries =
@@ -74,7 +80,7 @@ class _HomeScreenState extends State<HomeScreen> {
     }
     setState(() {
       exchangeCurrency.loadCountryList = dataCountries;
-      exchangeCurrency.favourites = activeCountryCurrencyNames;
+      exchangeCurrency.favourites = selectedCountries;
     });
   }
 

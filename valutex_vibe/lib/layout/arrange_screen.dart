@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'currency_draft.dart';
 import '../reorderable_list.dart';
 import '../exchange_currency.dart';
@@ -44,6 +45,11 @@ class _ArrangeScreenState extends State<ArrangeScreen> {
     return -1;
   }
 
+  _saveFavourites() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setStringList('favourites', exchangeCurrency.favourites);
+  }
+
   bool _reorderCallback(Key item, Key newPosition) {
     int draggingIndex = _indexOfKey(item);
     int newPositionIndex = _indexOfKey(newPosition);
@@ -60,6 +66,7 @@ class _ArrangeScreenState extends State<ArrangeScreen> {
         favList.add(item.countryName);
       });
       exchangeCurrency.favourites = favList;
+      _saveFavourites();
     });
     return true;
   }
