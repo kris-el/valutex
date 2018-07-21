@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'currency_draft.dart';
-import 'exchange_currency.dart';
+import '../exchange_currency.dart';
+
+ExchangeCurrency exchangeCurrency = ExchangeCurrency();
 
 class SelectionScreen extends StatefulWidget {
   @override
@@ -8,7 +10,6 @@ class SelectionScreen extends StatefulWidget {
 }
 
 class _SelectionScreenState extends State<SelectionScreen> {
-  ExchangeCurrency exchangeCurrency = ExchangeCurrency();
   TextEditingController _searchTextFieldController;
   List<CurrencyDraft> _currencyWidgets = <CurrencyDraft>[];
   String searchText = '';
@@ -93,10 +94,7 @@ class _SelectionScreenState extends State<SelectionScreen> {
             hintStyle: new TextStyle(color: Colors.white)),
       ),
       actions: <Widget>[
-        IconButton(
-          icon: Icon(Icons.clear),
-          onPressed: _clearSearchText
-        ),
+        IconButton(icon: Icon(Icons.clear), onPressed: _clearSearchText),
         IconButton(
           icon: Icon(Icons.send),
           onPressed: () {

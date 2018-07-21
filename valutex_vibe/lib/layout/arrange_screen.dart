@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'reorderable_list.dart';
-import 'exchange_currency.dart';
+import '../reorderable_list.dart';
+import '../exchange_currency.dart';
+
+ExchangeCurrency exchangeCurrency = ExchangeCurrency();
 
 class ArrangeScreen extends StatefulWidget {
   @override
@@ -8,7 +10,6 @@ class ArrangeScreen extends StatefulWidget {
 }
 
 class _ArrangeScreenState extends State<ArrangeScreen> {
-  ExchangeCurrency exchangeCurrency = ExchangeCurrency();
   List<CountryDetails> _items = [];
 
   @override

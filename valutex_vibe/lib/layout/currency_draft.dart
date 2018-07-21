@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 
-
 class CurrencyDraft extends StatelessWidget {
   final String flagCode;
   final String detail1;
   final String detail2;
   final String detail3;
   final Widget tailWidget;
-
 
   const CurrencyDraft({
     Key key,

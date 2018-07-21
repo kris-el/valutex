@@ -7,12 +7,28 @@ class ExchangeCurrency {
   }
   ExchangeCurrency._internal();
 
-  List<CountryDetails> countryList =
+  static List<CountryDetails> _countryList =
       <CountryDetails>[]; // Data countries details
-  Map currencyRates = {}; // Data exchange rates
-  String _currencyInput = 'eur';
-  num _amountInput = 1.0;
-  //String currencySource = 'none'; // Source of exchange rates
+  static Map _currencyRates = {}; // Data exchange rates
+  static String _currencyInput = 'eur';
+  static num _amountInput = 1.0;
+
+  bool isCountryListLoaded() {
+    if (_countryList == null) return false;
+    if (_countryList.isEmpty) return false;
+    return (_countryList.length > 0);
+  }
+
+  bool isReady() {
+    if (_countryList == null) return false;
+    if (_currencyRates == null) return false;
+    if (_countryList.isEmpty) return false;
+    if (_currencyRates.isEmpty) return false;
+    if (_currencyInput == null) return false;
+    if (_currencyInput == '') return false;
+    if (_amountInput == null) return false;
+    return true;
+  }
 
   set currencyInput(String currency) {
     _currencyInput = currency;
@@ -22,13 +38,26 @@ class ExchangeCurrency {
     _amountInput = amount;
   }
 
+  set countryList(List<CountryDetails> input) {
+    _countryList = List.from(input);
+  }
+
+  List<CountryDetails> get countryList {
+    List<CountryDetails> output = List.from(_countryList);
+    return output;
+  }
+
+  set currencyRates(Map input) {
+    _currencyRates = Map.from(input);
+  }
+
   set favourites(List<String> favs) {
-    countryList.forEach((CountryDetails country) {
+    _countryList.forEach((CountryDetails country) {
       int order = favs.indexOf(country.countryName);
       country.order = order;
       country.fav = (order != -1);
     });
-    countryList.sort((CountryDetails a, CountryDetails b) {
+    _countryList.sort((CountryDetails a, CountryDetails b) {
       if (a.fav && !b.fav) return -1;
       if (!a.fav && b.fav) return 1;
       if (a.order < b.order) return -1;
@@ -43,7 +72,7 @@ class ExchangeCurrency {
 
   List<String> get favourites {
     List<String> favs = [];
-    countryList.forEach((CountryDetails country) {
+    _countryList.forEach((CountryDetails country) {
       favs.add(country.countryName);
     });
     return favs;
@@ -54,7 +83,7 @@ class ExchangeCurrency {
       if (entry['currencySymbol'] == null)
         debugPrint('${entry['countryName']} has no symbol');
       try {
-        countryList.add(CountryDetails(
+        _countryList.add(CountryDetails(
           countryName: entry['countryName'],
           countryNormName: entry['countryNormName'],
           flagCode: entry['flagCode'],
@@ -70,7 +99,7 @@ class ExchangeCurrency {
   }
 
   List<CountryDetails> searchCountries(input) {
-    List<CountryDetails> result = countryList.where((country) {
+    List<CountryDetails> result = _countryList.where((country) {
       if (input == '') return country.fav;
       if (country.countryNormName.toString().contains(input.toLowerCase()))
         return true;
@@ -93,13 +122,13 @@ class ExchangeCurrency {
     if (cInput == 'EUR') {
       aEuro = aInput;
     } else {
-      aEuro = aInput / currencyRates[cInput];
+      aEuro = aInput / _currencyRates[cInput];
     }
     // Convert amountEuro euro -> cOutput
     if (cOutput == 'EUR') {
       aOutput = aEuro;
     } else {
-      aOutput = aEuro * currencyRates[cOutput];
+      aOutput = aEuro * _currencyRates[cOutput];
     }
     return aOutput;
   }
@@ -146,7 +175,7 @@ class ExchangeCurrency {
 
   String getCurrentAmount(String currencyOutput) {
     num amountOutput = exchange(_currencyInput, _amountInput, currencyOutput);
-    return normalizeAmount(currencyRates[currencyOutput], amountOutput);
+    return normalizeAmount(_currencyRates[currencyOutput], amountOutput);
   }
 
   num getMaxAmount(String currencyOutput) {
@@ -157,6 +186,31 @@ class ExchangeCurrency {
     digits = maxAmount.round().toString().length + 1;
     maxAmount = int.parse(1.toString().padRight(digits, '0'));
     return maxAmount;
+  }
+
+  String applyNotation(String number, bool euNotation) {
+    String char;
+    String output = '';
+    bool startCount = number.indexOf('.') == -1;
+    int intpart = 0;
+
+    for (int i = number.length - 1; i >= 0; i--) {
+      char = number[i];
+      if (startCount) intpart++;
+      if ((char == '.')) {
+        if (euNotation) char = ',';
+        startCount = true;
+      }
+      output = char + output;
+      if (euNotation) {
+        if ((intpart % 3 == 0) && (i != 0) && (intpart > 0))
+          output = '.' + output;
+      } else {
+        if ((intpart % 3 == 0) && (i != 0) && (intpart > 0))
+          output = ',' + output;
+      }
+    }
+    return output;
   }
 }
 

@@ -7,7 +7,9 @@ import 'home_drawer.dart';
 import 'currency_widget.dart';
 import 'selection_screen.dart';
 import 'arrange_screen.dart';
-import 'exchange_currency.dart';
+import '../exchange_currency.dart';
+
+ExchangeCurrency exchangeCurrency = ExchangeCurrency();
 
 class HomeScreen extends StatefulWidget {
   final String title;
@@ -19,7 +21,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  ExchangeCurrency exchangeCurrency = ExchangeCurrency();
   String currencySource = 'none'; // Source of exchange rates
   DateTime ratesUpdate = DateTime.now();
   List<CurrencyWidget> _activeCountryCurrencyWidgets =
@@ -62,7 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Future<void> _loadCountriesAsset(BuildContext context) async {
-    if (exchangeCurrency.countryList.isNotEmpty) return;
+    if (exchangeCurrency.isCountryListLoaded()) return;
     final jsonCountries =
         DefaultAssetBundle.of(context).loadString('assets/data/countries.json');
     final dataCountries = JsonDecoder().convert(await jsonCountries);
@@ -154,18 +155,15 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    if (exchangeCurrency.countryList.isNotEmpty && exchangeCurrency.currencyRates.isNotEmpty) {
+    if (exchangeCurrency.isReady()) {
       _activeCountryCurrencyWidgets.clear();
       exchangeCurrency.countryList
           .where((country) => country.fav)
           .forEach((element) {
         _activeCountryCurrencyWidgets.add(CurrencyWidget(
-          countryName: element.countryName,
-          flagCode: element.flagCode,
-          currencyName: element.currencyName,
-          currencyCode: element.currencyCode,
-          currencySymbol: element.currencySymbol,
-          currentAmount: exchangeCurrency.getCurrentAmount(element.currencyCode),
+          countryDetails: element,
+          currentAmount:
+              exchangeCurrency.getCurrentAmount(element.currencyCode),
           maxAmount: exchangeCurrency.getMaxAmount(element.currencyCode),
           europeanNotation: settings['europeanNotation'],
           inputAmountCallBack: (newCurrency, newAmount) {

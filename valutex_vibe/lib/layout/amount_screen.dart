@@ -1,30 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 import 'currency_draft.dart';
+import '../exchange_currency.dart';
+
+ExchangeCurrency exchangeCurrency = ExchangeCurrency();
 
 class AmountScreen extends StatefulWidget {
-  final String countryName;
-  final String flagCode;
-  final String currencyName;
-  final String currencyCode;
-  final String currencySymbol;
+  final CountryDetails countryDetails;
   final num initialAmount;
   final num maxAmount;
 
   AmountScreen({
     Key key,
-    @required this.countryName,
-    @required this.flagCode,
-    @required this.currencyName,
-    @required this.currencyCode,
-    @required this.currencySymbol,
+    @required this.countryDetails,
     @required this.initialAmount,
     @required this.maxAmount,
-  })  : assert(countryName != null),
-        assert(flagCode != null),
-        assert(currencyName != null),
-        assert(currencyCode != null),
-        assert(currencySymbol != null),
+  })  : assert(countryDetails != null),
         assert(initialAmount != null),
         assert(maxAmount != null),
         super(key: key);
@@ -37,7 +28,6 @@ class _AmountScreenState extends State<AmountScreen> {
   bool _isValidationError = false;
   String _textValidationError = '';
   num amountValue;
-
 
   @override
   void initState() {
@@ -62,7 +52,7 @@ class _AmountScreenState extends State<AmountScreen> {
           _isValidationError = true;
           _textValidationError = 'Invalid number entered';
         }
-        if(amountValue > widget.maxAmount) {
+        if (amountValue > widget.maxAmount) {
           _isValidationError = true;
           _textValidationError = 'Amount to high';
         }
@@ -79,11 +69,11 @@ class _AmountScreenState extends State<AmountScreen> {
     final upperBox = Padding(
       padding: EdgeInsets.all(16.0),
       child: CurrencyDraft(
-        flagCode: widget.flagCode,
-        detail1: widget.countryName,
-        detail2: widget.currencyName,
+        flagCode: widget.countryDetails.flagCode,
+        detail1: widget.countryDetails.countryName,
+        detail2: widget.countryDetails.currencyName,
         tailWidget: Text(
-          '${widget.currencySymbol}    ${widget.currencyCode}',
+          '${widget.countryDetails.currencySymbol}    ${widget.countryDetails.currencyCode}',
           style: TextStyle(fontSize: 18.0),
           textAlign: TextAlign.right,
         ),
@@ -125,7 +115,7 @@ class _AmountScreenState extends State<AmountScreen> {
             child: RaisedButton(
               child: Text('Ok'),
               onPressed: () {
-                if(!_isValidationError) Navigator.pop(context, amountValue);
+                if (!_isValidationError) Navigator.pop(context, amountValue);
               },
             ),
           ),
