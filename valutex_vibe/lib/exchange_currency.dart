@@ -72,7 +72,9 @@ class ExchangeCurrency {
 
   List<String> get favourites {
     List<String> favs = [];
-    _countryList.forEach((CountryDetails country) {
+    _countryList
+        .where((CountryDetails country) => country.fav)
+        .forEach((CountryDetails country) {
       favs.add(country.countryName);
     });
     return favs;
