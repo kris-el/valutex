@@ -88,10 +88,10 @@ class _SelectionScreenState extends State<SelectionScreen> {
       title: TextField(
         controller: _searchTextFieldController,
         onChanged: _updateSearchText,
-        decoration: new InputDecoration(
-            prefixIcon: new Icon(Icons.search, color: Colors.white),
+        decoration: InputDecoration(
+            prefixIcon: Icon(Icons.search, color: Colors.white),
             hintText: "Search...",
-            hintStyle: new TextStyle(color: Colors.white)),
+            hintStyle: TextStyle(color: Colors.white)),
       ),
       actions: <Widget>[
         IconButton(icon: Icon(Icons.clear), onPressed: _clearSearchText),

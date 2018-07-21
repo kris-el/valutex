@@ -68,6 +68,14 @@ class _ArrangeScreenState extends State<ArrangeScreen> {
   Widget build(BuildContext context) {
     final appBar = AppBar(
       title: Text('Arrange currencies'),
+      actions: <Widget>[
+        IconButton(
+          icon: Icon(Icons.send),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        )
+      ],
     );
 
     final body = Column(
@@ -127,10 +135,13 @@ class Item extends StatelessWidget {
           flagCode: data.flagCode,
           detail1: data.countryName,
           detail2: data.currencyName,
-          tailWidget: Icon(
-            Icons.reorder,
-            size: 48.0,
-            color: dragging ? Colors.grey[200] : null,
+          tailWidget: Padding(
+            padding: EdgeInsets.all(10.0),
+            child: Icon(
+              Icons.reorder,
+              size: 48.0,
+              color: dragging ? Colors.grey[200] : null,
+            ),
           ),
         ),
       ),

@@ -102,16 +102,20 @@ class _AmountScreenState extends State<AmountScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Padding(
-            padding: EdgeInsets.all(32.0),
+            padding: EdgeInsets.all(48.0),
             child: RaisedButton(
-              child: Text('Clear'),
+              child: Text(
+                'Clear',
+                //style: TextStyle(color: Colors.orange[600]),
+              ),
+              //color: Colors.white,
               onPressed: () {
                 _inputTextFieldController.clear();
               },
             ),
           ),
           Padding(
-            padding: EdgeInsets.all(32.0),
+            padding: EdgeInsets.all(48.0),
             child: RaisedButton(
               child: Text('Ok'),
               onPressed: () {
@@ -128,6 +132,7 @@ class _AmountScreenState extends State<AmountScreen> {
         children: <Widget>[
           upperBox,
           inputBox,
+          Container(height: 40.0),
           actionBox,
         ],
       ),
