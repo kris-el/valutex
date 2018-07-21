@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
+import '../app_settings.dart';
+
+AppSettings appSettings = AppSettings();
 
 class SettingsScreen extends StatefulWidget {
-  final Map settings;
-
-  SettingsScreen({
-    Key key,
-    @required this.settings,
-  })  : assert(settings != null),
-        super(key: key);
-
   @override
   createState() => SettingsScreenState();
 }
@@ -27,9 +22,9 @@ class SettingsScreenState extends State<SettingsScreen> {
           title: Text('European notation'),
           subtitle: Text('Apply european notation in amount'),
           trailing: Switch(
-              value: widget.settings['europeanNotation'],
+              value: appSettings.europeanNotation,
               onChanged: (value) =>
-                  setState(() => widget.settings['europeanNotation'] = value)),
+                  setState(() => appSettings.europeanNotation = value)),
         )
       ],
     );

@@ -3,15 +3,16 @@ import 'package:meta/meta.dart';
 import 'amount_screen.dart';
 import 'currency_draft.dart';
 import '../exchange_currency.dart';
+import '../app_settings.dart';
 
 typedef void InputAmountCallback(String newCurrency, num newAmount);
 ExchangeCurrency exchangeCurrency = ExchangeCurrency();
+AppSettings appSettings = AppSettings();
 
 class CurrencyWidget extends StatelessWidget {
   final CountryDetails countryDetails;
   final String currentAmount;
   final num maxAmount;
-  final bool europeanNotation;
   final InputAmountCallback inputAmountCallBack;
 
   CurrencyWidget({
@@ -19,12 +20,10 @@ class CurrencyWidget extends StatelessWidget {
     @required this.countryDetails,
     @required this.currentAmount,
     @required this.maxAmount,
-    @required this.europeanNotation,
     @required this.inputAmountCallBack,
   })  : assert(countryDetails != null),
         assert(currentAmount != null),
         assert(maxAmount != null),
-        assert(europeanNotation != null),
         super(key: key);
 
   void openAmountScreen(BuildContext context) async {
@@ -53,7 +52,7 @@ class CurrencyWidget extends StatelessWidget {
           detail1: countryDetails.countryName,
           detail2: countryDetails.currencyName,
           tailWidget: Text(
-            '${countryDetails.currencySymbol} ${exchangeCurrency.applyNotation(currentAmount, europeanNotation)}',
+            '${countryDetails.currencySymbol} ${exchangeCurrency.applyNotation(currentAmount, appSettings.europeanNotation)}',
             style: TextStyle(fontSize: 18.0),
             textAlign: TextAlign.right,
           ),

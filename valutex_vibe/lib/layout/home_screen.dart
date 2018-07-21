@@ -8,8 +8,10 @@ import 'currency_widget.dart';
 import 'selection_screen.dart';
 import 'arrange_screen.dart';
 import '../exchange_currency.dart';
+import '../app_settings.dart';
 
 ExchangeCurrency exchangeCurrency = ExchangeCurrency();
+AppSettings appSettings = AppSettings();
 
 class HomeScreen extends StatefulWidget {
   final String title;
@@ -25,7 +27,6 @@ class _HomeScreenState extends State<HomeScreen> {
   DateTime ratesUpdate = DateTime.now();
   List<CurrencyWidget> _activeCountryCurrencyWidgets =
       <CurrencyWidget>[]; // listview items
-  Map settings = {'europeanNotation': true};
   List<String> activeCountryCurrencyNames = <String>[
     // index of Items to show in listview
     'Europe',
@@ -33,14 +34,14 @@ class _HomeScreenState extends State<HomeScreen> {
     'Thailand',
     'Vietnam',
   ];
-  DateFormat formatter = new DateFormat('H:m E, d MMMM yyyy');
+  DateFormat dateFormatter = new DateFormat('H:m E, d MMMM yyyy');
 
   @override
   void initState() {
     super.initState();
-    _loadRatesAsset(context);
-    _loadCountriesAsset(context);
-    _getRatesFromApi();
+    _loadRatesFromAsset(context);
+    _loadCountriesFromAsset(context);
+    _loadRatesFromApi();
   }
 
   void updateFavourite(List countries, List<String> favs) {
@@ -62,7 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
-  Future<void> _loadCountriesAsset(BuildContext context) async {
+  Future<void> _loadCountriesFromAsset(BuildContext context) async {
     if (exchangeCurrency.isCountryListLoaded()) return;
     final jsonCountries =
         DefaultAssetBundle.of(context).loadString('assets/data/countries.json');
@@ -77,7 +78,7 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
-  Future<void> _loadRatesAsset(BuildContext context) async {
+  Future<void> _loadRatesFromAsset(BuildContext context) async {
     if (currencySource != 'none') return;
     currencySource = 'json';
     final jsonRates =
@@ -94,7 +95,7 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
-  Future<void> _getRatesFromApi() async {
+  Future<void> _loadRatesFromApi() async {
     if (currencySource == 'api') {
       debugPrint('Api request refused');
       return;
@@ -118,7 +119,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void refreshRates() {
     currencySource = 'old';
-    _getRatesFromApi();
+    _loadRatesFromApi();
   }
 
   Widget _buildCurrencyWidgets(List<Widget> currencies) {
@@ -165,7 +166,6 @@ class _HomeScreenState extends State<HomeScreen> {
           currentAmount:
               exchangeCurrency.getCurrentAmount(element.currencyCode),
           maxAmount: exchangeCurrency.getMaxAmount(element.currencyCode),
-          europeanNotation: settings['europeanNotation'],
           inputAmountCallBack: (newCurrency, newAmount) {
             if (newCurrency == null) return;
             if (newAmount == null) return;
@@ -201,7 +201,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Padding(
           padding: EdgeInsets.all(8.0),
           child: Text(
-            'Updated: ${formatter.format(ratesUpdate)}',
+            'Updated: ${dateFormatter.format(ratesUpdate)}',
             textAlign: TextAlign.center,
           ),
         ),
@@ -210,7 +210,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return Scaffold(
       appBar: appBar,
-      drawer: HomeDrawer(settings: settings),
+      drawer: HomeDrawer(),
       body: _buildCurrencyWidgets(_activeCountryCurrencyWidgets),
       bottomNavigationBar: bottomBar,
     );

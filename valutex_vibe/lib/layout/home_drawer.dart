@@ -3,19 +3,11 @@ import 'package:url_launcher/url_launcher.dart';
 import 'settings_screen.dart';
 
 class HomeDrawer extends StatelessWidget {
-  final Map settings;
-
-  HomeDrawer({
-    Key key,
-    @required this.settings,
-  })  : assert(settings != null),
-        super(key: key);
-
   void _openSettingsScreen(BuildContext context) async {
     //final newCurrencyList =
     await Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (context) => SettingsScreen(settings: settings),
+            builder: (context) => SettingsScreen(),
           ),
         );
     //callback(newCountryCurrencyName);
