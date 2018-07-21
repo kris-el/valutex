@@ -14,3 +14,10 @@ Fav icons:
     
 Known Bugs: 
 Clear search in selection_screen.dart doesn't update the state
+
+
+Armenian Dram has no symbol
+Bosnia and Herzegovina has no symbol
+Kazakhstan has no symbol
+Turkey has no symbol
+Uzbekistan has no symbol
