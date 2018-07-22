@@ -36,13 +36,24 @@ function areInTheSameDay(d1, d2) {
     d1.getDate() === d2.getDate();
 }
 
-var missingCountry = {
+var missingCountries = [{
   "countryName": "Europe",
   "flagCode": "EU",
   "currencyName": "Euro",
   "currencyCode": "EUR",
-  "currencySymbol": "€"
-};
+  "currencySymbol": "€",
+  "countryNormName": "europe",
+  "real": true
+},
+{
+  "countryName": "Kekistan",
+  "flagCode": "KK",
+  "currencyName": "Bitcoin",
+  "currencyCode": "BTC",
+  "currencySymbol": "₿",
+  "countryNormName": "kazakhstan",
+  "real": false
+}];
 
 var countriesToRename = [
   { from: "Viet Nam", to: "Vietnam" },
@@ -123,7 +134,9 @@ if (command === 'rates') {
   Promise.all([promiseRates, promiseCountries]).then(function (values) {
     var rates = values[0];
     var countries = values[1];
-    countries.push(missingCountry);
+    missingCountries.forEach((country) => {
+      countries.push(country);
+    });
     countries.sort(countryCompare);
 
     console.log('- Fix country names:');
@@ -135,7 +148,9 @@ if (command === 'rates') {
         }
       });
       obj.countryNormName = normalizeToLower(obj.countryName);
-
+      if (!('real' in obj)) {
+        obj.real = true;
+      }
     });
 
     if (rates && countries) {

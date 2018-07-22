@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'app_settings.dart';
+
+AppSettings appSettings = AppSettings();
 
 class ExchangeCurrency {
   static final ExchangeCurrency _singleton = ExchangeCurrency._internal();
@@ -43,7 +46,13 @@ class ExchangeCurrency {
   }
 
   List<CountryDetails> get countryList {
-    List<CountryDetails> output = List.from(_countryList);
+    List<CountryDetails> output = <CountryDetails>[];
+    if (!appSettings.fictionalCurrencies) {
+      output = List.from(_countryList.where((CountryDetails country) => country.real));
+    }
+    else {
+      output = List.from(_countryList);
+    }
     return output;
   }
 
@@ -93,6 +102,7 @@ class ExchangeCurrency {
           currencyCode: entry['currencyCode'],
           currencySymbol:
               (entry['currencySymbol'] != null) ? entry['currencySymbol'] : '',
+          real: entry['real'],
         ));
       } catch (e) {
         debugPrint("Error ${entry['countryName']}");
@@ -102,6 +112,9 @@ class ExchangeCurrency {
 
   List<CountryDetails> searchCountries(input) {
     List<CountryDetails> result = _countryList.where((country) {
+      if (!appSettings.fictionalCurrencies) {
+        if (!country.real) return false;
+      }
       if (input == '') return country.fav;
       if (country.countryNormName.toString().contains(input.toLowerCase()))
         return true;
@@ -224,6 +237,7 @@ class CountryDetails {
   final String currencyName;
   final String currencyCode;
   final String currencySymbol;
+  bool real;
   int order;
   bool fav;
 
@@ -235,6 +249,7 @@ class CountryDetails {
     @required this.currencyName,
     @required this.currencyCode,
     @required this.currencySymbol,
+    this.real,
     this.order,
     this.fav,
   })  : assert(countryName != null),

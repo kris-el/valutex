@@ -5,7 +5,8 @@
         "currencyName": "Afghan afghani",
         "currencyCode": "AFN",
         "currencySymbol": "؋",
-        "countryNormName": "afghanistan"
+        "countryNormName": "afghanistan",
+        "real": true
     },
     {
         "countryName": "Åland Islands",
@@ -13,7 +14,8 @@
         "currencyName": "Euro",
         "currencyCode": "EUR",
         "currencySymbol": "€",
-        "countryNormName": "aland islands"
+        "countryNormName": "aland islands",
+        "real": true
     },
     {
         "countryName": "Albania",
@@ -21,7 +23,8 @@
         "currencyName": "Albanian lek",
         "currencyCode": "ALL",
         "currencySymbol": "L",
-        "countryNormName": "albania"
+        "countryNormName": "albania",
+        "real": true
     },
     {
         "countryName": "Algeria",
@@ -29,7 +32,8 @@
         "currencyName": "Algerian dinar",
         "currencyCode": "DZD",
         "currencySymbol": "د.ج",
-        "countryNormName": "algeria"
+        "countryNormName": "algeria",
+        "real": true
     },
     {
         "countryName": "American Samoa",
@@ -37,7 +41,8 @@
         "currencyName": "United State Dollar",
         "currencyCode": "USD",
         "currencySymbol": "$",
-        "countryNormName": "american samoa"
+        "countryNormName": "american samoa",
+        "real": true
     },
     {
         "countryName": "Andorra",
@@ -45,7 +50,8 @@
         "currencyName": "Euro",
         "currencyCode": "EUR",
         "currencySymbol": "€",
-        "countryNormName": "andorra"
+        "countryNormName": "andorra",
+        "real": true
     },
     {
         "countryName": "Angola",
@@ -53,7 +59,8 @@
         "currencyName": "Angolan kwanza",
         "currencyCode": "AOA",
         "currencySymbol": "Kz",
-        "countryNormName": "angola"
+        "countryNormName": "angola",
+        "real": true
     },
     {
         "countryName": "Anguilla",
@@ -61,7 +68,8 @@
         "currencyName": "East Caribbean dollar",
         "currencyCode": "XCD",
         "currencySymbol": "$",
-        "countryNormName": "anguilla"
+        "countryNormName": "anguilla",
+        "real": true
     },
     {
         "countryName": "Antarctica",
@@ -69,7 +77,8 @@
         "currencyName": "Australian dollar",
         "currencyCode": "AUD",
         "currencySymbol": "$",
-        "countryNormName": "antarctica"
+        "countryNormName": "antarctica",
+        "real": true
     },
     {
         "countryName": "Antigua and Barbuda",
@@ -77,7 +86,8 @@
         "currencyName": "East Caribbean dollar",
         "currencyCode": "XCD",
         "currencySymbol": "$",
-        "countryNormName": "antigua and barbuda"
+        "countryNormName": "antigua and barbuda",
+        "real": true
     },
     {
         "countryName": "Argentina",
@@ -85,15 +95,17 @@
         "currencyName": "Argentine peso",
         "currencyCode": "ARS",
         "currencySymbol": "$",
-        "countryNormName": "argentina"
+        "countryNormName": "argentina",
+        "real": true
     },
     {
         "countryName": "Armenia",
         "flagCode": "AM",
         "currencyName": "Armenian dram",
         "currencyCode": "AMD",
-        "currencySymbol": "֏",
-        "countryNormName": "armenia"
+        "currencySymbol": null,
+        "countryNormName": "armenia",
+        "real": true
     },
     {
         "countryName": "Aruba",
@@ -101,7 +113,8 @@
         "currencyName": "Aruban florin",
         "currencyCode": "AWG",
         "currencySymbol": "ƒ",
-        "countryNormName": "aruba"
+        "countryNormName": "aruba",
+        "real": true
     },
     {
         "countryName": "Australia",
@@ -109,7 +122,8 @@
         "currencyName": "Australian dollar",
         "currencyCode": "AUD",
         "currencySymbol": "$",
-        "countryNormName": "australia"
+        "countryNormName": "australia",
+        "real": true
     },
     {
         "countryName": "Austria",
@@ -117,7 +131,8 @@
         "currencyName": "Euro",
         "currencyCode": "EUR",
         "currencySymbol": "€",
-        "countryNormName": "austria"
+        "countryNormName": "austria",
+        "real": true
     },
     {
         "countryName": "Azerbaijan",
@@ -125,7 +140,8 @@
         "currencyName": "Azerbaijani manat",
         "currencyCode": "AZN",
         "currencySymbol": null,
-        "countryNormName": "azerbaijan"
+        "countryNormName": "azerbaijan",
+        "real": true
     },
     {
         "countryName": "Bahamas",
@@ -133,7 +149,8 @@
         "currencyName": "Bahamian dollar",
         "currencyCode": "BSD",
         "currencySymbol": "$",
-        "countryNormName": "bahamas"
+        "countryNormName": "bahamas",
+        "real": true
     },
     {
         "countryName": "Bahrain",
@@ -141,7 +158,8 @@
         "currencyName": "Bahraini dinar",
         "currencyCode": "BHD",
         "currencySymbol": ".د.ب",
-        "countryNormName": "bahrain"
+        "countryNormName": "bahrain",
+        "real": true
     },
     {
         "countryName": "Bangladesh",
@@ -149,7 +167,8 @@
         "currencyName": "Bangladeshi taka",
         "currencyCode": "BDT",
         "currencySymbol": "৳",
-        "countryNormName": "bangladesh"
+        "countryNormName": "bangladesh",
+        "real": true
     },
     {
         "countryName": "Barbados",
@@ -157,7 +176,8 @@
         "currencyName": "Barbadian dollar",
         "currencyCode": "BBD",
         "currencySymbol": "$",
-        "countryNormName": "barbados"
+        "countryNormName": "barbados",
+        "real": true
     },
     {
         "countryName": "Belarus",
@@ -165,7 +185,8 @@
         "currencyName": "New Belarusian ruble",
         "currencyCode": "BYN",
         "currencySymbol": "Br",
-        "countryNormName": "belarus"
+        "countryNormName": "belarus",
+        "real": true
     },
     {
         "countryName": "Belgium",
@@ -173,7 +194,8 @@
         "currencyName": "Euro",
         "currencyCode": "EUR",
         "currencySymbol": "€",
-        "countryNormName": "belgium"
+        "countryNormName": "belgium",
+        "real": true
     },
     {
         "countryName": "Belize",
@@ -181,7 +203,8 @@
         "currencyName": "Belize dollar",
         "currencyCode": "BZD",
         "currencySymbol": "$",
-        "countryNormName": "belize"
+        "countryNormName": "belize",
+        "real": true
     },
     {
         "countryName": "Benin",
@@ -189,7 +212,8 @@
         "currencyName": "West African CFA franc",
         "currencyCode": "XOF",
         "currencySymbol": "Fr",
-        "countryNormName": "benin"
+        "countryNormName": "benin",
+        "real": true
     },
     {
         "countryName": "Bermuda",
@@ -197,7 +221,8 @@
         "currencyName": "Bermudian dollar",
         "currencyCode": "BMD",
         "currencySymbol": "$",
-        "countryNormName": "bermuda"
+        "countryNormName": "bermuda",
+        "real": true
     },
     {
         "countryName": "Bhutan",
@@ -205,7 +230,8 @@
         "currencyName": "Bhutanese ngultrum",
         "currencyCode": "BTN",
         "currencySymbol": "Nu.",
-        "countryNormName": "bhutan"
+        "countryNormName": "bhutan",
+        "real": true
     },
     {
         "countryName": "Bolivia (Plurinational State of)",
@@ -213,7 +239,8 @@
         "currencyName": "Bolivian boliviano",
         "currencyCode": "BOB",
         "currencySymbol": "Bs.",
-        "countryNormName": "bolivia (plurinational state of)"
+        "countryNormName": "bolivia (plurinational state of)",
+        "real": true
     },
     {
         "countryName": "Bosnia and Herzegovina",
@@ -221,7 +248,8 @@
         "currencyName": "Bosnia and Herzegovina convertible mark",
         "currencyCode": "BAM",
         "currencySymbol": null,
-        "countryNormName": "bosnia and herzegovina"
+        "countryNormName": "bosnia and herzegovina",
+        "real": true
     },
     {
         "countryName": "Botswana",
@@ -229,7 +257,8 @@
         "currencyName": "Botswana pula",
         "currencyCode": "BWP",
         "currencySymbol": "P",
-        "countryNormName": "botswana"
+        "countryNormName": "botswana",
+        "real": true
     },
     {
         "countryName": "Brazil",
@@ -237,7 +266,8 @@
         "currencyName": "Brazilian real",
         "currencyCode": "BRL",
         "currencySymbol": "R$",
-        "countryNormName": "brazil"
+        "countryNormName": "brazil",
+        "real": true
     },
     {
         "countryName": "Brunei Darussalam",
@@ -245,7 +275,8 @@
         "currencyName": "Brunei dollar",
         "currencyCode": "BND",
         "currencySymbol": "$",
-        "countryNormName": "brunei darussalam"
+        "countryNormName": "brunei darussalam",
+        "real": true
     },
     {
         "countryName": "Bulgaria",
@@ -253,7 +284,8 @@
         "currencyName": "Bulgarian lev",
         "currencyCode": "BGN",
         "currencySymbol": "лв",
-        "countryNormName": "bulgaria"
+        "countryNormName": "bulgaria",
+        "real": true
     },
     {
         "countryName": "Burkina Faso",
@@ -261,7 +293,8 @@
         "currencyName": "West African CFA franc",
         "currencyCode": "XOF",
         "currencySymbol": "Fr",
-        "countryNormName": "burkina faso"
+        "countryNormName": "burkina faso",
+        "real": true
     },
     {
         "countryName": "Burundi",
@@ -269,7 +302,8 @@
         "currencyName": "Burundian franc",
         "currencyCode": "BIF",
         "currencySymbol": "Fr",
-        "countryNormName": "burundi"
+        "countryNormName": "burundi",
+        "real": true
     },
     {
         "countryName": "Cabo Verde",
@@ -277,7 +311,8 @@
         "currencyName": "Cape Verdean escudo",
         "currencyCode": "CVE",
         "currencySymbol": "Esc",
-        "countryNormName": "cabo verde"
+        "countryNormName": "cabo verde",
+        "real": true
     },
     {
         "countryName": "Cambodia",
@@ -285,7 +320,8 @@
         "currencyName": "Cambodian riel",
         "currencyCode": "KHR",
         "currencySymbol": "៛",
-        "countryNormName": "cambodia"
+        "countryNormName": "cambodia",
+        "real": true
     },
     {
         "countryName": "Cameroon",
@@ -293,7 +329,8 @@
         "currencyName": "Central African CFA franc",
         "currencyCode": "XAF",
         "currencySymbol": "Fr",
-        "countryNormName": "cameroon"
+        "countryNormName": "cameroon",
+        "real": true
     },
     {
         "countryName": "Canada",
@@ -301,7 +338,8 @@
         "currencyName": "Canadian dollar",
         "currencyCode": "CAD",
         "currencySymbol": "$",
-        "countryNormName": "canada"
+        "countryNormName": "canada",
+        "real": true
     },
     {
         "countryName": "Cayman Islands",
@@ -309,7 +347,8 @@
         "currencyName": "Cayman Islands dollar",
         "currencyCode": "KYD",
         "currencySymbol": "$",
-        "countryNormName": "cayman islands"
+        "countryNormName": "cayman islands",
+        "real": true
     },
     {
         "countryName": "Central African Republic",
@@ -317,7 +356,8 @@
         "currencyName": "Central African CFA franc",
         "currencyCode": "XAF",
         "currencySymbol": "Fr",
-        "countryNormName": "central african republic"
+        "countryNormName": "central african republic",
+        "real": true
     },
     {
         "countryName": "Chad",
@@ -325,7 +365,8 @@
         "currencyName": "Central African CFA franc",
         "currencyCode": "XAF",
         "currencySymbol": "Fr",
-        "countryNormName": "chad"
+        "countryNormName": "chad",
+        "real": true
     },
     {
         "countryName": "Chile",
@@ -333,7 +374,8 @@
         "currencyName": "Chilean peso",
         "currencyCode": "CLP",
         "currencySymbol": "$",
-        "countryNormName": "chile"
+        "countryNormName": "chile",
+        "real": true
     },
     {
         "countryName": "China",
@@ -341,7 +383,8 @@
         "currencyName": "Chinese yuan",
         "currencyCode": "CNY",
         "currencySymbol": "¥",
-        "countryNormName": "china"
+        "countryNormName": "china",
+        "real": true
     },
     {
         "countryName": "Christmas Island",
@@ -349,7 +392,8 @@
         "currencyName": "Australian dollar",
         "currencyCode": "AUD",
         "currencySymbol": "$",
-        "countryNormName": "christmas island"
+        "countryNormName": "christmas island",
+        "real": true
     },
     {
         "countryName": "Cocos (Keeling) Islands",
@@ -357,7 +401,8 @@
         "currencyName": "Australian dollar",
         "currencyCode": "AUD",
         "currencySymbol": "$",
-        "countryNormName": "cocos (keeling) islands"
+        "countryNormName": "cocos (keeling) islands",
+        "real": true
     },
     {
         "countryName": "Colombia",
@@ -365,7 +410,8 @@
         "currencyName": "Colombian peso",
         "currencyCode": "COP",
         "currencySymbol": "$",
-        "countryNormName": "colombia"
+        "countryNormName": "colombia",
+        "real": true
     },
     {
         "countryName": "Comoros",
@@ -373,7 +419,8 @@
         "currencyName": "Comorian franc",
         "currencyCode": "KMF",
         "currencySymbol": "Fr",
-        "countryNormName": "comoros"
+        "countryNormName": "comoros",
+        "real": true
     },
     {
         "countryName": "Congo",
@@ -381,7 +428,8 @@
         "currencyName": "Central African CFA franc",
         "currencyCode": "XAF",
         "currencySymbol": "Fr",
-        "countryNormName": "congo"
+        "countryNormName": "congo",
+        "real": true
     },
     {
         "countryName": "Congo (Democratic Republic of the)",
@@ -389,7 +437,8 @@
         "currencyName": "Congolese franc",
         "currencyCode": "CDF",
         "currencySymbol": "Fr",
-        "countryNormName": "congo (democratic republic of the)"
+        "countryNormName": "congo (democratic republic of the)",
+        "real": true
     },
     {
         "countryName": "Cook Islands",
@@ -397,7 +446,8 @@
         "currencyName": "New Zealand dollar",
         "currencyCode": "NZD",
         "currencySymbol": "$",
-        "countryNormName": "cook islands"
+        "countryNormName": "cook islands",
+        "real": true
     },
     {
         "countryName": "Costa Rica",
@@ -405,7 +455,8 @@
         "currencyName": "Costa Rican colón",
         "currencyCode": "CRC",
         "currencySymbol": "₡",
-        "countryNormName": "costa rica"
+        "countryNormName": "costa rica",
+        "real": true
     },
     {
         "countryName": "Côte d'Ivoire",
@@ -413,7 +464,8 @@
         "currencyName": "West African CFA franc",
         "currencyCode": "XOF",
         "currencySymbol": "Fr",
-        "countryNormName": "cote d'ivoire"
+        "countryNormName": "cote d'ivoire",
+        "real": true
     },
     {
         "countryName": "Croatia",
@@ -421,7 +473,8 @@
         "currencyName": "Croatian kuna",
         "currencyCode": "HRK",
         "currencySymbol": "kn",
-        "countryNormName": "croatia"
+        "countryNormName": "croatia",
+        "real": true
     },
     {
         "countryName": "Cuba",
@@ -429,7 +482,8 @@
         "currencyName": "Cuban convertible peso",
         "currencyCode": "CUC",
         "currencySymbol": "$",
-        "countryNormName": "cuba"
+        "countryNormName": "cuba",
+        "real": true
     },
     {
         "countryName": "Curaçao",
@@ -437,7 +491,8 @@
         "currencyName": "Netherlands Antillean guilder",
         "currencyCode": "ANG",
         "currencySymbol": "ƒ",
-        "countryNormName": "curacao"
+        "countryNormName": "curacao",
+        "real": true
     },
     {
         "countryName": "Cyprus",
@@ -445,7 +500,8 @@
         "currencyName": "Euro",
         "currencyCode": "EUR",
         "currencySymbol": "€",
-        "countryNormName": "cyprus"
+        "countryNormName": "cyprus",
+        "real": true
     },
     {
         "countryName": "Czech Republic",
@@ -453,7 +509,8 @@
         "currencyName": "Czech koruna",
         "currencyCode": "CZK",
         "currencySymbol": "Kč",
-        "countryNormName": "czech republic"
+        "countryNormName": "czech republic",
+        "real": true
     },
     {
         "countryName": "Denmark",
@@ -461,7 +518,8 @@
         "currencyName": "Danish krone",
         "currencyCode": "DKK",
         "currencySymbol": "kr",
-        "countryNormName": "denmark"
+        "countryNormName": "denmark",
+        "real": true
     },
     {
         "countryName": "Djibouti",
@@ -469,7 +527,8 @@
         "currencyName": "Djiboutian franc",
         "currencyCode": "DJF",
         "currencySymbol": "Fr",
-        "countryNormName": "djibouti"
+        "countryNormName": "djibouti",
+        "real": true
     },
     {
         "countryName": "Dominica",
@@ -477,7 +536,8 @@
         "currencyName": "East Caribbean dollar",
         "currencyCode": "XCD",
         "currencySymbol": "$",
-        "countryNormName": "dominica"
+        "countryNormName": "dominica",
+        "real": true
     },
     {
         "countryName": "Dominican Republic",
@@ -485,7 +545,8 @@
         "currencyName": "Dominican peso",
         "currencyCode": "DOP",
         "currencySymbol": "$",
-        "countryNormName": "dominican republic"
+        "countryNormName": "dominican republic",
+        "real": true
     },
     {
         "countryName": "Ecuador",
@@ -493,7 +554,8 @@
         "currencyName": "United States dollar",
         "currencyCode": "USD",
         "currencySymbol": "$",
-        "countryNormName": "ecuador"
+        "countryNormName": "ecuador",
+        "real": true
     },
     {
         "countryName": "Egypt",
@@ -501,7 +563,8 @@
         "currencyName": "Egyptian pound",
         "currencyCode": "EGP",
         "currencySymbol": "£",
-        "countryNormName": "egypt"
+        "countryNormName": "egypt",
+        "real": true
     },
     {
         "countryName": "El Salvador",
@@ -509,7 +572,8 @@
         "currencyName": "United States dollar",
         "currencyCode": "USD",
         "currencySymbol": "$",
-        "countryNormName": "el salvador"
+        "countryNormName": "el salvador",
+        "real": true
     },
     {
         "countryName": "Equatorial Guinea",
@@ -517,7 +581,8 @@
         "currencyName": "Central African CFA franc",
         "currencyCode": "XAF",
         "currencySymbol": "Fr",
-        "countryNormName": "equatorial guinea"
+        "countryNormName": "equatorial guinea",
+        "real": true
     },
     {
         "countryName": "Eritrea",
@@ -525,7 +590,8 @@
         "currencyName": "Eritrean nakfa",
         "currencyCode": "ERN",
         "currencySymbol": "Nfk",
-        "countryNormName": "eritrea"
+        "countryNormName": "eritrea",
+        "real": true
     },
     {
         "countryName": "Estonia",
@@ -533,7 +599,8 @@
         "currencyName": "Euro",
         "currencyCode": "EUR",
         "currencySymbol": "€",
-        "countryNormName": "estonia"
+        "countryNormName": "estonia",
+        "real": true
     },
     {
         "countryName": "Ethiopia",
@@ -541,7 +608,8 @@
         "currencyName": "Ethiopian birr",
         "currencyCode": "ETB",
         "currencySymbol": "Br",
-        "countryNormName": "ethiopia"
+        "countryNormName": "ethiopia",
+        "real": true
     },
     {
         "countryName": "Europe",
@@ -549,6 +617,7 @@
         "currencyName": "Euro",
         "currencyCode": "EUR",
         "currencySymbol": "€",
+        "real": true,
         "countryNormName": "europe"
     },
     {
@@ -557,7 +626,8 @@
         "currencyName": "Falkland Islands pound",
         "currencyCode": "FKP",
         "currencySymbol": "£",
-        "countryNormName": "falkland islands (malvinas)"
+        "countryNormName": "falkland islands (malvinas)",
+        "real": true
     },
     {
         "countryName": "Faroe Islands",
@@ -565,7 +635,8 @@
         "currencyName": "Danish krone",
         "currencyCode": "DKK",
         "currencySymbol": "kr",
-        "countryNormName": "faroe islands"
+        "countryNormName": "faroe islands",
+        "real": true
     },
     {
         "countryName": "Fiji",
@@ -573,7 +644,8 @@
         "currencyName": "Fijian dollar",
         "currencyCode": "FJD",
         "currencySymbol": "$",
-        "countryNormName": "fiji"
+        "countryNormName": "fiji",
+        "real": true
     },
     {
         "countryName": "Finland",
@@ -581,7 +653,8 @@
         "currencyName": "Euro",
         "currencyCode": "EUR",
         "currencySymbol": "€",
-        "countryNormName": "finland"
+        "countryNormName": "finland",
+        "real": true
     },
     {
         "countryName": "France",
@@ -589,7 +662,8 @@
         "currencyName": "Euro",
         "currencyCode": "EUR",
         "currencySymbol": "€",
-        "countryNormName": "france"
+        "countryNormName": "france",
+        "real": true
     },
     {
         "countryName": "French Polynesia",
@@ -597,7 +671,8 @@
         "currencyName": "CFP franc",
         "currencyCode": "XPF",
         "currencySymbol": "Fr",
-        "countryNormName": "french polynesia"
+        "countryNormName": "french polynesia",
+        "real": true
     },
     {
         "countryName": "French Southern Territories",
@@ -605,7 +680,8 @@
         "currencyName": "Euro",
         "currencyCode": "EUR",
         "currencySymbol": "€",
-        "countryNormName": "french southern territories"
+        "countryNormName": "french southern territories",
+        "real": true
     },
     {
         "countryName": "Gabon",
@@ -613,7 +689,8 @@
         "currencyName": "Central African CFA franc",
         "currencyCode": "XAF",
         "currencySymbol": "Fr",
-        "countryNormName": "gabon"
+        "countryNormName": "gabon",
+        "real": true
     },
     {
         "countryName": "Gambia",
@@ -621,7 +698,8 @@
         "currencyName": "Gambian dalasi",
         "currencyCode": "GMD",
         "currencySymbol": "D",
-        "countryNormName": "gambia"
+        "countryNormName": "gambia",
+        "real": true
     },
     {
         "countryName": "Georgia",
@@ -629,7 +707,8 @@
         "currencyName": "Georgian Lari",
         "currencyCode": "GEL",
         "currencySymbol": "ლ",
-        "countryNormName": "georgia"
+        "countryNormName": "georgia",
+        "real": true
     },
     {
         "countryName": "Germany",
@@ -637,7 +716,8 @@
         "currencyName": "Euro",
         "currencyCode": "EUR",
         "currencySymbol": "€",
-        "countryNormName": "germany"
+        "countryNormName": "germany",
+        "real": true
     },
     {
         "countryName": "Ghana",
@@ -645,7 +725,8 @@
         "currencyName": "Ghanaian cedi",
         "currencyCode": "GHS",
         "currencySymbol": "₵",
-        "countryNormName": "ghana"
+        "countryNormName": "ghana",
+        "real": true
     },
     {
         "countryName": "Gibraltar",
@@ -653,7 +734,8 @@
         "currencyName": "Gibraltar pound",
         "currencyCode": "GIP",
         "currencySymbol": "£",
-        "countryNormName": "gibraltar"
+        "countryNormName": "gibraltar",
+        "real": true
     },
     {
         "countryName": "Greece",
@@ -661,7 +743,8 @@
         "currencyName": "Euro",
         "currencyCode": "EUR",
         "currencySymbol": "€",
-        "countryNormName": "greece"
+        "countryNormName": "greece",
+        "real": true
     },
     {
         "countryName": "Greenland",
@@ -669,7 +752,8 @@
         "currencyName": "Danish krone",
         "currencyCode": "DKK",
         "currencySymbol": "kr",
-        "countryNormName": "greenland"
+        "countryNormName": "greenland",
+        "real": true
     },
     {
         "countryName": "Grenada",
@@ -677,7 +761,8 @@
         "currencyName": "East Caribbean dollar",
         "currencyCode": "XCD",
         "currencySymbol": "$",
-        "countryNormName": "grenada"
+        "countryNormName": "grenada",
+        "real": true
     },
     {
         "countryName": "Guam",
@@ -685,7 +770,8 @@
         "currencyName": "United States dollar",
         "currencyCode": "USD",
         "currencySymbol": "$",
-        "countryNormName": "guam"
+        "countryNormName": "guam",
+        "real": true
     },
     {
         "countryName": "Guatemala",
@@ -693,7 +779,8 @@
         "currencyName": "Guatemalan quetzal",
         "currencyCode": "GTQ",
         "currencySymbol": "Q",
-        "countryNormName": "guatemala"
+        "countryNormName": "guatemala",
+        "real": true
     },
     {
         "countryName": "Guernsey",
@@ -701,7 +788,8 @@
         "currencyName": "British pound",
         "currencyCode": "GBP",
         "currencySymbol": "£",
-        "countryNormName": "guernsey"
+        "countryNormName": "guernsey",
+        "real": true
     },
     {
         "countryName": "Guinea",
@@ -709,7 +797,8 @@
         "currencyName": "Guinean franc",
         "currencyCode": "GNF",
         "currencySymbol": "Fr",
-        "countryNormName": "guinea"
+        "countryNormName": "guinea",
+        "real": true
     },
     {
         "countryName": "Guinea-Bissau",
@@ -717,7 +806,8 @@
         "currencyName": "West African CFA franc",
         "currencyCode": "XOF",
         "currencySymbol": "Fr",
-        "countryNormName": "guinea-bissau"
+        "countryNormName": "guinea-bissau",
+        "real": true
     },
     {
         "countryName": "Guyana",
@@ -725,7 +815,8 @@
         "currencyName": "Guyanese dollar",
         "currencyCode": "GYD",
         "currencySymbol": "$",
-        "countryNormName": "guyana"
+        "countryNormName": "guyana",
+        "real": true
     },
     {
         "countryName": "Haiti",
@@ -733,7 +824,8 @@
         "currencyName": "Haitian gourde",
         "currencyCode": "HTG",
         "currencySymbol": "G",
-        "countryNormName": "haiti"
+        "countryNormName": "haiti",
+        "real": true
     },
     {
         "countryName": "Holy See",
@@ -741,7 +833,8 @@
         "currencyName": "Euro",
         "currencyCode": "EUR",
         "currencySymbol": "€",
-        "countryNormName": "holy see"
+        "countryNormName": "holy see",
+        "real": true
     },
     {
         "countryName": "Honduras",
@@ -749,7 +842,8 @@
         "currencyName": "Honduran lempira",
         "currencyCode": "HNL",
         "currencySymbol": "L",
-        "countryNormName": "honduras"
+        "countryNormName": "honduras",
+        "real": true
     },
     {
         "countryName": "Hong Kong",
@@ -757,7 +851,8 @@
         "currencyName": "Hong Kong dollar",
         "currencyCode": "HKD",
         "currencySymbol": "$",
-        "countryNormName": "hong kong"
+        "countryNormName": "hong kong",
+        "real": true
     },
     {
         "countryName": "Hungary",
@@ -765,7 +860,8 @@
         "currencyName": "Hungarian forint",
         "currencyCode": "HUF",
         "currencySymbol": "Ft",
-        "countryNormName": "hungary"
+        "countryNormName": "hungary",
+        "real": true
     },
     {
         "countryName": "Iceland",
@@ -773,7 +869,8 @@
         "currencyName": "Icelandic króna",
         "currencyCode": "ISK",
         "currencySymbol": "kr",
-        "countryNormName": "iceland"
+        "countryNormName": "iceland",
+        "real": true
     },
     {
         "countryName": "India",
@@ -781,7 +878,8 @@
         "currencyName": "Indian rupee",
         "currencyCode": "INR",
         "currencySymbol": "₹",
-        "countryNormName": "india"
+        "countryNormName": "india",
+        "real": true
     },
     {
         "countryName": "Indonesia",
@@ -789,7 +887,8 @@
         "currencyName": "Indonesian rupiah",
         "currencyCode": "IDR",
         "currencySymbol": "Rp",
-        "countryNormName": "indonesia"
+        "countryNormName": "indonesia",
+        "real": true
     },
     {
         "countryName": "Iran (Islamic Republic of)",
@@ -797,7 +896,8 @@
         "currencyName": "Iranian rial",
         "currencyCode": "IRR",
         "currencySymbol": "﷼",
-        "countryNormName": "iran (islamic republic of)"
+        "countryNormName": "iran (islamic republic of)",
+        "real": true
     },
     {
         "countryName": "Iraq",
@@ -805,7 +905,8 @@
         "currencyName": "Iraqi dinar",
         "currencyCode": "IQD",
         "currencySymbol": "ع.د",
-        "countryNormName": "iraq"
+        "countryNormName": "iraq",
+        "real": true
     },
     {
         "countryName": "Ireland",
@@ -813,7 +914,8 @@
         "currencyName": "Euro",
         "currencyCode": "EUR",
         "currencySymbol": "€",
-        "countryNormName": "ireland"
+        "countryNormName": "ireland",
+        "real": true
     },
     {
         "countryName": "Isle of Man",
@@ -821,7 +923,8 @@
         "currencyName": "British pound",
         "currencyCode": "GBP",
         "currencySymbol": "£",
-        "countryNormName": "isle of man"
+        "countryNormName": "isle of man",
+        "real": true
     },
     {
         "countryName": "Israel",
@@ -829,7 +932,8 @@
         "currencyName": "Israeli new shekel",
         "currencyCode": "ILS",
         "currencySymbol": "₪",
-        "countryNormName": "israel"
+        "countryNormName": "israel",
+        "real": true
     },
     {
         "countryName": "Italy",
@@ -837,7 +941,8 @@
         "currencyName": "Euro",
         "currencyCode": "EUR",
         "currencySymbol": "€",
-        "countryNormName": "italy"
+        "countryNormName": "italy",
+        "real": true
     },
     {
         "countryName": "Jamaica",
@@ -845,7 +950,8 @@
         "currencyName": "Jamaican dollar",
         "currencyCode": "JMD",
         "currencySymbol": "$",
-        "countryNormName": "jamaica"
+        "countryNormName": "jamaica",
+        "real": true
     },
     {
         "countryName": "Japan",
@@ -853,7 +959,8 @@
         "currencyName": "Japanese yen",
         "currencyCode": "JPY",
         "currencySymbol": "¥",
-        "countryNormName": "japan"
+        "countryNormName": "japan",
+        "real": true
     },
     {
         "countryName": "Jersey",
@@ -861,7 +968,8 @@
         "currencyName": "British pound",
         "currencyCode": "GBP",
         "currencySymbol": "£",
-        "countryNormName": "jersey"
+        "countryNormName": "jersey",
+        "real": true
     },
     {
         "countryName": "Jordan",
@@ -869,7 +977,8 @@
         "currencyName": "Jordanian dinar",
         "currencyCode": "JOD",
         "currencySymbol": "د.ا",
-        "countryNormName": "jordan"
+        "countryNormName": "jordan",
+        "real": true
     },
     {
         "countryName": "Kazakhstan",
@@ -877,7 +986,17 @@
         "currencyName": "Kazakhstani tenge",
         "currencyCode": "KZT",
         "currencySymbol": null,
-        "countryNormName": "kazakhstan"
+        "countryNormName": "kazakhstan",
+        "real": true
+    },
+    {
+        "countryName": "Kekistan",
+        "flagCode": "KK",
+        "currencyName": "Bitcoin",
+        "currencyCode": "BTC",
+        "currencySymbol": "₿",
+        "real": false,
+        "countryNormName": "kekistan"
     },
     {
         "countryName": "Kenya",
@@ -885,7 +1004,8 @@
         "currencyName": "Kenyan shilling",
         "currencyCode": "KES",
         "currencySymbol": "Sh",
-        "countryNormName": "kenya"
+        "countryNormName": "kenya",
+        "real": true
     },
     {
         "countryName": "Kiribati",
@@ -893,7 +1013,8 @@
         "currencyName": "Australian dollar",
         "currencyCode": "AUD",
         "currencySymbol": "$",
-        "countryNormName": "kiribati"
+        "countryNormName": "kiribati",
+        "real": true
     },
     {
         "countryName": "North Korea",
@@ -901,7 +1022,8 @@
         "currencyName": "North Korean won",
         "currencyCode": "KPW",
         "currencySymbol": "₩",
-        "countryNormName": "north korea"
+        "countryNormName": "north korea",
+        "real": true
     },
     {
         "countryName": "South Korea",
@@ -909,7 +1031,8 @@
         "currencyName": "South Korean won",
         "currencyCode": "KRW",
         "currencySymbol": "₩",
-        "countryNormName": "south korea"
+        "countryNormName": "south korea",
+        "real": true
     },
     {
         "countryName": "Kuwait",
@@ -917,7 +1040,8 @@
         "currencyName": "Kuwaiti dinar",
         "currencyCode": "KWD",
         "currencySymbol": "د.ك",
-        "countryNormName": "kuwait"
+        "countryNormName": "kuwait",
+        "real": true
     },
     {
         "countryName": "Kyrgyzstan",
@@ -925,7 +1049,8 @@
         "currencyName": "Kyrgyzstani som",
         "currencyCode": "KGS",
         "currencySymbol": "с",
-        "countryNormName": "kyrgyzstan"
+        "countryNormName": "kyrgyzstan",
+        "real": true
     },
     {
         "countryName": "Laos",
@@ -933,7 +1058,8 @@
         "currencyName": "Lao kip",
         "currencyCode": "LAK",
         "currencySymbol": "₭",
-        "countryNormName": "laos"
+        "countryNormName": "laos",
+        "real": true
     },
     {
         "countryName": "Latvia",
@@ -941,7 +1067,8 @@
         "currencyName": "Euro",
         "currencyCode": "EUR",
         "currencySymbol": "€",
-        "countryNormName": "latvia"
+        "countryNormName": "latvia",
+        "real": true
     },
     {
         "countryName": "Lebanon",
@@ -949,7 +1076,8 @@
         "currencyName": "Lebanese pound",
         "currencyCode": "LBP",
         "currencySymbol": "ل.ل",
-        "countryNormName": "lebanon"
+        "countryNormName": "lebanon",
+        "real": true
     },
     {
         "countryName": "Lesotho",
@@ -957,7 +1085,8 @@
         "currencyName": "Lesotho loti",
         "currencyCode": "LSL",
         "currencySymbol": "L",
-        "countryNormName": "lesotho"
+        "countryNormName": "lesotho",
+        "real": true
     },
     {
         "countryName": "Liberia",
@@ -965,7 +1094,8 @@
         "currencyName": "Liberian dollar",
         "currencyCode": "LRD",
         "currencySymbol": "$",
-        "countryNormName": "liberia"
+        "countryNormName": "liberia",
+        "real": true
     },
     {
         "countryName": "Libya",
@@ -973,7 +1103,8 @@
         "currencyName": "Libyan dinar",
         "currencyCode": "LYD",
         "currencySymbol": "ل.د",
-        "countryNormName": "libya"
+        "countryNormName": "libya",
+        "real": true
     },
     {
         "countryName": "Liechtenstein",
@@ -981,7 +1112,8 @@
         "currencyName": "Swiss franc",
         "currencyCode": "CHF",
         "currencySymbol": "Fr",
-        "countryNormName": "liechtenstein"
+        "countryNormName": "liechtenstein",
+        "real": true
     },
     {
         "countryName": "Lithuania",
@@ -989,7 +1121,8 @@
         "currencyName": "Euro",
         "currencyCode": "EUR",
         "currencySymbol": "€",
-        "countryNormName": "lithuania"
+        "countryNormName": "lithuania",
+        "real": true
     },
     {
         "countryName": "Luxembourg",
@@ -997,7 +1130,8 @@
         "currencyName": "Euro",
         "currencyCode": "EUR",
         "currencySymbol": "€",
-        "countryNormName": "luxembourg"
+        "countryNormName": "luxembourg",
+        "real": true
     },
     {
         "countryName": "Macao",
@@ -1005,7 +1139,8 @@
         "currencyName": "Macanese pataca",
         "currencyCode": "MOP",
         "currencySymbol": "P",
-        "countryNormName": "macao"
+        "countryNormName": "macao",
+        "real": true
     },
     {
         "countryName": "Macedonia",
@@ -1013,7 +1148,8 @@
         "currencyName": "Macedonian denar",
         "currencyCode": "MKD",
         "currencySymbol": "ден",
-        "countryNormName": "macedonia"
+        "countryNormName": "macedonia",
+        "real": true
     },
     {
         "countryName": "Madagascar",
@@ -1021,7 +1157,8 @@
         "currencyName": "Malagasy ariary",
         "currencyCode": "MGA",
         "currencySymbol": "Ar",
-        "countryNormName": "madagascar"
+        "countryNormName": "madagascar",
+        "real": true
     },
     {
         "countryName": "Malawi",
@@ -1029,7 +1166,8 @@
         "currencyName": "Malawian kwacha",
         "currencyCode": "MWK",
         "currencySymbol": "MK",
-        "countryNormName": "malawi"
+        "countryNormName": "malawi",
+        "real": true
     },
     {
         "countryName": "Malaysia",
@@ -1037,7 +1175,8 @@
         "currencyName": "Malaysian ringgit",
         "currencyCode": "MYR",
         "currencySymbol": "RM",
-        "countryNormName": "malaysia"
+        "countryNormName": "malaysia",
+        "real": true
     },
     {
         "countryName": "Maldives",
@@ -1045,7 +1184,8 @@
         "currencyName": "Maldivian rufiyaa",
         "currencyCode": "MVR",
         "currencySymbol": ".ރ",
-        "countryNormName": "maldives"
+        "countryNormName": "maldives",
+        "real": true
     },
     {
         "countryName": "Mali",
@@ -1053,7 +1193,8 @@
         "currencyName": "West African CFA franc",
         "currencyCode": "XOF",
         "currencySymbol": "Fr",
-        "countryNormName": "mali"
+        "countryNormName": "mali",
+        "real": true
     },
     {
         "countryName": "Malta",
@@ -1061,7 +1202,8 @@
         "currencyName": "Euro",
         "currencyCode": "EUR",
         "currencySymbol": "€",
-        "countryNormName": "malta"
+        "countryNormName": "malta",
+        "real": true
     },
     {
         "countryName": "Marshall Islands",
@@ -1069,7 +1211,8 @@
         "currencyName": "United States dollar",
         "currencyCode": "USD",
         "currencySymbol": "$",
-        "countryNormName": "marshall islands"
+        "countryNormName": "marshall islands",
+        "real": true
     },
     {
         "countryName": "Martinique",
@@ -1077,7 +1220,8 @@
         "currencyName": "Euro",
         "currencyCode": "EUR",
         "currencySymbol": "€",
-        "countryNormName": "martinique"
+        "countryNormName": "martinique",
+        "real": true
     },
     {
         "countryName": "Mauritania",
@@ -1085,7 +1229,8 @@
         "currencyName": "Mauritanian ouguiya",
         "currencyCode": "MRO",
         "currencySymbol": "UM",
-        "countryNormName": "mauritania"
+        "countryNormName": "mauritania",
+        "real": true
     },
     {
         "countryName": "Mauritius",
@@ -1093,7 +1238,8 @@
         "currencyName": "Mauritian rupee",
         "currencyCode": "MUR",
         "currencySymbol": "₨",
-        "countryNormName": "mauritius"
+        "countryNormName": "mauritius",
+        "real": true
     },
     {
         "countryName": "Mayotte",
@@ -1101,7 +1247,8 @@
         "currencyName": "Euro",
         "currencyCode": "EUR",
         "currencySymbol": "€",
-        "countryNormName": "mayotte"
+        "countryNormName": "mayotte",
+        "real": true
     },
     {
         "countryName": "Mexico",
@@ -1109,7 +1256,8 @@
         "currencyName": "Mexican peso",
         "currencyCode": "MXN",
         "currencySymbol": "$",
-        "countryNormName": "mexico"
+        "countryNormName": "mexico",
+        "real": true
     },
     {
         "countryName": "Moldova (Republic of)",
@@ -1117,7 +1265,8 @@
         "currencyName": "Moldovan leu",
         "currencyCode": "MDL",
         "currencySymbol": "L",
-        "countryNormName": "moldova (republic of)"
+        "countryNormName": "moldova (republic of)",
+        "real": true
     },
     {
         "countryName": "Monaco",
@@ -1125,7 +1274,8 @@
         "currencyName": "Euro",
         "currencyCode": "EUR",
         "currencySymbol": "€",
-        "countryNormName": "monaco"
+        "countryNormName": "monaco",
+        "real": true
     },
     {
         "countryName": "Mongolia",
@@ -1133,7 +1283,8 @@
         "currencyName": "Mongolian tögrög",
         "currencyCode": "MNT",
         "currencySymbol": "₮",
-        "countryNormName": "mongolia"
+        "countryNormName": "mongolia",
+        "real": true
     },
     {
         "countryName": "Montenegro",
@@ -1141,7 +1292,8 @@
         "currencyName": "Euro",
         "currencyCode": "EUR",
         "currencySymbol": "€",
-        "countryNormName": "montenegro"
+        "countryNormName": "montenegro",
+        "real": true
     },
     {
         "countryName": "Montserrat",
@@ -1149,7 +1301,8 @@
         "currencyName": "East Caribbean dollar",
         "currencyCode": "XCD",
         "currencySymbol": "$",
-        "countryNormName": "montserrat"
+        "countryNormName": "montserrat",
+        "real": true
     },
     {
         "countryName": "Morocco",
@@ -1157,7 +1310,8 @@
         "currencyName": "Moroccan dirham",
         "currencyCode": "MAD",
         "currencySymbol": "د.م.",
-        "countryNormName": "morocco"
+        "countryNormName": "morocco",
+        "real": true
     },
     {
         "countryName": "Mozambique",
@@ -1165,7 +1319,8 @@
         "currencyName": "Mozambican metical",
         "currencyCode": "MZN",
         "currencySymbol": "MT",
-        "countryNormName": "mozambique"
+        "countryNormName": "mozambique",
+        "real": true
     },
     {
         "countryName": "Myanmar",
@@ -1173,7 +1328,8 @@
         "currencyName": "Burmese kyat",
         "currencyCode": "MMK",
         "currencySymbol": "Ks",
-        "countryNormName": "myanmar"
+        "countryNormName": "myanmar",
+        "real": true
     },
     {
         "countryName": "Namibia",
@@ -1181,7 +1337,8 @@
         "currencyName": "Namibian dollar",
         "currencyCode": "NAD",
         "currencySymbol": "$",
-        "countryNormName": "namibia"
+        "countryNormName": "namibia",
+        "real": true
     },
     {
         "countryName": "Nauru",
@@ -1189,7 +1346,8 @@
         "currencyName": "Australian dollar",
         "currencyCode": "AUD",
         "currencySymbol": "$",
-        "countryNormName": "nauru"
+        "countryNormName": "nauru",
+        "real": true
     },
     {
         "countryName": "Nepal",
@@ -1197,7 +1355,8 @@
         "currencyName": "Nepalese rupee",
         "currencyCode": "NPR",
         "currencySymbol": "₨",
-        "countryNormName": "nepal"
+        "countryNormName": "nepal",
+        "real": true
     },
     {
         "countryName": "Netherlands",
@@ -1205,7 +1364,8 @@
         "currencyName": "Euro",
         "currencyCode": "EUR",
         "currencySymbol": "€",
-        "countryNormName": "netherlands"
+        "countryNormName": "netherlands",
+        "real": true
     },
     {
         "countryName": "New Caledonia",
@@ -1213,7 +1373,8 @@
         "currencyName": "CFP franc",
         "currencyCode": "XPF",
         "currencySymbol": "Fr",
-        "countryNormName": "new caledonia"
+        "countryNormName": "new caledonia",
+        "real": true
     },
     {
         "countryName": "New Zealand",
@@ -1221,7 +1382,8 @@
         "currencyName": "New Zealand dollar",
         "currencyCode": "NZD",
         "currencySymbol": "$",
-        "countryNormName": "new zealand"
+        "countryNormName": "new zealand",
+        "real": true
     },
     {
         "countryName": "Nicaragua",
@@ -1229,7 +1391,8 @@
         "currencyName": "Nicaraguan córdoba",
         "currencyCode": "NIO",
         "currencySymbol": "C$",
-        "countryNormName": "nicaragua"
+        "countryNormName": "nicaragua",
+        "real": true
     },
     {
         "countryName": "Niger",
@@ -1237,7 +1400,8 @@
         "currencyName": "West African CFA franc",
         "currencyCode": "XOF",
         "currencySymbol": "Fr",
-        "countryNormName": "niger"
+        "countryNormName": "niger",
+        "real": true
     },
     {
         "countryName": "Nigeria",
@@ -1245,7 +1409,8 @@
         "currencyName": "Nigerian naira",
         "currencyCode": "NGN",
         "currencySymbol": "₦",
-        "countryNormName": "nigeria"
+        "countryNormName": "nigeria",
+        "real": true
     },
     {
         "countryName": "Niue",
@@ -1253,7 +1418,8 @@
         "currencyName": "New Zealand dollar",
         "currencyCode": "NZD",
         "currencySymbol": "$",
-        "countryNormName": "niue"
+        "countryNormName": "niue",
+        "real": true
     },
     {
         "countryName": "Norfolk Island",
@@ -1261,7 +1427,8 @@
         "currencyName": "Australian dollar",
         "currencyCode": "AUD",
         "currencySymbol": "$",
-        "countryNormName": "norfolk island"
+        "countryNormName": "norfolk island",
+        "real": true
     },
     {
         "countryName": "Northern Mariana Islands",
@@ -1269,7 +1436,8 @@
         "currencyName": "United States dollar",
         "currencyCode": "USD",
         "currencySymbol": "$",
-        "countryNormName": "northern mariana islands"
+        "countryNormName": "northern mariana islands",
+        "real": true
     },
     {
         "countryName": "Norway",
@@ -1277,7 +1445,8 @@
         "currencyName": "Norwegian krone",
         "currencyCode": "NOK",
         "currencySymbol": "kr",
-        "countryNormName": "norway"
+        "countryNormName": "norway",
+        "real": true
     },
     {
         "countryName": "Oman",
@@ -1285,7 +1454,8 @@
         "currencyName": "Omani rial",
         "currencyCode": "OMR",
         "currencySymbol": "ر.ع.",
-        "countryNormName": "oman"
+        "countryNormName": "oman",
+        "real": true
     },
     {
         "countryName": "Pakistan",
@@ -1293,7 +1463,8 @@
         "currencyName": "Pakistani rupee",
         "currencyCode": "PKR",
         "currencySymbol": "₨",
-        "countryNormName": "pakistan"
+        "countryNormName": "pakistan",
+        "real": true
     },
     {
         "countryName": "Palestine, State of",
@@ -1301,7 +1472,8 @@
         "currencyName": "Israeli new sheqel",
         "currencyCode": "ILS",
         "currencySymbol": "₪",
-        "countryNormName": "palestine, state of"
+        "countryNormName": "palestine, state of",
+        "real": true
     },
     {
         "countryName": "Panama",
@@ -1309,7 +1481,8 @@
         "currencyName": "Panamanian balboa",
         "currencyCode": "PAB",
         "currencySymbol": "B/.",
-        "countryNormName": "panama"
+        "countryNormName": "panama",
+        "real": true
     },
     {
         "countryName": "Papua New Guinea",
@@ -1317,7 +1490,8 @@
         "currencyName": "Papua New Guinean kina",
         "currencyCode": "PGK",
         "currencySymbol": "K",
-        "countryNormName": "papua new guinea"
+        "countryNormName": "papua new guinea",
+        "real": true
     },
     {
         "countryName": "Paraguay",
@@ -1325,7 +1499,8 @@
         "currencyName": "Paraguayan guaraní",
         "currencyCode": "PYG",
         "currencySymbol": "₲",
-        "countryNormName": "paraguay"
+        "countryNormName": "paraguay",
+        "real": true
     },
     {
         "countryName": "Peru",
@@ -1333,7 +1508,8 @@
         "currencyName": "Peruvian sol",
         "currencyCode": "PEN",
         "currencySymbol": "S/.",
-        "countryNormName": "peru"
+        "countryNormName": "peru",
+        "real": true
     },
     {
         "countryName": "Philippines",
@@ -1341,7 +1517,8 @@
         "currencyName": "Philippine peso",
         "currencyCode": "PHP",
         "currencySymbol": "₱",
-        "countryNormName": "philippines"
+        "countryNormName": "philippines",
+        "real": true
     },
     {
         "countryName": "Pitcairn",
@@ -1349,7 +1526,8 @@
         "currencyName": "New Zealand dollar",
         "currencyCode": "NZD",
         "currencySymbol": "$",
-        "countryNormName": "pitcairn"
+        "countryNormName": "pitcairn",
+        "real": true
     },
     {
         "countryName": "Poland",
@@ -1357,7 +1535,8 @@
         "currencyName": "Polish złoty",
         "currencyCode": "PLN",
         "currencySymbol": "zł",
-        "countryNormName": "poland"
+        "countryNormName": "poland",
+        "real": true
     },
     {
         "countryName": "Portugal",
@@ -1365,7 +1544,8 @@
         "currencyName": "Euro",
         "currencyCode": "EUR",
         "currencySymbol": "€",
-        "countryNormName": "portugal"
+        "countryNormName": "portugal",
+        "real": true
     },
     {
         "countryName": "Puerto Rico",
@@ -1373,7 +1553,8 @@
         "currencyName": "United States dollar",
         "currencyCode": "USD",
         "currencySymbol": "$",
-        "countryNormName": "puerto rico"
+        "countryNormName": "puerto rico",
+        "real": true
     },
     {
         "countryName": "Qatar",
@@ -1381,7 +1562,8 @@
         "currencyName": "Qatari riyal",
         "currencyCode": "QAR",
         "currencySymbol": "ر.ق",
-        "countryNormName": "qatar"
+        "countryNormName": "qatar",
+        "real": true
     },
     {
         "countryName": "Réunion",
@@ -1389,7 +1571,8 @@
         "currencyName": "Euro",
         "currencyCode": "EUR",
         "currencySymbol": "€",
-        "countryNormName": "reunion"
+        "countryNormName": "reunion",
+        "real": true
     },
     {
         "countryName": "Romania",
@@ -1397,7 +1580,8 @@
         "currencyName": "Romanian leu",
         "currencyCode": "RON",
         "currencySymbol": "lei",
-        "countryNormName": "romania"
+        "countryNormName": "romania",
+        "real": true
     },
     {
         "countryName": "Russian Federation",
@@ -1405,7 +1589,8 @@
         "currencyName": "Russian ruble",
         "currencyCode": "RUB",
         "currencySymbol": "₽",
-        "countryNormName": "russian federation"
+        "countryNormName": "russian federation",
+        "real": true
     },
     {
         "countryName": "Rwanda",
@@ -1413,7 +1598,8 @@
         "currencyName": "Rwandan franc",
         "currencyCode": "RWF",
         "currencySymbol": "Fr",
-        "countryNormName": "rwanda"
+        "countryNormName": "rwanda",
+        "real": true
     },
     {
         "countryName": "Saint Barthélemy",
@@ -1421,7 +1607,8 @@
         "currencyName": "Euro",
         "currencyCode": "EUR",
         "currencySymbol": "€",
-        "countryNormName": "saint barthelemy"
+        "countryNormName": "saint barthelemy",
+        "real": true
     },
     {
         "countryName": "Saint Helena, Ascension and Tristan da Cunha",
@@ -1429,7 +1616,8 @@
         "currencyName": "Saint Helena pound",
         "currencyCode": "SHP",
         "currencySymbol": "£",
-        "countryNormName": "saint helena, ascension and tristan da cunha"
+        "countryNormName": "saint helena, ascension and tristan da cunha",
+        "real": true
     },
     {
         "countryName": "Saint Kitts and Nevis",
@@ -1437,7 +1625,8 @@
         "currencyName": "East Caribbean dollar",
         "currencyCode": "XCD",
         "currencySymbol": "$",
-        "countryNormName": "saint kitts and nevis"
+        "countryNormName": "saint kitts and nevis",
+        "real": true
     },
     {
         "countryName": "Saint Lucia",
@@ -1445,7 +1634,8 @@
         "currencyName": "East Caribbean dollar",
         "currencyCode": "XCD",
         "currencySymbol": "$",
-        "countryNormName": "saint lucia"
+        "countryNormName": "saint lucia",
+        "real": true
     },
     {
         "countryName": "Saint Martin (French part)",
@@ -1453,7 +1643,8 @@
         "currencyName": "Euro",
         "currencyCode": "EUR",
         "currencySymbol": "€",
-        "countryNormName": "saint martin (french part)"
+        "countryNormName": "saint martin (french part)",
+        "real": true
     },
     {
         "countryName": "Saint Vincent and the Grenadines",
@@ -1461,7 +1652,8 @@
         "currencyName": "East Caribbean dollar",
         "currencyCode": "XCD",
         "currencySymbol": "$",
-        "countryNormName": "saint vincent and the grenadines"
+        "countryNormName": "saint vincent and the grenadines",
+        "real": true
     },
     {
         "countryName": "Samoa",
@@ -1469,7 +1661,8 @@
         "currencyName": "Samoan tālā",
         "currencyCode": "WST",
         "currencySymbol": "T",
-        "countryNormName": "samoa"
+        "countryNormName": "samoa",
+        "real": true
     },
     {
         "countryName": "San Marino",
@@ -1477,7 +1670,8 @@
         "currencyName": "Euro",
         "currencyCode": "EUR",
         "currencySymbol": "€",
-        "countryNormName": "san marino"
+        "countryNormName": "san marino",
+        "real": true
     },
     {
         "countryName": "Sao Tome and Principe",
@@ -1485,7 +1679,8 @@
         "currencyName": "São Tomé and Príncipe dobra",
         "currencyCode": "STD",
         "currencySymbol": "Db",
-        "countryNormName": "sao tome and principe"
+        "countryNormName": "sao tome and principe",
+        "real": true
     },
     {
         "countryName": "Saudi Arabia",
@@ -1493,7 +1688,8 @@
         "currencyName": "Saudi riyal",
         "currencyCode": "SAR",
         "currencySymbol": "ر.س",
-        "countryNormName": "saudi arabia"
+        "countryNormName": "saudi arabia",
+        "real": true
     },
     {
         "countryName": "Senegal",
@@ -1501,7 +1697,8 @@
         "currencyName": "West African CFA franc",
         "currencyCode": "XOF",
         "currencySymbol": "Fr",
-        "countryNormName": "senegal"
+        "countryNormName": "senegal",
+        "real": true
     },
     {
         "countryName": "Serbia",
@@ -1509,7 +1706,8 @@
         "currencyName": "Serbian dinar",
         "currencyCode": "RSD",
         "currencySymbol": "дин.",
-        "countryNormName": "serbia"
+        "countryNormName": "serbia",
+        "real": true
     },
     {
         "countryName": "Seychelles",
@@ -1517,7 +1715,8 @@
         "currencyName": "Seychellois rupee",
         "currencyCode": "SCR",
         "currencySymbol": "₨",
-        "countryNormName": "seychelles"
+        "countryNormName": "seychelles",
+        "real": true
     },
     {
         "countryName": "Sierra Leone",
@@ -1525,7 +1724,8 @@
         "currencyName": "Sierra Leonean leone",
         "currencyCode": "SLL",
         "currencySymbol": "Le",
-        "countryNormName": "sierra leone"
+        "countryNormName": "sierra leone",
+        "real": true
     },
     {
         "countryName": "Singapore",
@@ -1533,7 +1733,8 @@
         "currencyName": "Brunei dollar",
         "currencyCode": "BND",
         "currencySymbol": "$",
-        "countryNormName": "singapore"
+        "countryNormName": "singapore",
+        "real": true
     },
     {
         "countryName": "Sint Maarten (Dutch part)",
@@ -1541,7 +1742,8 @@
         "currencyName": "Netherlands Antillean guilder",
         "currencyCode": "ANG",
         "currencySymbol": "ƒ",
-        "countryNormName": "sint maarten (dutch part)"
+        "countryNormName": "sint maarten (dutch part)",
+        "real": true
     },
     {
         "countryName": "Slovakia",
@@ -1549,7 +1751,8 @@
         "currencyName": "Euro",
         "currencyCode": "EUR",
         "currencySymbol": "€",
-        "countryNormName": "slovakia"
+        "countryNormName": "slovakia",
+        "real": true
     },
     {
         "countryName": "Slovenia",
@@ -1557,7 +1760,8 @@
         "currencyName": "Euro",
         "currencyCode": "EUR",
         "currencySymbol": "€",
-        "countryNormName": "slovenia"
+        "countryNormName": "slovenia",
+        "real": true
     },
     {
         "countryName": "Solomon Islands",
@@ -1565,7 +1769,8 @@
         "currencyName": "Solomon Islands dollar",
         "currencyCode": "SBD",
         "currencySymbol": "$",
-        "countryNormName": "solomon islands"
+        "countryNormName": "solomon islands",
+        "real": true
     },
     {
         "countryName": "Somalia",
@@ -1573,7 +1778,8 @@
         "currencyName": "Somali shilling",
         "currencyCode": "SOS",
         "currencySymbol": "Sh",
-        "countryNormName": "somalia"
+        "countryNormName": "somalia",
+        "real": true
     },
     {
         "countryName": "South Africa",
@@ -1581,7 +1787,8 @@
         "currencyName": "South African rand",
         "currencyCode": "ZAR",
         "currencySymbol": "R",
-        "countryNormName": "south africa"
+        "countryNormName": "south africa",
+        "real": true
     },
     {
         "countryName": "South Georgia and the South Sandwich Islands",
@@ -1589,7 +1796,8 @@
         "currencyName": "British pound",
         "currencyCode": "GBP",
         "currencySymbol": "£",
-        "countryNormName": "south georgia and the south sandwich islands"
+        "countryNormName": "south georgia and the south sandwich islands",
+        "real": true
     },
     {
         "countryName": "Spain",
@@ -1597,7 +1805,8 @@
         "currencyName": "Euro",
         "currencyCode": "EUR",
         "currencySymbol": "€",
-        "countryNormName": "spain"
+        "countryNormName": "spain",
+        "real": true
     },
     {
         "countryName": "Sri Lanka",
@@ -1605,7 +1814,8 @@
         "currencyName": "Sri Lankan rupee",
         "currencyCode": "LKR",
         "currencySymbol": "Rs",
-        "countryNormName": "sri lanka"
+        "countryNormName": "sri lanka",
+        "real": true
     },
     {
         "countryName": "Sudan",
@@ -1613,7 +1823,8 @@
         "currencyName": "Sudanese pound",
         "currencyCode": "SDG",
         "currencySymbol": "ج.س.",
-        "countryNormName": "sudan"
+        "countryNormName": "sudan",
+        "real": true
     },
     {
         "countryName": "Suriname",
@@ -1621,7 +1832,8 @@
         "currencyName": "Surinamese dollar",
         "currencyCode": "SRD",
         "currencySymbol": "$",
-        "countryNormName": "suriname"
+        "countryNormName": "suriname",
+        "real": true
     },
     {
         "countryName": "Swaziland",
@@ -1629,7 +1841,8 @@
         "currencyName": "Swazi lilangeni",
         "currencyCode": "SZL",
         "currencySymbol": "L",
-        "countryNormName": "swaziland"
+        "countryNormName": "swaziland",
+        "real": true
     },
     {
         "countryName": "Sweden",
@@ -1637,7 +1850,8 @@
         "currencyName": "Swedish krona",
         "currencyCode": "SEK",
         "currencySymbol": "kr",
-        "countryNormName": "sweden"
+        "countryNormName": "sweden",
+        "real": true
     },
     {
         "countryName": "Switzerland",
@@ -1645,7 +1859,8 @@
         "currencyName": "Swiss franc",
         "currencyCode": "CHF",
         "currencySymbol": "Fr",
-        "countryNormName": "switzerland"
+        "countryNormName": "switzerland",
+        "real": true
     },
     {
         "countryName": "Syrian Arab Republic",
@@ -1653,7 +1868,8 @@
         "currencyName": "Syrian pound",
         "currencyCode": "SYP",
         "currencySymbol": "£",
-        "countryNormName": "syrian arab republic"
+        "countryNormName": "syrian arab republic",
+        "real": true
     },
     {
         "countryName": "Taiwan",
@@ -1661,7 +1877,8 @@
         "currencyName": "New Taiwan dollar",
         "currencyCode": "TWD",
         "currencySymbol": "$",
-        "countryNormName": "taiwan"
+        "countryNormName": "taiwan",
+        "real": true
     },
     {
         "countryName": "Tajikistan",
@@ -1669,7 +1886,8 @@
         "currencyName": "Tajikistani somoni",
         "currencyCode": "TJS",
         "currencySymbol": "ЅМ",
-        "countryNormName": "tajikistan"
+        "countryNormName": "tajikistan",
+        "real": true
     },
     {
         "countryName": "Tanzania, United Republic of",
@@ -1677,7 +1895,8 @@
         "currencyName": "Tanzanian shilling",
         "currencyCode": "TZS",
         "currencySymbol": "Sh",
-        "countryNormName": "tanzania, united republic of"
+        "countryNormName": "tanzania, united republic of",
+        "real": true
     },
     {
         "countryName": "Thailand",
@@ -1685,7 +1904,8 @@
         "currencyName": "Thai baht",
         "currencyCode": "THB",
         "currencySymbol": "฿",
-        "countryNormName": "thailand"
+        "countryNormName": "thailand",
+        "real": true
     },
     {
         "countryName": "Timor-Leste",
@@ -1693,7 +1913,8 @@
         "currencyName": "United States dollar",
         "currencyCode": "USD",
         "currencySymbol": "$",
-        "countryNormName": "timor-leste"
+        "countryNormName": "timor-leste",
+        "real": true
     },
     {
         "countryName": "Togo",
@@ -1701,7 +1922,8 @@
         "currencyName": "West African CFA franc",
         "currencyCode": "XOF",
         "currencySymbol": "Fr",
-        "countryNormName": "togo"
+        "countryNormName": "togo",
+        "real": true
     },
     {
         "countryName": "Tokelau",
@@ -1709,7 +1931,8 @@
         "currencyName": "New Zealand dollar",
         "currencyCode": "NZD",
         "currencySymbol": "$",
-        "countryNormName": "tokelau"
+        "countryNormName": "tokelau",
+        "real": true
     },
     {
         "countryName": "Tonga",
@@ -1717,7 +1940,8 @@
         "currencyName": "Tongan paʻanga",
         "currencyCode": "TOP",
         "currencySymbol": "T$",
-        "countryNormName": "tonga"
+        "countryNormName": "tonga",
+        "real": true
     },
     {
         "countryName": "Trinidad and Tobago",
@@ -1725,7 +1949,8 @@
         "currencyName": "Trinidad and Tobago dollar",
         "currencyCode": "TTD",
         "currencySymbol": "$",
-        "countryNormName": "trinidad and tobago"
+        "countryNormName": "trinidad and tobago",
+        "real": true
     },
     {
         "countryName": "Tunisia",
@@ -1733,7 +1958,8 @@
         "currencyName": "Tunisian dinar",
         "currencyCode": "TND",
         "currencySymbol": "د.ت",
-        "countryNormName": "tunisia"
+        "countryNormName": "tunisia",
+        "real": true
     },
     {
         "countryName": "Turkey",
@@ -1741,7 +1967,8 @@
         "currencyName": "Turkish lira",
         "currencyCode": "TRY",
         "currencySymbol": null,
-        "countryNormName": "turkey"
+        "countryNormName": "turkey",
+        "real": true
     },
     {
         "countryName": "Turkmenistan",
@@ -1749,7 +1976,8 @@
         "currencyName": "Turkmenistan manat",
         "currencyCode": "TMT",
         "currencySymbol": "m",
-        "countryNormName": "turkmenistan"
+        "countryNormName": "turkmenistan",
+        "real": true
     },
     {
         "countryName": "Turks and Caicos Islands",
@@ -1757,7 +1985,8 @@
         "currencyName": "United States dollar",
         "currencyCode": "USD",
         "currencySymbol": "$",
-        "countryNormName": "turks and caicos islands"
+        "countryNormName": "turks and caicos islands",
+        "real": true
     },
     {
         "countryName": "Tuvalu",
@@ -1765,7 +1994,8 @@
         "currencyName": "Australian dollar",
         "currencyCode": "AUD",
         "currencySymbol": "$",
-        "countryNormName": "tuvalu"
+        "countryNormName": "tuvalu",
+        "real": true
     },
     {
         "countryName": "Uganda",
@@ -1773,7 +2003,8 @@
         "currencyName": "Ugandan shilling",
         "currencyCode": "UGX",
         "currencySymbol": "Sh",
-        "countryNormName": "uganda"
+        "countryNormName": "uganda",
+        "real": true
     },
     {
         "countryName": "Ukraine",
@@ -1781,7 +2012,8 @@
         "currencyName": "Ukrainian hryvnia",
         "currencyCode": "UAH",
         "currencySymbol": "₴",
-        "countryNormName": "ukraine"
+        "countryNormName": "ukraine",
+        "real": true
     },
     {
         "countryName": "United Arab Emirates",
@@ -1789,7 +2021,8 @@
         "currencyName": "United Arab Emirates dirham",
         "currencyCode": "AED",
         "currencySymbol": "د.إ",
-        "countryNormName": "united arab emirates"
+        "countryNormName": "united arab emirates",
+        "real": true
     },
     {
         "countryName": "United Kingdom",
@@ -1797,7 +2030,8 @@
         "currencyName": "British pound",
         "currencyCode": "GBP",
         "currencySymbol": "£",
-        "countryNormName": "united kingdom"
+        "countryNormName": "united kingdom",
+        "real": true
     },
     {
         "countryName": "United States",
@@ -1805,7 +2039,8 @@
         "currencyName": "United States dollar",
         "currencyCode": "USD",
         "currencySymbol": "$",
-        "countryNormName": "united states"
+        "countryNormName": "united states",
+        "real": true
     },
     {
         "countryName": "Uruguay",
@@ -1813,7 +2048,8 @@
         "currencyName": "Uruguayan peso",
         "currencyCode": "UYU",
         "currencySymbol": "$",
-        "countryNormName": "uruguay"
+        "countryNormName": "uruguay",
+        "real": true
     },
     {
         "countryName": "Uzbekistan",
@@ -1821,7 +2057,8 @@
         "currencyName": "Uzbekistani so'm",
         "currencyCode": "UZS",
         "currencySymbol": null,
-        "countryNormName": "uzbekistan"
+        "countryNormName": "uzbekistan",
+        "real": true
     },
     {
         "countryName": "Vanuatu",
@@ -1829,7 +2066,8 @@
         "currencyName": "Vanuatu vatu",
         "currencyCode": "VUV",
         "currencySymbol": "Vt",
-        "countryNormName": "vanuatu"
+        "countryNormName": "vanuatu",
+        "real": true
     },
     {
         "countryName": "Venezuela",
@@ -1837,7 +2075,8 @@
         "currencyName": "Venezuelan bolívar",
         "currencyCode": "VEF",
         "currencySymbol": "Bs F",
-        "countryNormName": "venezuela"
+        "countryNormName": "venezuela",
+        "real": true
     },
     {
         "countryName": "Vietnam",
@@ -1845,7 +2084,8 @@
         "currencyName": "Vietnamese đồng",
         "currencyCode": "VND",
         "currencySymbol": "₫",
-        "countryNormName": "vietnam"
+        "countryNormName": "vietnam",
+        "real": true
     },
     {
         "countryName": "Virgin Islands (U.S.)",
@@ -1853,7 +2093,8 @@
         "currencyName": "United States dollar",
         "currencyCode": "USD",
         "currencySymbol": "$",
-        "countryNormName": "virgin islands (u.s.)"
+        "countryNormName": "virgin islands (u.s.)",
+        "real": true
     },
     {
         "countryName": "Wallis and Futuna",
@@ -1861,7 +2102,8 @@
         "currencyName": "CFP franc",
         "currencyCode": "XPF",
         "currencySymbol": "Fr",
-        "countryNormName": "wallis and futuna"
+        "countryNormName": "wallis and futuna",
+        "real": true
     },
     {
         "countryName": "Western Sahara",
@@ -1869,7 +2111,8 @@
         "currencyName": "Moroccan dirham",
         "currencyCode": "MAD",
         "currencySymbol": "د.م.",
-        "countryNormName": "western sahara"
+        "countryNormName": "western sahara",
+        "real": true
     },
     {
         "countryName": "Yemen",
@@ -1877,7 +2120,8 @@
         "currencyName": "Yemeni rial",
         "currencyCode": "YER",
         "currencySymbol": "﷼",
-        "countryNormName": "yemen"
+        "countryNormName": "yemen",
+        "real": true
     },
     {
         "countryName": "Zambia",
@@ -1885,7 +2129,8 @@
         "currencyName": "Zambian kwacha",
         "currencyCode": "ZMW",
         "currencySymbol": "ZK",
-        "countryNormName": "zambia"
+        "countryNormName": "zambia",
+        "real": true
     },
     {
         "countryName": "Zimbabwe",
@@ -1893,6 +2138,7 @@
         "currencyName": "Botswana pula",
         "currencyCode": "BWP",
         "currencySymbol": "P",
-        "countryNormName": "zimbabwe"
+        "countryNormName": "zimbabwe",
+        "real": true
     }
 ]
