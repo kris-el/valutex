@@ -26,15 +26,15 @@ class SettingsScreenState extends State<SettingsScreen> {
               onChanged: (value) =>
                   setState(() => appSettings.europeanNotation = value)),
         ),
-        /*ListTile(
+        ListTile(
           leading: const Icon(Icons.strikethrough_s),
           title: Text('Fictional countries'),
           subtitle: Text('Allow fictional counries'),
           trailing: Switch(
-              value: appSettings.europeanNotation,
+              value: appSettings.fictionalCurrencies,
               onChanged: (value) =>
                   setState(() => appSettings.fictionalCurrencies = value)),
-        ),*/
+        ),
       ],
     );
     return Scaffold(

@@ -1,6 +1,3 @@
-add fictionalCountry on SettingsScreen
-Fix Switch: Make them indipendent
-
 save data
 - settings
 - rates
