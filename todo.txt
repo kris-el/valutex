@@ -13,13 +13,6 @@ Implement HomeDrawer
 - rate on the store
 - share this app
 
-Add fictional flags:
-- Wakanda: bitcoin
-- Klingon: bitcoin
-- United federation of planets: bitcoin
-- Ferengi Alliance: gold XAU 
-- Arstotzka: flag AK
-
 settings
 - european notation
 - approximation

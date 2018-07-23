@@ -102,7 +102,7 @@ class _AmountScreenState extends State<AmountScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Padding(
-            padding: EdgeInsets.all(48.0),
+            padding: EdgeInsets.all(0.0),
             child: RaisedButton(
               child: Text(
                 'Clear',
@@ -114,8 +114,9 @@ class _AmountScreenState extends State<AmountScreen> {
               },
             ),
           ),
+          Container(width: 56.0,),
           Padding(
-            padding: EdgeInsets.all(48.0),
+            padding: EdgeInsets.all(0.0),
             child: RaisedButton(
               child: Text('Ok'),
               onPressed: () {
@@ -132,7 +133,7 @@ class _AmountScreenState extends State<AmountScreen> {
         children: <Widget>[
           upperBox,
           inputBox,
-          Container(height: 40.0),
+          Container(height: 72.0),
           actionBox,
         ],
       ),

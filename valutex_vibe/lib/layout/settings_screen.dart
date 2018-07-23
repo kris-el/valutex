@@ -29,7 +29,7 @@ class SettingsScreenState extends State<SettingsScreen> {
         ListTile(
           leading: const Icon(Icons.strikethrough_s),
           title: Text('Fictional countries'),
-          subtitle: Text('Allow fictional counries'),
+          subtitle: Text('Show fictional counries'),
           trailing: Switch(
               value: appSettings.fictionalCurrencies,
               onChanged: (value) =>

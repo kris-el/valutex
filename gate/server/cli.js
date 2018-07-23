@@ -53,6 +53,51 @@ var missingCountries = [{
   "currencySymbol": "₿",
   "countryNormName": "kazakhstan",
   "real": false
+},
+{
+  "countryName": "Arstotzka",
+  "flagCode": "AK",
+  "currencyName": "Bitcoin",
+  "currencyCode": "BTC",
+  "currencySymbol": "₿",
+  "countryNormName": "arstotzka",
+  "real": false
+},
+{
+  "countryName": "Federeation",
+  "flagCode": "FD",
+  "currencyName": "Euro",
+  "currencyCode": "EUR",
+  "currencySymbol": "€",
+  "countryNormName": "united federation of planets",
+  "real": false
+},
+{
+  "countryName": "Ferengi Alliance",
+  "flagCode": "FN",
+  "currencyName": "Ounce of gold",
+  "currencyCode": "XAU",
+  "currencySymbol": "oz",
+  "countryNormName": "ferengi alliance",
+  "real": false
+},
+{
+  "countryName": "Wakanda",
+  "flagCode": "WK",
+  "currencyName": "Bitcoin",
+  "currencyCode": "BTC",
+  "currencySymbol": "₿",
+  "countryNormName": "wakanda",
+  "real": false
+},
+{
+  "countryName": "Klingon",
+  "flagCode": "KL",
+  "currencyName": "Bitcoin",
+  "currencyCode": "BTC",
+  "currencySymbol": "₿",
+  "countryNormName": "klingon",
+  "real": false
 }];
 
 var countriesToRename = [

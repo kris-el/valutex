@@ -108,6 +108,15 @@
         "real": true
     },
     {
+        "countryName": "Arstotzka",
+        "flagCode": "AK",
+        "currencyName": "Bitcoin",
+        "currencyCode": "BTC",
+        "currencySymbol": "₿",
+        "countryNormName": "arstotzka",
+        "real": false
+    },
+    {
         "countryName": "Aruba",
         "flagCode": "AW",
         "currencyName": "Aruban florin",
@@ -617,8 +626,8 @@
         "currencyName": "Euro",
         "currencyCode": "EUR",
         "currencySymbol": "€",
-        "real": true,
-        "countryNormName": "europe"
+        "countryNormName": "europe",
+        "real": true
     },
     {
         "countryName": "Falkland Islands (Malvinas)",
@@ -637,6 +646,24 @@
         "currencySymbol": "kr",
         "countryNormName": "faroe islands",
         "real": true
+    },
+    {
+        "countryName": "Federeation",
+        "flagCode": "FD",
+        "currencyName": "Euro",
+        "currencyCode": "EUR",
+        "currencySymbol": "€",
+        "countryNormName": "united federation of planets", 
+        "real": false
+    },
+    {
+        "countryName": "Ferengi Alliance",
+        "flagCode": "FN",
+        "currencyName": "Ounce of gold",
+        "currencyCode": "XAU",
+        "currencySymbol": "oz",
+        "countryNormName": "ferengi alliance",
+        "real": false
     },
     {
         "countryName": "Fiji",
@@ -995,8 +1022,8 @@
         "currencyName": "Bitcoin",
         "currencyCode": "BTC",
         "currencySymbol": "₿",
-        "real": false,
-        "countryNormName": "kekistan"
+        "countryNormName": "kekistan",
+        "real": false
     },
     {
         "countryName": "Kenya",
@@ -1015,6 +1042,15 @@
         "currencySymbol": "$",
         "countryNormName": "kiribati",
         "real": true
+    },
+    {
+        "countryName": "Klingon",
+        "flagCode": "KL",
+        "currencyName": "Bitcoin",
+        "currencyCode": "BTC",
+        "currencySymbol": "₿",
+        "countryNormName": "klingon",
+        "real": false
     },
     {
         "countryName": "North Korea",
@@ -2095,6 +2131,15 @@
         "currencySymbol": "$",
         "countryNormName": "virgin islands (u.s.)",
         "real": true
+    },
+    {
+        "countryName": "Wakanda",
+        "flagCode": "WK",
+        "currencyName": "Bitcoin",
+        "currencyCode": "BTC",
+        "currencySymbol": "₿",
+        "countryNormName": "wakanda",
+        "real": false
     },
     {
         "countryName": "Wallis and Futuna",
