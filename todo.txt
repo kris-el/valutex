@@ -2,8 +2,6 @@ Prepare for test release android
 - Set App icon
 - App name
 
-Test no internet conncection
-
 Implement HomeDrawer 
 - about app screen
 - rate on the store
