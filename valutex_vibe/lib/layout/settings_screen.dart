@@ -23,8 +23,10 @@ class SettingsScreenState extends State<SettingsScreen> {
           subtitle: Text('Store amount input in the app'),
           trailing: Switch(
               value: appSettings.rememberInput,
-              onChanged: (value) =>
-                  setState(() => appSettings.rememberInput = value)),
+              onChanged: (value) => setState(() {
+                    appSettings.rememberInput = value;
+                    appSettings.save();
+                  })),
         ),
         ListTile(
           leading: const Icon(Icons.euro_symbol),
@@ -32,8 +34,10 @@ class SettingsScreenState extends State<SettingsScreen> {
           subtitle: Text('Apply european notation in amount'),
           trailing: Switch(
               value: appSettings.europeanNotation,
-              onChanged: (value) =>
-                  setState(() => appSettings.europeanNotation = value)),
+              onChanged: (value) => setState(() {
+                    appSettings.europeanNotation = value;
+                    appSettings.save();
+                  })),
         ),
         ListTile(
           leading: const Icon(Icons.power_input),
@@ -41,8 +45,10 @@ class SettingsScreenState extends State<SettingsScreen> {
           subtitle: Text('Approximate unnecessary precision'),
           trailing: Switch(
               value: appSettings.amountAppoximation,
-              onChanged: (value) =>
-                  setState(() => appSettings.amountAppoximation = value)),
+              onChanged: (value) => setState(() {
+                    appSettings.amountAppoximation = value;
+                    appSettings.save();
+                  })),
         ),
         ListTile(
           leading: const Icon(Icons.strikethrough_s),
@@ -50,8 +56,10 @@ class SettingsScreenState extends State<SettingsScreen> {
           subtitle: Text('Show fictional counries'),
           trailing: Switch(
               value: appSettings.fictionalCurrencies,
-              onChanged: (value) =>
-                  setState(() => appSettings.fictionalCurrencies = value)),
+              onChanged: (value) => setState(() {
+                    appSettings.fictionalCurrencies = value;
+                    appSettings.save();
+                  })),
         ),
       ],
     );

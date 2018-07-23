@@ -1,7 +1,3 @@
-save data
-- settings
-- rates
-
 Prepare for test release android
 - Set App icon
 - App name

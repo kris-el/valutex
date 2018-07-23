@@ -35,8 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    _loadRatesFromAsset(context);
-    _loadCountryListAndFavs();
+    _loadAssetsData();
     _loadRatesFromApi();
   }
 
@@ -59,20 +58,34 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
-  _loadCountryListAndFavs() async {
+  _loadAssetsData() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {
+      String rates = prefs.getString('rates');
+      String update = prefs.getString('update');
+      if ((rates != null) && (update != null)) {
+        currencySource = 'internal';
+        exchangeCurrency.currencyRates = JsonDecoder().convert(rates);
+        ratesUpdate = DateTime.parse(update).toLocal();
+        print('currencySource: $currencySource');
+      } else {
+        _loadRatesFromAsset(context);
+      }
       selectedCountries = (prefs.getStringList('favourites') ??
           ['Europe', 'United States', 'Thailand', 'Vietnam']);
       if (appSettings.rememberInput) {
         String amountLoaded = prefs.getString('amountInput');
-        String currencyLoaded = prefs.getString('currencyInput');
         if (amountLoaded != null) {
           exchangeCurrency.amountInput = double.parse(amountLoaded);
         }
+        String currencyLoaded = prefs.getString('currencyInput');
         if (currencyLoaded != null) {
           exchangeCurrency.currencyInput = currencyLoaded;
         }
+      }
+      String settings = prefs.getString('settings');
+      if (settings != null) {
+        appSettings.importFromJson(settings);
       }
       _loadCountriesFromAsset(context);
     });
@@ -115,6 +128,7 @@ class _HomeScreenState extends State<HomeScreen> {
       debugPrint('Api request refused');
       return;
     }
+    SharedPreferences prefs = await SharedPreferences.getInstance();
     currencySource = 'api';
     String apiUrl = 'https://valutex.herokuapp.com/api/getrates';
 
@@ -129,6 +143,8 @@ class _HomeScreenState extends State<HomeScreen> {
       exchangeCurrency.currencyRates = dataRates['rates'];
       ratesUpdate = DateTime.parse(dataRates['age']).toLocal();
       print('currencySource: $currencySource');
+      prefs.setString('rates', JsonEncoder().convert(dataRates['rates']));
+      prefs.setString('update', dataRates['age']);
     });
   }
 
