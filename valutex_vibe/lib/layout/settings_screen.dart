@@ -18,6 +18,15 @@ class SettingsScreenState extends State<SettingsScreen> {
     final listView = ListView(
       children: <Widget>[
         ListTile(
+          leading: const Icon(Icons.save),
+          title: Text('Save input'),
+          subtitle: Text('Store amount input in the app'),
+          trailing: Switch(
+              value: appSettings.rememberInput,
+              onChanged: (value) =>
+                  setState(() => appSettings.rememberInput = value)),
+        ),
+        ListTile(
           leading: const Icon(Icons.euro_symbol),
           title: Text('European notation'),
           subtitle: Text('Apply european notation in amount'),
@@ -25,6 +34,15 @@ class SettingsScreenState extends State<SettingsScreen> {
               value: appSettings.europeanNotation,
               onChanged: (value) =>
                   setState(() => appSettings.europeanNotation = value)),
+        ),
+        ListTile(
+          leading: const Icon(Icons.power_input),
+          title: Text('Smarth approximation'),
+          subtitle: Text('Approximate unnecessary precision'),
+          trailing: Switch(
+              value: appSettings.amountAppoximation,
+              onChanged: (value) =>
+                  setState(() => appSettings.amountAppoximation = value)),
         ),
         ListTile(
           leading: const Icon(Icons.strikethrough_s),
@@ -43,3 +61,5 @@ class SettingsScreenState extends State<SettingsScreen> {
     );
   }
 }
+
+//crop_free -> approx

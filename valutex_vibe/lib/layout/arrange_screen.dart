@@ -145,7 +145,7 @@ class Item extends StatelessWidget {
           tailWidget: Padding(
             padding: EdgeInsets.all(10.0),
             child: Icon(
-              Icons.reorder,
+              Icons.drag_handle,
               size: 48.0,
               color: dragging ? Colors.grey[200] : null,
             ),

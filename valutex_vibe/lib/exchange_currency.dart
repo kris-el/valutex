@@ -13,8 +13,8 @@ class ExchangeCurrency {
   static List<CountryDetails> _countryList =
       <CountryDetails>[]; // Data countries details
   static Map _currencyRates = {}; // Data exchange rates
-  static String _currencyInput = 'eur';
-  static num _amountInput = 1.0;
+  String currencyInput = 'eur';
+  num amountInput = 1.0;
 
   bool isCountryListLoaded() {
     if (_countryList == null) return false;
@@ -27,19 +27,12 @@ class ExchangeCurrency {
     if (_currencyRates == null) return false;
     if (_countryList.isEmpty) return false;
     if (_currencyRates.isEmpty) return false;
-    if (_currencyInput == null) return false;
-    if (_currencyInput == '') return false;
-    if (_amountInput == null) return false;
+    if (currencyInput == null) return false;
+    if (currencyInput == '') return false;
+    if (amountInput == null) return false;
     return true;
   }
 
-  set currencyInput(String currency) {
-    _currencyInput = currency;
-  }
-
-  set amountInput(num amount) {
-    _amountInput = amount;
-  }
 
   set countryList(List<CountryDetails> input) {
     _countryList = List.from(input);
@@ -189,7 +182,12 @@ class ExchangeCurrency {
   }
 
   String getCurrentAmount(String currencyOutput) {
-    num amountOutput = exchange(_currencyInput, _amountInput, currencyOutput);
+    num amountOutput = exchange(currencyInput, amountInput, currencyOutput);
+    if(!appSettings.amountAppoximation) {
+      amountOutput *= 100.0;
+      amountOutput = amountOutput.round();
+      return amountOutput.toString();
+    }
     return normalizeAmount(_currencyRates[currencyOutput], amountOutput);
   }
 

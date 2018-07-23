@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'currency_draft.dart';
 import '../exchange_currency.dart';
 
@@ -37,10 +38,16 @@ class _AmountScreenState extends State<AmountScreen> {
         TextEditingController(text: amountValue.round().toString());
   }
 
+  _storeAmount() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setString('amountInput', amountValue.toString());
+    prefs.setString('currencyInput', widget.countryDetails.currencyCode);
+  }
+
   void _updateAmoutValue(input) {
     setState(() {
       if (input == null || input.isEmpty) {
-        amountValue = 1.0;
+        amountValue = 1;
       } else {
         // Even though we are using the numerical keyboard, we still have to check
         // for non-numerical input such as '5..0' or '6 -3'
@@ -114,13 +121,18 @@ class _AmountScreenState extends State<AmountScreen> {
               },
             ),
           ),
-          Container(width: 56.0,),
+          Container(
+            width: 56.0,
+          ),
           Padding(
             padding: EdgeInsets.all(0.0),
             child: RaisedButton(
               child: Text('Ok'),
               onPressed: () {
-                if (!_isValidationError) Navigator.pop(context, amountValue);
+                if (!_isValidationError) {
+                  _storeAmount();
+                  Navigator.pop(context, amountValue);
+                }
               },
             ),
           ),

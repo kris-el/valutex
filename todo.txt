@@ -13,10 +13,4 @@ Implement HomeDrawer
 - rate on the store
 - share this app
 
-settings
-- european notation
-- approximation
-- fictional currencies
-- remeber last input
-
 on api-load show LinearProgressIndicator

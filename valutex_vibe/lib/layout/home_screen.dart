@@ -64,8 +64,17 @@ class _HomeScreenState extends State<HomeScreen> {
     setState(() {
       selectedCountries = (prefs.getStringList('favourites') ??
           ['Europe', 'United States', 'Thailand', 'Vietnam']);
+      if (appSettings.rememberInput) {
+        String amountLoaded = prefs.getString('amountInput');
+        String currencyLoaded = prefs.getString('currencyInput');
+        if (amountLoaded != null) {
+          exchangeCurrency.amountInput = double.parse(amountLoaded);
+        }
+        if (currencyLoaded != null) {
+          exchangeCurrency.currencyInput = currencyLoaded;
+        }
+      }
       _loadCountriesFromAsset(context);
-      //prefs.setStringList('favourites', ['Italy', 'United States']);
     });
   }
 
