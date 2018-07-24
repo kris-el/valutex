@@ -1,4 +1,4 @@
-package com.example.valutexvibe;
+package com.example.valutexapp;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;

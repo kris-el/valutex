@@ -1,5 +1,5 @@
-name: valutex_vibe
-description: A new Flutter project.
+name: valutex_app
+description: Valutex (currency converter)
 
 dependencies:
   flutter:
@@ -8,7 +8,7 @@ dependencies:
   cupertino_icons: ^0.1.2
   shared_preferences: ^0.4.2
   url_launcher: ^3.0.3
-  intl: "^0.15.6"
+  intl: "^0.15.7"
 
 dev_dependencies:
   flutter_test:

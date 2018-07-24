@@ -1,4 +1,4 @@
-# valutex_vibe
+# valutex_app
 
 A new Flutter project.
 

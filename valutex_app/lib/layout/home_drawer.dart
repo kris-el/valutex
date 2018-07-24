@@ -4,16 +4,11 @@ import 'settings_screen.dart';
 
 class HomeDrawer extends StatelessWidget {
   void _openSettingsScreen(BuildContext context) async {
-    //final newCurrencyList =
     await Navigator.of(context).push(
           MaterialPageRoute(
             builder: (context) => SettingsScreen(),
           ),
         );
-    //callback(newCountryCurrencyName);
-    // Scaffold
-    //     .of(context)
-    //     .showSnackBar(SnackBar(content: Text("$newCurrencyList")));
   }
 
   _openEmailApp() async {
@@ -57,8 +52,8 @@ class HomeDrawer extends StatelessWidget {
             leading: const Icon(Icons.settings),
             title: Text('Settings'),
             onTap: () {
-              _openSettingsScreen(context);
               Navigator.pop(context);
+              _openSettingsScreen(context);
             },
           ),
           ListTile(
