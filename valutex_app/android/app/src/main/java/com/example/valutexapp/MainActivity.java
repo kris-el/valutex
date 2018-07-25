@@ -1,4 +1,4 @@
-package com.example.valutexapp;
+package com.pardut.valutexapp;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;

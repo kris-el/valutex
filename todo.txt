@@ -1,10 +1,9 @@
-Prepare for test release android
-- App name
-
 Implement HomeDrawer 
 - about app screen
 - rate on the store
 - share this app
+
+Access api to get rates with authentication only
 
 Load assests, shared pref, before UI
 
