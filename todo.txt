@@ -7,4 +7,10 @@ Implement HomeDrawer
 - rate on the store
 - share this app
 
+Load assests, shared pref, before UI
+
 on api-load show LinearProgressIndicator
+
+ios
+- keyboard is not appearin
+- adopt cupertino widget style
