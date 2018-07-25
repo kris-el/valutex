@@ -256,7 +256,7 @@
         "flagCode": "BA",
         "currencyName": "Bosnia and Herzegovina convertible mark",
         "currencyCode": "BAM",
-        "currencySymbol": null,
+        "currencySymbol": "KM",
         "countryNormName": "bosnia and herzegovina",
         "real": true
     },
@@ -653,7 +653,7 @@
         "currencyName": "Euro",
         "currencyCode": "EUR",
         "currencySymbol": "€",
-        "countryNormName": "united federation of planets", 
+        "countryNormName": "federeation",
         "real": false
     },
     {
@@ -661,7 +661,7 @@
         "flagCode": "FN",
         "currencyName": "Ounce of gold",
         "currencyCode": "XAU",
-        "currencySymbol": "oz",
+        "currencySymbol": "",
         "countryNormName": "ferengi alliance",
         "real": false
     },
@@ -1012,7 +1012,7 @@
         "flagCode": "KZ",
         "currencyName": "Kazakhstani tenge",
         "currencyCode": "KZT",
-        "currencySymbol": null,
+        "currencySymbol": "₸",
         "countryNormName": "kazakhstan",
         "real": true
     },
@@ -1602,15 +1602,6 @@
         "real": true
     },
     {
-        "countryName": "Réunion",
-        "flagCode": "RE",
-        "currencyName": "Euro",
-        "currencyCode": "EUR",
-        "currencySymbol": "€",
-        "countryNormName": "reunion",
-        "real": true
-    },
-    {
         "countryName": "Romania",
         "flagCode": "RO",
         "currencyName": "Romanian leu",
@@ -2002,7 +1993,7 @@
         "flagCode": "TR",
         "currencyName": "Turkish lira",
         "currencyCode": "TRY",
-        "currencySymbol": null,
+        "currencySymbol": "₺",
         "countryNormName": "turkey",
         "real": true
     },
@@ -2092,7 +2083,7 @@
         "flagCode": "UZ",
         "currencyName": "Uzbekistani so'm",
         "currencyCode": "UZS",
-        "currencySymbol": null,
+        "currencySymbol": "лв",
         "countryNormName": "uzbekistan",
         "real": true
     },

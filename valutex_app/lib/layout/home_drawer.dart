@@ -56,30 +56,21 @@ class HomeDrawer extends StatelessWidget {
               _openSettingsScreen(context);
             },
           ),
-          ListTile(
-            leading: const Icon(Icons.info_outline),
-            title: Text('About app'),
-            onTap: () {
-              // Update the state of the app
-              // ...
-            },
-          ),
-          ListTile(
-            leading: const Icon(Icons.star),
-            title: Text('Rate on the store'),
-            onTap: () {
-              // Update the state of the app
-              // ...
-            },
-          ),
-          ListTile(
-            leading: const Icon(Icons.share),
-            title: Text('Share this app'),
-            onTap: () {
-              // Update the state of the app
-              // ...
-            },
-          ),
+          // ListTile(
+          //   leading: const Icon(Icons.info_outline),
+          //   title: Text('About app'),
+          //   onTap: () {},
+          // ),
+          // ListTile(
+          //   leading: const Icon(Icons.star),
+          //   title: Text('Rate on the store'),
+          //   onTap: () {},
+          // ),
+          // ListTile(
+          //   leading: const Icon(Icons.share),
+          //   title: Text('Share this app'),
+          //   onTap: () {},
+          // ),
           ListTile(
             leading: const Icon(Icons.email),
             title: Text('Contact developer'),

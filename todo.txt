@@ -1,5 +1,4 @@
 Prepare for test release android
-- Set App icon
 - App name
 
 Implement HomeDrawer 

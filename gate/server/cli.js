@@ -77,7 +77,7 @@ var missingCountries = [{
   "flagCode": "FN",
   "currencyName": "Ounce of gold",
   "currencyCode": "XAU",
-  "currencySymbol": "oz",
+  "currencySymbol": "",
   "countryNormName": "ferengi alliance",
   "real": false
 },
@@ -111,7 +111,15 @@ var countriesToRename = [
   { from: "Korea (Republic of)", to: "South Korea" }
 ];
 
-var flagsToRemove = ['BQ', 'BV', 'IO', 'GF', 'GP', 'HM', 'XK', 'RE', 'PM', 'SJ', 'UM'];
+var setcurrencySymbol = [
+  { when: "Armenian dram", symbol: "֏" },
+  { when: "Bosnia and Herzegovina", symbol: "KM" },
+  { when: "Kazakhstan", symbol: "₸" },
+  { when: "Turkey", symbol: "₺" },
+  { when: "Uzbekistan", symbol: "лв" }
+];
+
+var flagsToRemove = ['BQ', 'BV', 'IO', 'GF', 'GP', 'HM', 'XK', 'PM', 'SJ', 'UM', 'RE'];
 
 function normalizeToLower(str) {
   return str.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "");
@@ -192,21 +200,30 @@ if (command === 'rates') {
           obj.countryName = ren.to;
         }
       });
+      setcurrencySymbol.forEach(function (newsym) {
+        if (obj.countryName == newsym.when) {
+          obj.currencySymbol = newsym.symbol;
+        }
+      });
       obj.countryNormName = normalizeToLower(obj.countryName);
       if (!('real' in obj)) {
         obj.real = true;
       }
     });
 
+    var countriesToRemove = [];
     if (rates && countries) {
       var deleted = false;
       countries.forEach((country) => {
         if (!_.has(rates.rates, country.currencyCode) || (flagsToRemove.indexOf(country.flagCode) != -1)) {
           if (!deleted) console.log('- Countries removed: ');
           console.log(country.countryName);
-          countries.splice(countries.indexOf(country), 1);
+          countriesToRemove.push(country.countryName);
           deleted = true;
         }
+      });
+      countries = countries.filter((cObj) => {
+        return (countriesToRemove.indexOf(cObj.countryName) == -1);
       });
       fs.writeFile(__dirname + "/../offline/countries.json", JSON.stringify(countries, undefined, 4), (err) => {
         if (err) {
