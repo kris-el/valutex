@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'layout/home_screen.dart';
+import 'ui/home_screen.dart';
 
 void main() => runApp(ValutexApp());
 

@@ -13,6 +13,26 @@ class AppSettings {
   bool rememberInput = true;
   bool fictionalCurrencies = false;
 
+  String model = '';
+  String product = '';
+  String version = '';
+  String sdk = '';
+
+/*
+android:
+    model
+    product
+
+    version release
+    version sdkint
+
+ios:
+    model
+
+    systemName
+    systemVersion
+*/
+
   set europeanNotation(bool input) {
     if (input)
       amountNotation = 'eu';

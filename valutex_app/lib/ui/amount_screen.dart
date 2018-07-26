@@ -145,7 +145,7 @@ class _AmountScreenState extends State<AmountScreen> {
         children: <Widget>[
           upperBox,
           inputBox,
-          Container(height: 72.0),
+          Container(height: 64.0),
           actionBox,
         ],
       ),

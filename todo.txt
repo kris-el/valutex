@@ -3,6 +3,9 @@ Implement HomeDrawer
 - rate on the store
 - share this app
 
+Responsive
+- 4" limit amount to 40.000 reduce font size 
+
 Access api to get rates with authentication only
 
 Load assests, shared pref, before UI
