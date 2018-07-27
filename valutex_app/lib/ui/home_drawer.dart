@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'settings_screen.dart';
+import '../app_settings.dart';
+
+AppSettings appSettings = AppSettings();
 
 class HomeDrawer extends StatelessWidget {
   void _openSettingsScreen(BuildContext context) async {
@@ -14,7 +17,13 @@ class HomeDrawer extends StatelessWidget {
   _openEmailApp() async {
     String toAddress = 'valutex.pardut@gmail.com';
     String emailSubject = 'Valutex: About your app...';
-    String emailBody = 'Hi...';
+    String emailBody = '';
+    if (appSettings.product != '')
+      emailBody += 'Product: ${appSettings.product}\n';
+    if ((appSettings.version != '') && (appSettings.sdk != ''))
+      emailBody += 'Android ${appSettings.version}   API ${appSettings.sdk}\n\n';
+    emailBody += 'Hi, ';
+
     toAddress = Uri.encodeComponent(toAddress);
     emailSubject = Uri.encodeComponent(emailSubject);
     emailBody = Uri.encodeComponent(emailBody);

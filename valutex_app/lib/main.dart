@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
 import 'ui/home_screen.dart';
+import 'dart:async';
+import 'package:flutter/services.dart';
 
-void main() => runApp(ValutexApp());
+void main() {
+  runZoned(() {
+    runApp(new ValutexApp());
+  }, onError: (dynamic error, dynamic stack) {
+    print(error);
+    print(stack);
+  });
+}
 
 class ValutexApp extends StatelessWidget {
   @override

@@ -13,7 +13,9 @@ class AppSettings {
   bool rememberInput = true;
   bool fictionalCurrencies = false;
 
-  String model = '';
+  bool isFirstRun = true;
+  bool isLinked = false;
+
   String product = '';
   String version = '';
   String sdk = '';
@@ -75,6 +77,6 @@ ios:
   void load() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     String settings = prefs.getString('Settings');
-    if(settings != null) importFromJson(settings);
+    if (settings != null) importFromJson(settings);
   }
 }
