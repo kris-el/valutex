@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'settings_screen.dart';
 import '../app_settings.dart';
+import 'about_screen.dart';
 
 AppSettings appSettings = AppSettings();
 
@@ -21,7 +22,8 @@ class HomeDrawer extends StatelessWidget {
     if (appSettings.product != '')
       emailBody += 'Product: ${appSettings.product}\n';
     if ((appSettings.version != '') && (appSettings.sdk != ''))
-      emailBody += 'Android ${appSettings.version}   API ${appSettings.sdk}\n\n';
+      emailBody +=
+          'Android ${appSettings.version}   API ${appSettings.sdk}\n\n';
     emailBody += 'Hi, ';
 
     toAddress = Uri.encodeComponent(toAddress);
@@ -33,6 +35,14 @@ class HomeDrawer extends StatelessWidget {
     } else {
       throw 'Could not launch $url';
     }
+  }
+
+  void _openAboutScreen(BuildContext context) async {
+    await Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => AboutScreen(),
+          ),
+        );
   }
 
   @override
@@ -65,11 +75,13 @@ class HomeDrawer extends StatelessWidget {
               _openSettingsScreen(context);
             },
           ),
-          // ListTile(
-          //   leading: const Icon(Icons.info_outline),
-          //   title: Text('About app'),
-          //   onTap: () {},
-          // ),
+          ListTile(
+            leading: const Icon(Icons.info_outline),
+            title: Text('About app'),
+            onTap: () {
+              _openAboutScreen(context);
+            },
+          ),
           // ListTile(
           //   leading: const Icon(Icons.star),
           //   title: Text('Rate on the store'),

@@ -66,6 +66,7 @@ class _HomeScreenState extends State<HomeScreen> {
   _loadAssetsData() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {
+      appSettings.isTourComplete = (prefs.getBool('isTourComplete') ?? false);
       String rates = prefs.getString('rates');
       String update = prefs.getString('update');
       if ((rates != null) && (update != null)) {
@@ -172,7 +173,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
     setState(() {
       if (Platform.isAndroid) {
-        appSettings.product = '${deviceData['product']} (${deviceData['model']})';
+        appSettings.product =
+            '${deviceData['product']} (${deviceData['model']})';
         appSettings.version = deviceData['version.release'];
         appSettings.sdk = deviceData['version.sdkInt'].toString();
       }

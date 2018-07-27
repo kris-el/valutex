@@ -23,6 +23,12 @@ flutter:
     - assets/data/countries.json
     - assets/data/rates.json
 
+    - assets/images/logo/curex.png
+    
+    - assets/images/pictures/backmoney_v.jpg
+    - assets/images/pictures/backmoney_o.jpg
+    - assets/images/pictures/backmoney_m.jpg
+
     - assets/images/flags/country_ad_64.png
     - assets/images/flags/country_ae_64.png
     - assets/images/flags/country_af_64.png
