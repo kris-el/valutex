@@ -8,7 +8,9 @@ class AppSettings {
   }
   AppSettings._internal();
 
-  String amountNotation = 'eu';
+  String appVersion = '2.0.1';
+  bool darkTheme = true;
+  String amountNotation = 'us';
   bool amountAppoximation = true;
   bool rememberInput = true;
   bool fictionalCurrencies = false;
@@ -17,8 +19,8 @@ class AppSettings {
   bool isLinked = false; // On first connection create an account on the server
 
   String product = '';
-  String version = '';
-  String sdk = '';
+  String osVersion = '';
+  String androidSdk = '';
 
 
   set europeanNotation(bool input) {
@@ -34,6 +36,7 @@ class AppSettings {
 
   String exportToJson() {
     var settingsData = {
+      'darkTheme': darkTheme,
       'amountNotation': amountNotation,
       'amountAppoximation': amountAppoximation,
       'rememberInput': rememberInput,
@@ -45,6 +48,7 @@ class AppSettings {
   void importFromJson(String input) {
     var settingsData = JsonDecoder().convert(input);
     try {
+      darkTheme = settingsData['darkTheme'];
       amountNotation = settingsData['amountNotation'];
       amountAppoximation = settingsData['amountAppoximation'];
       rememberInput = settingsData['rememberInput'];

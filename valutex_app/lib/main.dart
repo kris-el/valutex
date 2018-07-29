@@ -1,14 +1,15 @@
-import 'package:flutter/material.dart';
-import 'ui/home_screen.dart';
 import 'dart:async';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'ui/home_screen.dart';
+
 
 void main() {
   runZoned(() {
-    runApp(new ValutexApp());
+    runApp(ValutexApp());
   }, onError: (dynamic error, dynamic stack) {
-    print(error);
-    print(stack);
+    debugPrint(error);
+    debugPrint(stack);
   });
 }
 
@@ -25,7 +26,6 @@ class ValutexApp extends StatelessWidget {
         accentColor: Colors.orange[600],
         toggleableActiveColor: Colors.orange[600],
         buttonColor: Colors.orange[600],
-        scaffoldBackgroundColor: Color(0xFF292929),
       ),
     );
   }

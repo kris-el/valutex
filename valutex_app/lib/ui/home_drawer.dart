@@ -21,9 +21,9 @@ class HomeDrawer extends StatelessWidget {
     String emailBody = '';
     if (appSettings.product != '')
       emailBody += 'Product: ${appSettings.product}\n';
-    if ((appSettings.version != '') && (appSettings.sdk != ''))
+    if ((appSettings.osVersion != '') && (appSettings.androidSdk != ''))
       emailBody +=
-          'Android ${appSettings.version}   API ${appSettings.sdk}\n\n';
+          'Android ${appSettings.osVersion}   API ${appSettings.androidSdk}\n\n';
     emailBody += 'Hi, ';
 
     toAddress = Uri.encodeComponent(toAddress);
@@ -57,9 +57,15 @@ class HomeDrawer extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
-                Text('Valutex', style: TextStyle(fontSize: 30.0)),
+                Text(
+                  'Valutex',
+                  style: TextStyle(color: Colors.white, fontSize: 30.0),
+                ),
                 //Container(height: 4.0),
-                Text('Currency exchange', style: TextStyle(fontSize: 18.0)),
+                Text(
+                  'Currency exchange',
+                  style: TextStyle(color: Colors.white, fontSize: 18.0),
+                ),
                 Container(height: 16.0),
               ],
             ),
@@ -79,6 +85,7 @@ class HomeDrawer extends StatelessWidget {
             leading: const Icon(Icons.info_outline),
             title: Text('About app'),
             onTap: () {
+              Navigator.pop(context);
               _openAboutScreen(context);
             },
           ),
@@ -95,7 +102,10 @@ class HomeDrawer extends StatelessWidget {
           ListTile(
             leading: const Icon(Icons.email),
             title: Text('Contact developer'),
-            onTap: _openEmailApp,
+            onTap: () {
+              Navigator.pop(context);
+              _openEmailApp();
+            },
           ),
         ],
       ),

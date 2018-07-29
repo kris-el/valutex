@@ -18,6 +18,17 @@ class SettingsScreenState extends State<SettingsScreen> {
     final listView = ListView(
       children: <Widget>[
         ListTile(
+          leading: const Icon(Icons.palette),
+          title: Text('Use dark theme'),
+          subtitle: Text('Use theme more relaxing for your eyes'),
+          trailing: Switch(
+              value: appSettings.darkTheme,
+              onChanged: (value) => setState(() {
+                    appSettings.darkTheme = value;
+                    appSettings.save();
+                  })),
+        ),
+        ListTile(
           leading: const Icon(Icons.save),
           title: Text('Save input'),
           subtitle: Text('Store amount input in the app'),

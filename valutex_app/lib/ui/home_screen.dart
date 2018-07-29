@@ -175,8 +175,8 @@ class _HomeScreenState extends State<HomeScreen> {
       if (Platform.isAndroid) {
         appSettings.product =
             '${deviceData['product']} (${deviceData['model']})';
-        appSettings.version = deviceData['version.release'];
-        appSettings.sdk = deviceData['version.sdkInt'].toString();
+        appSettings.osVersion = deviceData['version.release'];
+        appSettings.androidSdk = deviceData['version.sdkInt'].toString();
       }
     });
   }
@@ -314,6 +314,7 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Text(
             'Updated: ${dateFormatter.format(ratesUpdate)}',
             textAlign: TextAlign.center,
+            style: TextStyle(color: Colors.white),
           ),
         ),
       ),

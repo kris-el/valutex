@@ -1,3 +1,15 @@
+Allow light theme
+
+Numeric pad
+
+Swipe to increase or decrease the amount
+
+Feature discovery tutorial
+
+Version from code
+
+Same divider in all screens
+
 Responsive
 - 4" limit amount to 40.000 reduce font size 
 

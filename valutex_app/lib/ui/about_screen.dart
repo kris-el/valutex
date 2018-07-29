@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import '../app_settings.dart';
+
+AppSettings appSettings = AppSettings();
 
 class AboutScreen extends StatelessWidget {
   @override
@@ -20,7 +23,7 @@ class AboutScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text(
-                'Valutex 2.0.1',
+                'Valutex ${appSettings.appVersion}',
                 style: TextStyle(fontSize: 30.0, color: Colors.blueGrey[900]),
               ),
               Text(
@@ -28,9 +31,10 @@ class AboutScreen extends StatelessWidget {
                 style: TextStyle(fontSize: 18.0, color: Colors.blueGrey[900]),
               ),
               Container(height: 8.0),
-              Text('Author: Christian Grassi',
-                  style:
-                      TextStyle(fontSize: 14.0, color: Colors.blueGrey[700])),
+              Text(
+                'Author: Christian Grassi',
+                style: TextStyle(fontSize: 14.0, color: Colors.blueGrey[700]),
+              ),
             ],
           ),
         ],
@@ -40,11 +44,14 @@ class AboutScreen extends StatelessWidget {
     String description = '';
     description += 'This application is designed for casual usage.\n';
     description += 'Rates update are available once an hour.\n\n';
-    description += 'The application is realized with Flutter and Dart.\n';
+    description += 'Application realized with Flutter and Dart.\n';
 
     final boxBottom = Padding(
       padding: EdgeInsets.all(16.0),
-      child: Text(description),
+      child: Text(
+        description,
+        style: TextStyle(color: Colors.white),
+      ),
     );
 
     var body = Column(
