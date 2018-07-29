@@ -1,4 +1,8 @@
 Numeric pad
+- Define callback to set value of TextField
+- Back inline button
+- Add splash effect
+- Shrink input
 
 Responsive
 - 4" limit amount to 40.000euro reduce font size 
