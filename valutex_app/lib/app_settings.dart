@@ -36,7 +36,6 @@ class AppSettings {
 
   String exportToJson() {
     var settingsData = {
-      'darkTheme': darkTheme,
       'amountNotation': amountNotation,
       'amountAppoximation': amountAppoximation,
       'rememberInput': rememberInput,
@@ -48,7 +47,6 @@ class AppSettings {
   void importFromJson(String input) {
     var settingsData = JsonDecoder().convert(input);
     try {
-      darkTheme = settingsData['darkTheme'];
       amountNotation = settingsData['amountNotation'];
       amountAppoximation = settingsData['amountAppoximation'];
       rememberInput = settingsData['rememberInput'];

@@ -1,21 +1,13 @@
-Allow light theme
-
 Numeric pad
+
+Responsive
+- 4" limit amount to 40.000euro reduce font size 
+
+Access api to get rates with authentication only
 
 Swipe to increase or decrease the amount
 
 Feature discovery tutorial
-
-Version from code
-
-Same divider in all screens
-
-Responsive
-- 4" limit amount to 40.000 reduce font size 
-
-Show app tour
-
-Access api to get rates with authentication only
 
 Implement HomeDrawer 
 - rate on the store
@@ -26,5 +18,5 @@ Load assests, shared pref, before UI
 on api-load show LinearProgressIndicator
 
 ios
-- keyboard is not appearin
+- keyboard is not appearing
 - adopt cupertino widget style

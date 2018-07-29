@@ -56,8 +56,6 @@ class _ArrangeScreenState extends State<ArrangeScreen> {
 
     final draggedItem = _items[draggingIndex];
     setState(() {
-      debugPrint(
-          "Reordering " + item.toString() + " -> " + newPosition.toString());
       _items.removeAt(draggingIndex);
       _items.insert(newPositionIndex, draggedItem);
 
@@ -122,18 +120,18 @@ class Item extends StatelessWidget {
     return BoxDecoration(
         border: Border(
             top: first && !dragging
-                ? Divider.createBorderSide(context) //
+                ? Divider.createBorderSide(context, color: Colors.grey) //
                 : BorderSide.none,
             bottom: last && dragging
                 ? BorderSide.none //
-                : Divider.createBorderSide(context)));
+                : Divider.createBorderSide(context, color: Colors.grey)));
   }
 
   Widget _buildChild(BuildContext context, bool dragging) {
     return Container(
       // slightly transparent background white dragging (just like on iOS)
       decoration: BoxDecoration(
-        color: dragging ? Colors.grey[800] : Color(0xFF303030),
+        color: dragging ? Colors.grey : null,
       ),
       child: SafeArea(
         top: false,

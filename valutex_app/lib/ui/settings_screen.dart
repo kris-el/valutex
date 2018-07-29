@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../app_settings.dart';
+import '../dynamic_theme.dart';
 
 AppSettings appSettings = AppSettings();
 
@@ -9,6 +10,12 @@ class SettingsScreen extends StatefulWidget {
 }
 
 class SettingsScreenState extends State<SettingsScreen> {
+  @override
+  void initState() {
+    super.initState();
+    appSettings.darkTheme = DynamicTheme.of(context).getDarkTheme();
+  }
+
   @override
   Widget build(BuildContext context) {
     final appBar = AppBar(
@@ -22,11 +29,12 @@ class SettingsScreenState extends State<SettingsScreen> {
           title: Text('Use dark theme'),
           subtitle: Text('Use theme more relaxing for your eyes'),
           trailing: Switch(
-              value: appSettings.darkTheme,
-              onChanged: (value) => setState(() {
-                    appSettings.darkTheme = value;
-                    appSettings.save();
-                  })),
+            value: appSettings.darkTheme,
+            onChanged: (value) => setState(() {
+                  appSettings.darkTheme = value;
+                  DynamicTheme.of(context).setDarkTheme(value);
+                }),
+          ),
         ),
         ListTile(
           leading: const Icon(Icons.save),
