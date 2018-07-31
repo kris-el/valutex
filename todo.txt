@@ -6,9 +6,9 @@ Responsive
 
 Access api to get rates with authentication only
 
-Swipe to increase or decrease the amount
-
 Feature discovery tutorial
+
+Swipe to increase or decrease the amount
 
 Implement HomeDrawer 
 - rate on the store

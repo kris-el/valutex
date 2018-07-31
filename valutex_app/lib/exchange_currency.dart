@@ -10,6 +10,8 @@ class ExchangeCurrency {
   }
   ExchangeCurrency._internal();
 
+  final num maxEuroAmount = 1000000;
+
   static List<CountryDetails> _countryList =
       <CountryDetails>[]; // Data countries details
   static Map _currencyRates = {}; // Data exchange rates
@@ -192,7 +194,6 @@ class ExchangeCurrency {
   }
 
   num getMaxAmount(String currencyOutput) {
-    num maxEuroAmount = 2000000;
     int digits = 0;
     if (currencyOutput.toUpperCase() == 'EUR') return 10000000;
     num maxAmount = exchange('EUR', maxEuroAmount, currencyOutput);

@@ -36,17 +36,17 @@ class SettingsScreenState extends State<SettingsScreen> {
                 }),
           ),
         ),
-        ListTile(
-          leading: const Icon(Icons.save),
-          title: Text('Save input'),
-          subtitle: Text('Store amount input in the app'),
-          trailing: Switch(
-              value: appSettings.rememberInput,
-              onChanged: (value) => setState(() {
-                    appSettings.rememberInput = value;
-                    appSettings.save();
-                  })),
-        ),
+        // ListTile(
+        //   leading: const Icon(Icons.save),
+        //   title: Text('Save input'),
+        //   subtitle: Text('Store amount input in the app'),
+        //   trailing: Switch(
+        //       value: appSettings.rememberInput,
+        //       onChanged: (value) => setState(() {
+        //             appSettings.rememberInput = value;
+        //             appSettings.save();
+        //           })),
+        // ),
         ListTile(
           leading: const Icon(Icons.euro_symbol),
           title: Text('European notation'),

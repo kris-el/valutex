@@ -57,7 +57,7 @@ class _AmountScreenState extends State<AmountScreen> {
     } else {
       input = input.replaceAll(',', '');
     }
-    
+
     setState(() {
       if (input == null || input.isEmpty) {
         amountValue = 1;
@@ -84,6 +84,10 @@ class _AmountScreenState extends State<AmountScreen> {
     if (!useAmountPrefix) return '';
     if (_inputTextFieldController.text.length == 0) return '';
     return widget.countryDetails.currencySymbol + ' ';
+  }
+
+  String formattedAmount(num amountValue) {
+    return amountValue.toString();
   }
 
   @override
@@ -136,7 +140,8 @@ class _AmountScreenState extends State<AmountScreen> {
                       child: Container(
                         padding: EdgeInsets.only(top: 0.0, right: 12.0),
                         child: Text(
-                          '${amountPrefix()}${_inputTextFieldController.text}',
+                          //'${amountPrefix()}${_inputTextFieldController.text}',
+                          '${amountPrefix()}${exchangeCurrency.applyNotation(_inputTextFieldController.text, appSettings.europeanNotation)}',
                           style: TextStyle(fontSize: 32.0),
                           textAlign: TextAlign.end,
                           overflow: TextOverflow.ellipsis,
