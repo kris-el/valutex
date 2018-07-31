@@ -209,10 +209,14 @@ class ExchangeCurrency {
       number = number.replaceAll(',', '.');
     } else {
       number = number.replaceAll(',', '');
-    }    
+    }
     bool startCount = number.indexOf('.') == -1;
     int intpart = 0;
-
+    if (number.length > 1) {
+      if ((number[0].compareTo('0') == 0) && (number[1].compareTo('.') != 0)) {
+        number = number.substring(1, number.length);
+      }
+    }
 
     for (int i = number.length - 1; i >= 0; i--) {
       char = number[i];
