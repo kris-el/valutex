@@ -1,6 +1,5 @@
 Numeric pad
 - Add separator thousands
-- Enforce length limit
 
 Responsive
 - 4" limit amount to 40.000euro reduce font size 
@@ -20,5 +19,4 @@ Load assests, shared pref, before UI
 on api-load show LinearProgressIndicator
 
 ios
-- keyboard is not appearing
 - adopt cupertino widget style

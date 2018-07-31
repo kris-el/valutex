@@ -11,6 +11,7 @@ class Keypad extends StatelessWidget {
   final TextEditingController activeTextFieldController;
   final KeypadSubmitCallback onSubmit;
   final KeypadSubmitCallback onChange;
+  final maxLength;
   final String decimalSeparator = appSettings.europeanNotation ? ',' : '.';
   final List buttons = [
     '7',
@@ -32,6 +33,7 @@ class Keypad extends StatelessWidget {
     @required this.activeTextFieldController,
     @required this.onSubmit,
     this.onChange,
+    this.maxLength,
   })  : assert(activeTextFieldController != null),
         super(key: key);
 
@@ -41,6 +43,12 @@ class Keypad extends StatelessWidget {
 
     debugPrint('p ${buttons[itemIndex]}');
     if ((cCode >= '0'.codeUnitAt(0)) && (cCode <= '9'.codeUnitAt(0))) {
+      if (maxLength != null) {
+        String digits = text;
+        digits = digits.replaceAll('.', '');
+        digits = digits.replaceAll(',', '');
+        if (digits.length >= maxLength) return;
+      }
       activeTextFieldController.value =
           TextEditingValue(text: text + String.fromCharCode(cCode));
       onChange();

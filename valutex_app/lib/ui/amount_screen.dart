@@ -57,11 +57,7 @@ class _AmountScreenState extends State<AmountScreen> {
     } else {
       input = input.replaceAll(',', '');
     }
-    // if (input.length > maxLength) {
-    //   input = input.substring(0, maxLength - 1);
-    // }
-    // _inputTextFieldController.value = TextEditingValue(text: input);
-
+    
     setState(() {
       if (input == null || input.isEmpty) {
         amountValue = 1;
@@ -78,7 +74,7 @@ class _AmountScreenState extends State<AmountScreen> {
         }
         if (amountValue > widget.maxAmount) {
           _isValidationError = true;
-          _textValidationError = 'Amount to high';
+          _textValidationError = 'Amount too high';
         }
       }
     });
@@ -195,6 +191,7 @@ class _AmountScreenState extends State<AmountScreen> {
         ),
         Keypad(
           activeTextFieldController: _inputTextFieldController,
+          maxLength: 10,
           onSubmit: () {
             _updateAmoutValue(_inputTextFieldController.text);
             if (!_isValidationError) {
