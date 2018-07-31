@@ -7,8 +7,7 @@ A new Flutter project.
 For help getting started with Flutter, view our online
 [documentation](https://flutter.io/).
 
-Fav icons:
-    low_priority
-    wrap_text
-    power_input
+Impediments:
+- TextField can not align to right
+- Hero text in animation lose the style
     

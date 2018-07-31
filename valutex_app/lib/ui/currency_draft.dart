@@ -23,36 +23,39 @@ class CurrencyDraft extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final countryBox = Container(
-      color: Colors.transparent,
-      child: Image.asset(
-          "assets/images/flags/country_${flagCode.toLowerCase()}_64.png",
-          fit: BoxFit.fitHeight),
+    final countryBox = Hero(
+      tag: 'hero-flag-' + flagCode.toLowerCase(),
+      child: Container(
+        color: Colors.transparent,
+        child: Image.asset(
+            "assets/images/flags/country_${flagCode.toLowerCase()}_64.png",
+            fit: BoxFit.fitHeight),
+      ),
     );
 
     final detailsBox = Expanded(
       child: Padding(
-          padding: EdgeInsets.all(4.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text(
-                detail1,
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0),
-                textAlign: TextAlign.left,
-              ),
-              Container(
-                height: 6.0,
-              ),
-              Text(
-                detail2,
-                style: TextStyle(fontSize: 14.0),
-              ),
-            ],
-          )
-          //Text('${widget.countryName}'),
-          ),
+        padding: EdgeInsets.all(4.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              detail1,
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0),
+              textAlign: TextAlign.left,
+            ),
+            Container(
+              height: 6.0,
+            ),
+            Text(
+              detail2,
+              style: TextStyle(fontSize: 14.0),
+            ),
+          ],
+        ),
+        //Text('${widget.countryName}'),
+      ),
     );
 
     final exchangeBox = Padding(
