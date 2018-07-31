@@ -35,7 +35,6 @@ class ExchangeCurrency {
     return true;
   }
 
-
   set countryList(List<CountryDetails> input) {
     _countryList = List.from(input);
   }
@@ -43,9 +42,9 @@ class ExchangeCurrency {
   List<CountryDetails> get countryList {
     List<CountryDetails> output = <CountryDetails>[];
     if (!appSettings.fictionalCurrencies) {
-      output = List.from(_countryList.where((CountryDetails country) => country.real));
-    }
-    else {
+      output = List
+          .from(_countryList.where((CountryDetails country) => country.real));
+    } else {
       output = List.from(_countryList);
     }
     return output;
@@ -185,7 +184,7 @@ class ExchangeCurrency {
 
   String getCurrentAmount(String currencyOutput) {
     num amountOutput = exchange(currencyInput, amountInput, currencyOutput);
-    if(!appSettings.amountAppoximation) {
+    if (!appSettings.amountAppoximation) {
       amountOutput *= 100.0;
       amountOutput = amountOutput.round();
       return amountOutput.toString();
@@ -205,13 +204,20 @@ class ExchangeCurrency {
   String applyNotation(String number, bool euNotation) {
     String char;
     String output = '';
+    if (euNotation) {
+      number = number.replaceAll('.', '');
+      number = number.replaceAll(',', '.');
+    } else {
+      number = number.replaceAll(',', '');
+    }    
     bool startCount = number.indexOf('.') == -1;
     int intpart = 0;
+
 
     for (int i = number.length - 1; i >= 0; i--) {
       char = number[i];
       if (startCount) intpart++;
-      if ((char == '.')) {
+      if ((char.compareTo('.') == 0)) {
         if (euNotation) char = ',';
         startCount = true;
       }
