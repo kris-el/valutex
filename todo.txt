@@ -1,6 +1,3 @@
-Numeric pad
-- Add separator thousands
-
 Responsive
 - 4" limit amount to 40.000euro reduce font size 
 
