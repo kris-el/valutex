@@ -1,7 +1,6 @@
 Numeric pad
-- Back inline button
-- Shrink input
 - Add separator thousands
+- Enforce length limit
 
 Responsive
 - 4" limit amount to 40.000euro reduce font size 

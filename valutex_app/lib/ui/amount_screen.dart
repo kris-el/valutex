@@ -28,6 +28,8 @@ class AmountScreen extends StatefulWidget {
 }
 
 class _AmountScreenState extends State<AmountScreen> {
+  final bool enableClear = false;
+  final int maxLength = 12;
   TextEditingController _inputTextFieldController;
   bool _isValidationError = false;
   String _textValidationError = '';
@@ -48,7 +50,7 @@ class _AmountScreenState extends State<AmountScreen> {
   }
 
   void _updateAmoutValue(String input) {
-    if(appSettings.europeanNotation) {
+    if (appSettings.europeanNotation) {
       input = input.replaceAll('.', '');
       input = input.replaceAll(',', '.');
     } else {
@@ -99,51 +101,68 @@ class _AmountScreenState extends State<AmountScreen> {
 
     final inputBox = Padding(
       padding: EdgeInsets.all(16.0),
-      child: TextField(
-        controller: _inputTextFieldController,
-        decoration: InputDecoration(
-          hintText: 'Currency amount',
-          errorText: _isValidationError ? _textValidationError : null,
-        ),
-        // autofocus: true,
-        // autocorrect: true,
-        keyboardType: TextInputType.number,
-        style: TextStyle(fontSize: 20.0),
-        onChanged: _updateAmoutValue,
-      ),
-    );
-
-    final actionBox = Container(
-      color: Colors.transparent,
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Padding(
-            padding: EdgeInsets.all(0.0),
-            child: RaisedButton(
-              child: Text(
-                'Clear',
-                //style: TextStyle(color: Colors.orange[600]),
-              ),
-              //color: Colors.white,
-              onPressed: () {
-                _inputTextFieldController.clear();
-              },
-            ),
-          ),
-          Container(
-            width: 56.0,
-          ),
-          Padding(
-            padding: EdgeInsets.all(0.0),
-            child: RaisedButton(
-              child: Text('Ok'),
-              onPressed: () {
-                if (!_isValidationError) {
-                  _storeAmount();
-                  Navigator.pop(context, amountValue);
-                }
-              },
+          Expanded(
+            child: Stack(
+              //alignment: const Alignment(1.0, 0.0),
+              children: <Widget>[
+                TextField(
+                  controller: _inputTextFieldController,
+                  decoration: InputDecoration(
+                    hintText: 'Currency amount',
+                    errorText: _isValidationError ? _textValidationError : null,
+                  ),
+                  style: TextStyle(fontSize: 32.0, color: Colors.transparent),
+                  onChanged: _updateAmoutValue,
+                ),
+                Container(
+                  color: Colors.transparent,
+                  //padding: EdgeInsets.all(40.0),
+                  height: 160.0,
+                ),
+                Row(
+                  children: <Widget>[
+                    Expanded(
+                      child: Container(
+                        padding: EdgeInsets.only(top: 0.0, right: 12.0),
+                        child: Text(
+                          '${_inputTextFieldController.text}',
+                          style: TextStyle(fontSize: 32.0),
+                          textAlign: TextAlign.end,
+                        ),
+                      ),
+                    ),
+                    IconButton(
+                      icon: Icon(Icons.backspace),
+                      padding: EdgeInsets.all(12.0),
+                      iconSize: 32.0,
+                      onPressed: () {
+                        {
+                          String text = _inputTextFieldController.text;
+                          if (text.length > 0) {
+                            text = text.substring(0, text.length - 1);
+                            _inputTextFieldController.value =
+                                TextEditingValue(text: text);
+                            _updateAmoutValue(text);
+                          }
+                        }
+                      },
+                    ),
+                    (enableClear)
+                        ? IconButton(
+                            icon: Icon(Icons.clear),
+                            padding: EdgeInsets.all(12.0),
+                            iconSize: 36.0,
+                            onPressed: () {
+                              _inputTextFieldController.clear();
+                              _updateAmoutValue('');
+                            },
+                          )
+                        : Container(),
+                  ],
+                ),
+              ],
             ),
           ),
         ],
@@ -161,11 +180,6 @@ class _AmountScreenState extends State<AmountScreen> {
               // actionBox,
             ],
           ),
-        ),
-        Container(
-          color: Colors.transparent,
-          width: double.infinity,
-          height: double.infinity,
         ),
         Keypad(
           activeTextFieldController: _inputTextFieldController,
