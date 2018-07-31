@@ -29,6 +29,7 @@ class AmountScreen extends StatefulWidget {
 
 class _AmountScreenState extends State<AmountScreen> {
   final bool enableClear = false;
+  final bool useAmountPrefix = true;
   final int maxLength = 12;
   TextEditingController _inputTextFieldController;
   bool _isValidationError = false;
@@ -56,6 +57,10 @@ class _AmountScreenState extends State<AmountScreen> {
     } else {
       input = input.replaceAll(',', '');
     }
+    // if (input.length > maxLength) {
+    //   input = input.substring(0, maxLength - 1);
+    // }
+    // _inputTextFieldController.value = TextEditingValue(text: input);
 
     setState(() {
       if (input == null || input.isEmpty) {
@@ -79,6 +84,12 @@ class _AmountScreenState extends State<AmountScreen> {
     });
   }
 
+  String amountPrefix() {
+    if (!useAmountPrefix) return '';
+    if (_inputTextFieldController.text.length == 0) return '';
+    return widget.countryDetails.currencySymbol + ' ';
+  }
+
   @override
   Widget build(BuildContext context) {
     final appBar = AppBar(
@@ -92,7 +103,9 @@ class _AmountScreenState extends State<AmountScreen> {
         detail1: widget.countryDetails.countryName,
         detail2: widget.countryDetails.currencyName,
         tailWidget: Text(
-          '${widget.countryDetails.currencySymbol}    ${widget.countryDetails.currencyCode}',
+          (useAmountPrefix)
+              ? '${widget.countryDetails.currencyCode}'
+              : '${widget.countryDetails.currencySymbol}    ${widget.countryDetails.currencyCode}',
           style: TextStyle(fontSize: 18.0),
           textAlign: TextAlign.right,
         ),
@@ -127,9 +140,10 @@ class _AmountScreenState extends State<AmountScreen> {
                       child: Container(
                         padding: EdgeInsets.only(top: 0.0, right: 12.0),
                         child: Text(
-                          '${_inputTextFieldController.text}',
+                          '${amountPrefix()}${_inputTextFieldController.text}',
                           style: TextStyle(fontSize: 32.0),
                           textAlign: TextAlign.end,
+                          overflow: TextOverflow.ellipsis,
                         ),
                       ),
                     ),
@@ -176,8 +190,6 @@ class _AmountScreenState extends State<AmountScreen> {
             children: <Widget>[
               upperBox,
               inputBox,
-              // Container(height: 64.0),
-              // actionBox,
             ],
           ),
         ),
