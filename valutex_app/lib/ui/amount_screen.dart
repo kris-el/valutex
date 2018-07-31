@@ -57,6 +57,11 @@ class _AmountScreenState extends State<AmountScreen> {
     } else {
       input = input.replaceAll(',', '');
     }
+    if (input.length > 1) {
+      if ((input[0].compareTo('0') == 0) && (input[1].compareTo('.') != 0)) {
+        input = input.substring(1, input.length);
+      }
+    }
 
     setState(() {
       if (input == null || input.isEmpty) {
@@ -77,6 +82,9 @@ class _AmountScreenState extends State<AmountScreen> {
           _textValidationError = 'Amount too high';
         }
       }
+      String text =
+          exchangeCurrency.applyNotation(input, appSettings.europeanNotation);
+      _inputTextFieldController.value = TextEditingValue(text: text);
     });
   }
 
