@@ -3,8 +3,11 @@ import 'package:meta/meta.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'currency_draft.dart';
 import '../exchange_currency.dart';
+import '../keypad.dart';
+import '../app_settings.dart';
 
 ExchangeCurrency exchangeCurrency = ExchangeCurrency();
+AppSettings appSettings = AppSettings();
 
 class AmountScreen extends StatefulWidget {
   final CountryDetails countryDetails;
@@ -44,7 +47,14 @@ class _AmountScreenState extends State<AmountScreen> {
     prefs.setString('currencyInput', widget.countryDetails.currencyCode);
   }
 
-  void _updateAmoutValue(input) {
+  void _updateAmoutValue(String input) {
+    if(appSettings.europeanNotation) {
+      input = input.replaceAll('.', '');
+      input = input.replaceAll(',', '.');
+    } else {
+      input = input.replaceAll(',', '');
+    }
+
     setState(() {
       if (input == null || input.isEmpty) {
         amountValue = 1;
@@ -74,7 +84,7 @@ class _AmountScreenState extends State<AmountScreen> {
     );
 
     final upperBox = Padding(
-      padding: EdgeInsets.all(16.0),
+      padding: EdgeInsets.all(0.0),
       child: CurrencyDraft(
         flagCode: widget.countryDetails.flagCode,
         detail1: widget.countryDetails.countryName,
@@ -95,8 +105,8 @@ class _AmountScreenState extends State<AmountScreen> {
           hintText: 'Currency amount',
           errorText: _isValidationError ? _textValidationError : null,
         ),
-        autofocus: true,
-        autocorrect: true,
+        // autofocus: true,
+        // autocorrect: true,
         keyboardType: TextInputType.number,
         style: TextStyle(fontSize: 20.0),
         onChanged: _updateAmoutValue,
@@ -140,15 +150,37 @@ class _AmountScreenState extends State<AmountScreen> {
       ),
     );
 
-    final body = Center(
-      child: Column(
-        children: <Widget>[
-          upperBox,
-          inputBox,
-          Container(height: 64.0),
-          actionBox,
-        ],
-      ),
+    final body = Stack(
+      children: <Widget>[
+        Container(
+          child: Column(
+            children: <Widget>[
+              upperBox,
+              inputBox,
+              // Container(height: 64.0),
+              // actionBox,
+            ],
+          ),
+        ),
+        Container(
+          color: Colors.transparent,
+          width: double.infinity,
+          height: double.infinity,
+        ),
+        Keypad(
+          activeTextFieldController: _inputTextFieldController,
+          onSubmit: () {
+            _updateAmoutValue(_inputTextFieldController.text);
+            if (!_isValidationError) {
+              _storeAmount();
+              Navigator.pop(context, amountValue);
+            }
+          },
+          onChange: () {
+            _updateAmoutValue(_inputTextFieldController.text);
+          },
+        ),
+      ],
     );
 
     return Scaffold(
