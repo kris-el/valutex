@@ -25,9 +25,7 @@ flutter:
 
     - assets/images/logo/curex.png
     
-    - assets/images/pictures/backmoney_v.jpg
-    - assets/images/pictures/backmoney_o.jpg
-    - assets/images/pictures/backmoney_m.jpg
+    - assets/images/pictures/backmoney.jpg
 
     - assets/images/flags/country_ad_64.png
     - assets/images/flags/country_ae_64.png

@@ -1,0 +1,15 @@
+Friendly and easy currency converter, updated hourly with the main currencies in the world and more.
+
+Completly free!!!
+
+Choose your favourite currencies and keep them in your sight.
+
+* Easy and convinient interface
+* Dark and light theme
+* Search new currency by: country name, currency or code
+* Drag and drop to oraganize your favourite currencies
+* Rates updated hourly
+* Rates stored in your device for offline usage
+* Free of any charge, adverts free
+* No personal data retained or transmitted
+

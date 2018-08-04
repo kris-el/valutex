@@ -1,0 +1,1 @@
+Casual currency converter for all main currencies. Live data and offline mode!

@@ -1,3 +1,5 @@
+[Todo]
+
 Access api to get rates with authentication only
 
 Feature discovery tutorial
@@ -14,3 +16,10 @@ on api-load show LinearProgressIndicator
 
 ios
 - adopt cupertino widget style
+
+
+[Bug fix]
+
+Prevent Hero to work on search and sort
+
+Bitcoin shows wrong amount

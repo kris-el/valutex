@@ -86,7 +86,7 @@ class AboutScreen extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/images/pictures/backmoney_v.jpg"),
+            image: AssetImage("assets/images/pictures/backmoney.jpg"),
             fit: BoxFit.cover,
           ),
         ),

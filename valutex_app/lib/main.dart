@@ -31,6 +31,7 @@ class ValutexApp extends StatelessWidget {
           return MaterialApp(
             title: 'Valutex',
             theme: theme,
+            debugShowCheckedModeBanner: false,
             home: HomeScreen(
                 title: appSettings.isInDebugMode ? 'Valutex #' : 'Valutex'),
           );
