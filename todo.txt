@@ -20,4 +20,18 @@ ios
 
 [Bug fix]
 
+Settings names are not clear
+
+Switch should apply from all the row
+
+Switching approximation it got it wrong
+
 Bitcoin shows wrong amount
+
+[Improvements]
+
+Change keypad to be:
+789B
+456C
+123|
+0 .<

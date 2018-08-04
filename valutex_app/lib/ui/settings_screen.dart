@@ -50,7 +50,7 @@ class SettingsScreenState extends State<SettingsScreen> {
         ListTile(
           leading: const Icon(Icons.euro_symbol),
           title: Text('European notation'),
-          subtitle: Text('Apply european notation in amount'),
+          subtitle: Text('Change the separator of thousands and decimals'),
           trailing: Switch(
               value: appSettings.europeanNotation,
               onChanged: (value) => setState(() {
@@ -60,8 +60,8 @@ class SettingsScreenState extends State<SettingsScreen> {
         ),
         ListTile(
           leading: const Icon(Icons.power_input),
-          title: Text('Smarth approximation'),
-          subtitle: Text('Approximate unnecessary precision'),
+          title: Text('Smart approximation'),
+          subtitle: Text('Strong approximation on amount precision'),
           trailing: Switch(
               value: appSettings.amountAppoximation,
               onChanged: (value) => setState(() {
