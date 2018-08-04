@@ -259,18 +259,18 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void openSelScreen(BuildContext context) async {
     await Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (context) => SelectionScreen(),
-          ),
-        );
+      MaterialPageRoute(
+        builder: (context) => SelectionScreen(),
+      ),
+    );
   }
 
   void openArrScreen(BuildContext context) async {
     await Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (context) => ArrangeScreen(),
-          ),
-        );
+      MaterialPageRoute(
+        builder: (context) => ArrangeScreen(),
+      ),
+    );
   }
 
   @override
@@ -281,6 +281,7 @@ class _HomeScreenState extends State<HomeScreen> {
           .where((country) => country.fav)
           .forEach((element) {
         _activeCountryCurrencyWidgets.add(CurrencyWidget(
+          label: 'amount-flag-' + element.flagCode,
           countryDetails: element,
           currentAmount:
               exchangeCurrency.getCurrentAmount(element.currencyCode),

@@ -107,6 +107,7 @@ class _AmountScreenState extends State<AmountScreen> {
     final upperBox = Padding(
       padding: EdgeInsets.all(0.0),
       child: CurrencyDraft(
+        label: 'amount-flag-' + widget.countryDetails.flagCode,
         flagCode: widget.countryDetails.flagCode,
         detail1: widget.countryDetails.countryName,
         detail2: widget.countryDetails.currencyName,

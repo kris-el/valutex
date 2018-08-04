@@ -14,6 +14,7 @@ class CurrencyWidget extends StatelessWidget {
   final String currentAmount;
   final num maxAmount;
   final InputAmountCallback inputAmountCallBack;
+  final label;
 
   CurrencyWidget({
     Key key,
@@ -21,6 +22,7 @@ class CurrencyWidget extends StatelessWidget {
     @required this.currentAmount,
     @required this.maxAmount,
     @required this.inputAmountCallBack,
+    this.label,
   })  : assert(countryDetails != null),
         assert(currentAmount != null),
         assert(maxAmount != null),
@@ -48,6 +50,7 @@ class CurrencyWidget extends StatelessWidget {
       child: InkWell(
         borderRadius: BorderRadius.circular(18.0),
         child: CurrencyDraft(
+          label: label,
           flagCode: countryDetails.flagCode,
           detail1: countryDetails.countryName,
           detail2: countryDetails.currencyName,

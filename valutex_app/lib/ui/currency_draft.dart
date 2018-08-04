@@ -10,6 +10,7 @@ class CurrencyDraft extends StatelessWidget {
   final String detail2;
   final String detail3;
   final Widget tailWidget;
+  final String label;
 
   const CurrencyDraft({
     Key key,
@@ -17,6 +18,7 @@ class CurrencyDraft extends StatelessWidget {
     @required this.detail1,
     @required this.detail2,
     this.detail3,
+    this.label,
     @required this.tailWidget,
   })  : assert(flagCode != null),
         assert(detail1 != null),
@@ -27,7 +29,7 @@ class CurrencyDraft extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final countryBox = Hero(
-      tag: 'hero-flag-' + flagCode.toLowerCase(),
+      tag: (label != null) ? label : 'hero-flag-' + flagCode.toLowerCase(),
       child: Container(
         color: Colors.transparent,
         child: Image.asset(

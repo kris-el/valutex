@@ -20,6 +20,4 @@ ios
 
 [Bug fix]
 
-Prevent Hero to work on search and sort
-
 Bitcoin shows wrong amount
