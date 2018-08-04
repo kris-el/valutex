@@ -134,7 +134,10 @@ class _AmountScreenState extends State<AmountScreen> {
                     hintText: 'Currency amount',
                     errorText: _isValidationError ? _textValidationError : null,
                   ),
-                  style: TextStyle(fontSize: 32.0, color: Colors.transparent),
+                  style: TextStyle(
+                    fontSize: 32.0 * appSettings.scaleWidth,
+                    color: Colors.transparent,
+                  ),
                   onChanged: _updateAmoutValue,
                 ),
                 Container(
@@ -150,7 +153,9 @@ class _AmountScreenState extends State<AmountScreen> {
                         child: Text(
                           //'${amountPrefix()}${_inputTextFieldController.text}',
                           '${amountPrefix()}${exchangeCurrency.applyNotation(_inputTextFieldController.text, appSettings.europeanNotation)}',
-                          style: TextStyle(fontSize: 32.0),
+                          style: TextStyle(
+                            fontSize: 32.0 * appSettings.scaleWidth,
+                          ),
                           textAlign: TextAlign.end,
                           overflow: TextOverflow.ellipsis,
                         ),
@@ -159,7 +164,7 @@ class _AmountScreenState extends State<AmountScreen> {
                     IconButton(
                       icon: Icon(Icons.backspace),
                       padding: EdgeInsets.all(12.0),
-                      iconSize: 32.0,
+                      iconSize: 32.0 * appSettings.scaleWidth,
                       onPressed: () {
                         {
                           String text = _inputTextFieldController.text;
@@ -176,7 +181,7 @@ class _AmountScreenState extends State<AmountScreen> {
                         ? IconButton(
                             icon: Icon(Icons.clear),
                             padding: EdgeInsets.all(12.0),
-                            iconSize: 36.0,
+                            iconSize: 32.0 * appSettings.scaleWidth,
                             onPressed: () {
                               _inputTextFieldController.clear();
                               _updateAmoutValue('');

@@ -1,6 +1,3 @@
-Responsive
-- 4" limit amount to 40.000euro reduce font size 
-
 Access api to get rates with authentication only
 
 Feature discovery tutorial

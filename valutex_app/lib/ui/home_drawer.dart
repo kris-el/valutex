@@ -24,9 +24,9 @@ class HomeDrawer extends StatelessWidget {
     if ((appSettings.osVersion != '') && (appSettings.androidSdk != ''))
       emailBody +=
           'Android ${appSettings.osVersion}   API ${appSettings.androidSdk}\n';
-    emailBody += 'Screen: ' + MediaQuery.of(context).size.width.truncate().toString();
-    emailBody += 'x' + MediaQuery.of(context).size.height.truncate().toString();
-    emailBody += ' ' + MediaQuery.of(context).devicePixelRatio.toString() + '\n\n';
+    emailBody += 'Screen: ' + appSettings.screenWidth.toString();
+    emailBody += 'x' + appSettings.screenHeight.toString();
+    emailBody += ' ' + appSettings.screenRatio.toString() + '\n\n';
     emailBody += 'Hi, ';
 
     toAddress = Uri.encodeComponent(toAddress);

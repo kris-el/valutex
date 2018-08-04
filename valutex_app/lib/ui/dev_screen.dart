@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import '../app_settings.dart';
+
+AppSettings appSettings = AppSettings();
 
 class DevScreen extends StatefulWidget {
   @override
@@ -9,11 +12,12 @@ class _DevScreenState extends State<DevScreen> {
   @override
   Widget build(BuildContext context) {
     Map<String, dynamic> _devInfo = {
-      "Screen": MediaQuery.of(context).size.width.truncate().toString() +
+      "Screen": appSettings.screenWidth.toString() +
           'x' +
-          MediaQuery.of(context).size.height.truncate().toString() +
+          appSettings.screenHeight.toString() +
           ' ' +
-          MediaQuery.of(context).devicePixelRatio.toString(),
+          appSettings.screenRatio.toString(),
+      "Scale width": appSettings.scaleWidth.toString(),
     };
 
     final appBar = AppBar(

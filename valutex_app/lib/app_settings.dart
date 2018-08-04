@@ -22,6 +22,16 @@ class AppSettings {
   String osVersion = '';
   String androidSdk = '';
 
+  num designWidth = 411;
+  num designHeight = 683;
+  num screenWidth = 320;
+  num screenHeight = 533;
+  num screenRatio = 1.5;
+
+  num get scaleWidth {
+    num ratio = screenWidth / designWidth;
+    return (ratio <= 1.3) ? ratio : 1.3;
+  }
 
   set europeanNotation(bool input) {
     if (input)

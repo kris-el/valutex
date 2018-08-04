@@ -53,7 +53,7 @@ class CurrencyWidget extends StatelessWidget {
           detail2: countryDetails.currencyName,
           tailWidget: Text(
             '${countryDetails.currencySymbol} ${exchangeCurrency.applyNotation(currentAmount, appSettings.europeanNotation)}',
-            style: TextStyle(fontSize: 18.0),
+            style: TextStyle(fontSize: 18.0 * appSettings.scaleWidth),
             textAlign: TextAlign.right,
           ),
         ),

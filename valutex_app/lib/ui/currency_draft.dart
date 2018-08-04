@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
+import '../app_settings.dart';
+
+AppSettings appSettings = AppSettings();
 
 class CurrencyDraft extends StatelessWidget {
   final String flagCode;
@@ -34,27 +37,32 @@ class CurrencyDraft extends StatelessWidget {
     );
 
     final detailsBox = Expanded(
-      child: Padding(
-        padding: EdgeInsets.all(4.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              detail1,
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0),
-              textAlign: TextAlign.left,
-            ),
-            Container(
-              height: 6.0,
-            ),
-            Text(
-              detail2,
-              style: TextStyle(fontSize: 14.0),
-            ),
-          ],
+      child: Container(
+        // -- Hero -- should be used when got fix transition
+        //tag: 'hero-detail-' + flagCode.toLowerCase(),
+        child: Padding(
+          padding: EdgeInsets.all(4.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                detail1,
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18.0 * appSettings.scaleWidth),
+                textAlign: TextAlign.left,
+              ),
+              Container(
+                height: 6.0,
+              ),
+              Text(
+                detail2,
+                style: TextStyle(fontSize: 14.0 * appSettings.scaleWidth),
+              ),
+            ],
+          ),
         ),
-        //Text('${widget.countryName}'),
       ),
     );
 

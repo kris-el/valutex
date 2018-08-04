@@ -44,6 +44,14 @@ class _HomeScreenState extends State<HomeScreen> {
     initPlatformState();
   }
 
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    appSettings.screenWidth = MediaQuery.of(context).size.width.truncate();
+    appSettings.screenHeight = MediaQuery.of(context).size.height.truncate();
+    appSettings.screenRatio = MediaQuery.of(context).devicePixelRatio;
+  }
+
   void updateFavourite(List countries, List<String> favs) {
     countries.forEach((country) {
       int sort = favs.indexOf(country['countryName']);
