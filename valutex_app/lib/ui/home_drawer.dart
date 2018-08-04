@@ -15,7 +15,7 @@ class HomeDrawer extends StatelessWidget {
         );
   }
 
-  _openEmailApp() async {
+  _openEmailApp(BuildContext context) async {
     String toAddress = 'valutex.pardut@gmail.com';
     String emailSubject = 'Valutex: About your app...';
     String emailBody = '';
@@ -23,7 +23,10 @@ class HomeDrawer extends StatelessWidget {
       emailBody += 'Product: ${appSettings.product}\n';
     if ((appSettings.osVersion != '') && (appSettings.androidSdk != ''))
       emailBody +=
-          'Android ${appSettings.osVersion}   API ${appSettings.androidSdk}\n\n';
+          'Android ${appSettings.osVersion}   API ${appSettings.androidSdk}\n';
+    emailBody += 'Screen: ' + MediaQuery.of(context).size.width.truncate().toString();
+    emailBody += 'x' + MediaQuery.of(context).size.height.truncate().toString();
+    emailBody += ' ' + MediaQuery.of(context).devicePixelRatio.toString() + '\n\n';
     emailBody += 'Hi, ';
 
     toAddress = Uri.encodeComponent(toAddress);
@@ -104,7 +107,7 @@ class HomeDrawer extends StatelessWidget {
             title: Text('Contact developer'),
             onTap: () {
               Navigator.pop(context);
-              _openEmailApp();
+              _openEmailApp(context);
             },
           ),
         ],

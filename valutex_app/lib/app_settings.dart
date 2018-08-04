@@ -67,4 +67,10 @@ class AppSettings {
     String settings = prefs.getString('Settings');
     if (settings != null) importFromJson(settings);
   }
+
+  bool get isInDebugMode {
+    bool inDebugMode = false;
+    assert(inDebugMode = true);
+    return inDebugMode;
+  }
 }
