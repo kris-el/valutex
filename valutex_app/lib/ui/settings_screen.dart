@@ -24,61 +24,46 @@ class SettingsScreenState extends State<SettingsScreen> {
 
     final listView = ListView(
       children: <Widget>[
-        ListTile(
-          leading: const Icon(Icons.palette),
+        SwitchListTile(
+          secondary: const Icon(Icons.palette),
           title: Text('Use dark theme'),
           subtitle: Text('Use theme more relaxing for your eyes'),
-          trailing: Switch(
-            value: appSettings.darkTheme,
-            onChanged: (value) => setState(() {
-                  appSettings.darkTheme = value;
-                  DynamicTheme.of(context).setDarkTheme(value);
-                }),
-          ),
+          value: appSettings.darkTheme,
+          onChanged: (value) => setState(() {
+                appSettings.darkTheme = value;
+                DynamicTheme.of(context).setDarkTheme(value);
+              }),
         ),
-        // ListTile(
-        //   leading: const Icon(Icons.save),
-        //   title: Text('Save input'),
-        //   subtitle: Text('Store amount input in the app'),
-        //   trailing: Switch(
-        //       value: appSettings.rememberInput,
-        //       onChanged: (value) => setState(() {
-        //             appSettings.rememberInput = value;
-        //             appSettings.save();
-        //           })),
-        // ),
-        ListTile(
-          leading: const Icon(Icons.euro_symbol),
+        SwitchListTile(
+          //Icon(Icons.euro_symbol)
+          secondary: Icon(Icons.euro_symbol),
           title: Text('European notation'),
           subtitle: Text('Change the separator of thousands and decimals'),
-          trailing: Switch(
-              value: appSettings.europeanNotation,
-              onChanged: (value) => setState(() {
-                    appSettings.europeanNotation = value;
-                    appSettings.save();
-                  })),
+          value: appSettings.europeanNotation,
+          onChanged: (value) => setState(() {
+                appSettings.europeanNotation = value;
+                appSettings.save();
+              }),
         ),
-        ListTile(
-          leading: const Icon(Icons.power_input),
+        SwitchListTile(
+          secondary: const Icon(Icons.power_input),
           title: Text('Smart approximation'),
           subtitle: Text('Strong approximation on amount precision'),
-          trailing: Switch(
-              value: appSettings.amountAppoximation,
-              onChanged: (value) => setState(() {
-                    appSettings.amountAppoximation = value;
-                    appSettings.save();
-                  })),
+          value: appSettings.amountAppoximation,
+          onChanged: (value) => setState(() {
+                appSettings.amountAppoximation = value;
+                appSettings.save();
+              }),
         ),
-        ListTile(
-          leading: const Icon(Icons.strikethrough_s),
+        SwitchListTile(
+          secondary: const Icon(Icons.strikethrough_s),
           title: Text('Fictional countries'),
           subtitle: Text('Show fictional counries'),
-          trailing: Switch(
-              value: appSettings.fictionalCurrencies,
-              onChanged: (value) => setState(() {
-                    appSettings.fictionalCurrencies = value;
-                    appSettings.save();
-                  })),
+          value: appSettings.fictionalCurrencies,
+          onChanged: (value) => setState(() {
+                appSettings.fictionalCurrencies = value;
+                appSettings.save();
+              }),
         ),
       ],
     );

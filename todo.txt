@@ -20,13 +20,10 @@ ios
 
 [Bug fix]
 
-Settings names are not clear
-
-Switch should apply from all the row
-
 Switching approximation it got it wrong
 
 Bitcoin shows wrong amount
+
 
 [Improvements]
 
@@ -35,3 +32,10 @@ Change keypad to be:
 456C
 123|
 0 .<
+
+
+[Release 2.0.5]
+
+Settings names are not meaningfull
+
+Switch should work from all the row
