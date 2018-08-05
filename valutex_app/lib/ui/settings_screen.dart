@@ -18,6 +18,33 @@ class SettingsScreenState extends State<SettingsScreen> {
     appSettings.darkTheme = DynamicTheme.of(context).getDarkTheme();
   }
 
+  Future<Null> _reopenAppAlertDialog() async {
+  return showDialog<Null>(
+    context: context,
+    barrierDismissible: false, // user must tap button!
+    builder: (BuildContext context) {
+      return new AlertDialog(
+        title: new Text('Data cleared'),
+        content: new SingleChildScrollView(
+          child: new ListBody(
+            children: <Widget>[
+              new Text('Close and reopen the app again.'),
+            ],
+          ),
+        ),
+        actions: <Widget>[
+          new FlatButton(
+            child: new Text('Continue'),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          ),
+        ],
+      );
+    },
+  );
+}
+
   Future<Null> clearPreferences() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.clear();
@@ -51,6 +78,7 @@ class SettingsScreenState extends State<SettingsScreen> {
               onPressed: () {
                 clearPreferences();
                 Navigator.of(context).pop();
+                _reopenAppAlertDialog();
               },
             ),
           ],
