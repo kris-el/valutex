@@ -39,7 +39,9 @@ class _AmountScreenState extends State<AmountScreen> {
   @override
   void initState() {
     super.initState();
-    amountValue = widget.initialAmount.round();
+    amountValue = appSettings.inputAmountRound
+        ? widget.initialAmount.round()
+        : widget.initialAmount;
     amountValue = (amountValue != 0) ? amountValue : 1;
     _inputTextFieldController =
         TextEditingController(text: amountValue.toString());
@@ -83,8 +85,7 @@ class _AmountScreenState extends State<AmountScreen> {
           _textValidationError = 'Amount too high';
         }
       }
-      String text =
-          exchangeCurrency.applyNotation(input, appSettings.europeanNotation);
+      String text = input;
       _inputTextFieldController.value = TextEditingValue(text: text);
     });
   }
@@ -154,7 +155,7 @@ class _AmountScreenState extends State<AmountScreen> {
                         padding: EdgeInsets.only(top: 0.0, right: 12.0),
                         child: Text(
                           //'${amountPrefix()}${_inputTextFieldController.text}',
-                          '${amountPrefix()}${exchangeCurrency.applyNotation(_inputTextFieldController.text, appSettings.europeanNotation)}',
+                          '${amountPrefix()}${_inputTextFieldController.text}',
                           style: TextStyle(
                             fontSize: 32.0 * appSettings.scaleWidth,
                           ),

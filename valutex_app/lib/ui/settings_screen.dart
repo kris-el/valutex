@@ -28,7 +28,7 @@ class SettingsScreenState extends State<SettingsScreen> {
         content: new SingleChildScrollView(
           child: new ListBody(
             children: <Widget>[
-              new Text('Close and reopen the app again.'),
+              new Text('Close and open the app again.'),
             ],
           ),
         ),
@@ -118,11 +118,21 @@ class SettingsScreenState extends State<SettingsScreen> {
         ),
         SwitchListTile(
           secondary: const Icon(Icons.power_input),
-          title: Text('Smart approximation'),
-          subtitle: Text('Strong approximation on amount precision'),
-          value: appSettings.amountAppoximation,
+          title: Text('Extra precision'),
+          subtitle: Text('Increase precision of one significant digit in amounts calculation'),
+          value: appSettings.extraPrecision,
           onChanged: (value) => setState(() {
-                appSettings.amountAppoximation = value;
+                appSettings.extraPrecision = value;
+                appSettings.save();
+              }),
+        ),
+        SwitchListTile(
+          secondary: const Icon(Icons.input),
+          title: Text('Limit input to decimalas'),
+          subtitle: Text('Rounds the amount input in "Set amount" screen.'),
+          value: appSettings.inputAmountRound,
+          onChanged: (value) => setState(() {
+                appSettings.inputAmountRound = value;
                 appSettings.save();
               }),
         ),

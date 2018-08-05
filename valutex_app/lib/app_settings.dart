@@ -8,12 +8,13 @@ class AppSettings {
   }
   AppSettings._internal();
 
-  String appVersion = '2.0.4';
+  String appVersion = '2.0.5';
   bool darkTheme = true;
   String amountNotation = 'us';
-  bool amountAppoximation = true;
+  bool extraPrecision = false;
   bool rememberInput = true;
   bool fictionalCurrencies = false;
+  bool inputAmountRound = true;
 
   bool isTourComplete = false; // On first run shows mini tutorial
   bool isLinked = false; // On first connection create an account on the server
@@ -47,9 +48,10 @@ class AppSettings {
   String exportToJson() {
     var settingsData = {
       'amountNotation': amountNotation,
-      'amountAppoximation': amountAppoximation,
+      'amountAppoximation': extraPrecision,
       'rememberInput': rememberInput,
       'fictionalCurrencies': fictionalCurrencies,
+      'inputAmountRound': inputAmountRound,
     };
     return JsonEncoder().convert(settingsData);
   }
@@ -58,9 +60,10 @@ class AppSettings {
     var settingsData = JsonDecoder().convert(input);
     try {
       amountNotation = settingsData['amountNotation'];
-      amountAppoximation = settingsData['amountAppoximation'];
+      extraPrecision = settingsData['amountAppoximation'];
       rememberInput = settingsData['rememberInput'];
       fictionalCurrencies = settingsData['fictionalCurrencies'];
+      inputAmountRound = settingsData['inputAmountRound'];
     } catch (e) {
       print('Error on reading settings');
     }

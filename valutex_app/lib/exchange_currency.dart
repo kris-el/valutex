@@ -154,74 +154,34 @@ class ExchangeCurrency {
   }
 
   String normalizeAmount(num inRate, num inAmount) {
-    num rate = inRate;
-    num amount = inAmount;
+    int approx = 3;
+    int rateIntPart = intPart(inRate);
     String strAmount;
-    int moved = 0;
+    int pad;
 
-    const int approx = 4;
-    int rateIntPart = intPart(inRate);
+    if (appSettings.extraPrecision) approx = 4;
     if (rateIntPart > 0) {
       int decimals = approx - rateIntPart;
       if (decimals > 0) {
         return inAmount.toStringAsFixed(decimals);
+      } else {
+        pad = decimals * -1;
+        strAmount = (inAmount / pow(10, pad)).round().toString();
+        return strAmount.padRight(strAmount.length + pad, '0');
       }
     }
-    if (rate >= 1000) {
-      while (rate >= 1000) {
-        rate /= 10;
-        amount /= 10;
-        moved--;
-      }
-      amount = amount.round();
-      if (amount == 0) return '0';
-      while (moved < 0) {
-        amount *= 10;
-        moved++;
-      }
-      return amount.toString();
+    int ints = 0;
+    while (intPart(inAmount) < approx) {
+      inAmount *= 10;
+      ints++;
     }
-
-    while (rate < 1000) {
-      rate *= 10;
-      amount *= 10;
-      moved++;
-    }
-    amount = amount.round().toDouble();
-    while (moved > 0) {
-      amount /= 10.0;
-      moved--;
-    }
-    strAmount = amount.toString();
-    int dec = (decPart(inRate) < 2) ? 3 : decPart(inRate) + 1;
-    int pos = strAmount.indexOf('.') + dec;
-    pos = (strAmount.length > pos) ? pos : strAmount.length;
-    if (pos != -1) strAmount = strAmount.substring(0, pos);
-    amount = double.parse(strAmount);
-    strAmount = amount.toString();
-    strAmount = (amount == 0) ? '0' : strAmount;
-    return strAmount;
-  }
-
-  String normalizeAmount2(num inRate, num inAmount) {
-    const int approx = 4;
-    int rateIntPart = intPart(inRate);
-    if (rateIntPart > 0) {
-      int decimals = approx - rateIntPart;
-      if (decimals > 0) {
-        return inAmount.toStringAsFixed(decimals);
-      }
-    }
+    pad = ints - approx;
+    strAmount = inAmount.round().toString();
+    return '0.' + strAmount.padLeft(strAmount.length + pad, '0');
   }
 
   String getCurrentAmount(String currencyOutput) {
     num amountOutput = exchange(currencyInput, amountInput, currencyOutput);
-    if (!appSettings.amountAppoximation) {
-      amountOutput *= 100.0;
-      amountOutput = amountOutput.round();
-      amountOutput /= 100.0;
-      return amountOutput.toString();
-    }
     return normalizeAmount(_currencyRates[currencyOutput], amountOutput);
   }
 
@@ -237,12 +197,6 @@ class ExchangeCurrency {
   String applyNotation(String number, bool euNotation) {
     String char;
     String output = '';
-    if (euNotation) {
-      number = number.replaceAll('.', '');
-      number = number.replaceAll(',', '.');
-    } else {
-      number = number.replaceAll(',', '');
-    }
     bool startCount = number.indexOf('.') == -1;
     int intpart = 0;
     if (number.length > 1) {
