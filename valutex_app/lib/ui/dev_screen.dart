@@ -28,19 +28,19 @@ class _DevScreenState extends State<DevScreen> {
       children: _devInfo.keys.map((String property) {
         return Row(
           children: <Widget>[
-            new Container(
+            Container(
               padding: const EdgeInsets.all(10.0),
-              child: new Text(
+              child: Text(
                 property,
                 style: const TextStyle(
                   fontWeight: FontWeight.bold,
                 ),
               ),
             ),
-            new Expanded(
-                child: new Container(
+            Expanded(
+                child: Container(
               padding: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
-              child: new Text(
+              child: Text(
                 '${_devInfo[property]}',
                 overflow: TextOverflow.ellipsis,
               ),

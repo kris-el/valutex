@@ -27,14 +27,14 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  static final DeviceInfoPlugin deviceInfoPlugin = new DeviceInfoPlugin();
+  static final DeviceInfoPlugin deviceInfoPlugin = DeviceInfoPlugin();
   String currencySource = 'none'; // Source of exchange rates
   DateTime ratesUpdate = DateTime.now();
   List<CurrencyWidget> _activeCountryCurrencyWidgets =
       <CurrencyWidget>[]; // listview items
   List<String> selectedCountries =
       <String>[]; // index of Items to show in listview
-  DateFormat dateFormatter = new DateFormat('H:m E, d MMMM yyyy');
+  DateFormat dateFormatter = DateFormat('H:m E, d MMMM yyyy');
 
   @override
   void initState() {
@@ -301,17 +301,17 @@ class _HomeScreenState extends State<HomeScreen> {
     final appBar = AppBar(
       title: Text(widget.title),
       actions: <Widget>[
-        new IconButton(
-            icon: new Icon(Icons.playlist_add),
+        IconButton(
+            icon: Icon(Icons.playlist_add),
             onPressed: () {
               openSelScreen(context);
             }),
-        new IconButton(
-            icon: new Icon(Icons.wrap_text),
+        IconButton(
+            icon: Icon(Icons.wrap_text),
             onPressed: () {
               openArrScreen(context);
             }),
-        new IconButton(icon: new Icon(Icons.refresh), onPressed: refreshRates)
+        IconButton(icon: Icon(Icons.refresh), onPressed: refreshRates)
       ],
     );
 

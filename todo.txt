@@ -39,3 +39,5 @@ Change keypad to be:
 Settings names are not meaningfull
 
 Switch should work from all the row
+
+App reset: Clear all app data
