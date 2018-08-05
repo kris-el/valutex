@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
 import 'app_settings.dart';
 
@@ -42,8 +43,8 @@ class ExchangeCurrency {
   List<CountryDetails> get countryList {
     List<CountryDetails> output = <CountryDetails>[];
     if (!appSettings.fictionalCurrencies) {
-      output = List
-          .from(_countryList.where((CountryDetails country) => country.real));
+      output = List.from(
+          _countryList.where((CountryDetails country) => country.real));
     } else {
       output = List.from(_countryList);
     }
@@ -142,44 +143,75 @@ class ExchangeCurrency {
     return aOutput;
   }
 
+  int decPart(num input) {
+    List lst = input.toString().split('.');
+    return (lst.length == 1) ? 0 : lst[1].length;
+  }
+
+  int intPart(num input) {
+    List lst = input.toString().split('.');
+    return (lst[0].length > 1) ? lst[0].length : ((input < 1) ? 0 : 1);
+  }
+
   String normalizeAmount(num inRate, num inAmount) {
     num rate = inRate;
     num amount = inAmount;
     String strAmount;
-    int approx = 0;
+    int moved = 0;
 
+    const int approx = 4;
+    int rateIntPart = intPart(inRate);
+    if (rateIntPart > 0) {
+      int decimals = approx - rateIntPart;
+      if (decimals > 0) {
+        return inAmount.toStringAsFixed(decimals);
+      }
+    }
     if (rate >= 1000) {
       while (rate >= 1000) {
         rate /= 10;
         amount /= 10;
-        approx--;
+        moved--;
       }
       amount = amount.round();
       if (amount == 0) return '0';
-      while (approx < 0) {
+      while (moved < 0) {
         amount *= 10;
-        approx++;
+        moved++;
       }
       return amount.toString();
     }
-    if (rate < 1000) {
-      while (rate < 1000) {
-        rate *= 10;
-        amount *= 10;
-        approx++;
-      }
-      amount = amount.round().toDouble();
-      while (approx > 0) {
-        amount /= 10.0;
-        approx--;
-      }
-      strAmount = amount.toString();
-      int pos = strAmount.indexOf('.') + 3;
-      pos = (strAmount.length > pos) ? pos : strAmount.length;
-      if (pos != -1) strAmount = strAmount.substring(0, pos);
-      return strAmount;
+
+    while (rate < 1000) {
+      rate *= 10;
+      amount *= 10;
+      moved++;
     }
-    return amount.round().toString();
+    amount = amount.round().toDouble();
+    while (moved > 0) {
+      amount /= 10.0;
+      moved--;
+    }
+    strAmount = amount.toString();
+    int dec = (decPart(inRate) < 2) ? 3 : decPart(inRate) + 1;
+    int pos = strAmount.indexOf('.') + dec;
+    pos = (strAmount.length > pos) ? pos : strAmount.length;
+    if (pos != -1) strAmount = strAmount.substring(0, pos);
+    amount = double.parse(strAmount);
+    strAmount = amount.toString();
+    strAmount = (amount == 0) ? '0' : strAmount;
+    return strAmount;
+  }
+
+  String normalizeAmount2(num inRate, num inAmount) {
+    const int approx = 4;
+    int rateIntPart = intPart(inRate);
+    if (rateIntPart > 0) {
+      int decimals = approx - rateIntPart;
+      if (decimals > 0) {
+        return inAmount.toStringAsFixed(decimals);
+      }
+    }
   }
 
   String getCurrentAmount(String currencyOutput) {
