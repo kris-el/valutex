@@ -39,9 +39,10 @@ class _AmountScreenState extends State<AmountScreen> {
   @override
   void initState() {
     super.initState();
-    amountValue = widget.initialAmount;
+    amountValue = widget.initialAmount.round();
+    amountValue = (amountValue != 0) ? amountValue : 1;
     _inputTextFieldController =
-        TextEditingController(text: amountValue.round().toString());
+        TextEditingController(text: amountValue.toString());
   }
 
   _storeAmount() async {

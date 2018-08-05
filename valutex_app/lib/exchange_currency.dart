@@ -187,6 +187,7 @@ class ExchangeCurrency {
     if (!appSettings.amountAppoximation) {
       amountOutput *= 100.0;
       amountOutput = amountOutput.round();
+      amountOutput /= 100.0;
       return amountOutput.toString();
     }
     return normalizeAmount(_currencyRates[currencyOutput], amountOutput);

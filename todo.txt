@@ -20,8 +20,6 @@ ios
 
 [Bug fix]
 
-Switching approximation it got it wrong
-
 Bitcoin shows wrong amount
 
 
@@ -41,3 +39,5 @@ Settings names are not meaningfull
 Switch should work from all the row
 
 App reset: Clear all app data
+
+Fix bug: Switching approximation it got it wrong
