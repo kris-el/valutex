@@ -40,10 +40,13 @@ class ValutexApp extends StatelessWidget {
 }
 
 /*
-[Release 2.0.6] #4
+[2.0.9] #9
+Optimization for release
+
+[2.0.6] #4
 Apply notation to "Set amount" screen
 
-[Release 2.0.5] #3
+[2.0.5] #3
 Settings names are rewritten to be more meaningfull
 The switch in settings now work from all the row
 Added settings to control amount rounding

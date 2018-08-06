@@ -37,7 +37,7 @@ class AboutScreen extends StatelessWidget {
                   style: TextStyle(fontSize: 30.0, color: Colors.blueGrey[900]),
                 ),
                 Text(
-                  'Currency exchange',
+                  'Currency converter',
                   style: TextStyle(fontSize: 18.0, color: Colors.blueGrey[900]),
                 ),
                 Container(height: 8.0),
