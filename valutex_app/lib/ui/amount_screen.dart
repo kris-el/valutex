@@ -54,12 +54,6 @@ class _AmountScreenState extends State<AmountScreen> {
   }
 
   void _updateAmoutValue(String input) {
-    if (appSettings.europeanNotation) {
-      input = input.replaceAll('.', '');
-      input = input.replaceAll(',', '.');
-    } else {
-      input = input.replaceAll(',', '');
-    }
     if (input.length > 1) {
       if ((input[0].compareTo('0') == 0) && (input[1].compareTo('.') != 0)) {
         input = input.substring(1, input.length);
@@ -155,7 +149,7 @@ class _AmountScreenState extends State<AmountScreen> {
                         padding: EdgeInsets.only(top: 0.0, right: 12.0),
                         child: Text(
                           //'${amountPrefix()}${_inputTextFieldController.text}',
-                          '${amountPrefix()}${_inputTextFieldController.text}',
+                          '${amountPrefix()}${exchangeCurrency.applyNotation(_inputTextFieldController.text, appSettings.europeanNotation)}',
                           style: TextStyle(
                             fontSize: 32.0 * appSettings.scaleWidth,
                           ),

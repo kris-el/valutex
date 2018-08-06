@@ -8,7 +8,7 @@ class AppSettings {
   }
   AppSettings._internal();
 
-  String appVersion = '2.0.5';
+  String appVersion = '2.0.6';
   bool darkTheme = true;
   String amountNotation = 'us';
   bool extraPrecision = false;

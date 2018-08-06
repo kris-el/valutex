@@ -12,7 +12,8 @@ class Keypad extends StatelessWidget {
   final KeypadSubmitCallback onSubmit;
   final KeypadSubmitCallback onChange;
   final maxLength;
-  final String decimalSeparator = appSettings.europeanNotation ? ',' : '.';
+  final String shownSeparator = appSettings.europeanNotation ? ',' : '.';
+  final String realSeparator = '.';
   final List buttons = [
     '7',
     '8',
@@ -45,17 +46,15 @@ class Keypad extends StatelessWidget {
     if ((cCode >= '0'.codeUnitAt(0)) && (cCode <= '9'.codeUnitAt(0))) {
       if (maxLength != null) {
         String digits = text;
-        digits = digits.replaceAll('.', '');
-        digits = digits.replaceAll(',', '');
         if (digits.length >= maxLength) return;
       }
       activeTextFieldController.value =
           TextEditingValue(text: text + String.fromCharCode(cCode));
       onChange();
     } else if (itemIndex == 7) {
-      if (!text.contains(decimalSeparator)) {
+      if (!text.contains(realSeparator)) {
         activeTextFieldController.value =
-            TextEditingValue(text: text + decimalSeparator);
+            TextEditingValue(text: text + realSeparator);
         onChange();
       }
     } else {
@@ -88,7 +87,7 @@ class Keypad extends StatelessWidget {
                   translation:
                       ((index != 11)) ? Offset(0.0, 0.0) : Offset(-0.15, -0.1),
                   child: Text(
-                    (index == 7) ? decimalSeparator : buttons[index],
+                    (index == 7) ? shownSeparator : buttons[index],
                     style: (index != 11)
                         ? TextStyle(fontSize: 22.0)
                         : TextStyle(fontSize: 48.0),

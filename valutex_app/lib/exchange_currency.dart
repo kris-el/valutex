@@ -170,14 +170,15 @@ class ExchangeCurrency {
         return strAmount.padRight(strAmount.length + pad, '0');
       }
     }
-    int ints = 0;
-    while (intPart(inAmount) < approx) {
-      inAmount *= 10;
-      ints++;
+    num tmp = inRate;
+    int signifDigits = 0;
+    while (intPart(tmp) == 0) {
+      tmp *= 10;
+      signifDigits++;
     }
-    pad = ints - approx;
-    strAmount = inAmount.round().toString();
-    return '0.' + strAmount.padLeft(strAmount.length + pad, '0');
+    signifDigits--;
+    signifDigits += approx;
+    return inAmount.toStringAsFixed(signifDigits);
   }
 
   String getCurrentAmount(String currencyOutput) {
