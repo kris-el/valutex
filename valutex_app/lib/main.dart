@@ -40,6 +40,9 @@ class ValutexApp extends StatelessWidget {
 }
 
 /*
+[2.1.0] #10
+Fix zero amount
+
 [2.0.9] #9
 Optimization for release
 
