@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AppSettings {
@@ -65,7 +66,7 @@ class AppSettings {
       fictionalCurrencies = settingsData['fictionalCurrencies'];
       inputAmountRound = settingsData['inputAmountRound'];
     } catch (e) {
-      print('Error on reading settings');
+      debugPrint('Error on reading settings');
     }
   }
 

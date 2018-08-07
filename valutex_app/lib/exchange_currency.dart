@@ -159,15 +159,20 @@ class ExchangeCurrency {
     String strAmount;
     int pad;
 
+    if (inAmount == 0) return '0';
     if (appSettings.extraPrecision) approx = 4;
     if (rateIntPart > 0) {
       int decimals = approx - rateIntPart;
       if (decimals > 0) {
-        return inAmount.toStringAsFixed(decimals);
+        strAmount = inAmount.toStringAsFixed(decimals);
+        if(double.parse(strAmount) == 0.0) return '0';
+        return strAmount;
       } else {
         pad = decimals * -1;
         strAmount = (inAmount / pow(10, pad)).round().toString();
-        return strAmount.padRight(strAmount.length + pad, '0');
+        strAmount = strAmount.padRight(strAmount.length + pad, '0');
+        if(double.parse(strAmount) == 0.0) return '0';
+        return strAmount;
       }
     }
     num tmp = inRate;
@@ -178,7 +183,9 @@ class ExchangeCurrency {
     }
     signifDigits--;
     signifDigits += approx;
-    return inAmount.toStringAsFixed(signifDigits);
+    strAmount = inAmount.toStringAsFixed(signifDigits);
+    if(double.parse(strAmount) == 0.0) return '0';
+    return strAmount;
   }
 
   String getCurrentAmount(String currencyOutput) {

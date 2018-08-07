@@ -81,7 +81,7 @@ class _HomeScreenState extends State<HomeScreen> {
         currencySource = 'internal';
         exchangeCurrency.currencyRates = JsonDecoder().convert(rates);
         ratesUpdate = DateTime.parse(update).toLocal();
-        print('currencySource: $currencySource');
+        debugPrint('currencySource: $currencySource');
       } else {
         _loadRatesFromAsset(context);
       }
@@ -133,7 +133,7 @@ class _HomeScreenState extends State<HomeScreen> {
       currencySource = 'json';
       exchangeCurrency.currencyRates = dataRates['rates'];
       ratesUpdate = DateTime.parse(dataRates['age']).toLocal();
-      print('currencySource: $currencySource');
+      debugPrint('currencySource: $currencySource');
     });
   }
 
@@ -156,7 +156,7 @@ class _HomeScreenState extends State<HomeScreen> {
       currencySource = 'api';
       exchangeCurrency.currencyRates = dataRates['rates'];
       ratesUpdate = DateTime.parse(dataRates['age']).toLocal();
-      print('currencySource: $currencySource');
+      debugPrint('currencySource: $currencySource');
       prefs.setString('rates', JsonEncoder().convert(dataRates['rates']));
       prefs.setString('update', dataRates['age']);
     });

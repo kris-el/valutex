@@ -70,13 +70,17 @@ class _AmountScreenState extends State<AmountScreen> {
           amountValue = double.parse(input);
           _isValidationError = false;
         } on Exception catch (e) {
-          print('Error: $e');
+          debugPrint('Error: $e');
           _isValidationError = true;
           _textValidationError = 'Invalid number entered';
         }
-        if (amountValue > widget.maxAmount) {
+        if (!_isValidationError && (amountValue > widget.maxAmount)) {
           _isValidationError = true;
           _textValidationError = 'Amount too high';
+        }
+        if (!_isValidationError && (amountValue == 0)) {
+          _isValidationError = true;
+          _textValidationError = 'Enter an amount different from zero';
         }
       }
       String text = input;
