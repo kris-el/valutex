@@ -1,0 +1,17 @@
+
+[maps]
+App import bookmarks from gmaps
+Save favourites
+Open gmaps app and navigate to it 
+
+[animation]
+check if hero got fixed
+
+[translation]
+en, th, it, vn, ko, fr
+app
+listing
+
+[iOS]
+iOs widgets
+deploy app

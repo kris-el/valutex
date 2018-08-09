@@ -1,8 +1,10 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'ui/home_screen.dart';
 import 'dynamic_theme.dart';
 import 'app_settings.dart';
+import 'localization.dart';
 
 AppSettings appSettings = AppSettings();
 
@@ -29,6 +31,19 @@ class ValutexApp extends StatelessWidget {
             ),
         themedWidgetBuilder: (context, theme) {
           return MaterialApp(
+            localizationsDelegates: [
+              const ValutexLocalizationsDelegate(),
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+            ],
+            supportedLocales: [
+              const Locale('en', 'US'),
+              // const Locale('th', 'TH'),
+              //const Locale('it', 'IT'),
+              // const Locale('vn', 'VN'),
+              // const Locale('ko', 'KR'),
+              // const Locale('fr', 'FR'),
+            ],
             title: 'Valutex',
             theme: theme,
             debugShowCheckedModeBanner: false,

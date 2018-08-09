@@ -13,6 +13,7 @@ import 'selection_screen.dart';
 import 'arrange_screen.dart';
 import '../exchange_currency.dart';
 import '../app_settings.dart';
+import '../localization.dart';
 
 ExchangeCurrency exchangeCurrency = ExchangeCurrency();
 AppSettings appSettings = AppSettings();
@@ -321,6 +322,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Padding(
           padding: EdgeInsets.all(8.0),
           child: Text(
+            // '${ValutexLocalizations.of(context).updated}: ${dateFormatter.format(ratesUpdate)}',
             'Updated: ${dateFormatter.format(ratesUpdate)}',
             textAlign: TextAlign.center,
             style: TextStyle(color: Colors.white),
