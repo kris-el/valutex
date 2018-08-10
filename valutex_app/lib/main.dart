@@ -39,7 +39,7 @@ class ValutexApp extends StatelessWidget {
             supportedLocales: [
               const Locale('en', 'US'),
               const Locale('it', 'IT'),
-              //const Locale('th', 'TH'),
+              const Locale('th', 'TH'),
               //const Locale('vn', 'VN'),
               // const Locale('fr', 'FR'),
               // const Locale('ko', 'KR'),

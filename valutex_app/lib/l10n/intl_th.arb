@@ -1,0 +1,207 @@
+﻿{
+  "@@last_modified": "2018-08-10T22:19:41.977565",
+  "msgboxActionContinue": "ทำต่อ",
+  "@msgboxActionContinue": {
+    "description": "Messagebox action: Continue",
+    "type": "text",
+    "placeholders": {}
+  },
+  "msgboxActionAbort": "ยกเลิก",
+  "@msgboxActionAbort": {
+    "description": "Messagebox action: Abort",
+    "type": "text",
+    "placeholders": {}
+  },
+  "updated": "ปรับปรุง",
+  "@updated": {
+    "description": "bottomNavigationBar: Updated",
+    "type": "text",
+    "placeholders": {}
+  },
+  "appSubtitle": "แปลงสกุลเงิน",
+  "@appSubtitle": {
+    "description": "Subtitle of the app",
+    "type": "text",
+    "placeholders": {}
+  },
+  "appAuthor": "ผู้เขียน",
+  "@appAuthor": {
+    "description": "Author of the app",
+    "type": "text",
+    "placeholders": {}
+  },
+  "drawerSettings": "การตั้งค่า",
+  "@drawerSettings": {
+    "description": "Drawer list item: Settings",
+    "type": "text",
+    "placeholders": {}
+  },
+  "drawerAboutApp": "เกี่ยวกับแอพพลิเคชั่น",
+  "@drawerAboutApp": {
+    "description": "Drawer list item: About App",
+    "type": "text",
+    "placeholders": {}
+  },
+  "aboutBodyAppDescription": "แอพพลิเคชั่นนี้ถูกออกแบบเพื่อการใช้งานอย่างง่าย\nมีการปรับปรุงทุกชั่วโมง\n\nแอพพลิเคชั่นนี้สร้างขึ้นจากโปรแกรม Flutter และ Dart\n",
+  "@aboutBodyAppDescription": {
+    "description": "About body App description",
+    "type": "text",
+    "placeholders": {}
+  },
+  "drawerContactDeveloper": "ติดต่อนักพัฒนาซอฟต์แวร์",
+  "@drawerContactDeveloper": {
+    "description": "Drawer list item: Contact developer",
+    "type": "text",
+    "placeholders": {}
+  },
+  "emailTextDetailsProduct": "สินค้า",
+  "@emailTextDetailsProduct": {
+    "description": "Email details: Product",
+    "type": "text",
+    "placeholders": {}
+  },
+  "emailTextDetailsScreen": "หน้าจอ",
+  "@emailTextDetailsScreen": {
+    "description": "Email details: Screen",
+    "type": "text",
+    "placeholders": {}
+  },
+  "emailTextHello": "สวัสดี",
+  "@emailTextHello": {
+    "description": "Email details: Hello",
+    "type": "text",
+    "placeholders": {}
+  },
+  "settingsTitleUseDarkTheme": "ใช้ธีมมืด",
+  "@settingsTitleUseDarkTheme": {
+    "description": "Settings title: Use dark theme",
+    "type": "text",
+    "placeholders": {}
+  },
+  "settingsSubtitleUseDarkTheme": "ใช้ธีมเพื่อถนอมสายตา",
+  "@settingsSubtitleUseDarkTheme": {
+    "description": "Settings subtitle: Use dark theme",
+    "type": "text",
+    "placeholders": {}
+  },
+  "settingsTitleEuropeanNotation": "สัญกรณ์ยุโรป",
+  "@settingsTitleEuropeanNotation": {
+    "description": "Settings title: European notation",
+    "type": "text",
+    "placeholders": {}
+  },
+  "settingsSubtitleEuropeanNotation": "เปลี่ยนจุดทศนิยมและหลักพัน",
+  "@settingsSubtitleEuropeanNotation": {
+    "description": "Settings subtitle: European notation",
+    "type": "text",
+    "placeholders": {}
+  },
+  "settingsTitleExtraPrecision": "มีความแม่นยำ",
+  "@settingsTitleExtraPrecision": {
+    "description": "Settings title: Extra precision",
+    "type": "text",
+    "placeholders": {}
+  },
+  "settingsSubtitleExtraPrecision": "เพิ่มความถูกต้องของตัวเลขในการคำนวณจำนวนเงิน",
+  "@settingsSubtitleExtraPrecision": {
+    "description": "Settings subtitle: Extra precision",
+    "type": "text",
+    "placeholders": {}
+  },
+  "settingsTitleLimitInput": "จำกัดการใส่ข้อมูลตัวเลขจำนวนเต็ม",
+  "@settingsTitleLimitInput": {
+    "description": "Settings title: Limit input to decimalas",
+    "type": "text",
+    "placeholders": {}
+  },
+  "screenTitleSetAmount": "Set amount",
+  "@screenTitleSetAmount": {
+    "description": "Scree title: Set amount",
+    "type": "text",
+    "placeholders": {}
+  },
+  "screenTitleArrangeCurrencies": "Arrange favourites",
+  "@screenTitleArrangeCurrencies": {
+    "description": "Scree title: Set amount",
+    "type": "text",
+    "placeholders": {}
+  },
+  "settingsSubtitleLimitInput": "รอบของจำนวนที่ป้อนเข้า \"ตั้งค่าจำนวน\" หน้าจอ",
+  "@settingsSubtitleLimitInput": {
+    "description": "Settings subtitle: Limit input to decimalas",
+    "type": "text",
+    "placeholders": {}
+  },
+  "settingsTitleFictionalCountries": "ประเทศสมมติ",
+  "@settingsTitleFictionalCountries": {
+    "description": "Settings title: Fictional countries",
+    "type": "text",
+    "placeholders": {}
+  },
+  "settingsSubtitleFictionalCountries": "แสดงประเทศสมมติ",
+  "@settingsSubtitleFictionalCountries": {
+    "description": "Settings subtitle: Fictional countries",
+    "type": "text",
+    "placeholders": {}
+  },
+  "settingsTitleAppReset": "ตั้งค่าแอพพลิเคชั่นใหม่",
+  "@settingsTitleAppReset": {
+    "description": "Settings title: App reset",
+    "type": "text",
+    "placeholders": {}
+  },
+  "settingsSubtitleAppReset": "ล้างข้อมูลทั้งหมดของแอพพลิเคชั่น",
+  "@settingsSubtitleAppReset": {
+    "description": "Settings subtitle: App reset",
+    "type": "text",
+    "placeholders": {}
+  },
+  "settingsMsgboxBodyAppReset": "คุณต้องการลบแอพพลิเคชั่นทั้งหมดหรือไม่?\n\n้าคุณต้องการทำต่อ คุณจะสูญเสียการตั้งค่าทั้งหมด, แอพพลิเคชั่นจะกลับสู่สถานะแรกเริ่ม",
+  "@settingsMsgboxBodyAppReset": {
+    "description": "Settings messagebox text: App reset",
+    "type": "text",
+    "placeholders": {}
+  },
+  "settingsMsgboxTitleDataCleared": "ข้อมูลถูกลบเรียบร้อยแล้ว",
+  "@settingsMsgboxTitleDataCleared": {
+    "description": "Settings messagebox title: Data cleared",
+    "type": "text",
+    "placeholders": {}
+  },
+  "settingsMsgboxBodyDataCleared": "ปิดและเปิดแอพพลิเคชั่นอีกครั้ง",
+  "@settingsMsgboxBodyDataCleared": {
+    "description": "Settings messagebox text: Data cleared",
+    "type": "text",
+    "placeholders": {}
+  },  
+  "inputPlaceHolderSearch": "Search...",
+  "@inputPlaceHolderSearch": {
+    "description": "Input search place holder",
+    "type": "text",
+    "placeholders": {}
+  },
+  "inputPlaceHolderAmount": "จำนวนสกุลเงิน",
+  "@inputPlaceHolderAmount": {
+    "description": "Input place holder",
+    "type": "text",
+    "placeholders": {}
+  },
+  "inputErrorInvalidAmount": "ป้อนหมายเลขไม่ถูกต้อง",
+  "@inputErrorInvalidAmount": {
+    "description": "Input error: Invalid number entered",
+    "type": "text",
+    "placeholders": {}
+  },
+  "inputErrorAmountToHigh": "จำนวนสูงเกินไป",
+  "@inputErrorAmountToHigh": {
+    "description": "Input error: Amount too high",
+    "type": "text",
+    "placeholders": {}
+  },
+  "inputErrorNonZeroAmount": "ป้อนจำนวนที่ไม่ใช่ศูนย์",
+  "@inputErrorNonZeroAmount": {
+    "description": "Input error: Non zero amount",
+    "type": "text",
+    "placeholders": {}
+  }
+}
