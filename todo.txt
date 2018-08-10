@@ -1,10 +1,9 @@
 [Todo]
 
-Missing th translations:
+Missing TH translations:
 Set amount
 Arrange favourites
 Search...
-
 
 If is localization IT use European notation
 

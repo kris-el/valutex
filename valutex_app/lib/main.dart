@@ -55,6 +55,9 @@ class ValutexApp extends StatelessWidget {
 }
 
 /*
+[2.1.1] #11
+Localization IT, TH
+
 [2.1.0] #10
 Fix zero amount
 
