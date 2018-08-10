@@ -32,17 +32,17 @@ class ValutexApp extends StatelessWidget {
         themedWidgetBuilder: (context, theme) {
           return MaterialApp(
             localizationsDelegates: [
-              const ValutexLocalizationsDelegate(),
+              const AppLocalizationsDelegate(),
               GlobalMaterialLocalizations.delegate,
               GlobalWidgetsLocalizations.delegate,
             ],
             supportedLocales: [
               const Locale('en', 'US'),
-              // const Locale('th', 'TH'),
-              //const Locale('it', 'IT'),
-              // const Locale('vn', 'VN'),
-              // const Locale('ko', 'KR'),
+              const Locale('it', 'IT'),
+              //const Locale('th', 'TH'),
+              //const Locale('vn', 'VN'),
               // const Locale('fr', 'FR'),
+              // const Locale('ko', 'KR'),
             ],
             title: 'Valutex',
             theme: theme,

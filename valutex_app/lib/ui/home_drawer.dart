@@ -3,16 +3,17 @@ import 'package:url_launcher/url_launcher.dart';
 import 'settings_screen.dart';
 import '../app_settings.dart';
 import 'about_screen.dart';
+import '../localization.dart';
 
 AppSettings appSettings = AppSettings();
 
 class HomeDrawer extends StatelessWidget {
   void _openSettingsScreen(BuildContext context) async {
     await Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (context) => SettingsScreen(),
-          ),
-        );
+      MaterialPageRoute(
+        builder: (context) => SettingsScreen(),
+      ),
+    );
   }
 
   _openEmailApp(BuildContext context) async {
@@ -42,10 +43,10 @@ class HomeDrawer extends StatelessWidget {
 
   void _openAboutScreen(BuildContext context) async {
     await Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (context) => AboutScreen(),
-          ),
-        );
+      MaterialPageRoute(
+        builder: (context) => AboutScreen(),
+      ),
+    );
   }
 
   @override
@@ -66,7 +67,7 @@ class HomeDrawer extends StatelessWidget {
                 ),
                 //Container(height: 4.0),
                 Text(
-                  'Currency exchange',
+                  AppLocalizations.of(context).appSubtitle,
                   style: TextStyle(color: Colors.white, fontSize: 18.0),
                 ),
                 Container(height: 16.0),
@@ -78,7 +79,7 @@ class HomeDrawer extends StatelessWidget {
           ),
           ListTile(
             leading: const Icon(Icons.settings),
-            title: Text('Settings'),
+            title: Text(AppLocalizations.of(context).drawerSettings),
             onTap: () {
               Navigator.pop(context);
               _openSettingsScreen(context);
@@ -86,7 +87,7 @@ class HomeDrawer extends StatelessWidget {
           ),
           ListTile(
             leading: const Icon(Icons.info_outline),
-            title: Text('About app'),
+            title: Text(AppLocalizations.of(context).drawerAboutApp),
             onTap: () {
               Navigator.pop(context);
               _openAboutScreen(context);
@@ -104,7 +105,7 @@ class HomeDrawer extends StatelessWidget {
           // ),
           ListTile(
             leading: const Icon(Icons.email),
-            title: Text('Contact developer'),
+            title: Text(AppLocalizations.of(context).drawerContactDeveloper),
             onTap: () {
               Navigator.pop(context);
               _openEmailApp(context);

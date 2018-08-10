@@ -322,8 +322,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Padding(
           padding: EdgeInsets.all(8.0),
           child: Text(
-            // '${ValutexLocalizations.of(context).updated}: ${dateFormatter.format(ratesUpdate)}',
-            'Updated: ${dateFormatter.format(ratesUpdate)}',
+            '${AppLocalizations.of(context).updated} ${dateFormatter.format(ratesUpdate)}',
             textAlign: TextAlign.center,
             style: TextStyle(color: Colors.white),
           ),

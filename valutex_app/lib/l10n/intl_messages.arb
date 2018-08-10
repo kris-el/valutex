@@ -1,0 +1,33 @@
+{
+  "@@last_modified": "2018-08-10T17:11:00.914304",
+  "updated": "Updated:",
+  "@updated": {
+    "description": "bottomNavigationBar: Updated",
+    "type": "text",
+    "placeholders": {}
+  },
+  "appSubtitle": "Currency converter",
+  "@appSubtitle": {
+    "description": "Subtitle of the app",
+    "type": "text",
+    "placeholders": {}
+  },
+  "drawerSettings": "Settings",
+  "@drawerSettings": {
+    "description": "Drawer list item: Settings",
+    "type": "text",
+    "placeholders": {}
+  },
+  "drawerAboutApp": "About App",
+  "@drawerAboutApp": {
+    "description": "Drawer list item: About App",
+    "type": "text",
+    "placeholders": {}
+  },
+  "drawerContactDeveloper": "Contact developer",
+  "@drawerContactDeveloper": {
+    "description": "Drawer list item: Contact developer",
+    "type": "text",
+    "placeholders": {}
+  }
+}
