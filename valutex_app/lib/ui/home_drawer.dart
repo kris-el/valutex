@@ -21,11 +21,11 @@ class HomeDrawer extends StatelessWidget {
     String emailSubject = 'Valutex: About your app...';
     String emailBody = '';
     if (appSettings.product != '')
-      emailBody += 'Product: ${appSettings.product}\n';
+      emailBody += '${AppLocalizations.of(context).emailTextDetailsProduct}: ${appSettings.product}\n';
     if ((appSettings.osVersion != '') && (appSettings.androidSdk != ''))
       emailBody +=
           'Android ${appSettings.osVersion}   API ${appSettings.androidSdk}\n';
-    emailBody += 'Screen: ' + appSettings.screenWidth.toString();
+    emailBody += '${AppLocalizations.of(context).emailTextDetailsScreen}: ' + appSettings.screenWidth.toString();
     emailBody += 'x' + appSettings.screenHeight.toString();
     emailBody += ' ' + appSettings.screenRatio.toString() + '\n\n';
     emailBody += 'Hi, ';

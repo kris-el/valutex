@@ -1,5 +1,5 @@
 {
-  "@@last_modified": "2018-08-10T18:53:33.183314",
+  "@@last_modified": "2018-08-10T19:42:22.207590",
   "msgboxActionContinue": "Continua",
   "@msgboxActionContinue": {
     "description": "Messagebox action: Continue",
@@ -54,7 +54,19 @@
     "type": "text",
     "placeholders": {}
   },
-  "settingsTitleUseDarkTheme": "Usa tema scuro",
+  "emailTextDetailsProduct": "Product",
+  "@emailTextDetailsProduct": {
+    "description": "Email details: Product",
+    "type": "text",
+    "placeholders": {}
+  },
+  "emailTextDetailsScreen": "Screen",
+  "@emailTextDetailsScreen": {
+    "description": "Email details: Screen",
+    "type": "text",
+    "placeholders": {}
+  },
+  "settingsTitleUseDarkTheme": "Use dark theme",
   "@settingsTitleUseDarkTheme": {
     "description": "Settings title: Use dark theme",
     "type": "text",
@@ -93,6 +105,12 @@
   "settingsTitleLimitInput": "Limita input",
   "@settingsTitleLimitInput": {
     "description": "Settings title: Limit input to decimalas",
+    "type": "text",
+    "placeholders": {}
+  },
+  "screenTitleSetAmount": "Inserimento importo",
+  "@screenTitleSetAmount": {
+    "description": "Scree title: Set amount",
     "type": "text",
     "placeholders": {}
   },
@@ -141,6 +159,30 @@
   "settingsMsgboxBodyDataCleared": "Chiudi e riapri la app.",
   "@settingsMsgboxBodyDataCleared": {
     "description": "Settings messagebox text: Data cleared",
+    "type": "text",
+    "placeholders": {}
+  },
+  "inputPlaceHolder": "Importo valuta",
+  "@inputPlaceHolder": {
+    "description": "Input place holder",
+    "type": "text",
+    "placeholders": {}
+  },
+  "inputErrorInvalidAmount": "Numero invalido",
+  "@inputErrorInvalidAmount": {
+    "description": "Input error: Invalid number entered",
+    "type": "text",
+    "placeholders": {}
+  },
+  "inputErrorAmountToHigh": "Importo troppo alto",
+  "@inputErrorAmountToHigh": {
+    "description": "Input error: Amount too high",
+    "type": "text",
+    "placeholders": {}
+  },
+  "inputErrorNonZeroAmount": "Inserire un importo diverso da zero",
+  "@inputErrorNonZeroAmount": {
+    "description": "Input error: Non zero amount",
     "type": "text",
     "placeholders": {}
   }

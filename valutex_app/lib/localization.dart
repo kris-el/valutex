@@ -91,6 +91,22 @@ class AppLocalizations {
     );
   }
 
+  String get emailTextDetailsProduct {
+    return Intl.message(
+      'Product',
+      name: 'emailTextDetailsProduct',
+      desc: 'Email details: Product',
+    );
+  }
+
+  String get emailTextDetailsScreen {
+    return Intl.message(
+      'Screen',
+      name: 'emailTextDetailsScreen',
+      desc: 'Email details: Screen',
+    );
+  }
+
   String get settingsTitleUseDarkTheme {
     return Intl.message(
       'Use dark theme',
@@ -144,6 +160,14 @@ class AppLocalizations {
       'Limit input to integer',
       name: 'settingsTitleLimitInput',
       desc: 'Settings title: Limit input to decimalas',
+    );
+  }
+
+  String get screenTitleSetAmount {
+    return Intl.message(
+      'Set amount',
+      name: 'screenTitleSetAmount',
+      desc: 'Scree title: Set amount',
     );
   }
 
@@ -208,6 +232,38 @@ class AppLocalizations {
       'Close and open the app again.',
       name: 'settingsMsgboxBodyDataCleared',
       desc: 'Settings messagebox text: Data cleared',
+    );
+  }
+
+  String get inputPlaceHolder {
+    return Intl.message(
+      'Currency amount',
+      name: 'inputPlaceHolder',
+      desc: 'Input place holder',
+    );
+  }
+
+  String get inputErrorInvalidAmount {
+    return Intl.message(
+      'Invalid number entered',
+      name: 'inputErrorInvalidAmount',
+      desc: 'Input error: Invalid number entered',
+    );
+  }
+
+  String get inputErrorAmountToHigh {
+    return Intl.message(
+      'Amount too high',
+      name: 'inputErrorAmountToHigh',
+      desc: 'Input error: Amount too high',
+    );
+  }
+
+  String get inputErrorNonZeroAmount {
+    return Intl.message(
+      'Enter an amount different from zero',
+      name: 'inputErrorNonZeroAmount',
+      desc: 'Input error: Non zero amount',
     );
   }
 }

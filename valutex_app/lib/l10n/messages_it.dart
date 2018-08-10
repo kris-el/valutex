@@ -25,8 +25,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "drawerAboutApp" : MessageLookupByLibrary.simpleMessage("About App"),
     "drawerContactDeveloper" : MessageLookupByLibrary.simpleMessage("Contatta sviluppatore"),
     "drawerSettings" : MessageLookupByLibrary.simpleMessage("Impostazioni"),
+    "emailTextDetailsProduct" : MessageLookupByLibrary.simpleMessage("Product"),
+    "emailTextDetailsScreen" : MessageLookupByLibrary.simpleMessage("Screen"),
+    "inputErrorAmountToHigh" : MessageLookupByLibrary.simpleMessage("Importo troppo alto"),
+    "inputErrorInvalidAmount" : MessageLookupByLibrary.simpleMessage("Numero invalido"),
+    "inputErrorNonZeroAmount" : MessageLookupByLibrary.simpleMessage("Inserire un importo diverso da zero"),
+    "inputPlaceHolder" : MessageLookupByLibrary.simpleMessage("Importo valuta"),
     "msgboxActionAbort" : MessageLookupByLibrary.simpleMessage("Annulla"),
     "msgboxActionContinue" : MessageLookupByLibrary.simpleMessage("Continua"),
+    "screenTitleSetAmount" : MessageLookupByLibrary.simpleMessage("Inserimento importo"),
     "settingsMsgboxBodyAppReset" : MessageLookupByLibrary.simpleMessage("Vuoi cancellare tutti i dati di questa App?\n\nSe continui tutte le tue preferenze andranno perse riportando la App allo stato originale."),
     "settingsMsgboxBodyDataCleared" : MessageLookupByLibrary.simpleMessage("Chiudi e riapri la app."),
     "settingsMsgboxTitleDataCleared" : MessageLookupByLibrary.simpleMessage("Dati eliminati"),
@@ -41,7 +48,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "settingsTitleExtraPrecision" : MessageLookupByLibrary.simpleMessage("Extra precisione"),
     "settingsTitleFictionalCountries" : MessageLookupByLibrary.simpleMessage("Nazioni fittizie"),
     "settingsTitleLimitInput" : MessageLookupByLibrary.simpleMessage("Limita input"),
-    "settingsTitleUseDarkTheme" : MessageLookupByLibrary.simpleMessage("Usa tema scuro"),
+    "settingsTitleUseDarkTheme" : MessageLookupByLibrary.simpleMessage("Use dark theme"),
     "updated" : MessageLookupByLibrary.simpleMessage("Ultimo agg")
   };
 }

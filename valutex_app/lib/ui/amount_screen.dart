@@ -5,6 +5,7 @@ import 'currency_draft.dart';
 import '../exchange_currency.dart';
 import '../keypad.dart';
 import '../app_settings.dart';
+import '../localization.dart';
 
 ExchangeCurrency exchangeCurrency = ExchangeCurrency();
 AppSettings appSettings = AppSettings();
@@ -72,15 +73,18 @@ class _AmountScreenState extends State<AmountScreen> {
         } on Exception catch (e) {
           debugPrint('Error: $e');
           _isValidationError = true;
-          _textValidationError = 'Invalid number entered';
+          _textValidationError =
+              AppLocalizations.of(context).inputErrorInvalidAmount;
         }
         if (!_isValidationError && (amountValue > widget.maxAmount)) {
           _isValidationError = true;
-          _textValidationError = 'Amount too high';
+          _textValidationError =
+              AppLocalizations.of(context).inputErrorAmountToHigh;
         }
         if (!_isValidationError && (amountValue == 0)) {
           _isValidationError = true;
-          _textValidationError = 'Enter an amount different from zero';
+          _textValidationError =
+              AppLocalizations.of(context).inputErrorNonZeroAmount;
         }
       }
       String text = input;
@@ -101,7 +105,7 @@ class _AmountScreenState extends State<AmountScreen> {
   @override
   Widget build(BuildContext context) {
     final appBar = AppBar(
-      title: Text('Set amount'),
+      title: Text(AppLocalizations.of(context).screenTitleSetAmount),
     );
 
     final upperBox = Padding(
@@ -132,7 +136,7 @@ class _AmountScreenState extends State<AmountScreen> {
                 TextField(
                   controller: _inputTextFieldController,
                   decoration: InputDecoration(
-                    hintText: 'Currency amount',
+                    hintText: AppLocalizations.of(context).inputPlaceHolder,
                     errorText: _isValidationError ? _textValidationError : null,
                   ),
                   style: TextStyle(
