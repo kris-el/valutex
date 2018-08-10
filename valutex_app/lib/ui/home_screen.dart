@@ -322,7 +322,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Padding(
           padding: EdgeInsets.all(8.0),
           child: Text(
-            '${AppLocalizations.of(context).updated} ${dateFormatter.format(ratesUpdate)}',
+            '${AppLocalizations.of(context).updated}: ${dateFormatter.format(ratesUpdate)}',
             textAlign: TextAlign.center,
             style: TextStyle(color: Colors.white),
           ),

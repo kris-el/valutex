@@ -1,5 +1,5 @@
 {
-  "@@last_modified": "2018-08-10T18:10:08.829459",
+  "@@last_modified": "2018-08-10T18:53:33.183314",
   "msgboxActionContinue": "Continua",
   "@msgboxActionContinue": {
     "description": "Messagebox action: Continue",
@@ -12,7 +12,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "updated": "Aggiornato:",
+  "updated": "Ultimo agg",
   "@updated": {
     "description": "bottomNavigationBar: Updated",
     "type": "text",
@@ -21,6 +21,12 @@
   "appSubtitle": "Cambio valuta",
   "@appSubtitle": {
     "description": "Subtitle of the app",
+    "type": "text",
+    "placeholders": {}
+  },
+  "appAuthor": "Autore",
+  "@appAuthor": {
+    "description": "Author of the app",
     "type": "text",
     "placeholders": {}
   },
@@ -33,6 +39,12 @@
   "drawerAboutApp": "About App",
   "@drawerAboutApp": {
     "description": "Drawer list item: About App",
+    "type": "text",
+    "placeholders": {}
+  },
+  "aboutBodyAppDescription": "Questa applicazione è stata pensata per l'uso quotidiano.\nI tassi di cambio sono aggiornati ogni ora.\n\nApplicazione realizzata con Flutter e Dart.\n",
+  "@aboutBodyAppDescription": {
+    "description": "About body App description",
     "type": "text",
     "placeholders": {}
   },

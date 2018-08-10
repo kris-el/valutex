@@ -37,7 +37,7 @@ class AppLocalizations {
 
   String get updated {
     return Intl.message(
-      'Updated:',
+      'Updated',
       name: 'updated',
       desc: 'bottomNavigationBar: Updated',
     );
@@ -48,6 +48,14 @@ class AppLocalizations {
       'Currency converter',
       name: 'appSubtitle',
       desc: 'Subtitle of the app',
+    );
+  }
+
+  String get appAuthor {
+    return Intl.message(
+      'Author',
+      name: 'appAuthor',
+      desc: 'Author of the app',
     );
   }
 
@@ -64,6 +72,14 @@ class AppLocalizations {
       'About App',
       name: 'drawerAboutApp',
       desc: 'Drawer list item: About App',
+    );
+  }
+
+  String get aboutBodyAppDescription {
+    return Intl.message(
+      'This application is designed for casual usage.\nRates update are available once an hour.\n\nApplication realized with Flutter and Dart.\n',
+      name: 'aboutBodyAppDescription',
+      desc: 'About body App description',
     );
   }
 
@@ -125,7 +141,7 @@ class AppLocalizations {
 
   String get settingsTitleLimitInput {
     return Intl.message(
-      'Limit input to decimalas',
+      'Limit input to integer',
       name: 'settingsTitleLimitInput',
       desc: 'Settings title: Limit input to decimalas',
     );

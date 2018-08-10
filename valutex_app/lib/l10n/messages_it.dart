@@ -19,6 +19,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
+    "aboutBodyAppDescription" : MessageLookupByLibrary.simpleMessage("Questa applicazione è stata pensata per l\'uso quotidiano.\nI tassi di cambio sono aggiornati ogni ora.\n\nApplicazione realizzata con Flutter e Dart.\n"),
+    "appAuthor" : MessageLookupByLibrary.simpleMessage("Autore"),
     "appSubtitle" : MessageLookupByLibrary.simpleMessage("Cambio valuta"),
     "drawerAboutApp" : MessageLookupByLibrary.simpleMessage("About App"),
     "drawerContactDeveloper" : MessageLookupByLibrary.simpleMessage("Contatta sviluppatore"),
@@ -40,6 +42,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "settingsTitleFictionalCountries" : MessageLookupByLibrary.simpleMessage("Nazioni fittizie"),
     "settingsTitleLimitInput" : MessageLookupByLibrary.simpleMessage("Limita input"),
     "settingsTitleUseDarkTheme" : MessageLookupByLibrary.simpleMessage("Usa tema scuro"),
-    "updated" : MessageLookupByLibrary.simpleMessage("Aggiornato:")
+    "updated" : MessageLookupByLibrary.simpleMessage("Ultimo agg")
   };
 }
