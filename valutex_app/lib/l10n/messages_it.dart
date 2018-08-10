@@ -23,6 +23,23 @@ class MessageLookup extends MessageLookupByLibrary {
     "drawerAboutApp" : MessageLookupByLibrary.simpleMessage("About App"),
     "drawerContactDeveloper" : MessageLookupByLibrary.simpleMessage("Contatta sviluppatore"),
     "drawerSettings" : MessageLookupByLibrary.simpleMessage("Impostazioni"),
+    "msgboxActionAbort" : MessageLookupByLibrary.simpleMessage("Annulla"),
+    "msgboxActionContinue" : MessageLookupByLibrary.simpleMessage("Continua"),
+    "settingsMsgboxBodyAppReset" : MessageLookupByLibrary.simpleMessage("Vuoi cancellare tutti i dati di questa App?\n\nSe continui tutte le tue preferenze andranno perse riportando la App allo stato originale."),
+    "settingsMsgboxBodyDataCleared" : MessageLookupByLibrary.simpleMessage("Chiudi e riapri la app."),
+    "settingsMsgboxTitleDataCleared" : MessageLookupByLibrary.simpleMessage("Dati eliminati"),
+    "settingsSubtitleAppReset" : MessageLookupByLibrary.simpleMessage("Elimia tutti i dati memorizzati da questa App"),
+    "settingsSubtitleEuropeanNotation" : MessageLookupByLibrary.simpleMessage("Cambia separatore dei decimali e migliaia"),
+    "settingsSubtitleExtraPrecision" : MessageLookupByLibrary.simpleMessage("Aumenta la precisione di una cifra significativa nel calcolo degli importi"),
+    "settingsSubtitleFictionalCountries" : MessageLookupByLibrary.simpleMessage("Abilita la ricerca di nazioni fittizie"),
+    "settingsSubtitleLimitInput" : MessageLookupByLibrary.simpleMessage("Arrotonda gli importi in input nella schermata \"Inserimento importo\""),
+    "settingsSubtitleUseDarkTheme" : MessageLookupByLibrary.simpleMessage("Usa un tema più riposante per la vista"),
+    "settingsTitleAppReset" : MessageLookupByLibrary.simpleMessage("App reset"),
+    "settingsTitleEuropeanNotation" : MessageLookupByLibrary.simpleMessage("Notazione europea"),
+    "settingsTitleExtraPrecision" : MessageLookupByLibrary.simpleMessage("Extra precisione"),
+    "settingsTitleFictionalCountries" : MessageLookupByLibrary.simpleMessage("Nazioni fittizie"),
+    "settingsTitleLimitInput" : MessageLookupByLibrary.simpleMessage("Limita input"),
+    "settingsTitleUseDarkTheme" : MessageLookupByLibrary.simpleMessage("Usa tema scuro"),
     "updated" : MessageLookupByLibrary.simpleMessage("Aggiornato:")
   };
 }

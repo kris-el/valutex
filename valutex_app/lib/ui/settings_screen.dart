@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../app_settings.dart';
 import '../dynamic_theme.dart';
+import '../localization.dart';
 
 AppSettings appSettings = AppSettings();
 
@@ -19,31 +20,31 @@ class SettingsScreenState extends State<SettingsScreen> {
   }
 
   Future<Null> _reopenAppAlertDialog() async {
-  return showDialog<Null>(
-    context: context,
-    barrierDismissible: false, // user must tap button!
-    builder: (BuildContext context) {
-      return new AlertDialog(
-        title: new Text('Data cleared'),
-        content: new SingleChildScrollView(
-          child: new ListBody(
-            children: <Widget>[
-              new Text('Close and open the app again.'),
-            ],
+    return showDialog<Null>(
+      context: context,
+      barrierDismissible: false, // user must tap button!
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text(AppLocalizations.of(context).settingsMsgboxTitleDataCleared),
+          content: SingleChildScrollView(
+            child: ListBody(
+              children: <Widget>[
+                Text(AppLocalizations.of(context).settingsMsgboxBodyDataCleared),
+              ],
+            ),
           ),
-        ),
-        actions: <Widget>[
-          new FlatButton(
-            child: new Text('Continue'),
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-          ),
-        ],
-      );
-    },
-  );
-}
+          actions: <Widget>[
+            FlatButton(
+              child: Text(AppLocalizations.of(context).msgboxActionContinue),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
 
   Future<Null> clearPreferences() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -56,25 +57,23 @@ class SettingsScreenState extends State<SettingsScreen> {
       barrierDismissible: false, // user must tap button!
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('App reset'),
+          title: Text(AppLocalizations.of(context).settingsTitleAppReset),
           content: SingleChildScrollView(
             child: ListBody(
               children: <Widget>[
-                Text('Do you want to delete all your app data?\n'),
-                Text(
-                    'If you continue you will lose all your preferences, bringing back the application as just downloaded state.'),
+                Text(AppLocalizations.of(context).settingsMsgboxBodyAppReset),
               ],
             ),
           ),
           actions: <Widget>[
             FlatButton(
-              child: Text('Abort'),
+              child: Text(AppLocalizations.of(context).msgboxActionAbort),
               onPressed: () {
                 Navigator.of(context).pop();
               },
             ),
             FlatButton(
-              child: Text('Continue'),
+              child: Text(AppLocalizations.of(context).msgboxActionContinue),
               onPressed: () {
                 clearPreferences();
                 Navigator.of(context).pop();
@@ -90,15 +89,16 @@ class SettingsScreenState extends State<SettingsScreen> {
   @override
   Widget build(BuildContext context) {
     final appBar = AppBar(
-      title: Text('Settings'),
+      title: Text(AppLocalizations.of(context).drawerSettings),
     );
 
     final listView = ListView(
       children: <Widget>[
         SwitchListTile(
           secondary: const Icon(Icons.palette),
-          title: Text('Use dark theme'),
-          subtitle: Text('Use theme more relaxing for your eyes'),
+          title: Text(AppLocalizations.of(context).settingsTitleUseDarkTheme),
+          subtitle:
+              Text(AppLocalizations.of(context).settingsSubtitleUseDarkTheme),
           value: appSettings.darkTheme,
           onChanged: (value) => setState(() {
                 appSettings.darkTheme = value;
@@ -108,8 +108,10 @@ class SettingsScreenState extends State<SettingsScreen> {
         SwitchListTile(
           //Icon(Icons.euro_symbol)
           secondary: Icon(Icons.euro_symbol),
-          title: Text('European notation'),
-          subtitle: Text('Change the separator of thousands and decimals'),
+          title:
+              Text(AppLocalizations.of(context).settingsTitleEuropeanNotation),
+          subtitle: Text(
+              AppLocalizations.of(context).settingsSubtitleEuropeanNotation),
           value: appSettings.europeanNotation,
           onChanged: (value) => setState(() {
                 appSettings.europeanNotation = value;
@@ -118,8 +120,9 @@ class SettingsScreenState extends State<SettingsScreen> {
         ),
         SwitchListTile(
           secondary: const Icon(Icons.power_input),
-          title: Text('Extra precision'),
-          subtitle: Text('Increase precision of one significant digit in amounts calculation'),
+          title: Text(AppLocalizations.of(context).settingsTitleExtraPrecision),
+          subtitle:
+              Text(AppLocalizations.of(context).settingsSubtitleExtraPrecision),
           value: appSettings.extraPrecision,
           onChanged: (value) => setState(() {
                 appSettings.extraPrecision = value;
@@ -128,8 +131,9 @@ class SettingsScreenState extends State<SettingsScreen> {
         ),
         SwitchListTile(
           secondary: const Icon(Icons.input),
-          title: Text('Limit input to decimalas'),
-          subtitle: Text('Rounds the amount input in "Set amount" screen.'),
+          title: Text(AppLocalizations.of(context).settingsTitleLimitInput),
+          subtitle:
+              Text(AppLocalizations.of(context).settingsSubtitleLimitInput),
           value: appSettings.inputAmountRound,
           onChanged: (value) => setState(() {
                 appSettings.inputAmountRound = value;
@@ -138,8 +142,10 @@ class SettingsScreenState extends State<SettingsScreen> {
         ),
         SwitchListTile(
           secondary: const Icon(Icons.strikethrough_s),
-          title: Text('Fictional countries'),
-          subtitle: Text('Show fictional counries'),
+          title: Text(
+              AppLocalizations.of(context).settingsTitleFictionalCountries),
+          subtitle: Text(
+              AppLocalizations.of(context).settingsSubtitleFictionalCountries),
           value: appSettings.fictionalCurrencies,
           onChanged: (value) => setState(() {
                 appSettings.fictionalCurrencies = value;
@@ -148,8 +154,8 @@ class SettingsScreenState extends State<SettingsScreen> {
         ),
         ListTile(
           leading: const Icon(Icons.clear_all),
-          title: Text('App reset'),
-          subtitle: Text('Clear all app data'),
+          title: Text(AppLocalizations.of(context).settingsTitleAppReset),
+          subtitle: Text(AppLocalizations.of(context).settingsSubtitleAppReset),
           onTap: () {
             _appResetAlertDialog();
           },

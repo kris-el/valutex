@@ -1,5 +1,7 @@
 [Todo]
 
+If is localization IT use European notation
+
 Access api to get rates with authentication only
 
 Feature discovery tutorial

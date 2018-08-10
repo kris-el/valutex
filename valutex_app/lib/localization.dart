@@ -19,6 +19,22 @@ class AppLocalizations {
     return Localizations.of<AppLocalizations>(context, AppLocalizations);
   }
 
+  String get msgboxActionContinue {
+    return Intl.message(
+      'Continue',
+      name: 'msgboxActionContinue',
+      desc: 'Messagebox action: Continue',
+    );
+  }
+
+  String get msgboxActionAbort {
+    return Intl.message(
+      'Abort',
+      name: 'msgboxActionAbort',
+      desc: 'Messagebox action: Abort',
+    );
+  }
+
   String get updated {
     return Intl.message(
       'Updated:',
@@ -56,6 +72,126 @@ class AppLocalizations {
       'Contact developer',
       name: 'drawerContactDeveloper',
       desc: 'Drawer list item: Contact developer',
+    );
+  }
+
+  String get settingsTitleUseDarkTheme {
+    return Intl.message(
+      'Use dark theme',
+      name: 'settingsTitleUseDarkTheme',
+      desc: 'Settings title: Use dark theme',
+    );
+  }
+
+  String get settingsSubtitleUseDarkTheme {
+    return Intl.message(
+      'Use theme more relaxing for your eyes',
+      name: 'settingsSubtitleUseDarkTheme',
+      desc: 'Settings subtitle: Use dark theme',
+    );
+  }
+
+  String get settingsTitleEuropeanNotation {
+    return Intl.message(
+      'European notation',
+      name: 'settingsTitleEuropeanNotation',
+      desc: 'Settings title: European notation',
+    );
+  }
+
+  String get settingsSubtitleEuropeanNotation {
+    return Intl.message(
+      'Change the separator of thousands and decimals',
+      name: 'settingsSubtitleEuropeanNotation',
+      desc: 'Settings subtitle: European notation',
+    );
+  }
+
+  String get settingsTitleExtraPrecision {
+    return Intl.message(
+      'Extra precision',
+      name: 'settingsTitleExtraPrecision',
+      desc: 'Settings title: Extra precision',
+    );
+  }
+
+  String get settingsSubtitleExtraPrecision {
+    return Intl.message(
+      'Increase precision of one significant digit in amounts calculation',
+      name: 'settingsSubtitleExtraPrecision',
+      desc: 'Settings subtitle: Extra precision',
+    );
+  }
+
+  String get settingsTitleLimitInput {
+    return Intl.message(
+      'Limit input to decimalas',
+      name: 'settingsTitleLimitInput',
+      desc: 'Settings title: Limit input to decimalas',
+    );
+  }
+
+  String get settingsSubtitleLimitInput {
+    return Intl.message(
+      'Rounds the amount input in "Set amount" screen',
+      name: 'settingsSubtitleLimitInput',
+      desc: 'Settings subtitle: Limit input to decimalas',
+    );
+  }
+
+  String get settingsTitleFictionalCountries {
+    return Intl.message(
+      'Fictional countries',
+      name: 'settingsTitleFictionalCountries',
+      desc: 'Settings title: Fictional countries',
+    );
+  }
+
+  String get settingsSubtitleFictionalCountries {
+    return Intl.message(
+      'Show fictional counries',
+      name: 'settingsSubtitleFictionalCountries',
+      desc: 'Settings subtitle: Fictional countries',
+    );
+  }
+
+  String get settingsTitleAppReset {
+    return Intl.message(
+      'App reset',
+      name: 'settingsTitleAppReset',
+      desc: 'Settings title: App reset',
+    );
+  }
+
+  String get settingsSubtitleAppReset {
+    return Intl.message(
+      'Clear all app data',
+      name: 'settingsSubtitleAppReset',
+      desc: 'Settings subtitle: App reset',
+    );
+  }
+
+  String get settingsMsgboxBodyAppReset {
+    return Intl.message(
+      'Do you want to delete all your app data?\n\nIf you continue you will lose all your preferences, bringing back the application as just downloaded state.',
+      name: 'settingsMsgboxBodyAppReset',
+      desc: 'Settings messagebox text: App reset',
+    );
+  }
+
+  String get settingsMsgboxTitleDataCleared {
+    return Intl.message(
+      'Data cleared',
+      name: 'settingsMsgboxTitleDataCleared',
+      desc: 'Settings messagebox title: Data cleared',
+    );
+  }
+
+  String get settingsMsgboxBodyDataCleared {
+    return Intl.message(
+      'Close and open the app again.',
+      name: 'settingsMsgboxBodyDataCleared',
+      desc: 'Settings messagebox text: Data cleared',
     );
   }
 }

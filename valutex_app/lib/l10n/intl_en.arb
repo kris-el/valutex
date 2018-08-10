@@ -1,5 +1,17 @@
 {
-  "@@last_modified": "2018-08-10T17:11:00.914304",
+  "@@last_modified": "2018-08-10T18:10:08.829459",
+  "msgboxActionContinue": "Continue",
+  "@msgboxActionContinue": {
+    "description": "Messagebox action: Continue",
+    "type": "text",
+    "placeholders": {}
+  },
+  "msgboxActionAbort": "Abort",
+  "@msgboxActionAbort": {
+    "description": "Messagebox action: Abort",
+    "type": "text",
+    "placeholders": {}
+  },
   "updated": "Updated:",
   "@updated": {
     "description": "bottomNavigationBar: Updated",
@@ -27,6 +39,96 @@
   "drawerContactDeveloper": "Contact developer",
   "@drawerContactDeveloper": {
     "description": "Drawer list item: Contact developer",
+    "type": "text",
+    "placeholders": {}
+  },
+  "settingsTitleUseDarkTheme": "Use dark theme",
+  "@settingsTitleUseDarkTheme": {
+    "description": "Settings title: Use dark theme",
+    "type": "text",
+    "placeholders": {}
+  },
+  "settingsSubtitleUseDarkTheme": "Use theme more relaxing for your eyes",
+  "@settingsSubtitleUseDarkTheme": {
+    "description": "Settings subtitle: Use dark theme",
+    "type": "text",
+    "placeholders": {}
+  },
+  "settingsTitleEuropeanNotation": "European notation",
+  "@settingsTitleEuropeanNotation": {
+    "description": "Settings title: European notation",
+    "type": "text",
+    "placeholders": {}
+  },
+  "settingsSubtitleEuropeanNotation": "Change the separator of thousands and decimals",
+  "@settingsSubtitleEuropeanNotation": {
+    "description": "Settings subtitle: European notation",
+    "type": "text",
+    "placeholders": {}
+  },
+  "settingsTitleExtraPrecision": "Extra precision",
+  "@settingsTitleExtraPrecision": {
+    "description": "Settings title: Extra precision",
+    "type": "text",
+    "placeholders": {}
+  },
+  "settingsSubtitleExtraPrecision": "Increase precision of one significant digit in amounts calculation",
+  "@settingsSubtitleExtraPrecision": {
+    "description": "Settings subtitle: Extra precision",
+    "type": "text",
+    "placeholders": {}
+  },
+  "settingsTitleLimitInput": "Limit input to integer",
+  "@settingsTitleLimitInput": {
+    "description": "Settings title: Limit input to decimalas",
+    "type": "text",
+    "placeholders": {}
+  },
+  "settingsSubtitleLimitInput": "Rounds the amount input in \"Set amount\" screen",
+  "@settingsSubtitleLimitInput": {
+    "description": "Settings subtitle: Limit input to decimalas",
+    "type": "text",
+    "placeholders": {}
+  },
+  "settingsTitleFictionalCountries": "Fictional countries",
+  "@settingsTitleFictionalCountries": {
+    "description": "Settings title: Fictional countries",
+    "type": "text",
+    "placeholders": {}
+  },
+  "settingsSubtitleFictionalCountries": "Show fictional counries",
+  "@settingsSubtitleFictionalCountries": {
+    "description": "Settings subtitle: Fictional countries",
+    "type": "text",
+    "placeholders": {}
+  },
+  "settingsTitleAppReset": "App reset",
+  "@settingsTitleAppReset": {
+    "description": "Settings title: App reset",
+    "type": "text",
+    "placeholders": {}
+  },
+  "settingsSubtitleAppReset": "Clear all app data",
+  "@settingsSubtitleAppReset": {
+    "description": "Settings subtitle: App reset",
+    "type": "text",
+    "placeholders": {}
+  },
+  "settingsMsgboxBodyAppReset": "Do you want to delete all your app data?\n\nIf you continue you will lose all your preferences, bringing back the application as just downloaded state.",
+  "@settingsMsgboxBodyAppReset": {
+    "description": "Settings messagebox text: App reset",
+    "type": "text",
+    "placeholders": {}
+  },
+  "settingsMsgboxTitleDataCleared": "Data cleared",
+  "@settingsMsgboxTitleDataCleared": {
+    "description": "Settings messagebox title: Data cleared",
+    "type": "text",
+    "placeholders": {}
+  },
+  "settingsMsgboxBodyDataCleared": "Close and open the app again.",
+  "@settingsMsgboxBodyDataCleared": {
+    "description": "Settings messagebox text: Data cleared",
     "type": "text",
     "placeholders": {}
   }

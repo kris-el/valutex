@@ -1,5 +1,17 @@
 {
-  "@@last_modified": "2018-08-10T17:11:00.914304",
+  "@@last_modified": "2018-08-10T18:10:08.829459",
+  "msgboxActionContinue": "Continua",
+  "@msgboxActionContinue": {
+    "description": "Messagebox action: Continue",
+    "type": "text",
+    "placeholders": {}
+  },
+  "msgboxActionAbort": "Annulla",
+  "@msgboxActionAbort": {
+    "description": "Messagebox action: Abort",
+    "type": "text",
+    "placeholders": {}
+  },
   "updated": "Aggiornato:",
   "@updated": {
     "description": "bottomNavigationBar: Updated",
@@ -27,6 +39,96 @@
   "drawerContactDeveloper": "Contatta sviluppatore",
   "@drawerContactDeveloper": {
     "description": "Drawer list item: Contact developer",
+    "type": "text",
+    "placeholders": {}
+  },
+  "settingsTitleUseDarkTheme": "Usa tema scuro",
+  "@settingsTitleUseDarkTheme": {
+    "description": "Settings title: Use dark theme",
+    "type": "text",
+    "placeholders": {}
+  },
+  "settingsSubtitleUseDarkTheme": "Usa un tema più riposante per la vista",
+  "@settingsSubtitleUseDarkTheme": {
+    "description": "Settings subtitle: Use dark theme",
+    "type": "text",
+    "placeholders": {}
+  },
+  "settingsTitleEuropeanNotation": "Notazione europea",
+  "@settingsTitleEuropeanNotation": {
+    "description": "Settings title: European notation",
+    "type": "text",
+    "placeholders": {}
+  },
+  "settingsSubtitleEuropeanNotation": "Cambia separatore dei decimali e migliaia",
+  "@settingsSubtitleEuropeanNotation": {
+    "description": "Settings subtitle: European notation",
+    "type": "text",
+    "placeholders": {}
+  },
+  "settingsTitleExtraPrecision": "Extra precisione",
+  "@settingsTitleExtraPrecision": {
+    "description": "Settings title: Extra precision",
+    "type": "text",
+    "placeholders": {}
+  },
+  "settingsSubtitleExtraPrecision": "Aumenta la precisione di una cifra significativa nel calcolo degli importi",
+  "@settingsSubtitleExtraPrecision": {
+    "description": "Settings subtitle: Extra precision",
+    "type": "text",
+    "placeholders": {}
+  },
+  "settingsTitleLimitInput": "Limita input",
+  "@settingsTitleLimitInput": {
+    "description": "Settings title: Limit input to decimalas",
+    "type": "text",
+    "placeholders": {}
+  },
+  "settingsSubtitleLimitInput": "Arrotonda gli importi in input nella schermata \"Inserimento importo\"",
+  "@settingsSubtitleLimitInput": {
+    "description": "Settings subtitle: Limit input to decimalas",
+    "type": "text",
+    "placeholders": {}
+  },
+  "settingsTitleFictionalCountries": "Nazioni fittizie",
+  "@settingsTitleFictionalCountries": {
+    "description": "Settings title: Fictional countries",
+    "type": "text",
+    "placeholders": {}
+  },
+  "settingsSubtitleFictionalCountries": "Abilita la ricerca di nazioni fittizie",
+  "@settingsSubtitleFictionalCountries": {
+    "description": "Settings subtitle: Fictional countries",
+    "type": "text",
+    "placeholders": {}
+  },
+  "settingsTitleAppReset": "App reset",
+  "@settingsTitleAppReset": {
+    "description": "Settings title: App reset",
+    "type": "text",
+    "placeholders": {}
+  },
+  "settingsSubtitleAppReset": "Elimia tutti i dati memorizzati da questa App",
+  "@settingsSubtitleAppReset": {
+    "description": "Settings subtitle: App reset",
+    "type": "text",
+    "placeholders": {}
+  },
+  "settingsMsgboxBodyAppReset": "Vuoi cancellare tutti i dati di questa App?\n\nSe continui tutte le tue preferenze andranno perse riportando la App allo stato originale.",
+  "@settingsMsgboxBodyAppReset": {
+    "description": "Settings messagebox text: App reset",
+    "type": "text",
+    "placeholders": {}
+  },
+  "settingsMsgboxTitleDataCleared": "Dati eliminati",
+  "@settingsMsgboxTitleDataCleared": {
+    "description": "Settings messagebox title: Data cleared",
+    "type": "text",
+    "placeholders": {}
+  },
+  "settingsMsgboxBodyDataCleared": "Chiudi e riapri la app.",
+  "@settingsMsgboxBodyDataCleared": {
+    "description": "Settings messagebox text: Data cleared",
     "type": "text",
     "placeholders": {}
   }
