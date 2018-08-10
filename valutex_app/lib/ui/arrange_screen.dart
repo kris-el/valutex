@@ -3,6 +3,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'currency_draft.dart';
 import '../reorderable_list.dart';
 import '../exchange_currency.dart';
+import '../localization.dart';
 
 ExchangeCurrency exchangeCurrency = ExchangeCurrency();
 
@@ -72,7 +73,7 @@ class _ArrangeScreenState extends State<ArrangeScreen> {
   @override
   Widget build(BuildContext context) {
     final appBar = AppBar(
-      title: Text('Arrange currencies'),
+      title: Text(AppLocalizations.of(context).screenTitleArrangeCurrencies),
       actions: <Widget>[
         IconButton(
           icon: Icon(Icons.send),

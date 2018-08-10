@@ -107,6 +107,14 @@ class AppLocalizations {
     );
   }
 
+  String get emailTextHello {
+    return Intl.message(
+      'Hello,',
+      name: 'emailTextHello',
+      desc: 'Email details: Hello',
+    );
+  }
+
   String get settingsTitleUseDarkTheme {
     return Intl.message(
       'Use dark theme',
@@ -167,6 +175,14 @@ class AppLocalizations {
     return Intl.message(
       'Set amount',
       name: 'screenTitleSetAmount',
+      desc: 'Scree title: Set amount',
+    );
+  }
+
+  String get screenTitleArrangeCurrencies {
+    return Intl.message(
+      'Arrange favourites',
+      name: 'screenTitleArrangeCurrencies',
       desc: 'Scree title: Set amount',
     );
   }
@@ -235,10 +251,18 @@ class AppLocalizations {
     );
   }
 
-  String get inputPlaceHolder {
+  String get inputPlaceHolderSearch {
+    return Intl.message(
+      'Search...',
+      name: 'inputPlaceHolderSearch',
+      desc: 'Input search place holder',
+    );
+  }
+
+  String get inputPlaceHolderAmount {
     return Intl.message(
       'Currency amount',
-      name: 'inputPlaceHolder',
+      name: 'inputPlaceHolderAmount',
       desc: 'Input place holder',
     );
   }

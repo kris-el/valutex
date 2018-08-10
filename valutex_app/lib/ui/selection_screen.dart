@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'currency_draft.dart';
 import '../exchange_currency.dart';
+import '../localization.dart';
 
 ExchangeCurrency exchangeCurrency = ExchangeCurrency();
 
@@ -93,7 +94,7 @@ class _SelectionScreenState extends State<SelectionScreen> {
         onChanged: _updateSearchText,
         decoration: InputDecoration(
             prefixIcon: Icon(Icons.search, color: Colors.white),
-            hintText: "Search...",
+            hintText: AppLocalizations.of(context).inputPlaceHolderSearch,
             hintStyle: TextStyle(color: Colors.white)),
       ),
       actions: <Widget>[

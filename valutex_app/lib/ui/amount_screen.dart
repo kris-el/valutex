@@ -136,7 +136,7 @@ class _AmountScreenState extends State<AmountScreen> {
                 TextField(
                   controller: _inputTextFieldController,
                   decoration: InputDecoration(
-                    hintText: AppLocalizations.of(context).inputPlaceHolder,
+                    hintText: AppLocalizations.of(context).inputPlaceHolderAmount,
                     errorText: _isValidationError ? _textValidationError : null,
                   ),
                   style: TextStyle(

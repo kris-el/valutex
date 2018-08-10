@@ -27,8 +27,8 @@ class HomeDrawer extends StatelessWidget {
           'Android ${appSettings.osVersion}   API ${appSettings.androidSdk}\n';
     emailBody += '${AppLocalizations.of(context).emailTextDetailsScreen}: ' + appSettings.screenWidth.toString();
     emailBody += 'x' + appSettings.screenHeight.toString();
-    emailBody += ' ' + appSettings.screenRatio.toString() + '\n\n';
-    emailBody += 'Hi, ';
+    emailBody += ' ' + appSettings.screenRatio.toStringAsFixed(3) + '\n\n';
+    emailBody += '${AppLocalizations.of(context).emailTextHello} ';
 
     toAddress = Uri.encodeComponent(toAddress);
     emailSubject = Uri.encodeComponent(emailSubject);

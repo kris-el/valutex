@@ -1,5 +1,5 @@
 {
-  "@@last_modified": "2018-08-10T19:42:22.207590",
+  "@@last_modified": "2018-08-10T22:19:41.977565",
   "msgboxActionContinue": "Continua",
   "@msgboxActionContinue": {
     "description": "Messagebox action: Continue",
@@ -54,19 +54,25 @@
     "type": "text",
     "placeholders": {}
   },
-  "emailTextDetailsProduct": "Product",
+  "emailTextDetailsProduct": "Prodotto",
   "@emailTextDetailsProduct": {
     "description": "Email details: Product",
     "type": "text",
     "placeholders": {}
   },
-  "emailTextDetailsScreen": "Screen",
+  "emailTextDetailsScreen": "Schermo",
   "@emailTextDetailsScreen": {
     "description": "Email details: Screen",
     "type": "text",
     "placeholders": {}
   },
-  "settingsTitleUseDarkTheme": "Use dark theme",
+  "emailTextHello": "Ciao,",
+  "@emailTextHello": {
+    "description": "Email details: Hello",
+    "type": "text",
+    "placeholders": {}
+  },
+  "settingsTitleUseDarkTheme": "Use tema scuro",
   "@settingsTitleUseDarkTheme": {
     "description": "Settings title: Use dark theme",
     "type": "text",
@@ -110,6 +116,12 @@
   },
   "screenTitleSetAmount": "Inserimento importo",
   "@screenTitleSetAmount": {
+    "description": "Scree title: Set amount",
+    "type": "text",
+    "placeholders": {}
+  },
+  "screenTitleArrangeCurrencies": "Ordina preferiti",
+  "@screenTitleArrangeCurrencies": {
     "description": "Scree title: Set amount",
     "type": "text",
     "placeholders": {}
@@ -162,8 +174,14 @@
     "type": "text",
     "placeholders": {}
   },
-  "inputPlaceHolder": "Importo valuta",
-  "@inputPlaceHolder": {
+  "inputPlaceHolderSearch": "Cerca...",
+  "@inputPlaceHolderSearch": {
+    "description": "Input search place holder",
+    "type": "text",
+    "placeholders": {}
+  },
+  "inputPlaceHolderAmount": "Importo valuta",
+  "@inputPlaceHolderAmount": {
     "description": "Input place holder",
     "type": "text",
     "placeholders": {}
