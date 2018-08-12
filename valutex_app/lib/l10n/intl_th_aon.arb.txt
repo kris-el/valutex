@@ -1,4 +1,4 @@
-﻿{
+{
   "@@last_modified": "2018-08-10T22:19:41.977565",
   "msgboxActionContinue": "ต่อไป",
   "@msgboxActionContinue": {
@@ -30,37 +30,37 @@
     "type": "text",
     "placeholders": {}
   },
-  "drawerSettings": "การตั้งค่า",
+  "drawerSettings": "ตั้งค่า",
   "@drawerSettings": {
     "description": "Drawer list item: Settings",
     "type": "text",
     "placeholders": {}
   },
-  "drawerAboutApp": "เกี่ยวกับแอพพลิเคชั่น",
+  "drawerAboutApp": "เกี่ยวกับแอป",
   "@drawerAboutApp": {
     "description": "Drawer list item: About App",
     "type": "text",
     "placeholders": {}
   },
-  "aboutBodyAppDescription": "แอพพลิเคชั่นนี้ถูกออกแบบเพื่อการใช้งานอย่างง่าย\nมีการปรับปรุงทุกชั่วโมง\n\nแอพพลิเคชั่นนี้สร้างขึ้นจากโปรแกรม Flutter และ Dart\n",
+  "aboutBodyAppDescription": "แอปนี้ออกแบบมาเพื่อให้ง่ายต่อการใช้งาน แบบสบาย.\nมีอัตราในการอัปเดตทุกๆหนึ่งชั่วโมง.\n\nแอปพลิเคชั่นคำนึงถึง Flutter และ Dart.\n",
   "@aboutBodyAppDescription": {
     "description": "About body App description",
     "type": "text",
     "placeholders": {}
   },
-  "drawerContactDeveloper": "ติดต่อนักพัฒนาซอฟต์แวร์",
+  "drawerContactDeveloper": "ติดต่อเรา",
   "@drawerContactDeveloper": {
     "description": "Drawer list item: Contact developer",
     "type": "text",
     "placeholders": {}
   },
-  "emailTextDetailsProduct": "สินค้า",
+  "emailTextDetailsProduct": "ผลผลิต",
   "@emailTextDetailsProduct": {
     "description": "Email details: Product",
     "type": "text",
     "placeholders": {}
   },
-  "emailTextDetailsScreen": "หน้าจอ",
+  "emailTextDetailsScreen": "ตรวจสอบ",
   "@emailTextDetailsScreen": {
     "description": "Email details: Screen",
     "type": "text",
@@ -72,13 +72,13 @@
     "type": "text",
     "placeholders": {}
   },
-  "settingsTitleUseDarkTheme": "ใช้ธีมมืด",
+  "settingsTitleUseDarkTheme": "ธีมทึบ",
   "@settingsTitleUseDarkTheme": {
     "description": "Settings title: Use dark theme",
     "type": "text",
     "placeholders": {}
   },
-  "settingsSubtitleUseDarkTheme": "ใช้ธีมเพื่อถนอมสายตา",
+  "settingsSubtitleUseDarkTheme": "ใช้เพื่อช่วยถนอมสายตาของคุณ",
   "@settingsSubtitleUseDarkTheme": {
     "description": "Settings subtitle: Use dark theme",
     "type": "text",
@@ -96,25 +96,25 @@
     "type": "text",
     "placeholders": {}
   },
-  "settingsTitleExtraPrecision": "มีความแม่นยำ",
+  "settingsTitleExtraPrecision": "ความแม่นยำสูง",
   "@settingsTitleExtraPrecision": {
     "description": "Settings title: Extra precision",
     "type": "text",
     "placeholders": {}
   },
-  "settingsSubtitleExtraPrecision": "เพิ่มความถูกต้องของตัวเลขในการคำนวณจำนวนเงิน",
+  "settingsSubtitleExtraPrecision": "เพิ่มความแม่นยำในการคำนวนตัวเลขสำคัญ",
   "@settingsSubtitleExtraPrecision": {
     "description": "Settings subtitle: Extra precision",
     "type": "text",
     "placeholders": {}
   },
-  "settingsTitleLimitInput": "จำกัดการใส่ข้อมูลตัวเลขจำนวนเต็ม",
+  "settingsTitleLimitInput": "ข้อจำกัดในการป้อนข้อมูลที่เป็นจำนวนเต็ม",
   "@settingsTitleLimitInput": {
     "description": "Settings title: Limit input to decimalas",
     "type": "text",
     "placeholders": {}
   },
-  "screenTitleSetAmount": "Set amount",
+  "screenTitleSetAmount": "จำนวนเงินที่ตั้งไว้",
   "@screenTitleSetAmount": {
     "description": "Scree title: Set amount",
     "type": "text",
@@ -126,49 +126,49 @@
     "type": "text",
     "placeholders": {}
   },
-  "settingsSubtitleLimitInput": "รอบของจำนวนที่ป้อนเข้า \"ตั้งค่าจำนวน\" หน้าจอ",
+  "settingsSubtitleLimitInput": "ปัดเศษจำนวนที่ป้อนเข้า \"จำนวนเงินที่ตั้งไว้\" ตรวจสอบ",
   "@settingsSubtitleLimitInput": {
     "description": "Settings subtitle: Limit input to decimalas",
     "type": "text",
     "placeholders": {}
   },
-  "settingsTitleFictionalCountries": "ประเทศสมมติ",
+  "settingsTitleFictionalCountries": "ประเทศต่างๆ",
   "@settingsTitleFictionalCountries": {
     "description": "Settings title: Fictional countries",
     "type": "text",
     "placeholders": {}
   },
-  "settingsSubtitleFictionalCountries": "แสดงประเทศสมมติ",
+  "settingsSubtitleFictionalCountries": "แสดงประเทศต่างๆ",
   "@settingsSubtitleFictionalCountries": {
     "description": "Settings subtitle: Fictional countries",
     "type": "text",
     "placeholders": {}
   },
-  "settingsTitleAppReset": "ตั้งค่าแอพพลิเคชั่นใหม่",
+  "settingsTitleAppReset": "รีเซ็ตแอป",
   "@settingsTitleAppReset": {
     "description": "Settings title: App reset",
     "type": "text",
     "placeholders": {}
   },
-  "settingsSubtitleAppReset": "ล้างข้อมูลทั้งหมดของแอพพลิเคชั่น",
+  "settingsSubtitleAppReset": "ล้างข้อมูลแอป",
   "@settingsSubtitleAppReset": {
     "description": "Settings subtitle: App reset",
     "type": "text",
     "placeholders": {}
   },
-  "settingsMsgboxBodyAppReset": "คุณต้องการลบแอพพลิเคชั่นทั้งหมดหรือไม่?\n\n้าคุณต้องการทำต่อ คุณจะสูญเสียการตั้งค่าทั้งหมด, แอพพลิเคชั่นจะกลับสู่สถานะแรกเริ่ม",
+  "settingsMsgboxBodyAppReset": "คุณต้องการลบแอปนี้หรือไม่?\n\nถ้าคุณดำเนินการต่อการตั้งค่าทั้งหมดจะถูกลบ, สามารถใช้งานได้อีกครั้งเพียงแค่ดาวน์โหลดแอปและติดตั้ง.",
   "@settingsMsgboxBodyAppReset": {
     "description": "Settings messagebox text: App reset",
     "type": "text",
     "placeholders": {}
   },
-  "settingsMsgboxTitleDataCleared": "ข้อมูลถูกลบเรียบร้อยแล้ว",
+  "settingsMsgboxTitleDataCleared": "ล้างข้อมูลแล้ว",
   "@settingsMsgboxTitleDataCleared": {
     "description": "Settings messagebox title: Data cleared",
     "type": "text",
     "placeholders": {}
   },
-  "settingsMsgboxBodyDataCleared": "ปิดและเปิดแอพพลิเคชั่นอีกครั้ง",
+  "settingsMsgboxBodyDataCleared": "ปิดแล้วเปิดแอปใหม่อีกครั้ง.",
   "@settingsMsgboxBodyDataCleared": {
     "description": "Settings messagebox text: Data cleared",
     "type": "text",
@@ -180,7 +180,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "inputPlaceHolderAmount": "จำนวนสกุลเงิน",
+  "inputPlaceHolderAmount": "ปริมาณสกุลเงิน",
   "@inputPlaceHolderAmount": {
     "description": "Input place holder",
     "type": "text",
@@ -192,13 +192,13 @@
     "type": "text",
     "placeholders": {}
   },
-  "inputErrorAmountToHigh": "จำนวนสูงเกินไป",
+  "inputErrorAmountToHigh": "จำนวนมากเกินไป",
   "@inputErrorAmountToHigh": {
     "description": "Input error: Amount too high",
     "type": "text",
     "placeholders": {}
   },
-  "inputErrorNonZeroAmount": "ป้อนจำนวนที่ไม่ใช่ศูนย์",
+  "inputErrorNonZeroAmount": "ใส่จำนวนเงินที่ไม่ใช่ศูนย์",
   "@inputErrorNonZeroAmount": {
     "description": "Input error: Non zero amount",
     "type": "text",

@@ -183,7 +183,7 @@ class AppLocalizations {
     return Intl.message(
       'Arrange favourites',
       name: 'screenTitleArrangeCurrencies',
-      desc: 'Scree title: Set amount',
+      desc: 'Scree title: Arrange favourites',
     );
   }
 

@@ -29,7 +29,7 @@ class CurrencyDraft extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final countryBox = Hero(
-      tag: (label != null) ? label : 'hero-flag-' + flagCode.toLowerCase(),
+      tag: (label != null) ? 'f'+label : 'hero-flag-' + flagCode.toLowerCase(),
       child: Container(
         color: Colors.transparent,
         child: Image.asset(
@@ -41,7 +41,7 @@ class CurrencyDraft extends StatelessWidget {
     final detailsBox = Expanded(
       child: Container(
         // -- Hero -- should be used when got fix transition
-        //tag: 'hero-detail-' + flagCode.toLowerCase(),
+        // tag: (label != null) ? 'd'+label : 'hero-flag-' + flagCode.toLowerCase(),
         child: Padding(
           padding: EdgeInsets.all(4.0),
           child: Column(

@@ -1,6 +1,6 @@
 ﻿{
   "@@last_modified": "2018-08-10T22:19:41.977565",
-  "msgboxActionContinue": "ต่อไป",
+  "msgboxActionContinue": "ทำต่อ",
   "@msgboxActionContinue": {
     "description": "Messagebox action: Continue",
     "type": "text",
@@ -12,19 +12,19 @@
     "type": "text",
     "placeholders": {}
   },
-  "updated": "อัปเดต",
+  "updated": "ปรับปรุง",
   "@updated": {
     "description": "bottomNavigationBar: Updated",
     "type": "text",
     "placeholders": {}
   },
-  "appSubtitle": "ตัวแปลงสกุลเงิน",
+  "appSubtitle": "แปลงสกุลเงิน",
   "@appSubtitle": {
     "description": "Subtitle of the app",
     "type": "text",
     "placeholders": {}
   },
-  "appAuthor": "นักพัฒนาซอฟต์แวร์",
+  "appAuthor": "ผู้เขียน",
   "@appAuthor": {
     "description": "Author of the app",
     "type": "text",
@@ -84,13 +84,13 @@
     "type": "text",
     "placeholders": {}
   },
-  "settingsTitleEuropeanNotation": "สัญลักษณ์เลขแบบยุโรป",
+  "settingsTitleEuropeanNotation": "สัญกรณ์ยุโรป",
   "@settingsTitleEuropeanNotation": {
     "description": "Settings title: European notation",
     "type": "text",
     "placeholders": {}
   },
-  "settingsSubtitleEuropeanNotation": "การแยกระหว่างจำนวนเต็มพันและทศนิยม",
+  "settingsSubtitleEuropeanNotation": "เปลี่ยนจุดทศนิยมและหลักพัน",
   "@settingsSubtitleEuropeanNotation": {
     "description": "Settings subtitle: European notation",
     "type": "text",
@@ -122,7 +122,7 @@
   },
   "screenTitleArrangeCurrencies": "Arrange favourites",
   "@screenTitleArrangeCurrencies": {
-    "description": "Scree title: Arrange favourites",
+    "description": "Scree title: Set amount",
     "type": "text",
     "placeholders": {}
   },
