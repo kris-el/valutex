@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'l10n/messages_all.dart';
 
+List allowedLanguages = ['en', 'it', 'th'];
+
 class AppLocalizations {
   static Future<AppLocalizations> load(Locale locale) {
     final String name =
@@ -296,7 +298,7 @@ class AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
   const AppLocalizationsDelegate();
 
   @override
-  bool isSupported(Locale locale) => ['en', 'it', 'th'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => allowedLanguages.contains(locale.languageCode);
 
   @override
   Future<AppLocalizations> load(Locale locale) => AppLocalizations.load(locale);

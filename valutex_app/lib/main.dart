@@ -58,6 +58,7 @@ class ValutexApp extends StatelessWidget {
 /*
 [2.1.1] #11
 Localization IT, TH
+Set notation accordingly to system language
 
 [2.1.0] #10
 Fix zero amount

@@ -53,6 +53,15 @@ class _HomeScreenState extends State<HomeScreen> {
     appSettings.screenRatio = MediaQuery.of(context).devicePixelRatio;
   }
 
+  String get sysLanguage {
+    Locale myLocale = Localizations.localeOf(context);
+    return myLocale.languageCode;
+  }
+
+  String get appLanguage {
+    return allowedLanguages.contains(sysLanguage) ? sysLanguage : 'en';
+  }
+
   void updateFavourite(List countries, List<String> favs) {
     countries.forEach((country) {
       int sort = favs.indexOf(country['countryName']);
@@ -101,6 +110,32 @@ class _HomeScreenState extends State<HomeScreen> {
       String settings = prefs.getString('settings');
       if (settings != null) {
         appSettings.importFromJson(settings);
+      } else {
+        switch (sysLanguage) {
+          case 'it':
+            appSettings.europeanNotation = true;
+            break;
+          case 'fr':
+            appSettings.europeanNotation = true;
+            break;
+          case 'vn':
+            appSettings.europeanNotation = true;
+            break;
+          case 'th':
+            appSettings.europeanNotation = false;
+            break;
+          case 'en':
+            appSettings.europeanNotation = false;
+            break;
+          case 'ko':
+            appSettings.europeanNotation = false;
+            break;
+          case 'jp':
+            appSettings.europeanNotation = false;
+            break;
+          default:
+            appSettings.europeanNotation = true;
+        }
       }
       _loadCountriesFromAsset(context);
     });
