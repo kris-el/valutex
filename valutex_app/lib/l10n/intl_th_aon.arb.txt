@@ -174,7 +174,7 @@
     "type": "text",
     "placeholders": {}
   },  
-  "inputPlaceHolderSearch": "Search...",
+  "inputPlaceHolderSearch": "ค้นหา...",
   "@inputPlaceHolderSearch": {
     "description": "Input search place holder",
     "type": "text",

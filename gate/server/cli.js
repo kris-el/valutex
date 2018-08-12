@@ -9,6 +9,7 @@ var { mongoose } = require('./mongoose');
 var { Exchange } = require('./models/exchange');
 
 var dirs = ['./offline', './offline/flags', 'public', 'playground'];
+var allowedLanguages = ['en', 'it', 'th', 'vn', 'fr', 'sp'];
 
 dirs.forEach((dir) => {
   if (!fs.existsSync(dir)) {

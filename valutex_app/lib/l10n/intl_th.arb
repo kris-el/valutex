@@ -36,13 +36,13 @@
     "type": "text",
     "placeholders": {}
   },
-  "drawerAboutApp": "เกี่ยวกับแอพพลิเคชั่น",
+  "drawerAboutApp": "เกี่ยวกับแอปพลิเคชั่น",
   "@drawerAboutApp": {
     "description": "Drawer list item: About App",
     "type": "text",
     "placeholders": {}
   },
-  "aboutBodyAppDescription": "แอพพลิเคชั่นนี้ถูกออกแบบเพื่อการใช้งานอย่างง่าย\nมีการปรับปรุงทุกชั่วโมง\n\nแอพพลิเคชั่นนี้สร้างขึ้นจากโปรแกรม Flutter และ Dart\n",
+  "aboutBodyAppDescription": "แอปพลิเคชั่นนี้ถูกออกเเบบเพื่อใช้งานง่าย\nมีการอัพเดตอัตราเเลกเปลี่ยนเงินทุกวินาที\n\nแอปพลิเคชั่นนี้สร้างขึ้นจากโปรเเกรม Futter และ Dart\n",
   "@aboutBodyAppDescription": {
     "description": "About body App description",
     "type": "text",
@@ -54,7 +54,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "emailTextDetailsProduct": "สินค้า",
+  "emailTextDetailsProduct": "ผลิตภัณฑ์",
   "@emailTextDetailsProduct": {
     "description": "Email details: Product",
     "type": "text",
@@ -72,7 +72,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "settingsTitleUseDarkTheme": "ใช้ธีมมืด",
+  "settingsTitleUseDarkTheme": "ใช้ธีมสีดำ",
   "@settingsTitleUseDarkTheme": {
     "description": "Settings title: Use dark theme",
     "type": "text",
@@ -96,31 +96,31 @@
     "type": "text",
     "placeholders": {}
   },
-  "settingsTitleExtraPrecision": "มีความแม่นยำ",
+  "settingsTitleExtraPrecision": "ความแม่นยำสูง",
   "@settingsTitleExtraPrecision": {
     "description": "Settings title: Extra precision",
     "type": "text",
     "placeholders": {}
   },
-  "settingsSubtitleExtraPrecision": "เพิ่มความถูกต้องของตัวเลขในการคำนวณจำนวนเงิน",
+  "settingsSubtitleExtraPrecision": "เพิ่มความแม่นยำในการคำนวนตัวเลข",
   "@settingsSubtitleExtraPrecision": {
     "description": "Settings subtitle: Extra precision",
     "type": "text",
     "placeholders": {}
   },
-  "settingsTitleLimitInput": "จำกัดการใส่ข้อมูลตัวเลขจำนวนเต็ม",
+  "settingsTitleLimitInput": "จำกัดการใส่ข้อมูลตัวเลขเต็มจำนวน",
   "@settingsTitleLimitInput": {
     "description": "Settings title: Limit input to decimalas",
     "type": "text",
     "placeholders": {}
   },
-  "screenTitleSetAmount": "Set amount",
+  "screenTitleSetAmount": "ใส่จำนวนเงิน",
   "@screenTitleSetAmount": {
     "description": "Scree title: Set amount",
     "type": "text",
     "placeholders": {}
   },
-  "screenTitleArrangeCurrencies": "Arrange favourites",
+  "screenTitleArrangeCurrencies": "จัดเรียงรายการโปรด",
   "@screenTitleArrangeCurrencies": {
     "description": "Scree title: Arrange favourites",
     "type": "text",
@@ -144,13 +144,13 @@
     "type": "text",
     "placeholders": {}
   },
-  "settingsTitleAppReset": "ตั้งค่าแอพพลิเคชั่นใหม่",
+  "settingsTitleAppReset": "ตั้งค่าแอปพลิเคชั่นใหม่",
   "@settingsTitleAppReset": {
     "description": "Settings title: App reset",
     "type": "text",
     "placeholders": {}
   },
-  "settingsSubtitleAppReset": "ล้างข้อมูลทั้งหมดของแอพพลิเคชั่น",
+  "settingsSubtitleAppReset": "ล้างข้อมูลทั้งหมดของแอปพลิเคชั่น",
   "@settingsSubtitleAppReset": {
     "description": "Settings subtitle: App reset",
     "type": "text",
@@ -162,19 +162,19 @@
     "type": "text",
     "placeholders": {}
   },
-  "settingsMsgboxTitleDataCleared": "ข้อมูลถูกลบเรียบร้อยแล้ว",
+  "settingsMsgboxTitleDataCleared": "ล้างข้อมูลแล้ว",
   "@settingsMsgboxTitleDataCleared": {
     "description": "Settings messagebox title: Data cleared",
     "type": "text",
     "placeholders": {}
   },
-  "settingsMsgboxBodyDataCleared": "ปิดและเปิดแอพพลิเคชั่นอีกครั้ง",
+  "settingsMsgboxBodyDataCleared": "ปิดและเปิดแอปพลิเคชั่นอีกครั้ง",
   "@settingsMsgboxBodyDataCleared": {
     "description": "Settings messagebox text: Data cleared",
     "type": "text",
     "placeholders": {}
   },  
-  "inputPlaceHolderSearch": "Search...",
+  "inputPlaceHolderSearch": "ค้นหา...",
   "@inputPlaceHolderSearch": {
     "description": "Input search place holder",
     "type": "text",
