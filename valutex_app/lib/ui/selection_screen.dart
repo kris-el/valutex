@@ -7,6 +7,14 @@ import '../localization.dart';
 ExchangeCurrency exchangeCurrency = ExchangeCurrency();
 
 class SelectionScreen extends StatefulWidget {
+  final String lang;
+
+  SelectionScreen({
+    Key key,
+    @required this.lang,
+  })  : assert(lang != null),
+        super(key: key);
+
   @override
   State<StatefulWidget> createState() => _SelectionScreenState();
 }
@@ -64,11 +72,11 @@ class _SelectionScreenState extends State<SelectionScreen> {
   Widget build(BuildContext context) {
     if (_currencyWidgets != null) {
       _currencyWidgets.clear();
-      exchangeCurrency.searchCountries(searchText).forEach((country) {
+      exchangeCurrency.searchCountriesByLang(searchText, widget.lang).forEach((country) {
         _currencyWidgets.add(CurrencyDraft(
           flagCode: country.flagCode,
-          detail1: country.countryName,
-          detail2: country.currencyName,
+          detail1: country.countryNameAlt[widget.lang],
+          detail2: country.currencyNameAlt[widget.lang],
           tailWidget: InkWell(
             borderRadius: BorderRadius.circular(18.0),
             onTap: () {

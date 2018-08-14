@@ -97,6 +97,9 @@ class ExchangeCurrency {
           currencyCode: entry['currencyCode'],
           currencySymbol:
               (entry['currencySymbol'] != null) ? entry['currencySymbol'] : '',
+          countryNameAlt: entry['countryNameAlt'],
+          currencyNameAlt: entry['currencyNameAlt'],
+          countryNormNameAlt: entry['countryNormNameAlt'],
           real: entry['real'],
         ));
       } catch (e) {
@@ -113,6 +116,26 @@ class ExchangeCurrency {
       if (input == '') return country.fav;
       if (country.countryNormName.toString().contains(input.toLowerCase()))
         return true;
+      if (country.currencyName.toLowerCase().contains(input.toLowerCase()))
+        return true;
+      if (country.currencyCode.toLowerCase().contains(input.toLowerCase()))
+        return true;
+      return false;
+    }).toList();
+    return result;
+  }
+
+  List<CountryDetails> searchCountriesByLang(input, lang) {
+    List<CountryDetails> result = _countryList.where((country) {
+      if (!appSettings.fictionalCurrencies) {
+        if (!country.real) return false;
+      }
+      if (input == '') return country.fav;
+      //if (country.countryNormName.toString().contains(input.toLowerCase()))
+      //  return true;
+      if (country.countryNormNameAlt[lang]
+          .toString()
+          .contains(input.toLowerCase())) return true;
       if (country.currencyName.toLowerCase().contains(input.toLowerCase()))
         return true;
       if (country.currencyCode.toLowerCase().contains(input.toLowerCase()))
@@ -165,13 +188,13 @@ class ExchangeCurrency {
       int decimals = approx - rateIntPart;
       if (decimals > 0) {
         strAmount = inAmount.toStringAsFixed(decimals);
-        if(double.parse(strAmount) == 0.0) return '0';
+        if (double.parse(strAmount) == 0.0) return '0';
         return strAmount;
       } else {
         pad = decimals * -1;
         strAmount = (inAmount / pow(10, pad)).round().toString();
         strAmount = strAmount.padRight(strAmount.length + pad, '0');
-        if(double.parse(strAmount) == 0.0) return '0';
+        if (double.parse(strAmount) == 0.0) return '0';
         return strAmount;
       }
     }
@@ -184,7 +207,7 @@ class ExchangeCurrency {
     signifDigits--;
     signifDigits += approx;
     strAmount = inAmount.toStringAsFixed(signifDigits);
-    if(double.parse(strAmount) == 0.0) return '0';
+    if (double.parse(strAmount) == 0.0) return '0';
     return strAmount;
   }
 
@@ -241,6 +264,9 @@ class CountryDetails {
   final String currencyName;
   final String currencyCode;
   final String currencySymbol;
+  final Map countryNameAlt;
+  final Map currencyNameAlt;
+  final Map countryNormNameAlt;
   bool real;
   int order;
   bool fav;
@@ -253,6 +279,9 @@ class CountryDetails {
     @required this.currencyName,
     @required this.currencyCode,
     @required this.currencySymbol,
+    this.countryNameAlt,
+    this.currencyNameAlt,
+    this.countryNormNameAlt,
     this.real,
     this.order,
     this.fav,

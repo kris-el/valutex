@@ -9,7 +9,7 @@ var { mongoose } = require('./mongoose');
 var { Exchange } = require('./models/exchange');
 
 var dirs = ['./offline', './offline/flags', 'public', 'playground'];
-var allowedLanguages = ['en', 'it', 'th', 'vn', 'fr', 'sp'];
+var allowedLanguages = ['en', 'it', 'th', 'vn'];
 
 dirs.forEach((dir) => {
   if (!fs.existsSync(dir)) {
@@ -137,6 +137,7 @@ function countryCompare(a, b) {
 const argv = yargs
   .command('rates', 'Update the exchange rates')
   .command('countries', 'Get a json file with all the countries of available currencies')
+  .command('merge', 'Merge country data and translations it requires "countryNames.json"')
   .command('flags', 'Download the flags of all the countries of available currencies')
   .command('clear', 'Clean DB historical data')
   .help()
@@ -226,16 +227,86 @@ if (command === 'rates') {
       countries = countries.filter((cObj) => {
         return (countriesToRemove.indexOf(cObj.countryName) == -1);
       });
+      var countryNames = [];
+      var element = {};
+      countries.forEach((country) => {
+        element = {};
+        element.countryName = country.countryName;
+        var countryAlt = {};
+        var currencyAlt = {};
+        allowedLanguages.forEach((language) => {
+          _.set(countryAlt, language, country.countryName);
+          _.set(currencyAlt, language, country.currencyName);
+        });
+        _.set(element, 'countryAlt', countryAlt);
+        _.set(element, 'currencyAlt', currencyAlt);
+        countryNames.push(element);
+      });
       fs.writeFile(__dirname + "/../offline/countries.json", JSON.stringify(countries, undefined, 4), (err) => {
         if (err) {
           console.error(err);
           return;
         };
-        console.log("- File has been created");
+        console.log("- countries.json has been created");
+      });
+      fs.writeFile(__dirname + "/../offline/countryNames.new.json", JSON.stringify(countryNames, undefined, 4), (err) => {
+        if (err) {
+          console.error(err);
+          return;
+        };
+        console.log("- countryNames.json has been created");
       });
     }
     mongoose.connection.close();
   });
+
+} else if (command === 'merge') {
+
+  var countryNames = [];
+  var countries = [];
+  var countriesML = [];
+  try {
+    countries = require(__dirname + "/../offline/countries.json") || [];
+  } catch (error) {
+    countries = [];
+  }
+  try {
+    countryNames = require(__dirname + "/../offline/countryNames.json") || [];
+  } catch (error) {
+    countryNames = [];
+  }
+
+  if ((countries.length > 0) && (countryNames.length > 0)) {
+    console.log('Start merge!');
+    countries.forEach((country) => {
+      var countryNormNameAlt = {};
+      var names = countryNames.find((entity) => entity.countryName === country.countryName);
+      _.set(country, 'countryNameAlt', names.countryAlt);
+      _.set(country, 'currencyNameAlt', names.currencyAlt);
+      allowedLanguages.forEach((lang) => {
+        //countryNormNameAlt[lang] = normalizeToLower(country.countryNameAlt[lang]);
+        _.set(countryNormNameAlt, lang, normalizeToLower(country.countryNameAlt[lang]));
+      });
+      _.set(country, 'countryNormNameAlt', countryNormNameAlt);
+      countriesML.push(country);
+    });
+    fs.writeFile(__dirname + "/../offline/countries_ml.json", JSON.stringify(countriesML, undefined, 4), (err) => {
+      if (err) {
+        console.error(err);
+        return;
+      };
+      console.log("- countries_ml.json has been created");
+    });
+  } else {
+    console.log('No data to merge!');
+    console.log('Countries: ' + countries.length);
+    console.log('Country names: ' + countryNames.length);
+  }
+  mongoose.connection.close();
+
+} else if (command === 'addlang') {
+  // Add missing languages to countryNames.json
+  //...
 
 } else if (command === 'flags') {
 

@@ -14,15 +14,18 @@ class AmountScreen extends StatefulWidget {
   final CountryDetails countryDetails;
   final num initialAmount;
   final num maxAmount;
+  final String lang;
 
   AmountScreen({
     Key key,
     @required this.countryDetails,
     @required this.initialAmount,
     @required this.maxAmount,
+    @required this.lang,
   })  : assert(countryDetails != null),
         assert(initialAmount != null),
         assert(maxAmount != null),
+        assert(lang != null),
         super(key: key);
 
   createState() => _AmountScreenState();
@@ -113,8 +116,8 @@ class _AmountScreenState extends State<AmountScreen> {
       child: CurrencyDraft(
         label: 'amount-flag-' + widget.countryDetails.flagCode,
         flagCode: widget.countryDetails.flagCode,
-        detail1: widget.countryDetails.countryName,
-        detail2: widget.countryDetails.currencyName,
+        detail1: widget.countryDetails.countryNameAlt[widget.lang],
+        detail2: widget.countryDetails.currencyNameAlt[widget.lang],
         tailWidget: Text(
           (useAmountPrefix)
               ? '${widget.countryDetails.currencyCode}'

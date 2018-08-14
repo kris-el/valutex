@@ -8,6 +8,14 @@ import '../localization.dart';
 ExchangeCurrency exchangeCurrency = ExchangeCurrency();
 
 class ArrangeScreen extends StatefulWidget {
+  final String lang;
+
+  ArrangeScreen({
+    Key key,
+    @required this.lang,
+  })  : assert(lang != null),
+        super(key: key);
+
   @override
   createState() => _ArrangeScreenState();
 }
@@ -26,10 +34,10 @@ class _ArrangeScreenState extends State<ArrangeScreen> {
       _items.add(
         CountryDetails(
           key: ValueKey(i),
-          countryName: country.countryName,
-          countryNormName: country.countryNormName,
+          countryName: country.countryNameAlt[widget.lang],
+          countryNormName: country.countryNormNameAlt[widget.lang],
           flagCode: country.flagCode,
-          currencyName: country.currencyName,
+          currencyName: country.currencyNameAlt[widget.lang],
           currencyCode: country.currencyCode,
           currencySymbol: country.currencySymbol,
         ),

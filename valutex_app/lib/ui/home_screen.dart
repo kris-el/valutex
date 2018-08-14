@@ -143,8 +143,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Future<void> _loadCountriesFromAsset(BuildContext context) async {
     if (exchangeCurrency.isCountryListLoaded()) return;
-    final jsonCountries =
-        DefaultAssetBundle.of(context).loadString('assets/data/countries.json');
+    final jsonCountries = DefaultAssetBundle.of(context)
+        .loadString('assets/data/countries_ml.json');
     final dataCountries = JsonDecoder().convert(await jsonCountries);
 
     if (dataCountries is! List) {
@@ -296,7 +296,7 @@ class _HomeScreenState extends State<HomeScreen> {
   void openSelScreen(BuildContext context) async {
     await Navigator.of(context).push(
       MaterialPageRoute(
-        builder: (context) => SelectionScreen(),
+        builder: (context) => SelectionScreen(lang: appLanguage),
       ),
     );
   }
@@ -304,7 +304,7 @@ class _HomeScreenState extends State<HomeScreen> {
   void openArrScreen(BuildContext context) async {
     await Navigator.of(context).push(
       MaterialPageRoute(
-        builder: (context) => ArrangeScreen(),
+        builder: (context) => ArrangeScreen(lang: appLanguage),
       ),
     );
   }
@@ -317,6 +317,7 @@ class _HomeScreenState extends State<HomeScreen> {
           .where((country) => country.fav)
           .forEach((element) {
         _activeCountryCurrencyWidgets.add(CurrencyWidget(
+          lang: appLanguage,
           label: 'amount-flag-' + element.flagCode,
           countryDetails: element,
           currentAmount:

@@ -24,7 +24,7 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/data/countries.json
+    - assets/data/countries_ml.json
     - assets/data/rates.json
 
     - assets/images/logo/curex.png

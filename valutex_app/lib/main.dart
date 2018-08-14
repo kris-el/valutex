@@ -57,6 +57,8 @@ class ValutexApp extends StatelessWidget {
 
 /*
 [2.1.1] #11
+Localize country data on server side
+Display localized info
 Localization IT, TH
 Set notation accordingly to system language
 

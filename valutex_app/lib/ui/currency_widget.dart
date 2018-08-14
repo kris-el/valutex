@@ -13,8 +13,9 @@ class CurrencyWidget extends StatelessWidget {
   final CountryDetails countryDetails;
   final String currentAmount;
   final num maxAmount;
+  final String lang;
   final InputAmountCallback inputAmountCallBack;
-  final label;
+  final String label;
 
   CurrencyWidget({
     Key key,
@@ -22,24 +23,26 @@ class CurrencyWidget extends StatelessWidget {
     @required this.currentAmount,
     @required this.maxAmount,
     @required this.inputAmountCallBack,
+    @required this.lang,
     this.label,
   })  : assert(countryDetails != null),
         assert(currentAmount != null),
         assert(maxAmount != null),
+        assert(lang != null),
         super(key: key);
 
   void openAmountScreen(BuildContext context) async {
     final amount = await Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (context) => AmountScreen(
-                  countryDetails: countryDetails,
-                  initialAmount: (currentAmount == null)
-                      ? 1.0
-                      : double.parse(currentAmount),
-                  maxAmount: maxAmount,
-                ),
-          ),
-        );
+      MaterialPageRoute(
+        builder: (context) => AmountScreen(
+              lang: lang,
+              countryDetails: countryDetails,
+              initialAmount:
+                  (currentAmount == null) ? 1.0 : double.parse(currentAmount),
+              maxAmount: maxAmount,
+            ),
+      ),
+    );
     inputAmountCallBack(countryDetails.currencyCode, amount);
     //Scaffold.of(context).showSnackBar(SnackBar(content: Text("$amount")));
   }
@@ -52,8 +55,8 @@ class CurrencyWidget extends StatelessWidget {
         child: CurrencyDraft(
           label: label,
           flagCode: countryDetails.flagCode,
-          detail1: countryDetails.countryName,
-          detail2: countryDetails.currencyName,
+          detail1: countryDetails.countryNameAlt[lang],
+          detail2: countryDetails.currencyNameAlt[lang],
           tailWidget: Text(
             '${countryDetails.currencySymbol} ${exchangeCurrency.applyNotation(currentAmount, appSettings.europeanNotation)}',
             style: TextStyle(fontSize: 18.0 * appSettings.scaleWidth),

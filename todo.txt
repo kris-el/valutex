@@ -1,4 +1,6 @@
 [Todo]
+Complete country currency translations
+Test localization th, search and display
 
 Missing TH translations:
 Set amount
