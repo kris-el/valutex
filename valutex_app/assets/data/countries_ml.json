@@ -95,10 +95,10 @@
             "vn": "Algeria"
         },
         "currencyNameAlt": {
-            "en": "Algerian dinar",
-            "it": "Dinaro algerino",
-            "th": "ดีนาร์แอลจีเรีย",
-            "vn": "Algerian dinar"
+            "en": "Dinar",
+            "it": "Dinaro",
+            "th": "ดีนาร์",
+            "vn": "Dinar"
         },
         "countryNormNameAlt": {
             "en": "algeria",
@@ -123,7 +123,7 @@
         },
         "currencyNameAlt": {
             "en": "US Dollar",
-            "it": "Dollaro statunitense",
+            "it": "Dollaro US",
             "th": "ดอลลาร์สหรัฐ",
             "vn": "US Dollar"
         },
@@ -232,7 +232,7 @@
         "currencyNameAlt": {
             "en": "AU dollar",
             "it": "Dollaro AU",
-            "th": "ดอลลาร์ทวิปแอนตาร์กติกา",
+            "th": "ดอลลาร์ US",
             "vn": "Australian dollar"
         },
         "countryNormNameAlt": {
@@ -259,7 +259,7 @@
         "currencyNameAlt": {
             "en": "OECS Dollar",
             "it": "Dollaro OECS",
-            "th": "ดอลลาร์แคริบเบียนตะวันออก",
+            "th": "ดอลลาร์ OECS",
             "vn": "East Caribbean dollar"
         },
         "countryNormNameAlt": {
@@ -284,9 +284,9 @@
             "vn": "Argentina"
         },
         "currencyNameAlt": {
-            "en": "Argentine peso",
-            "it": "Peso argentino",
-            "th": "เปโซอาร์เจนตินา",
+            "en": "Peso",
+            "it": "Peso",
+            "th": "เปโซ",
             "vn": "Argentine peso"
         },
         "countryNormNameAlt": {
@@ -311,9 +311,9 @@
             "vn": "Armenia"
         },
         "currencyNameAlt": {
-            "en": "Armenian dram",
-            "it": "Armenian dram",
-            "th": "Armenian dram",
+            "en": "Dram",
+            "it": "Dram",
+            "th": "ดรัม",
             "vn": "Armenian dram"
         },
         "countryNormNameAlt": {
@@ -365,9 +365,9 @@
             "vn": "Aruba"
         },
         "currencyNameAlt": {
-            "en": "Aruban florin",
-            "it": "Aruban florin",
-            "th": "Aruban florin",
+            "en": "Florin",
+            "it": "Fiorino",
+            "th": "โฟลริน",
             "vn": "Aruban florin"
         },
         "countryNormNameAlt": {
@@ -394,7 +394,7 @@
         "currencyNameAlt": {
             "en": "AU dollar",
             "it": "Dollaro AU",
-            "th": "ดอลลาร์ออสเตรเลีย",
+            "th": "ดอลลาร์ AU",
             "vn": "Australian dollar"
         },
         "countryNormNameAlt": {
@@ -473,9 +473,9 @@
             "vn": "Bahamas"
         },
         "currencyNameAlt": {
-            "en": "Bahamian dollar",
-            "it": "Dollaro delle Bahamas",
-            "th": "ดอลลาร์บาฮามาส",
+            "en": "Dollar",
+            "it": "Dollaro",
+            "th": "ดอลลาร์",
             "vn": "Bahamian dollar"
         },
         "countryNormNameAlt": {
@@ -500,9 +500,9 @@
             "vn": "Bahrain"
         },
         "currencyNameAlt": {
-            "en": "Bahraini dinar",
-            "it": "Dinaro del Bahrein",
-            "th": "ดีนาร์บาห์เรน",
+            "en": "Dinar",
+            "it": "Dinaro",
+            "th": "ดีนาร์",
             "vn": "Bahraini dinar"
         },
         "countryNormNameAlt": {
@@ -554,9 +554,9 @@
             "vn": "Barbados"
         },
         "currencyNameAlt": {
-            "en": "Barbadian dollar",
-            "it": "Dollaro di Barbados",
-            "th": "ดอลลาร์บาร์เบโดส",
+            "en": "Dollar",
+            "it": "Dollaro",
+            "th": "ดอลลาร์",
             "vn": "Barbadian dollar"
         },
         "countryNormNameAlt": {
@@ -581,10 +581,10 @@
             "vn": "Belarus"
         },
         "currencyNameAlt": {
-            "en": "Belarusian ruble",
-            "it": "Rublo bielorusso",
-            "th": "รูเบิลเบลารุส",
-            "vn": "Belarusian ruble"
+            "en": "Ruble",
+            "it": "Rublo",
+            "th": "รูเบิล",
+            "vn": "Ruble"
         },
         "countryNormNameAlt": {
             "en": "belarus",
@@ -635,10 +635,10 @@
             "vn": "Belize"
         },
         "currencyNameAlt": {
-            "en": "Belize dollar",
-            "it": "Dollaro del Belize",
-            "th": "ดอลลาร์เบลีซ",
-            "vn": "Belize dollar"
+            "en": "Dollar",
+            "it": "Belize",
+            "th": "ดอลลาร์",
+            "vn": "Dollar"
         },
         "countryNormNameAlt": {
             "en": "belize",
@@ -664,7 +664,7 @@
         "currencyNameAlt": {
             "en": "CFA franc",
             "it": "Franco CFA",
-            "th": "ฟรังก์ซีเอฟเอ",
+            "th": "ฟรังก์ CFA",
             "vn": "CFA franc"
         },
         "countryNormNameAlt": {
@@ -689,10 +689,10 @@
             "vn": "Bermuda"
         },
         "currencyNameAlt": {
-            "en": "Bermudian dollar",
-            "it": "Dollaro delle Bermude",
-            "th": "ดอลลาร์เบอร์มิวดา",
-            "vn": "Bermudian dollar"
+            "en": "Dollar",
+            "it": "Dollaro",
+            "th": "ดอลลาร์",
+            "vn": "Dollar"
         },
         "countryNormNameAlt": {
             "en": "bermuda",
@@ -851,9 +851,9 @@
             "vn": "Brunei Darussalam"
         },
         "currencyNameAlt": {
-            "en": "Brunei dollar",
-            "it": "Dollaro del Brunei",
-            "th": "ดอลลาร์บรูไน",
+            "en": "Dollar",
+            "it": "Dollaro",
+            "th": "ดอลลาร์",
             "vn": "Brunei dollar"
         },
         "countryNormNameAlt": {
@@ -907,7 +907,7 @@
         "currencyNameAlt": {
             "en": "West African CFA franc",
             "it": "Franco CFA",
-            "th": "ฟรังก์ซีเอฟเอ",
+            "th": "ฟรังก์ CFA",
             "vn": "CFA franc"
         },
         "countryNormNameAlt": {
@@ -932,9 +932,9 @@
             "vn": "Burundi"
         },
         "currencyNameAlt": {
-            "en": "Burundian franc",
-            "it": "Franco del Burundi",
-            "th": "ฟรังก์บุรุนดี",
+            "en": "Franc",
+            "it": "Franco",
+            "th": "ฟรังก์",
             "vn": "Burundian franc"
         },
         "countryNormNameAlt": {
@@ -959,10 +959,10 @@
             "vn": "Cabo Verde"
         },
         "currencyNameAlt": {
-            "en": "Cape Verdean escudo",
-            "it": "Escudo capoverdiano",
+            "en": "Escudo",
+            "it": "Escudo",
             "th": "อิชกูดู",
-            "vn": "Cape Verdean escudo"
+            "vn": "Escudo"
         },
         "countryNormNameAlt": {
             "en": "cape verde",
@@ -1015,7 +1015,7 @@
         "currencyNameAlt": {
             "en": "CFA franc",
             "it": "Franco CFA",
-            "th": "ฟรังก์ซีเอฟเอ",
+            "th": "ฟรังก์ CFA",
             "vn": "CFA franc"
         },
         "countryNormNameAlt": {
@@ -1096,7 +1096,7 @@
         "currencyNameAlt": {
             "en": "CFA franc",
             "it": "Franco CFA",
-            "th": "ฟรังก์ซีเอฟเอ",
+            "th": "ฟรังก์ CFA",
             "vn": "CFA franc"
         },
         "countryNormNameAlt": {
@@ -1123,7 +1123,7 @@
         "currencyNameAlt": {
             "en": "CFA franc",
             "it": "Franco CFA",
-            "th": "ฟรังก์ซีเอฟเอ",
+            "th": "ฟรังก์ CFA",
             "vn": "CFA franc"
         },
         "countryNormNameAlt": {
@@ -1204,7 +1204,7 @@
         "currencyNameAlt": {
             "en": "AU dollar",
             "it": "Dollaro AU",
-            "th": "ดอลลาร์ทวิปแอนตาร์กติกา",
+            "th": "ดอลลาร์ US",
             "vn": "Australian dollar"
         },
         "countryNormNameAlt": {
@@ -1231,7 +1231,7 @@
         "currencyNameAlt": {
             "en": "AU dollar",
             "it": "Dollaro AU",
-            "th": "ดอลลาร์ทวิปแอนตาร์กติกา",
+            "th": "ดอลลาร์ US",
             "vn": "Australian dollar"
         },
         "countryNormNameAlt": {
@@ -1256,9 +1256,9 @@
             "vn": "Colombia"
         },
         "currencyNameAlt": {
-            "en": "Colombian peso",
-            "it": "Peso colombiano",
-            "th": "เปโซโคลอมเบีย",
+            "en": "Peso",
+            "it": "Peso",
+            "th": "เปโซ",
             "vn": "Colombian peso"
         },
         "countryNormNameAlt": {
@@ -1283,9 +1283,9 @@
             "vn": "Comoros"
         },
         "currencyNameAlt": {
-            "en": "Comorian franc",
-            "it": "Franco delle Comore",
-            "th": "ฟรังก์คอโมโรส",
+            "en": "Franc",
+            "it": "Franco",
+            "th": "ฟรังก์",
             "vn": "Comorian franc"
         },
         "countryNormNameAlt": {
@@ -1312,7 +1312,7 @@
         "currencyNameAlt": {
             "en": "CFA franc",
             "it": "Franco CFA",
-            "th": "ฟรังก์ซีเอฟเอ",
+            "th": "ฟรังก์ CFA",
             "vn": "CFA franc"
         },
         "countryNormNameAlt": {
@@ -1337,9 +1337,9 @@
             "vn": "Congo (Democratic Republic of the)"
         },
         "currencyNameAlt": {
-            "en": "Congolese franc",
-            "it": "Franco congolese",
-            "th": "ฟรังก์คองโก",
+            "en": "Franc",
+            "it": "Franco",
+            "th": "ฟรังก์",
             "vn": "Congolese franc"
         },
         "countryNormNameAlt": {
@@ -1359,20 +1359,20 @@
         "real": true,
         "countryNameAlt": {
             "en": "Cook Islands",
-            "it": "Cook Islands",
-            "th": "Cook Islands",
+            "it": "Isole Cook",
+            "th": "หมู่เกาะคุก",
             "vn": "Cook Islands"
         },
         "currencyNameAlt": {
-            "en": "New Zealand dollar",
-            "it": "New Zealand dollar",
-            "th": "New Zealand dollar",
+            "en": "NZ Dollar",
+            "it": "Dollaro NZ",
+            "th": "ดอลลาร์นิวซีแลนด์",
             "vn": "New Zealand dollar"
         },
         "countryNormNameAlt": {
             "en": "cook islands",
-            "it": "cook islands",
-            "th": "cook islands",
+            "it": "isole cook",
+            "th": "หมู่เกาะคุก",
             "vn": "cook islands"
         }
     },
@@ -1387,19 +1387,19 @@
         "countryNameAlt": {
             "en": "Costa Rica",
             "it": "Costa Rica",
-            "th": "Costa Rica",
+            "th": "คอสตาริกา",
             "vn": "Costa Rica"
         },
         "currencyNameAlt": {
-            "en": "Costa Rican colón",
-            "it": "Costa Rican colón",
-            "th": "Costa Rican colón",
-            "vn": "Costa Rican colón"
+            "en": "Colón",
+            "it": "Colón",
+            "th": "Colón",
+            "vn": "โกลอน"
         },
         "countryNormNameAlt": {
             "en": "costa rica",
             "it": "costa rica",
-            "th": "costa rica",
+            "th": "คอสตาริกา",
             "vn": "costa rica"
         }
     },
@@ -1412,21 +1412,21 @@
         "countryNormName": "cote d'ivoire",
         "real": true,
         "countryNameAlt": {
-            "en": "Côte d'Ivoire",
-            "it": "Côte d'Ivoire",
-            "th": "Côte d'Ivoire",
+            "en": "Ivory Coast",
+            "it": "Costa d'Avorio",
+            "th": "โกตดิวัวร์",
             "vn": "Côte d'Ivoire"
         },
         "currencyNameAlt": {
             "en": "West African CFA franc",
             "it": "Franco CFA",
-            "th": "ฟรังก์ซีเอฟเอ",
+            "th": "ฟรังก์ CFA",
             "vn": "CFA franc"
         },
         "countryNormNameAlt": {
-            "en": "cote d'ivoire",
-            "it": "cote d'ivoire",
-            "th": "cote d'ivoire",
+            "en": "ivory coast",
+            "it": "costa d'avorio",
+            "th": "โกตดิวัวร์",
             "vn": "cote d'ivoire"
         }
     },
@@ -1440,20 +1440,20 @@
         "real": true,
         "countryNameAlt": {
             "en": "Croatia",
-            "it": "Croatia",
-            "th": "Croatia",
+            "it": "Croazia",
+            "th": "โครเอเชีย",
             "vn": "Croatia"
         },
         "currencyNameAlt": {
-            "en": "Croatian kuna",
-            "it": "Croatian kuna",
-            "th": "Croatian kuna",
+            "en": "Kuna",
+            "it": "Kuna",
+            "th": "คูนา",
             "vn": "Croatian kuna"
         },
         "countryNormNameAlt": {
             "en": "croatia",
-            "it": "croatia",
-            "th": "croatia",
+            "it": "croazia",
+            "th": "โครเอเชีย",
             "vn": "croatia"
         }
     },
@@ -1468,19 +1468,19 @@
         "countryNameAlt": {
             "en": "Cuba",
             "it": "Cuba",
-            "th": "Cuba",
+            "th": "คิวบา",
             "vn": "Cuba"
         },
         "currencyNameAlt": {
-            "en": "Cuban convertible peso",
-            "it": "Cuban convertible peso",
-            "th": "Cuban convertible peso",
+            "en": "Peso",
+            "it": "Peso",
+            "th": "เปโซ",
             "vn": "Cuban convertible peso"
         },
         "countryNormNameAlt": {
             "en": "cuba",
             "it": "cuba",
-            "th": "cuba",
+            "th": "คิวบา",
             "vn": "cuba"
         }
     },
@@ -1495,19 +1495,19 @@
         "countryNameAlt": {
             "en": "Curaçao",
             "it": "Curaçao",
-            "th": "Curaçao",
+            "th": "กือราเซา",
             "vn": "Curaçao"
         },
         "currencyNameAlt": {
-            "en": "Netherlands Antillean guilder",
-            "it": "Netherlands Antillean guilder",
-            "th": "Netherlands Antillean guilder",
+            "en": "Guilder",
+            "it": "Fiorino",
+            "th": "กิลเดอร์",
             "vn": "Netherlands Antillean guilder"
         },
         "countryNormNameAlt": {
             "en": "curacao",
             "it": "curacao",
-            "th": "curacao",
+            "th": "กือราเซา",
             "vn": "curacao"
         }
     },
@@ -1521,8 +1521,8 @@
         "real": true,
         "countryNameAlt": {
             "en": "Cyprus",
-            "it": "Cyprus",
-            "th": "Cyprus",
+            "it": "Cipro",
+            "th": "ไซปรัส",
             "vn": "Cyprus"
         },
         "currencyNameAlt": {
@@ -1533,8 +1533,8 @@
         },
         "countryNormNameAlt": {
             "en": "cyprus",
-            "it": "cyprus",
-            "th": "cyprus",
+            "it": "cipro",
+            "th": "ไซปรัส",
             "vn": "cyprus"
         }
     },
@@ -1548,20 +1548,20 @@
         "real": true,
         "countryNameAlt": {
             "en": "Czech Republic",
-            "it": "Czech Republic",
-            "th": "Czech Republic",
+            "it": "Repubblica Ceca",
+            "th": "เช็กเกีย",
             "vn": "Czech Republic"
         },
         "currencyNameAlt": {
-            "en": "Czech koruna",
-            "it": "Czech koruna",
-            "th": "Czech koruna",
+            "en": "Koruna",
+            "it": "Corona",
+            "th": "โครูนา",
             "vn": "Czech koruna"
         },
         "countryNormNameAlt": {
             "en": "czech republic",
-            "it": "czech republic",
-            "th": "czech republic",
+            "it": "repubblica ceca",
+            "th": "เช็กเกีย",
             "vn": "czech republic"
         }
     },
@@ -1575,20 +1575,20 @@
         "real": true,
         "countryNameAlt": {
             "en": "Denmark",
-            "it": "Denmark",
-            "th": "Denmark",
+            "it": "Danimarca",
+            "th": "เดนมาร์ก",
             "vn": "Denmark"
         },
         "currencyNameAlt": {
-            "en": "Danish krone",
-            "it": "Danish krone",
-            "th": "Danish krone",
+            "en": "Krone",
+            "it": "Corona",
+            "th": "โครน",
             "vn": "Danish krone"
         },
         "countryNormNameAlt": {
             "en": "denmark",
-            "it": "denmark",
-            "th": "denmark",
+            "it": "danimarca",
+            "th": "เดนมาร์ก",
             "vn": "denmark"
         }
     },
@@ -1602,20 +1602,20 @@
         "real": true,
         "countryNameAlt": {
             "en": "Djibouti",
-            "it": "Djibouti",
-            "th": "Djibouti",
+            "it": "Gibuti",
+            "th": "จิบูตี",
             "vn": "Djibouti"
         },
         "currencyNameAlt": {
-            "en": "Djiboutian franc",
-            "it": "Djiboutian franc",
-            "th": "Djiboutian franc",
+            "en": "Franc",
+            "it": "Franco",
+            "th": "ฟรังก์",
             "vn": "Djiboutian franc"
         },
         "countryNormNameAlt": {
             "en": "djibouti",
-            "it": "djibouti",
-            "th": "djibouti",
+            "it": "gibuti",
+            "th": "จิบูตี",
             "vn": "djibouti"
         }
     },
@@ -1630,7 +1630,7 @@
         "countryNameAlt": {
             "en": "Dominica",
             "it": "Dominica",
-            "th": "Dominica",
+            "th": "ดอมินีกา",
             "vn": "Dominica"
         },
         "currencyNameAlt": {
@@ -1642,7 +1642,7 @@
         "countryNormNameAlt": {
             "en": "dominica",
             "it": "dominica",
-            "th": "dominica",
+            "th": "ดอมินีกา",
             "vn": "dominica"
         }
     },
@@ -1656,20 +1656,20 @@
         "real": true,
         "countryNameAlt": {
             "en": "Dominican Republic",
-            "it": "Dominican Republic",
-            "th": "Dominican Republic",
+            "it": "Repubblica Dominicana",
+            "th": "สาธารณรัฐโดมินิกัน",
             "vn": "Dominican Republic"
         },
         "currencyNameAlt": {
-            "en": "Dominican peso",
-            "it": "Dominican peso",
-            "th": "Dominican peso",
+            "en": "Peso",
+            "it": "Peso",
+            "th": "เปโซ",
             "vn": "Dominican peso"
         },
         "countryNormNameAlt": {
             "en": "dominican republic",
-            "it": "dominican republic",
-            "th": "dominican republic",
+            "it": "repubblica dominicana",
+            "th": "สาธารณรัฐโดมินิกัน",
             "vn": "dominican republic"
         }
     },
@@ -1684,19 +1684,19 @@
         "countryNameAlt": {
             "en": "Ecuador",
             "it": "Ecuador",
-            "th": "Ecuador",
+            "th": "เอกวาดอร์",
             "vn": "Ecuador"
         },
         "currencyNameAlt": {
-            "en": "United States dollar",
-            "it": "United States dollar",
-            "th": "United States dollar",
+            "en": "US Dollar",
+            "it": "Dollaro US",
+            "th": "ดอลลาร์สหรัฐ",
             "vn": "United States dollar"
         },
         "countryNormNameAlt": {
             "en": "ecuador",
             "it": "ecuador",
-            "th": "ecuador",
+            "th": "เอกวาดอร์",
             "vn": "ecuador"
         }
     },
@@ -1710,20 +1710,20 @@
         "real": true,
         "countryNameAlt": {
             "en": "Egypt",
-            "it": "Egypt",
-            "th": "Egypt",
+            "it": "Egitto",
+            "th": "อียิปต์",
             "vn": "Egypt"
         },
         "currencyNameAlt": {
-            "en": "Egyptian pound",
-            "it": "Egyptian pound",
-            "th": "Egyptian pound",
+            "en": "Pound",
+            "it": "Sterlina",
+            "th": "ปอนด์",
             "vn": "Egyptian pound"
         },
         "countryNormNameAlt": {
             "en": "egypt",
-            "it": "egypt",
-            "th": "egypt",
+            "it": "egitto",
+            "th": "อียิปต์",
             "vn": "egypt"
         }
     },
@@ -1738,19 +1738,19 @@
         "countryNameAlt": {
             "en": "El Salvador",
             "it": "El Salvador",
-            "th": "El Salvador",
+            "th": "เอลซัลวาดอร์",
             "vn": "El Salvador"
         },
         "currencyNameAlt": {
-            "en": "United States dollar",
-            "it": "United States dollar",
-            "th": "United States dollar",
+            "en": "US Dollar",
+            "it": "Dollaro US",
+            "th": "ดอลลาร์สหรัฐ",
             "vn": "United States dollar"
         },
         "countryNormNameAlt": {
             "en": "el salvador",
             "it": "el salvador",
-            "th": "el salvador",
+            "th": "เอลซัลวาดอร์",
             "vn": "el salvador"
         }
     },
@@ -1764,20 +1764,20 @@
         "real": true,
         "countryNameAlt": {
             "en": "Equatorial Guinea",
-            "it": "Equatorial Guinea",
-            "th": "Equatorial Guinea",
+            "it": "Guinea Equatoriale",
+            "th": "อิเควทอเรียลกินี",
             "vn": "Equatorial Guinea"
         },
         "currencyNameAlt": {
             "en": "CFA franc",
             "it": "Franco CFA",
-            "th": "ฟรังก์ซีเอฟเอ",
+            "th": "ฟรังก์ CFA",
             "vn": "CFA franc"
         },
         "countryNormNameAlt": {
             "en": "equatorial guinea",
-            "it": "equatorial guinea",
-            "th": "equatorial guinea",
+            "it": "guinea equatoriale",
+            "th": "อิเควทอเรียลกินี",
             "vn": "equatorial guinea"
         }
     },
@@ -1792,19 +1792,19 @@
         "countryNameAlt": {
             "en": "Eritrea",
             "it": "Eritrea",
-            "th": "Eritrea",
+            "th": "เอริเทรีย",
             "vn": "Eritrea"
         },
         "currencyNameAlt": {
-            "en": "Eritrean nakfa",
-            "it": "Eritrean nakfa",
-            "th": "Eritrean nakfa",
+            "en": "Nakfa",
+            "it": "Nacfa",
+            "th": "นัฟกา",
             "vn": "Eritrean nakfa"
         },
         "countryNormNameAlt": {
             "en": "eritrea",
             "it": "eritrea",
-            "th": "eritrea",
+            "th": "เอริเทรีย",
             "vn": "eritrea"
         }
     },
@@ -1819,7 +1819,7 @@
         "countryNameAlt": {
             "en": "Estonia",
             "it": "Estonia",
-            "th": "Estonia",
+            "th": "เอสโตเนีย",
             "vn": "Estonia"
         },
         "currencyNameAlt": {
@@ -1831,7 +1831,7 @@
         "countryNormNameAlt": {
             "en": "estonia",
             "it": "estonia",
-            "th": "estonia",
+            "th": "เอสโตเนีย",
             "vn": "estonia"
         }
     },
@@ -1845,20 +1845,20 @@
         "real": true,
         "countryNameAlt": {
             "en": "Ethiopia",
-            "it": "Ethiopia",
-            "th": "Ethiopia",
+            "it": "Etiopia",
+            "th": "เอธิโอเปีย",
             "vn": "Ethiopia"
         },
         "currencyNameAlt": {
-            "en": "Ethiopian birr",
-            "it": "Ethiopian birr",
-            "th": "Ethiopian birr",
+            "en": "Birr",
+            "it": "Birr",
+            "th": "เบอร์",
             "vn": "Ethiopian birr"
         },
         "countryNormNameAlt": {
             "en": "ethiopia",
-            "it": "ethiopia",
-            "th": "ethiopia",
+            "it": "etiopia",
+            "th": "เอธิโอเปีย",
             "vn": "ethiopia"
         }
     },
@@ -1872,9 +1872,9 @@
         "real": true,
         "countryNameAlt": {
             "en": "Europe",
-            "it": "Europe",
-            "th": "Europe",
-            "vn": "Europe"
+            "it": "Europa",
+            "th": "ทวีปยุโรป",
+            "vn": "Châu Âu"
         },
         "currencyNameAlt": {
             "en": "Euro",
@@ -1884,9 +1884,9 @@
         },
         "countryNormNameAlt": {
             "en": "europe",
-            "it": "europe",
-            "th": "europe",
-            "vn": "europe"
+            "it": "europa",
+            "th": "ทวีปยุโรป",
+            "vn": "chau au"
         }
     },
     {
@@ -1898,21 +1898,21 @@
         "countryNormName": "falkland islands (malvinas)",
         "real": true,
         "countryNameAlt": {
-            "en": "Falkland Islands (Malvinas)",
-            "it": "Falkland Islands (Malvinas)",
-            "th": "Falkland Islands (Malvinas)",
+            "en": "Falkland Islands",
+            "it": "Isole Falkland",
+            "th": "หมู่เกาะฟอล์กแลนด์",
             "vn": "Falkland Islands (Malvinas)"
         },
         "currencyNameAlt": {
-            "en": "Falkland Islands pound",
-            "it": "Falkland Islands pound",
-            "th": "Falkland Islands pound",
+            "en": "Pound",
+            "it": "Sterlina",
+            "th": "ปอนด์",
             "vn": "Falkland Islands pound"
         },
         "countryNormNameAlt": {
-            "en": "falkland islands (malvinas)",
-            "it": "falkland islands (malvinas)",
-            "th": "falkland islands (malvinas)",
+            "en": "falkland islands",
+            "it": "isole falkland",
+            "th": "หมู่เกาะฟอล์กแลนด์",
             "vn": "falkland islands (malvinas)"
         }
     },
@@ -1926,20 +1926,20 @@
         "real": true,
         "countryNameAlt": {
             "en": "Faroe Islands",
-            "it": "Faroe Islands",
-            "th": "Faroe Islands",
+            "it": "Isole Faroe",
+            "th": "หมู่เกาะแฟโร",
             "vn": "Faroe Islands"
         },
         "currencyNameAlt": {
-            "en": "Danish krone",
-            "it": "Danish krone",
-            "th": "Danish krone",
+            "en": "Krone",
+            "it": "Corona",
+            "th": "โครนา",
             "vn": "Danish krone"
         },
         "countryNormNameAlt": {
             "en": "faroe islands",
-            "it": "faroe islands",
-            "th": "faroe islands",
+            "it": "isole faroe",
+            "th": "หมู่เกาะแฟโร",
             "vn": "faroe islands"
         }
     },
@@ -1980,19 +1980,19 @@
         "real": false,
         "countryNameAlt": {
             "en": "Ferengi Alliance",
-            "it": "Ferengi Alliance",
+            "it": "Alleanza Ferengi",
             "th": "Ferengi Alliance",
             "vn": "Ferengi Alliance"
         },
         "currencyNameAlt": {
             "en": "Ounce of gold",
-            "it": "Ounce of gold",
+            "it": "Once d'oro",
             "th": "Ounce of gold",
             "vn": "Ounce of gold"
         },
         "countryNormNameAlt": {
             "en": "ferengi alliance",
-            "it": "ferengi alliance",
+            "it": "alleanza ferengi",
             "th": "ferengi alliance",
             "vn": "ferengi alliance"
         }
@@ -2007,20 +2007,20 @@
         "real": true,
         "countryNameAlt": {
             "en": "Fiji",
-            "it": "Fiji",
-            "th": "Fiji",
+            "it": "Figi",
+            "th": "ฟีจี",
             "vn": "Fiji"
         },
         "currencyNameAlt": {
-            "en": "Fijian dollar",
-            "it": "Fijian dollar",
-            "th": "Fijian dollar",
+            "en": "Dollar",
+            "it": "Dollaro",
+            "th": "Dollar",
             "vn": "Fijian dollar"
         },
         "countryNormNameAlt": {
             "en": "fiji",
-            "it": "fiji",
-            "th": "fiji",
+            "it": "figi",
+            "th": "ฟีจี",
             "vn": "fiji"
         }
     },
@@ -2034,8 +2034,8 @@
         "real": true,
         "countryNameAlt": {
             "en": "Finland",
-            "it": "Finland",
-            "th": "Finland",
+            "it": "Finlandia",
+            "th": "ฟินแลนด์",
             "vn": "Finland"
         },
         "currencyNameAlt": {
@@ -2046,8 +2046,8 @@
         },
         "countryNormNameAlt": {
             "en": "finland",
-            "it": "finland",
-            "th": "finland",
+            "it": "finlandia",
+            "th": "ฟินแลนด์",
             "vn": "finland"
         }
     },
@@ -2061,8 +2061,8 @@
         "real": true,
         "countryNameAlt": {
             "en": "France",
-            "it": "France",
-            "th": "France",
+            "it": "Francia",
+            "th": "ฝรั่งเศส",
             "vn": "France"
         },
         "currencyNameAlt": {
@@ -2073,8 +2073,8 @@
         },
         "countryNormNameAlt": {
             "en": "france",
-            "it": "france",
-            "th": "france",
+            "it": "francia",
+            "th": "ฝรั่งเศส",
             "vn": "france"
         }
     },
@@ -2088,48 +2088,21 @@
         "real": true,
         "countryNameAlt": {
             "en": "French Polynesia",
-            "it": "French Polynesia",
-            "th": "French Polynesia",
+            "it": "Polinesia Francese",
+            "th": "เฟรนช์พอลินีเชีย",
             "vn": "French Polynesia"
         },
         "currencyNameAlt": {
             "en": "CFP franc",
-            "it": "CFP franc",
-            "th": "CFP franc",
+            "it": "Franco CFP",
+            "th": "ฟรังก์ CFP",
             "vn": "CFP franc"
         },
         "countryNormNameAlt": {
             "en": "french polynesia",
-            "it": "french polynesia",
-            "th": "french polynesia",
+            "it": "polinesia francese",
+            "th": "เฟรนช์พอลินีเชีย",
             "vn": "french polynesia"
-        }
-    },
-    {
-        "countryName": "French Southern Territories",
-        "flagCode": "TF",
-        "currencyName": "Euro",
-        "currencyCode": "EUR",
-        "currencySymbol": "€",
-        "countryNormName": "french southern territories",
-        "real": true,
-        "countryNameAlt": {
-            "en": "French Southern Territories",
-            "it": "French Southern Territories",
-            "th": "French Southern Territories",
-            "vn": "French Southern Territories"
-        },
-        "currencyNameAlt": {
-            "en": "Euro",
-            "it": "Euro",
-            "th": "ยูโร",
-            "vn": "Euro"
-        },
-        "countryNormNameAlt": {
-            "en": "french southern territories",
-            "it": "french southern territories",
-            "th": "french southern territories",
-            "vn": "french southern territories"
         }
     },
     {
@@ -2143,19 +2116,19 @@
         "countryNameAlt": {
             "en": "Gabon",
             "it": "Gabon",
-            "th": "Gabon",
+            "th": "กาบอง",
             "vn": "Gabon"
         },
         "currencyNameAlt": {
             "en": "CFA franc",
             "it": "Franco CFA",
-            "th": "ฟรังก์ซีเอฟเอ",
+            "th": "ฟรังก์ CFA",
             "vn": "CFA franc"
         },
         "countryNormNameAlt": {
             "en": "gabon",
             "it": "gabon",
-            "th": "gabon",
+            "th": "กาบอง",
             "vn": "gabon"
         }
     },
@@ -2170,19 +2143,19 @@
         "countryNameAlt": {
             "en": "Gambia",
             "it": "Gambia",
-            "th": "Gambia",
+            "th": "แกมเบีย",
             "vn": "Gambia"
         },
         "currencyNameAlt": {
-            "en": "Gambian dalasi",
-            "it": "Gambian dalasi",
-            "th": "Gambian dalasi",
+            "en": "Dalasi",
+            "it": "Dalasi",
+            "th": "ดาราซี",
             "vn": "Gambian dalasi"
         },
         "countryNormNameAlt": {
             "en": "gambia",
             "it": "gambia",
-            "th": "gambia",
+            "th": "แกมเบีย",
             "vn": "gambia"
         }
     },
@@ -2197,19 +2170,19 @@
         "countryNameAlt": {
             "en": "Georgia",
             "it": "Georgia",
-            "th": "Georgia",
+            "th": "จอร์เจีย",
             "vn": "Georgia"
         },
         "currencyNameAlt": {
-            "en": "Georgian Lari",
-            "it": "Georgian Lari",
-            "th": "Georgian Lari",
+            "en": "Lari",
+            "it": "Lari",
+            "th": "ลารี",
             "vn": "Georgian Lari"
         },
         "countryNormNameAlt": {
             "en": "georgia",
             "it": "georgia",
-            "th": "georgia",
+            "th": "จอร์เจีย",
             "vn": "georgia"
         }
     },
@@ -2223,8 +2196,8 @@
         "real": true,
         "countryNameAlt": {
             "en": "Germany",
-            "it": "Germany",
-            "th": "Germany",
+            "it": "Germania",
+            "th": "เยอรมนี",
             "vn": "Germany"
         },
         "currencyNameAlt": {
@@ -2235,8 +2208,8 @@
         },
         "countryNormNameAlt": {
             "en": "germany",
-            "it": "germany",
-            "th": "germany",
+            "it": "germania",
+            "th": "เยอรมนี",
             "vn": "germany"
         }
     },
@@ -2251,19 +2224,19 @@
         "countryNameAlt": {
             "en": "Ghana",
             "it": "Ghana",
-            "th": "Ghana",
+            "th": "กานา",
             "vn": "Ghana"
         },
         "currencyNameAlt": {
-            "en": "Ghanaian cedi",
-            "it": "Ghanaian cedi",
-            "th": "Ghanaian cedi",
+            "en": "Cedi",
+            "it": "Cedi",
+            "th": "ซีดี",
             "vn": "Ghanaian cedi"
         },
         "countryNormNameAlt": {
             "en": "ghana",
             "it": "ghana",
-            "th": "ghana",
+            "th": "กานา",
             "vn": "ghana"
         }
     },
@@ -2277,20 +2250,20 @@
         "real": true,
         "countryNameAlt": {
             "en": "Gibraltar",
-            "it": "Gibraltar",
-            "th": "Gibraltar",
+            "it": "Gibilterra",
+            "th": "ยิบรอลตาร์",
             "vn": "Gibraltar"
         },
         "currencyNameAlt": {
-            "en": "Gibraltar pound",
-            "it": "Gibraltar pound",
-            "th": "Gibraltar pound",
+            "en": "Pound",
+            "it": "Sterlina",
+            "th": "ปอนด์",
             "vn": "Gibraltar pound"
         },
         "countryNormNameAlt": {
             "en": "gibraltar",
-            "it": "gibraltar",
-            "th": "gibraltar",
+            "it": "gibilterra",
+            "th": "ยิบรอลตาร์",
             "vn": "gibraltar"
         }
     },
@@ -2304,8 +2277,8 @@
         "real": true,
         "countryNameAlt": {
             "en": "Greece",
-            "it": "Greece",
-            "th": "Greece",
+            "it": "Grecia",
+            "th": "กรีซ",
             "vn": "Greece"
         },
         "currencyNameAlt": {
@@ -2316,8 +2289,8 @@
         },
         "countryNormNameAlt": {
             "en": "greece",
-            "it": "greece",
-            "th": "greece",
+            "it": "grecia",
+            "th": "กรีซ",
             "vn": "greece"
         }
     },
@@ -2331,20 +2304,20 @@
         "real": true,
         "countryNameAlt": {
             "en": "Greenland",
-            "it": "Greenland",
-            "th": "Greenland",
+            "it": "Groenlandia",
+            "th": "กรีนแลนด์",
             "vn": "Greenland"
         },
         "currencyNameAlt": {
-            "en": "Danish krone",
-            "it": "Danish krone",
-            "th": "Danish krone",
+            "en": "Krone",
+            "it": "Corona",
+            "th": "โครน",
             "vn": "Danish krone"
         },
         "countryNormNameAlt": {
             "en": "greenland",
-            "it": "greenland",
-            "th": "greenland",
+            "it": "groenlandia",
+            "th": "กรีนแลนด์",
             "vn": "greenland"
         }
     },
@@ -2359,7 +2332,7 @@
         "countryNameAlt": {
             "en": "Grenada",
             "it": "Grenada",
-            "th": "Grenada",
+            "th": "เกรเนดา",
             "vn": "Grenada"
         },
         "currencyNameAlt": {
@@ -2371,7 +2344,7 @@
         "countryNormNameAlt": {
             "en": "grenada",
             "it": "grenada",
-            "th": "grenada",
+            "th": "เกรเนดา",
             "vn": "grenada"
         }
     },
@@ -2386,19 +2359,19 @@
         "countryNameAlt": {
             "en": "Guam",
             "it": "Guam",
-            "th": "Guam",
+            "th": "กวม",
             "vn": "Guam"
         },
         "currencyNameAlt": {
-            "en": "United States dollar",
-            "it": "United States dollar",
-            "th": "United States dollar",
+            "en": "US Dollar",
+            "it": "Dollaro US",
+            "th": "ดอลลาร์สหรัฐ",
             "vn": "United States dollar"
         },
         "countryNormNameAlt": {
             "en": "guam",
             "it": "guam",
-            "th": "guam",
+            "th": "กวม",
             "vn": "guam"
         }
     },
@@ -2413,47 +2386,20 @@
         "countryNameAlt": {
             "en": "Guatemala",
             "it": "Guatemala",
-            "th": "Guatemala",
+            "th": "กัวเตมาลา",
             "vn": "Guatemala"
         },
         "currencyNameAlt": {
-            "en": "Guatemalan quetzal",
-            "it": "Guatemalan quetzal",
-            "th": "Guatemalan quetzal",
+            "en": "Quetzal",
+            "it": "Quetzal",
+            "th": "เกตซัล",
             "vn": "Guatemalan quetzal"
         },
         "countryNormNameAlt": {
             "en": "guatemala",
             "it": "guatemala",
-            "th": "guatemala",
+            "th": "กัวเตมาลา",
             "vn": "guatemala"
-        }
-    },
-    {
-        "countryName": "Guernsey",
-        "flagCode": "GG",
-        "currencyName": "British pound",
-        "currencyCode": "GBP",
-        "currencySymbol": "£",
-        "countryNormName": "guernsey",
-        "real": true,
-        "countryNameAlt": {
-            "en": "Guernsey",
-            "it": "Guernsey",
-            "th": "Guernsey",
-            "vn": "Guernsey"
-        },
-        "currencyNameAlt": {
-            "en": "British pound",
-            "it": "British pound",
-            "th": "British pound",
-            "vn": "British pound"
-        },
-        "countryNormNameAlt": {
-            "en": "guernsey",
-            "it": "guernsey",
-            "th": "guernsey",
-            "vn": "guernsey"
         }
     },
     {
@@ -2467,19 +2413,19 @@
         "countryNameAlt": {
             "en": "Guinea",
             "it": "Guinea",
-            "th": "Guinea",
+            "th": "กินี",
             "vn": "Guinea"
         },
         "currencyNameAlt": {
-            "en": "Guinean franc",
-            "it": "Guinean franc",
-            "th": "Guinean franc",
+            "en": "Franc",
+            "it": "Franco",
+            "th": "ฟรังก์",
             "vn": "Guinean franc"
         },
         "countryNormNameAlt": {
             "en": "guinea",
             "it": "guinea",
-            "th": "guinea",
+            "th": "กินี",
             "vn": "guinea"
         }
     },
@@ -2494,19 +2440,19 @@
         "countryNameAlt": {
             "en": "Guinea-Bissau",
             "it": "Guinea-Bissau",
-            "th": "Guinea-Bissau",
+            "th": "กินี-บิสเซา",
             "vn": "Guinea-Bissau"
         },
         "currencyNameAlt": {
             "en": "West African CFA franc",
             "it": "Franco CFA",
-            "th": "ฟรังก์ซีเอฟเอ",
+            "th": "ฟรังก์ CFA",
             "vn": "CFA franc"
         },
         "countryNormNameAlt": {
             "en": "guinea-bissau",
             "it": "guinea-bissau",
-            "th": "guinea-bissau",
+            "th": "กินี-บิสเซา",
             "vn": "guinea-bissau"
         }
     },
@@ -2521,19 +2467,19 @@
         "countryNameAlt": {
             "en": "Guyana",
             "it": "Guyana",
-            "th": "Guyana",
+            "th": "กายอานา",
             "vn": "Guyana"
         },
         "currencyNameAlt": {
-            "en": "Guyanese dollar",
-            "it": "Guyanese dollar",
-            "th": "Guyanese dollar",
+            "en": "Dollar",
+            "it": "Dollaro",
+            "th": "ดอลลาร์",
             "vn": "Guyanese dollar"
         },
         "countryNormNameAlt": {
             "en": "guyana",
             "it": "guyana",
-            "th": "guyana",
+            "th": "กายอานา",
             "vn": "guyana"
         }
     },
@@ -2548,19 +2494,19 @@
         "countryNameAlt": {
             "en": "Haiti",
             "it": "Haiti",
-            "th": "Haiti",
+            "th": "เฮติ",
             "vn": "Haiti"
         },
         "currencyNameAlt": {
-            "en": "Haitian gourde",
-            "it": "Haitian gourde",
-            "th": "Haitian gourde",
+            "en": "Gourde",
+            "it": "Gourde",
+            "th": "กูร์ด",
             "vn": "Haitian gourde"
         },
         "countryNormNameAlt": {
             "en": "haiti",
             "it": "haiti",
-            "th": "haiti",
+            "th": "เฮติ",
             "vn": "haiti"
         }
     },
@@ -2574,8 +2520,8 @@
         "real": true,
         "countryNameAlt": {
             "en": "Holy See",
-            "it": "Holy See",
-            "th": "Holy See",
+            "it": "Santa Sede",
+            "th": "สันตะสำนัก",
             "vn": "Holy See"
         },
         "currencyNameAlt": {
@@ -2586,8 +2532,8 @@
         },
         "countryNormNameAlt": {
             "en": "holy see",
-            "it": "holy see",
-            "th": "holy see",
+            "it": "santa sede",
+            "th": "สันตะสำนัก",
             "vn": "holy see"
         }
     },
@@ -2602,19 +2548,19 @@
         "countryNameAlt": {
             "en": "Honduras",
             "it": "Honduras",
-            "th": "Honduras",
+            "th": "ฮอนดูรัส",
             "vn": "Honduras"
         },
         "currencyNameAlt": {
-            "en": "Honduran lempira",
-            "it": "Honduran lempira",
-            "th": "Honduran lempira",
+            "en": "Lempira",
+            "it": "Lempira",
+            "th": "เลมปีรา",
             "vn": "Honduran lempira"
         },
         "countryNormNameAlt": {
             "en": "honduras",
             "it": "honduras",
-            "th": "honduras",
+            "th": "ฮอนดูรัส",
             "vn": "honduras"
         }
     },
@@ -2629,19 +2575,19 @@
         "countryNameAlt": {
             "en": "Hong Kong",
             "it": "Hong Kong",
-            "th": "Hong Kong",
+            "th": "ฮ่องกง",
             "vn": "Hong Kong"
         },
         "currencyNameAlt": {
-            "en": "Hong Kong dollar",
-            "it": "Hong Kong dollar",
-            "th": "Hong Kong dollar",
+            "en": "HK Dollar",
+            "it": "Dollaro HK",
+            "th": "ดอลล่าร์ฮ่องกง",
             "vn": "Hong Kong dollar"
         },
         "countryNormNameAlt": {
             "en": "hong kong",
             "it": "hong kong",
-            "th": "hong kong",
+            "th": "ฮ่องกง",
             "vn": "hong kong"
         }
     },
@@ -2655,20 +2601,20 @@
         "real": true,
         "countryNameAlt": {
             "en": "Hungary",
-            "it": "Hungary",
-            "th": "Hungary",
+            "it": "Ungheria",
+            "th": "ฮังการี",
             "vn": "Hungary"
         },
         "currencyNameAlt": {
-            "en": "Hungarian forint",
-            "it": "Hungarian forint",
-            "th": "Hungarian forint",
+            "en": "Forint",
+            "it": "Fiorino",
+            "th": "โฟรินต์",
             "vn": "Hungarian forint"
         },
         "countryNormNameAlt": {
             "en": "hungary",
-            "it": "hungary",
-            "th": "hungary",
+            "it": "ungheria",
+            "th": "ฮังการี",
             "vn": "hungary"
         }
     },
@@ -2682,20 +2628,20 @@
         "real": true,
         "countryNameAlt": {
             "en": "Iceland",
-            "it": "Iceland",
-            "th": "Iceland",
+            "it": "Islanda",
+            "th": "ไอซ์แลนด์",
             "vn": "Iceland"
         },
         "currencyNameAlt": {
-            "en": "Icelandic króna",
-            "it": "Icelandic króna",
-            "th": "Icelandic króna",
+            "en": "Króna",
+            "it": "Corona",
+            "th": "โครนา",
             "vn": "Icelandic króna"
         },
         "countryNormNameAlt": {
             "en": "iceland",
-            "it": "iceland",
-            "th": "iceland",
+            "it": "islanda",
+            "th": "ไอซ์แลนด์",
             "vn": "iceland"
         }
     },
@@ -2710,19 +2656,19 @@
         "countryNameAlt": {
             "en": "India",
             "it": "India",
-            "th": "India",
+            "th": "อินเดีย",
             "vn": "India"
         },
         "currencyNameAlt": {
-            "en": "Indian rupee",
-            "it": "Indian rupee",
-            "th": "Indian rupee",
+            "en": "Rupee",
+            "it": "Rupia",
+            "th": "รูปี",
             "vn": "Indian rupee"
         },
         "countryNormNameAlt": {
             "en": "india",
             "it": "india",
-            "th": "india",
+            "th": "อินเดีย",
             "vn": "india"
         }
     },
@@ -2737,19 +2683,19 @@
         "countryNameAlt": {
             "en": "Indonesia",
             "it": "Indonesia",
-            "th": "Indonesia",
+            "th": "อินโดนีเซีย",
             "vn": "Indonesia"
         },
         "currencyNameAlt": {
-            "en": "Indonesian rupiah",
-            "it": "Indonesian rupiah",
-            "th": "Indonesian rupiah",
+            "en": "Rupiah",
+            "it": "Rupia",
+            "th": "รูปียะฮ์",
             "vn": "Indonesian rupiah"
         },
         "countryNormNameAlt": {
             "en": "indonesia",
             "it": "indonesia",
-            "th": "indonesia",
+            "th": "อินโดนีเซีย",
             "vn": "indonesia"
         }
     },
@@ -2762,21 +2708,21 @@
         "countryNormName": "iran (islamic republic of)",
         "real": true,
         "countryNameAlt": {
-            "en": "Iran (Islamic Republic of)",
-            "it": "Iran (Islamic Republic of)",
-            "th": "Iran (Islamic Republic of)",
+            "en": "Iran",
+            "it": "Iran",
+            "th": "อิหร่าน",
             "vn": "Iran (Islamic Republic of)"
         },
         "currencyNameAlt": {
-            "en": "Iranian rial",
-            "it": "Iranian rial",
-            "th": "Iranian rial",
+            "en": "Rial",
+            "it": "Riyal",
+            "th": "เรียล",
             "vn": "Iranian rial"
         },
         "countryNormNameAlt": {
-            "en": "iran (islamic republic of)",
-            "it": "iran (islamic republic of)",
-            "th": "iran (islamic republic of)",
+            "en": "iran",
+            "it": "iran",
+            "th": "อิหร่าน",
             "vn": "iran (islamic republic of)"
         }
     },
@@ -2791,19 +2737,19 @@
         "countryNameAlt": {
             "en": "Iraq",
             "it": "Iraq",
-            "th": "Iraq",
+            "th": "อิรัก",
             "vn": "Iraq"
         },
         "currencyNameAlt": {
-            "en": "Iraqi dinar",
-            "it": "Iraqi dinar",
-            "th": "Iraqi dinar",
+            "en": "Dinar",
+            "it": "Dīnār",
+            "th": "ดีนาร์",
             "vn": "Iraqi dinar"
         },
         "countryNormNameAlt": {
             "en": "iraq",
             "it": "iraq",
-            "th": "iraq",
+            "th": "อิรัก",
             "vn": "iraq"
         }
     },
@@ -2817,8 +2763,8 @@
         "real": true,
         "countryNameAlt": {
             "en": "Ireland",
-            "it": "Ireland",
-            "th": "Ireland",
+            "it": "Irlanda",
+            "th": "เกาะไอร์แลนด์",
             "vn": "Ireland"
         },
         "currencyNameAlt": {
@@ -2829,8 +2775,8 @@
         },
         "countryNormNameAlt": {
             "en": "ireland",
-            "it": "ireland",
-            "th": "ireland",
+            "it": "irlanda",
+            "th": "เกาะไอร์แลนด์",
             "vn": "ireland"
         }
     },
@@ -2844,20 +2790,20 @@
         "real": true,
         "countryNameAlt": {
             "en": "Isle of Man",
-            "it": "Isle of Man",
-            "th": "Isle of Man",
+            "it": "Isola di Man",
+            "th": "ไอล์ออฟแมน",
             "vn": "Isle of Man"
         },
         "currencyNameAlt": {
-            "en": "British pound",
-            "it": "British pound",
-            "th": "British pound",
+            "en": "Pound",
+            "it": "Sterlina",
+            "th": "ปอนด์",
             "vn": "British pound"
         },
         "countryNormNameAlt": {
             "en": "isle of man",
-            "it": "isle of man",
-            "th": "isle of man",
+            "it": "isola di man",
+            "th": "ไอล์ออฟแมน",
             "vn": "isle of man"
         }
     },
@@ -2871,20 +2817,20 @@
         "real": true,
         "countryNameAlt": {
             "en": "Israel",
-            "it": "Israel",
-            "th": "Israel",
+            "it": "Israele",
+            "th": "อิสราเอล",
             "vn": "Israel"
         },
         "currencyNameAlt": {
-            "en": "Israeli new shekel",
-            "it": "Israeli new shekel",
-            "th": "Israeli new shekel",
+            "en": "New shekel",
+            "it": "Nuovo siclo",
+            "th": "นิวเชเกล",
             "vn": "Israeli new shekel"
         },
         "countryNormNameAlt": {
             "en": "israel",
-            "it": "israel",
-            "th": "israel",
+            "it": "israele",
+            "th": "อิสราเอล",
             "vn": "israel"
         }
     },
@@ -2898,8 +2844,8 @@
         "real": true,
         "countryNameAlt": {
             "en": "Italy",
-            "it": "Italy",
-            "th": "Italy",
+            "it": "Italia",
+            "th": "อิตาลี",
             "vn": "Italy"
         },
         "currencyNameAlt": {
@@ -2910,8 +2856,8 @@
         },
         "countryNormNameAlt": {
             "en": "italy",
-            "it": "italy",
-            "th": "italy",
+            "it": "italia",
+            "th": "อิตาลี",
             "vn": "italy"
         }
     },
@@ -3121,7 +3067,7 @@
         "currencyNameAlt": {
             "en": "AU dollar",
             "it": "Dollaro AU",
-            "th": "ดอลลาร์ทวิปแอนตาร์กติกา",
+            "th": "ดอลลาร์ US",
             "vn": "Australian dollar"
         },
         "countryNormNameAlt": {
@@ -3688,7 +3634,7 @@
         "currencyNameAlt": {
             "en": "West African CFA franc",
             "it": "Franco CFA",
-            "th": "ฟรังก์ซีเอฟเอ",
+            "th": "ฟรังก์ CFA",
             "vn": "CFA franc"
         },
         "countryNormNameAlt": {
@@ -3740,9 +3686,9 @@
             "vn": "Marshall Islands"
         },
         "currencyNameAlt": {
-            "en": "United States dollar",
-            "it": "United States dollar",
-            "th": "United States dollar",
+            "en": "US Dollar",
+            "it": "Dollaro US",
+            "th": "ดอลลาร์สหรัฐ",
             "vn": "United States dollar"
         },
         "countryNormNameAlt": {
@@ -4147,7 +4093,7 @@
         "currencyNameAlt": {
             "en": "AU dollar",
             "it": "Dollaro AU",
-            "th": "ดอลลาร์ทวิปแอนตาร์กติกา",
+            "th": "ดอลลาร์ US",
             "vn": "Australian dollar"
         },
         "countryNormNameAlt": {
@@ -4253,9 +4199,9 @@
             "vn": "New Zealand"
         },
         "currencyNameAlt": {
-            "en": "New Zealand dollar",
-            "it": "New Zealand dollar",
-            "th": "New Zealand dollar",
+            "en": "NZ dollar",
+            "it": "Dollaro NZ",
+            "th": "ดอลลาร์นิวซีแลนด์",
             "vn": "New Zealand dollar"
         },
         "countryNormNameAlt": {
@@ -4309,7 +4255,7 @@
         "currencyNameAlt": {
             "en": "West African CFA franc",
             "it": "Franco CFA",
-            "th": "ฟรังก์ซีเอฟเอ",
+            "th": "ฟรังก์ CFA",
             "vn": "CFA franc"
         },
         "countryNormNameAlt": {
@@ -4361,9 +4307,9 @@
             "vn": "Niue"
         },
         "currencyNameAlt": {
-            "en": "New Zealand dollar",
-            "it": "New Zealand dollar",
-            "th": "New Zealand dollar",
+            "en": "NZ dollar",
+            "it": "Dollaro NZ",
+            "th": "ดอลลาร์นิวซีแลนด์",
             "vn": "New Zealand dollar"
         },
         "countryNormNameAlt": {
@@ -4390,7 +4336,7 @@
         "currencyNameAlt": {
             "en": "AU dollar",
             "it": "Dollaro AU",
-            "th": "ดอลลาร์ทวิปแอนตาร์กติกา",
+            "th": "ดอลลาร์ US",
             "vn": "Australian dollar"
         },
         "countryNormNameAlt": {
@@ -4415,9 +4361,9 @@
             "vn": "Northern Mariana Islands"
         },
         "currencyNameAlt": {
-            "en": "United States dollar",
-            "it": "United States dollar",
-            "th": "United States dollar",
+            "en": "US Dollar",
+            "it": "Dollaro US",
+            "th": "ดอลลาร์สหรัฐ",
             "vn": "United States dollar"
         },
         "countryNormNameAlt": {
@@ -4685,9 +4631,9 @@
             "vn": "Pitcairn"
         },
         "currencyNameAlt": {
-            "en": "New Zealand dollar",
-            "it": "New Zealand dollar",
-            "th": "New Zealand dollar",
+            "en": "NZ dollar",
+            "it": "Dollaro NZ",
+            "th": "ดอลลาร์นิวซีแลนด์",
             "vn": "New Zealand dollar"
         },
         "countryNormNameAlt": {
@@ -4766,9 +4712,9 @@
             "vn": "Puerto Rico"
         },
         "currencyNameAlt": {
-            "en": "United States dollar",
-            "it": "United States dollar",
-            "th": "United States dollar",
+            "en": "US Dollar",
+            "it": "Dollaro US",
+            "th": "ดอลลาร์สหรัฐ",
             "vn": "United States dollar"
         },
         "countryNormNameAlt": {
@@ -5173,7 +5119,7 @@
         "currencyNameAlt": {
             "en": "West African CFA franc",
             "it": "Franco CFA",
-            "th": "ฟรังก์ซีเอฟเอ",
+            "th": "ฟรังก์ CFA",
             "vn": "CFA franc"
         },
         "countryNormNameAlt": {
@@ -5819,9 +5765,9 @@
             "vn": "Timor-Leste"
         },
         "currencyNameAlt": {
-            "en": "United States dollar",
-            "it": "United States dollar",
-            "th": "United States dollar",
+            "en": "US Dollar",
+            "it": "Dollaro US",
+            "th": "ดอลลาร์สหรัฐ",
             "vn": "United States dollar"
         },
         "countryNormNameAlt": {
@@ -5848,7 +5794,7 @@
         "currencyNameAlt": {
             "en": "West African CFA franc",
             "it": "Franco CFA",
-            "th": "ฟรังก์ซีเอฟเอ",
+            "th": "ฟรังก์ CFA",
             "vn": "CFA franc"
         },
         "countryNormNameAlt": {
@@ -5873,9 +5819,9 @@
             "vn": "Tokelau"
         },
         "currencyNameAlt": {
-            "en": "New Zealand dollar",
-            "it": "New Zealand dollar",
-            "th": "New Zealand dollar",
+            "en": "NZ dollar",
+            "it": "Dollaro NZ",
+            "th": "ดอลลาร์นิวซีแลนด์",
             "vn": "New Zealand dollar"
         },
         "countryNormNameAlt": {
@@ -6035,9 +5981,9 @@
             "vn": "Turks and Caicos Islands"
         },
         "currencyNameAlt": {
-            "en": "United States dollar",
-            "it": "United States dollar",
-            "th": "United States dollar",
+            "en": "US Dollar",
+            "it": "Dollaro US",
+            "th": "ดอลลาร์สหรัฐ",
             "vn": "United States dollar"
         },
         "countryNormNameAlt": {
@@ -6064,7 +6010,7 @@
         "currencyNameAlt": {
             "en": "AU dollar",
             "it": "Dollaro AU",
-            "th": "ดอลลาร์ทวิปแอนตาร์กติกา",
+            "th": "ดอลลาร์ US",
             "vn": "Australian dollar"
         },
         "countryNormNameAlt": {
@@ -6197,9 +6143,9 @@
             "vn": "United States"
         },
         "currencyNameAlt": {
-            "en": "United States dollar",
-            "it": "United States dollar",
-            "th": "United States dollar",
+            "en": "US Dollar",
+            "it": "Dollaro US",
+            "th": "ดอลลาร์สหรัฐ",
             "vn": "United States dollar"
         },
         "countryNormNameAlt": {
@@ -6359,9 +6305,9 @@
             "vn": "Virgin Islands (U.S.)"
         },
         "currencyNameAlt": {
-            "en": "United States dollar",
-            "it": "United States dollar",
-            "th": "United States dollar",
+            "en": "US Dollar",
+            "it": "Dollaro US",
+            "th": "ดอลลาร์สหรัฐ",
             "vn": "United States dollar"
         },
         "countryNormNameAlt": {

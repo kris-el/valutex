@@ -63,7 +63,7 @@ packages:
       name: csslib
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.14.4+1"
+    version: "0.14.5"
   cupertino_icons:
     dependency: "direct main"
     description:
@@ -120,7 +120,7 @@ packages:
       name: html
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.13.3+2"
+    version: "0.13.3+3"
   http:
     dependency: transitive
     description:
@@ -197,7 +197,7 @@ packages:
       name: matcher
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.12.2+1"
+    version: "0.12.3+1"
   meta:
     dependency: transitive
     description:
@@ -363,7 +363,7 @@ packages:
       name: string_scanner
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.3"
+    version: "1.0.4"
   term_glyph:
     dependency: transitive
     description:
@@ -377,7 +377,7 @@ packages:
       name: test
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.12.41"
+    version: "0.12.42"
   typed_data:
     dependency: transitive
     description:

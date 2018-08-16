@@ -702,15 +702,6 @@
         "real": true
     },
     {
-        "countryName": "French Southern Territories",
-        "flagCode": "TF",
-        "currencyName": "Euro",
-        "currencyCode": "EUR",
-        "currencySymbol": "€",
-        "countryNormName": "french southern territories",
-        "real": true
-    },
-    {
         "countryName": "Gabon",
         "flagCode": "GA",
         "currencyName": "Central African CFA franc",
@@ -807,15 +798,6 @@
         "currencyCode": "GTQ",
         "currencySymbol": "Q",
         "countryNormName": "guatemala",
-        "real": true
-    },
-    {
-        "countryName": "Guernsey",
-        "flagCode": "GG",
-        "currencyName": "British pound",
-        "currencyCode": "GBP",
-        "currencySymbol": "£",
-        "countryNormName": "guernsey",
         "real": true
     },
     {

@@ -120,7 +120,7 @@ var setcurrencySymbol = [
   { when: "Uzbekistan", symbol: "лв" }
 ];
 
-var flagsToRemove = ['BQ', 'BV', 'IO', 'GF', 'GP', 'HM', 'XK', 'PM', 'SJ', 'UM', 'RE'];
+var flagsToRemove = ['BQ', 'BV', 'IO', 'GF', 'GP', 'HM', 'XK', 'PM', 'SJ', 'UM', 'RE', 'TF', 'GG'];
 
 function normalizeToLower(str) {
   return str.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "");
@@ -284,7 +284,6 @@ if (command === 'rates') {
       _.set(country, 'countryNameAlt', names.countryAlt);
       _.set(country, 'currencyNameAlt', names.currencyAlt);
       allowedLanguages.forEach((lang) => {
-        //countryNormNameAlt[lang] = normalizeToLower(country.countryNameAlt[lang]);
         _.set(countryNormNameAlt, lang, normalizeToLower(country.countryNameAlt[lang]));
       });
       _.set(country, 'countryNormNameAlt', countryNormNameAlt);
