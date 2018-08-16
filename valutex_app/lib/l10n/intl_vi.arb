@@ -1,204 +1,204 @@
-﻿{
+{
   "@@last_modified": "2018-08-16T23:10:33.666558",
-  "msgboxActionContinue": "ต่อไป",
+  "msgboxActionContinue": "Tiếp tục",
   "@msgboxActionContinue": {
     "description": "Messagebox action: Continue",
     "type": "text",
     "placeholders": {}
   },
-  "msgboxActionAbort": "ยกเลิก",
+  "msgboxActionAbort": "Bỏ qua",
   "@msgboxActionAbort": {
     "description": "Messagebox action: Abort",
     "type": "text",
     "placeholders": {}
   },
-  "updated": "อัปเดต",
+  "updated": "Cập nhật",
   "@updated": {
     "description": "bottomNavigationBar: Updated",
     "type": "text",
     "placeholders": {}
   },
-  "appSubtitle": "ตัวแปลงสกุลเงิน",
+  "appSubtitle": "Chuyển đổi tiền tệ",
   "@appSubtitle": {
     "description": "Subtitle of the app",
     "type": "text",
     "placeholders": {}
   },
-  "appAuthor": "นักพัฒนาซอฟต์แวร์",
+  "appAuthor": "Tác giả",
   "@appAuthor": {
     "description": "Author of the app",
     "type": "text",
     "placeholders": {}
   },
-  "drawerSettings": "การตั้งค่า",
+  "drawerSettings": "Cài đặt",
   "@drawerSettings": {
     "description": "Drawer list item: Settings",
     "type": "text",
     "placeholders": {}
   },
-  "drawerAboutApp": "เกี่ยวกับแอปพลิเคชั่น",
+  "drawerAboutApp": "Thông tin",
   "@drawerAboutApp": {
     "description": "Drawer list item: About App",
     "type": "text",
     "placeholders": {}
   },
-  "aboutBodyAppDescription": "แอปพลิเคชั่นนี้ถูกออกเเบบเพื่อใช้งานง่าย\nมีการอัพเดตอัตราเเลกเปลี่ยนเงินทุกวินาที\n\nแอปพลิเคชั่นนี้สร้างขึ้นจากโปรเเกรม Futter และ Dart\n",
+  "aboutBodyAppDescription": "Ứng dụng này được thiết kế cho việc sử dụng bình thường.\n Tỷ lệ được cập nhật mỗi giờ.\n\nƯngs dụng được nhận biết với Flutter và Dart.\n",
   "@aboutBodyAppDescription": {
     "description": "About body App description",
     "type": "text",
     "placeholders": {}
   },
-  "drawerContactDeveloper": "ติดต่อนักพัฒนาซอฟต์แวร์",
+  "drawerContactDeveloper": "Liên hệ tác giả",
   "@drawerContactDeveloper": {
     "description": "Drawer list item: Contact developer",
     "type": "text",
     "placeholders": {}
   },
-  "emailTextDetailsProduct": "ผลิตภัณฑ์",
+  "emailTextDetailsProduct": "Sản phẩm",
   "@emailTextDetailsProduct": {
     "description": "Email details: Product",
     "type": "text",
     "placeholders": {}
   },
-  "emailTextDetailsScreen": "หน้าจอ",
+  "emailTextDetailsScreen": "Cấu hình",
   "@emailTextDetailsScreen": {
     "description": "Email details: Screen",
     "type": "text",
     "placeholders": {}
   },
-  "emailTextHello": "สวัสดี",
+  "emailTextHello": "Xin chào,",
   "@emailTextHello": {
     "description": "Email details: Hello",
     "type": "text",
     "placeholders": {}
   },
-  "settingsTitleUseDarkTheme": "ใช้ธีมสีดำ",
+  "settingsTitleUseDarkTheme": "Sử dụng chế độ tối",
   "@settingsTitleUseDarkTheme": {
     "description": "Settings title: Use dark theme",
     "type": "text",
     "placeholders": {}
   },
-  "settingsSubtitleUseDarkTheme": "ใช้ธีมเพื่อถนอมสายตา",
+  "settingsSubtitleUseDarkTheme": "Sử dụng chế độ này để mắt thư giãn",
   "@settingsSubtitleUseDarkTheme": {
     "description": "Settings subtitle: Use dark theme",
     "type": "text",
     "placeholders": {}
   },
-  "settingsTitleEuropeanNotation": "สัญลักษณ์เลขแบบยุโรป",
+  "settingsTitleEuropeanNotation": "Kí hiệu Châu Âu",
   "@settingsTitleEuropeanNotation": {
     "description": "Settings title: European notation",
     "type": "text",
     "placeholders": {}
   },
-  "settingsSubtitleEuropeanNotation": "การแยกระหว่างจำนวนเต็มพันและทศนิยม",
+  "settingsSubtitleEuropeanNotation": "Thay đổi dấu cách phần nghìn và phần thập phân",
   "@settingsSubtitleEuropeanNotation": {
     "description": "Settings subtitle: European notation",
     "type": "text",
     "placeholders": {}
   },
-  "settingsTitleExtraPrecision": "ความแม่นยำสูง",
+  "settingsTitleExtraPrecision": "Độ chính xác cao",
   "@settingsTitleExtraPrecision": {
     "description": "Settings title: Extra precision",
     "type": "text",
     "placeholders": {}
   },
-  "settingsSubtitleExtraPrecision": "เพิ่มความแม่นยำในการคำนวนตัวเลข",
+  "settingsSubtitleExtraPrecision": "Tăng độ chính xác cho kết quả chuyển đổi",
   "@settingsSubtitleExtraPrecision": {
     "description": "Settings subtitle: Extra precision",
     "type": "text",
     "placeholders": {}
   },
-  "settingsTitleLimitInput": "จำกัดการใส่ข้อมูลตัวเลขเต็มจำนวน",
+  "settingsTitleLimitInput": "Làm tròn phần thập phân",
   "@settingsTitleLimitInput": {
     "description": "Settings title: Limit input to decimalas",
     "type": "text",
     "placeholders": {}
   },
-  "screenTitleSetAmount": "ใส่จำนวนเงิน",
+  "screenTitleSetAmount": "Nhập giá trị",
   "@screenTitleSetAmount": {
     "description": "Scree title: Set amount",
     "type": "text",
     "placeholders": {}
   },
-  "screenTitleArrangeCurrencies": "จัดเรียงรายการโปรด",
+  "screenTitleArrangeCurrencies": "Sắp xếp thứ tự yêu thích",
   "@screenTitleArrangeCurrencies": {
     "description": "Scree title: Arrange favourites",
     "type": "text",
     "placeholders": {}
   },
-  "settingsSubtitleLimitInput": "รอบของจำนวนที่ป้อนเข้า \"ตั้งค่าจำนวน\" หน้าจอ",
+  "settingsSubtitleLimitInput": "Làm tròn số trong màn hình \"Nhập giá trị\"",
   "@settingsSubtitleLimitInput": {
     "description": "Settings subtitle: Limit input to decimalas",
     "type": "text",
     "placeholders": {}
   },
-  "settingsTitleFictionalCountries": "ประเทศสมมติ",
+  "settingsTitleFictionalCountries": "Đất nước ảo",
   "@settingsTitleFictionalCountries": {
     "description": "Settings title: Fictional countries",
     "type": "text",
     "placeholders": {}
   },
-  "settingsSubtitleFictionalCountries": "แสดงประเทศสมมติ",
+  "settingsSubtitleFictionalCountries": "Sử dụng đất nước ảo",
   "@settingsSubtitleFictionalCountries": {
     "description": "Settings subtitle: Fictional countries",
     "type": "text",
     "placeholders": {}
   },
-  "settingsTitleAppReset": "ตั้งค่าแอปพลิเคชั่นใหม่",
+  "settingsTitleAppReset": "Khởi động lại ứng dụng",
   "@settingsTitleAppReset": {
     "description": "Settings title: App reset",
     "type": "text",
     "placeholders": {}
   },
-  "settingsSubtitleAppReset": "ล้างข้อมูลทั้งหมดของแอปพลิเคชั่น",
+  "settingsSubtitleAppReset": "Xoá tất cả dữ liệu",
   "@settingsSubtitleAppReset": {
     "description": "Settings subtitle: App reset",
     "type": "text",
     "placeholders": {}
   },
-  "settingsMsgboxBodyAppReset": "คุณต้องการลบแอพพลิเคชั่นทั้งหมดหรือไม่?\n\n้าคุณต้องการทำต่อ คุณจะสูญเสียการตั้งค่าทั้งหมด, แอพพลิเคชั่นจะกลับสู่สถานะแรกเริ่ม",
+  "settingsMsgboxBodyAppReset": "Bạn có muốn xoá hết dữ liệu?\n\nNếu tiếp tục bạn sẽ xoá tất cả những dữ liệu trước đó, ứng dụng sẽ trở về trạng thái như mới được tải về.",
   "@settingsMsgboxBodyAppReset": {
     "description": "Settings messagebox text: App reset",
     "type": "text",
     "placeholders": {}
   },
-  "settingsMsgboxTitleDataCleared": "ล้างข้อมูลแล้ว",
+  "settingsMsgboxTitleDataCleared": "Dữ liệu đã xoá",
   "@settingsMsgboxTitleDataCleared": {
     "description": "Settings messagebox title: Data cleared",
     "type": "text",
     "placeholders": {}
   },
-  "settingsMsgboxBodyDataCleared": "ปิดและเปิดแอปพลิเคชั่นอีกครั้ง",
+  "settingsMsgboxBodyDataCleared": "Đóng và mở lại ứng dụng.",
   "@settingsMsgboxBodyDataCleared": {
     "description": "Settings messagebox text: Data cleared",
     "type": "text",
     "placeholders": {}
-  },  
-  "inputPlaceHolderSearch": "ค้นหา...",
+  },
+  "inputPlaceHolderSearch": "Tìm kiếm...",
   "@inputPlaceHolderSearch": {
     "description": "Input search place holder",
     "type": "text",
     "placeholders": {}
   },
-  "inputPlaceHolderAmount": "จำนวนสกุลเงิน",
+  "inputPlaceHolderAmount": "Nhập giá trị",
   "@inputPlaceHolderAmount": {
     "description": "Input place holder",
     "type": "text",
     "placeholders": {}
   },
-  "inputErrorInvalidAmount": "ป้อนหมายเลขไม่ถูกต้อง",
+  "inputErrorInvalidAmount": "Giá trị nhập không hợp lệ",
   "@inputErrorInvalidAmount": {
     "description": "Input error: Invalid number entered",
     "type": "text",
     "placeholders": {}
   },
-  "inputErrorAmountToHigh": "จำนวนสูงเกินไป",
+  "inputErrorAmountToHigh": "Giá trị quá lớn",
   "@inputErrorAmountToHigh": {
     "description": "Input error: Amount too high",
     "type": "text",
     "placeholders": {}
   },
-  "inputErrorNonZeroAmount": "ป้อนจำนวนที่ไม่ใช่ศูนย์",
+  "inputErrorNonZeroAmount": "Nhập giá trị khác không",
   "@inputErrorNonZeroAmount": {
     "description": "Input error: Non zero amount",
     "type": "text",

@@ -1,5 +1,5 @@
 {
-  "@@last_modified": "2018-08-10T22:19:41.977565",
+  "@@last_modified": "2018-08-16T23:10:33.666558",
   "msgboxActionContinue": "Continua",
   "@msgboxActionContinue": {
     "description": "Messagebox action: Continue",
@@ -122,7 +122,7 @@
   },
   "screenTitleArrangeCurrencies": "Ordina preferiti",
   "@screenTitleArrangeCurrencies": {
-    "description": "Scree title: Set amount",
+    "description": "Scree title: Arrange favourites",
     "type": "text",
     "placeholders": {}
   },

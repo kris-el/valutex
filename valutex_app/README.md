@@ -15,3 +15,6 @@ flutter pub pub run intl_translation:extract_to_arb --output-dir=lib/l10n lib/lo
 
 flutter pub pub run intl_translation:generate_from_arb --output-dir=lib/l10n --no-use-deferred-loading lib/localization.dart lib/l10n/intl_*.arb
     
+Bug arrange countries
+When Europe is in favourites and is moved 
+Then disappears from favourites

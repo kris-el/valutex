@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'l10n/messages_all.dart';
 
-List allowedLanguages = ['en', 'it', 'th'];
+List allowedLanguages = ['en', 'it', 'th', 'vi'];
 
 class AppLocalizations {
   static Future<AppLocalizations> load(Locale locale) {

@@ -9,7 +9,7 @@ var { mongoose } = require('./mongoose');
 var { Exchange } = require('./models/exchange');
 
 var dirs = ['./offline', './offline/flags', 'public', 'playground'];
-var allowedLanguages = ['en', 'it', 'th', 'vn'];
+var allowedLanguages = ['en', 'it', 'th', 'vi'];
 
 dirs.forEach((dir) => {
   if (!fs.existsSync(dir)) {
@@ -120,7 +120,7 @@ var setcurrencySymbol = [
   { when: "Uzbekistan", symbol: "лв" }
 ];
 
-var flagsToRemove = ['BQ', 'BV', 'IO', 'GF', 'GP', 'HM', 'XK', 'PM', 'SJ', 'UM', 'RE', 'TF', 'GG'];
+var flagsToRemove = ['BQ', 'BV', 'IO', 'GF', 'GP', 'HM', 'XK', 'PM', 'SJ', 'UM', 'RE', 'TF', 'GG', 'JE'];
 
 function normalizeToLower(str) {
   return str.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "");
