@@ -1,7 +1,7 @@
 [Todo]
 Test localization th, search and display
 If (currencyNameEN.lenght < 10) (wordsEN < 3) (shortestWordEN > 4) than add "(CUR)" to currency display name
-Sort coutries by Language specific
+Sort coutries by Language specific Thai
 
 Missing TH translations:
 Set amount
