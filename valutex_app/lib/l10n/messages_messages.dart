@@ -33,7 +33,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "inputErrorNonZeroAmount" : MessageLookupByLibrary.simpleMessage("Enter an amount different from zero"),
     "inputPlaceHolderAmount" : MessageLookupByLibrary.simpleMessage("Currency amount"),
     "inputPlaceHolderSearch" : MessageLookupByLibrary.simpleMessage("Search..."),
-    "msgboxActionAbort" : MessageLookupByLibrary.simpleMessage("Abort"),
+    "msgboxActionAbort" : MessageLookupByLibrary.simpleMessage("Cancel"),
     "msgboxActionContinue" : MessageLookupByLibrary.simpleMessage("Continue"),
     "screenTitleArrangeCurrencies" : MessageLookupByLibrary.simpleMessage("Arrange favourites"),
     "screenTitleSetAmount" : MessageLookupByLibrary.simpleMessage("Set amount"),

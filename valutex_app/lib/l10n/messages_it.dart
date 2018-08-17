@@ -22,7 +22,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "aboutBodyAppDescription" : MessageLookupByLibrary.simpleMessage("Questa applicazione è stata pensata per l\'uso quotidiano.\nI tassi di cambio sono aggiornati ogni ora.\n\nApplicazione realizzata con Flutter e Dart.\n"),
     "appAuthor" : MessageLookupByLibrary.simpleMessage("Autore"),
     "appSubtitle" : MessageLookupByLibrary.simpleMessage("Cambio valuta"),
-    "drawerAboutApp" : MessageLookupByLibrary.simpleMessage("About App"),
+    "drawerAboutApp" : MessageLookupByLibrary.simpleMessage("Informazioni"),
     "drawerContactDeveloper" : MessageLookupByLibrary.simpleMessage("Contatta sviluppatore"),
     "drawerSettings" : MessageLookupByLibrary.simpleMessage("Impostazioni"),
     "emailTextDetailsProduct" : MessageLookupByLibrary.simpleMessage("Prodotto"),

@@ -1,5 +1,5 @@
 {
-  "@@last_modified": "2018-08-16T23:10:33.666558",
+  "@@last_modified": "2018-08-17T20:10:21.134221",
   "msgboxActionContinue": "Continua",
   "@msgboxActionContinue": {
     "description": "Messagebox action: Continue",
@@ -8,7 +8,7 @@
   },
   "msgboxActionAbort": "Annulla",
   "@msgboxActionAbort": {
-    "description": "Messagebox action: Abort",
+    "description": "Messagebox action: Cancel",
     "type": "text",
     "placeholders": {}
   },
@@ -36,7 +36,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "drawerAboutApp": "About App",
+  "drawerAboutApp": "Informazioni",
   "@drawerAboutApp": {
     "description": "Drawer list item: About App",
     "type": "text",

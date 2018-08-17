@@ -31,9 +31,9 @@ class AppLocalizations {
 
   String get msgboxActionAbort {
     return Intl.message(
-      'Abort',
+      'Cancel',
       name: 'msgboxActionAbort',
-      desc: 'Messagebox action: Abort',
+      desc: 'Messagebox action: Cancel',
     );
   }
 
