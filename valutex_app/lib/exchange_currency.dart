@@ -57,7 +57,7 @@ class ExchangeCurrency {
 
   set favourites(List<String> favs) {
     _countryList.forEach((CountryDetails country) {
-      int order = favs.indexOf(country.countryName);
+      int order = favs.indexOf(country.countryIndex);
       country.order = order;
       country.fav = (order != -1);
     });
@@ -66,9 +66,13 @@ class ExchangeCurrency {
       if (!a.fav && b.fav) return 1;
       if (a.order < b.order) return -1;
       if (a.order > b.order) return 1;
-      if (a.countryNormName.toString().compareTo(b.countryNormName.toString()) <
+      if (a.countryNameNormTr
+              .toString()
+              .compareTo(b.countryNameNormTr.toString()) <
           0) return -1;
-      if (a.countryNormName.toString().compareTo(b.countryNormName.toString()) >
+      if (a.countryNameNormTr
+              .toString()
+              .compareTo(b.countryNameNormTr.toString()) >
           0) return 1;
       return 0;
     });
@@ -79,7 +83,7 @@ class ExchangeCurrency {
     _countryList
         .where((CountryDetails country) => country.fav)
         .forEach((CountryDetails country) {
-      favs.add(country.countryName);
+      favs.add(country.countryIndex);
     });
     return favs;
   }
@@ -90,16 +94,17 @@ class ExchangeCurrency {
         debugPrint('${entry['countryName']} has no symbol');
       try {
         _countryList.add(CountryDetails(
-          countryName: entry['countryName'],
-          countryNormName: entry['countryNormName'],
+          countryIndex: entry['countryIndex'],
+          countryNameTr: entry['countryNameTr'],
+          countryNameNormEn: entry['countryNameNormEn'],
+          countryNameNormTr: entry['countryNameNormTr'],
+          currencyNameTr: entry['currencyNameTr'],
+          currencyNameNormEn: entry['currencyNameNormEn'],
+          currencyNameNormTr: entry['currencyNameNormTr'],
           flagCode: entry['flagCode'],
-          currencyName: entry['currencyName'],
           currencyCode: entry['currencyCode'],
           currencySymbol:
               (entry['currencySymbol'] != null) ? entry['currencySymbol'] : '',
-          countryNameAlt: entry['countryNameAlt'],
-          currencyNameAlt: entry['currencyNameAlt'],
-          countryNormNameAlt: entry['countryNormNameAlt'],
           real: entry['real'],
         ));
       } catch (e) {
@@ -107,36 +112,20 @@ class ExchangeCurrency {
       }
     });
   }
-
+  
   List<CountryDetails> searchCountries(input) {
     List<CountryDetails> result = _countryList.where((country) {
       if (!appSettings.fictionalCurrencies) {
         if (!country.real) return false;
       }
       if (input == '') return country.fav;
-      if (country.countryNormName.toString().contains(input.toLowerCase()))
+      if (country.countryNameNormTr.toString().contains(input.toLowerCase()))
         return true;
-      if (country.currencyName.toLowerCase().contains(input.toLowerCase()))
+      if (country.currencyNameNormTr.toLowerCase().contains(input.toLowerCase()))
         return true;
-      if (country.currencyCode.toLowerCase().contains(input.toLowerCase()))
+      if (country.countryNameNormEn.toString().contains(input.toLowerCase()))
         return true;
-      return false;
-    }).toList();
-    return result;
-  }
-
-  List<CountryDetails> searchCountriesByLang(input, lang) {
-    List<CountryDetails> result = _countryList.where((country) {
-      if (!appSettings.fictionalCurrencies) {
-        if (!country.real) return false;
-      }
-      if (input == '') return country.fav;
-      //if (country.countryNormName.toString().contains(input.toLowerCase()))
-      //  return true;
-      if (country.countryNormNameAlt[lang]
-          .toString()
-          .contains(input.toLowerCase())) return true;
-      if (country.currencyName.toLowerCase().contains(input.toLowerCase()))
+      if (country.currencyNameNormEn.toLowerCase().contains(input.toLowerCase()))
         return true;
       if (country.currencyCode.toLowerCase().contains(input.toLowerCase()))
         return true;
@@ -258,37 +247,43 @@ class ExchangeCurrency {
 
 class CountryDetails {
   Key key;
-  final String countryName;
-  final String countryNormName;
+  final String countryIndex;
+  final String countryNameTr;
+  final String countryNameNormEn;
+  final String countryNameNormTr;
+  final String currencyNameTr;
+  final String currencyNameNormEn;
+  final String currencyNameNormTr;
   final String flagCode;
-  final String currencyName;
   final String currencyCode;
   final String currencySymbol;
-  final Map countryNameAlt;
-  final Map currencyNameAlt;
-  final Map countryNormNameAlt;
   bool real;
   int order;
   bool fav;
 
   CountryDetails({
     this.key,
-    @required this.countryName,
-    @required this.countryNormName,
+    @required this.countryIndex,
+    @required this.countryNameTr,
+    @required this.countryNameNormEn,
+    @required this.countryNameNormTr,
+    @required this.currencyNameTr,
+    @required this.currencyNameNormEn,
+    @required this.currencyNameNormTr,
     @required this.flagCode,
-    @required this.currencyName,
     @required this.currencyCode,
     @required this.currencySymbol,
-    this.countryNameAlt,
-    this.currencyNameAlt,
-    this.countryNormNameAlt,
     this.real,
     this.order,
     this.fav,
-  })  : assert(countryName != null),
-        assert(countryNormName != null),
+  })  : assert(countryIndex != null),
+        assert(countryNameTr != null),
+        assert(countryNameNormEn != null),
+        assert(countryNameNormTr != null),
+        assert(currencyNameTr != null),
+        assert(currencyNameNormEn != null),
+        assert(currencyNameNormTr != null),
         assert(flagCode != null),
-        assert(currencyName != null),
         assert(currencyCode != null),
         assert(currencySymbol != null);
 }

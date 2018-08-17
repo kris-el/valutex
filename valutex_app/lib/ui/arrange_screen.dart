@@ -34,10 +34,14 @@ class _ArrangeScreenState extends State<ArrangeScreen> {
       _items.add(
         CountryDetails(
           key: ValueKey(i),
-          countryName: country.countryNameAlt[widget.lang],
-          countryNormName: country.countryNormNameAlt[widget.lang],
+          countryIndex: country.countryIndex,
+          countryNameTr: country.countryNameTr,
+          countryNameNormEn: country.countryNameNormEn,
+          countryNameNormTr: country.countryNameNormTr,
+          currencyNameTr: country.currencyNameTr,
+          currencyNameNormEn: country.currencyNameNormEn,
+          currencyNameNormTr: country.currencyNameNormTr,
           flagCode: country.flagCode,
-          currencyName: country.currencyNameAlt[widget.lang],
           currencyCode: country.currencyCode,
           currencySymbol: country.currencySymbol,
         ),
@@ -70,7 +74,7 @@ class _ArrangeScreenState extends State<ArrangeScreen> {
 
       List<String> favList = [];
       _items.forEach((item) {
-        favList.add(item.countryName);
+        favList.add(item.countryIndex);
       });
       exchangeCurrency.favourites = favList;
       _saveFavourites();
@@ -147,8 +151,8 @@ class Item extends StatelessWidget {
         bottom: false,
         child: CurrencyDraft(
           flagCode: data.flagCode,
-          detail1: data.countryName,
-          detail2: data.currencyName,
+          detail1: data.countryNameTr,
+          detail2: data.currencyNameTr,
           tailWidget: Padding(
             padding: EdgeInsets.all(10.0),
             child: Icon(

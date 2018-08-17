@@ -53,13 +53,9 @@ class _HomeScreenState extends State<HomeScreen> {
     appSettings.screenRatio = MediaQuery.of(context).devicePixelRatio;
   }
 
-  String get sysLanguage {
+  String get appLanguage {
     Locale myLocale = Localizations.localeOf(context);
     return myLocale.languageCode;
-  }
-
-  String get appLanguage {
-    return allowedLanguages.contains(sysLanguage) ? sysLanguage : 'en';
   }
 
   void updateFavourite(List countries, List<String> favs) {
@@ -111,7 +107,7 @@ class _HomeScreenState extends State<HomeScreen> {
       if (settings != null) {
         appSettings.importFromJson(settings);
       } else {
-        switch (sysLanguage) {
+        switch (appLanguage) {
           case 'it':
             appSettings.europeanNotation = true;
             break;
@@ -144,7 +140,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Future<void> _loadCountriesFromAsset(BuildContext context) async {
     if (exchangeCurrency.isCountryListLoaded()) return;
     final jsonCountries = DefaultAssetBundle.of(context)
-        .loadString('assets/data/countries_ml.json');
+        .loadString('assets/data/countries_$appLanguage.json');
     final dataCountries = JsonDecoder().convert(await jsonCountries);
 
     if (dataCountries is! List) {

@@ -116,8 +116,8 @@ class _AmountScreenState extends State<AmountScreen> {
       child: CurrencyDraft(
         label: 'amount-flag-' + widget.countryDetails.flagCode,
         flagCode: widget.countryDetails.flagCode,
-        detail1: widget.countryDetails.countryNameAlt[widget.lang],
-        detail2: widget.countryDetails.currencyNameAlt[widget.lang],
+        detail1: widget.countryDetails.countryNameTr,
+        detail2: widget.countryDetails.currencyNameTr,
         tailWidget: Text(
           (useAmountPrefix)
               ? '${widget.countryDetails.currencyCode}'

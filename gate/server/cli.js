@@ -264,6 +264,7 @@ if (command === 'rates') {
 
   var countryNames = [];
   var countries = [];
+  var countriesUN = [];
   var countriesML = [];
   try {
     countries = require(__dirname + "/../offline/countries.json") || [];
@@ -278,24 +279,71 @@ if (command === 'rates') {
 
   if ((countries.length > 0) && (countryNames.length > 0)) {
     console.log('Start merge!');
-    countries.forEach((country) => {
-      var countryNormNameAlt = {};
-      var names = countryNames.find((entity) => entity.countryName === country.countryName);
-      _.set(country, 'countryNameAlt', names.countryAlt);
-      _.set(country, 'currencyNameAlt', names.currencyAlt);
-      allowedLanguages.forEach((lang) => {
-        _.set(countryNormNameAlt, lang, normalizeToLower(country.countryNameAlt[lang]));
+
+    // UL Unique sile for all the languages
+    // countries.forEach((country) => {
+    //   var countriesPartUN = _.clone(country, true);
+    //   var countryNormNameAlt = {};
+    //   var names = countryNames.find((entity) => entity.countryName === countriesPartUN.countryName);
+    //   _.set(countriesPartUN, 'countryNameAlt', names.countryAlt);
+    //   _.set(countriesPartUN, 'currencyNameAlt', names.currencyAlt);
+    //   allowedLanguages.forEach((lang) => {
+    //     _.set(countryNormNameAlt, lang, normalizeToLower(countriesPartUN.countryNameAlt[lang]));
+    //   });
+    //   _.set(countriesPartUN, 'countryNormNameAlt', countryNormNameAlt);
+    //   countriesUN.push(countriesPartUN);
+    // });
+    // fs.writeFile(__dirname + "/../offline/countries_ml.json", JSON.stringify(countriesUN, undefined, 4), (err) => {
+    //   if (err) {
+    //     console.error(err);
+    //     return;
+    //   };
+    //   console.log("- countries_ml.json has been created");
+    // });
+
+    // ML One file for each language
+    // *countryIndex = countryName
+    //    *countryNameEn = countryName[en]
+    // *countryNameTr = countryName[lang]
+    //    *currencyNameEn = currencyName[en]
+    // *currencyNameTr = currencyName[lang]
+    // *countryNameNormEn = norm(currencyName[en])
+    // *countryNameNormTr = norm(currencyName[lang])
+    // =flagCode
+    // =currencyCode
+    // =currencySymbol
+    // =real
+    allowedLanguages.forEach((lang) => {
+      countriesML = [];
+      countries.forEach((country) => {
+        countriesPartML = {};
+        console.log('--- lang: '+ lang + '   --- country: '+ country.countryName);
+        var translations = countryNames.find((entity) => entity.countryName === country.countryName);
+        _.set(countriesPartML, 'countryIndex', country.countryName);
+        //_.set(countriesPartML, 'countryNameEn', _.get(translations, 'countryAlt.en', country.countryName));
+        _.set(countriesPartML, 'countryNameTr', _.get(translations, 'countryAlt.'+ lang, country.countryName));
+        _.set(countriesPartML, 'countryNameNormEn', normalizeToLower(_.get(translations, 'countryAlt.en', country.countryName)));
+        _.set(countriesPartML, 'countryNameNormTr', normalizeToLower(_.get(translations, 'countryAlt.'+ lang, country.countryName)));
+        //_.set(countriesPartML, 'currencyNameEn', _.get(translations, 'currencyAlt.en', country.currencyName));
+        _.set(countriesPartML, 'currencyNameTr', _.get(translations, 'currencyAlt.'+ lang, country.currencyName));
+        _.set(countriesPartML, 'currencyNameNormEn', normalizeToLower(_.get(translations, 'currencyAlt.en', country.currencyName)));
+        _.set(countriesPartML, 'currencyNameNormTr', normalizeToLower(_.get(translations, 'currencyAlt.'+ lang, country.currencyName)));
+        _.set(countriesPartML, 'flagCode', country.flagCode);
+        _.set(countriesPartML, 'currencyCode', country.currencyCode);
+        _.set(countriesPartML, 'currencySymbol', country.currencySymbol);
+        _.set(countriesPartML, 'real', country.real);
+        console.log(JSON.stringify(countriesPartML, undefined, 4));
+        countriesML.push(countriesPartML);
       });
-      _.set(country, 'countryNormNameAlt', countryNormNameAlt);
-      countriesML.push(country);
+      fs.writeFile(__dirname + "/../offline/countries_"+lang+".json", JSON.stringify(countriesML, undefined, 4), (err) => {
+        if (err) {
+          console.error(err);
+          return;
+        };
+        console.log("- countries_"+lang+".json has been created");
+      });
     });
-    fs.writeFile(__dirname + "/../offline/countries_ml.json", JSON.stringify(countriesML, undefined, 4), (err) => {
-      if (err) {
-        console.error(err);
-        return;
-      };
-      console.log("- countries_ml.json has been created");
-    });
+
   } else {
     console.log('No data to merge!');
     console.log('Countries: ' + countries.length);

@@ -1,9 +1,7 @@
 [Todo]
-Complete country currency translations
 Test localization th, search and display
 Fix Singapore currency to Singapore dollar
 If (currencyNameEN.lenght < 10) (wordsEN < 3) (shortestWordEN > 4) than add "(CUR)" to currency display name
-Create a coutry file for each language
 Sort coutries by Language specific
 
 Missing TH translations:

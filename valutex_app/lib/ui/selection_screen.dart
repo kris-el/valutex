@@ -72,11 +72,11 @@ class _SelectionScreenState extends State<SelectionScreen> {
   Widget build(BuildContext context) {
     if (_currencyWidgets != null) {
       _currencyWidgets.clear();
-      exchangeCurrency.searchCountriesByLang(searchText, widget.lang).forEach((country) {
+      exchangeCurrency.searchCountries(searchText).forEach((country) {
         _currencyWidgets.add(CurrencyDraft(
           flagCode: country.flagCode,
-          detail1: country.countryNameAlt[widget.lang],
-          detail2: country.currencyNameAlt[widget.lang],
+          detail1: country.countryNameTr,
+          detail2: country.currencyNameTr,
           tailWidget: InkWell(
             borderRadius: BorderRadius.circular(18.0),
             onTap: () {

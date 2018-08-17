@@ -55,8 +55,8 @@ class CurrencyWidget extends StatelessWidget {
         child: CurrencyDraft(
           label: label,
           flagCode: countryDetails.flagCode,
-          detail1: countryDetails.countryNameAlt[lang],
-          detail2: countryDetails.currencyNameAlt[lang],
+          detail1: countryDetails.countryNameTr,
+          detail2: countryDetails.currencyNameTr,
           tailWidget: Text(
             '${countryDetails.currencySymbol} ${exchangeCurrency.applyNotation(currentAmount, appSettings.europeanNotation)}',
             style: TextStyle(fontSize: 18.0 * appSettings.scaleWidth),
