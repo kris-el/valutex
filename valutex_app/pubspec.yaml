@@ -27,6 +27,7 @@ flutter:
     - assets/data/countries_en.json
     - assets/data/countries_it.json
     - assets/data/countries_th.json
+    - assets/data/countries_vi.json
     - assets/data/rates.json
 
     - assets/images/logo/curex.png

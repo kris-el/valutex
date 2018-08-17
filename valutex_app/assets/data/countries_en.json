@@ -2465,8 +2465,8 @@
         "currencyNameNormEn": "sg dollar",
         "currencyNameNormTr": "sg dollar",
         "flagCode": "SG",
-        "currencyCode": "BND",
-        "currencySymbol": "$",
+        "currencyCode": "SGD",
+        "currencySymbol": "S$",
         "real": true
     },
     {

@@ -43,7 +43,6 @@ var missingCountries = [{
   "currencyName": "Euro",
   "currencyCode": "EUR",
   "currencySymbol": "€",
-  "countryNormName": "europe",
   "real": true
 },
 {
@@ -52,7 +51,6 @@ var missingCountries = [{
   "currencyName": "Bitcoin",
   "currencyCode": "BTC",
   "currencySymbol": "₿",
-  "countryNormName": "kazakhstan",
   "real": false
 },
 {
@@ -61,7 +59,6 @@ var missingCountries = [{
   "currencyName": "Bitcoin",
   "currencyCode": "BTC",
   "currencySymbol": "₿",
-  "countryNormName": "arstotzka",
   "real": false
 },
 {
@@ -70,7 +67,6 @@ var missingCountries = [{
   "currencyName": "Euro",
   "currencyCode": "EUR",
   "currencySymbol": "€",
-  "countryNormName": "united federation of planets",
   "real": false
 },
 {
@@ -79,7 +75,6 @@ var missingCountries = [{
   "currencyName": "Ounce of gold",
   "currencyCode": "XAU",
   "currencySymbol": "",
-  "countryNormName": "ferengi alliance",
   "real": false
 },
 {
@@ -88,7 +83,6 @@ var missingCountries = [{
   "currencyName": "Bitcoin",
   "currencyCode": "BTC",
   "currencySymbol": "₿",
-  "countryNormName": "wakanda",
   "real": false
 },
 {
@@ -97,7 +91,6 @@ var missingCountries = [{
   "currencyName": "Bitcoin",
   "currencyCode": "BTC",
   "currencySymbol": "₿",
-  "countryNormName": "klingon",
   "real": false
 }];
 
@@ -112,12 +105,17 @@ var countriesToRename = [
   { from: "Korea (Republic of)", to: "South Korea" }
 ];
 
-var setcurrencySymbol = [
+var setCurrencyCode = [
+  { when: "Singapore", code: "SGD" },
+];
+
+var setCurrencySymbol = [
   { when: "Armenian dram", symbol: "֏" },
   { when: "Bosnia and Herzegovina", symbol: "KM" },
   { when: "Kazakhstan", symbol: "₸" },
   { when: "Turkey", symbol: "₺" },
-  { when: "Uzbekistan", symbol: "лв" }
+  { when: "Uzbekistan", symbol: "лв" },
+  { when: "Singapore", symbol: "S$" }
 ];
 
 var flagsToRemove = ['BQ', 'BV', 'IO', 'GF', 'GP', 'HM', 'XK', 'PM', 'SJ', 'UM', 'RE', 'TF', 'GG', 'JE', 'SH', 'MF', 'SM', 'SX', 'GS', 'TV', 'VI', 'EH', 'ZW'];
@@ -202,12 +200,16 @@ if (command === 'rates') {
           obj.countryName = ren.to;
         }
       });
-      setcurrencySymbol.forEach(function (newsym) {
-        if (obj.countryName == newsym.when) {
-          obj.currencySymbol = newsym.symbol;
+      setCurrencySymbol.forEach(function (newSym) {
+        if (obj.countryName == newSym.when) {
+          obj.currencySymbol = newSym.symbol;
         }
       });
-      obj.countryNormName = normalizeToLower(obj.countryName);
+      setCurrencyCode.forEach(function (newCode) {
+        if (obj.countryName == newCode.when) {
+          obj.currencyCode = newCode.code;
+        }
+      });
       if (!('real' in obj)) {
         obj.real = true;
       }
@@ -280,39 +282,6 @@ if (command === 'rates') {
   if ((countries.length > 0) && (countryNames.length > 0)) {
     console.log('Start merge!');
 
-    // UL Unique sile for all the languages
-    // countries.forEach((country) => {
-    //   var countriesPartUN = _.clone(country, true);
-    //   var countryNormNameAlt = {};
-    //   var names = countryNames.find((entity) => entity.countryName === countriesPartUN.countryName);
-    //   _.set(countriesPartUN, 'countryNameAlt', names.countryAlt);
-    //   _.set(countriesPartUN, 'currencyNameAlt', names.currencyAlt);
-    //   allowedLanguages.forEach((lang) => {
-    //     _.set(countryNormNameAlt, lang, normalizeToLower(countriesPartUN.countryNameAlt[lang]));
-    //   });
-    //   _.set(countriesPartUN, 'countryNormNameAlt', countryNormNameAlt);
-    //   countriesUN.push(countriesPartUN);
-    // });
-    // fs.writeFile(__dirname + "/../offline/countries_ml.json", JSON.stringify(countriesUN, undefined, 4), (err) => {
-    //   if (err) {
-    //     console.error(err);
-    //     return;
-    //   };
-    //   console.log("- countries_ml.json has been created");
-    // });
-
-    // ML One file for each language
-    // *countryIndex = countryName
-    //    *countryNameEn = countryName[en]
-    // *countryNameTr = countryName[lang]
-    //    *currencyNameEn = currencyName[en]
-    // *currencyNameTr = currencyName[lang]
-    // *countryNameNormEn = norm(currencyName[en])
-    // *countryNameNormTr = norm(currencyName[lang])
-    // =flagCode
-    // =currencyCode
-    // =currencySymbol
-    // =real
     allowedLanguages.forEach((lang) => {
       countriesML = [];
       countries.forEach((country) => {
