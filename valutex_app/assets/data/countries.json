@@ -972,15 +972,6 @@
         "real": true
     },
     {
-        "countryName": "Jersey",
-        "flagCode": "JE",
-        "currencyName": "British pound",
-        "currencyCode": "GBP",
-        "currencySymbol": "£",
-        "countryNormName": "jersey",
-        "real": true
-    },
-    {
         "countryName": "Jordan",
         "flagCode": "JO",
         "currencyName": "Jordanian dinar",
@@ -1620,15 +1611,6 @@
         "real": true
     },
     {
-        "countryName": "Saint Helena, Ascension and Tristan da Cunha",
-        "flagCode": "SH",
-        "currencyName": "Saint Helena pound",
-        "currencyCode": "SHP",
-        "currencySymbol": "£",
-        "countryNormName": "saint helena, ascension and tristan da cunha",
-        "real": true
-    },
-    {
         "countryName": "Saint Kitts and Nevis",
         "flagCode": "KN",
         "currencyName": "East Caribbean dollar",
@@ -1647,15 +1629,6 @@
         "real": true
     },
     {
-        "countryName": "Saint Martin (French part)",
-        "flagCode": "MF",
-        "currencyName": "Euro",
-        "currencyCode": "EUR",
-        "currencySymbol": "€",
-        "countryNormName": "saint martin (french part)",
-        "real": true
-    },
-    {
         "countryName": "Saint Vincent and the Grenadines",
         "flagCode": "VC",
         "currencyName": "East Caribbean dollar",
@@ -1671,15 +1644,6 @@
         "currencyCode": "WST",
         "currencySymbol": "T",
         "countryNormName": "samoa",
-        "real": true
-    },
-    {
-        "countryName": "San Marino",
-        "flagCode": "SM",
-        "currencyName": "Euro",
-        "currencyCode": "EUR",
-        "currencySymbol": "€",
-        "countryNormName": "san marino",
         "real": true
     },
     {
@@ -1746,15 +1710,6 @@
         "real": true
     },
     {
-        "countryName": "Sint Maarten (Dutch part)",
-        "flagCode": "SX",
-        "currencyName": "Netherlands Antillean guilder",
-        "currencyCode": "ANG",
-        "currencySymbol": "ƒ",
-        "countryNormName": "sint maarten (dutch part)",
-        "real": true
-    },
-    {
         "countryName": "Slovakia",
         "flagCode": "SK",
         "currencyName": "Euro",
@@ -1797,15 +1752,6 @@
         "currencyCode": "ZAR",
         "currencySymbol": "R",
         "countryNormName": "south africa",
-        "real": true
-    },
-    {
-        "countryName": "South Georgia and the South Sandwich Islands",
-        "flagCode": "GS",
-        "currencyName": "British pound",
-        "currencyCode": "GBP",
-        "currencySymbol": "£",
-        "countryNormName": "south georgia and the south sandwich islands",
         "real": true
     },
     {
@@ -1998,15 +1944,6 @@
         "real": true
     },
     {
-        "countryName": "Tuvalu",
-        "flagCode": "TV",
-        "currencyName": "Australian dollar",
-        "currencyCode": "AUD",
-        "currencySymbol": "$",
-        "countryNormName": "tuvalu",
-        "real": true
-    },
-    {
         "countryName": "Uganda",
         "flagCode": "UG",
         "currencyName": "Ugandan shilling",
@@ -2097,15 +2034,6 @@
         "real": true
     },
     {
-        "countryName": "Virgin Islands (U.S.)",
-        "flagCode": "VI",
-        "currencyName": "United States dollar",
-        "currencyCode": "USD",
-        "currencySymbol": "$",
-        "countryNormName": "virgin islands (u.s.)",
-        "real": true
-    },
-    {
         "countryName": "Wakanda",
         "flagCode": "WK",
         "currencyName": "Bitcoin",
@@ -2124,15 +2052,6 @@
         "real": true
     },
     {
-        "countryName": "Western Sahara",
-        "flagCode": "EH",
-        "currencyName": "Moroccan dirham",
-        "currencyCode": "MAD",
-        "currencySymbol": "د.م.",
-        "countryNormName": "western sahara",
-        "real": true
-    },
-    {
         "countryName": "Yemen",
         "flagCode": "YE",
         "currencyName": "Yemeni rial",
@@ -2148,15 +2067,6 @@
         "currencyCode": "ZMW",
         "currencySymbol": "ZK",
         "countryNormName": "zambia",
-        "real": true
-    },
-    {
-        "countryName": "Zimbabwe",
-        "flagCode": "ZW",
-        "currencyName": "Botswana pula",
-        "currencyCode": "BWP",
-        "currencySymbol": "P",
-        "countryNormName": "zimbabwe",
         "real": true
     }
 ]

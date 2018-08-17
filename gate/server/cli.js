@@ -120,7 +120,7 @@ var setcurrencySymbol = [
   { when: "Uzbekistan", symbol: "лв" }
 ];
 
-var flagsToRemove = ['BQ', 'BV', 'IO', 'GF', 'GP', 'HM', 'XK', 'PM', 'SJ', 'UM', 'RE', 'TF', 'GG', 'JE'];
+var flagsToRemove = ['BQ', 'BV', 'IO', 'GF', 'GP', 'HM', 'XK', 'PM', 'SJ', 'UM', 'RE', 'TF', 'GG', 'JE', 'SH', 'MF', 'SM', 'SX', 'GS', 'TV', 'VI', 'EH', 'ZW'];
 
 function normalizeToLower(str) {
   return str.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "");
