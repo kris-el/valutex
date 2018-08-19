@@ -32,7 +32,6 @@ class AmountScreen extends StatefulWidget {
 }
 
 class _AmountScreenState extends State<AmountScreen> {
-  final bool enableClear = false;
   final bool useAmountPrefix = true;
   final int maxLength = 12;
   TextEditingController _inputTextFieldController;
@@ -139,7 +138,8 @@ class _AmountScreenState extends State<AmountScreen> {
                 TextField(
                   controller: _inputTextFieldController,
                   decoration: InputDecoration(
-                    hintText: AppLocalizations.of(context).inputPlaceHolderAmount,
+                    hintText:
+                        AppLocalizations.of(context).inputPlaceHolderAmount,
                     errorText: _isValidationError ? _textValidationError : null,
                   ),
                   style: TextStyle(
@@ -169,33 +169,30 @@ class _AmountScreenState extends State<AmountScreen> {
                         ),
                       ),
                     ),
-                    IconButton(
-                      icon: Icon(Icons.backspace),
-                      padding: EdgeInsets.all(12.0),
-                      iconSize: 32.0 * appSettings.scaleWidth,
-                      onPressed: () {
-                        {
-                          String text = _inputTextFieldController.text;
-                          if (text.length > 0) {
-                            text = text.substring(0, text.length - 1);
-                            _inputTextFieldController.value =
-                                TextEditingValue(text: text);
-                            _updateAmoutValue(text);
+                    InkWell(
+                      child: IconButton(
+                        icon: Icon(Icons.backspace),
+                        padding: EdgeInsets.all(12.0),
+                        iconSize: 32.0 * appSettings.scaleWidth,
+                        onPressed: () {
+                          {
+                            String text = _inputTextFieldController.text;
+                            if (text.length > 0) {
+                              text = text.substring(0, text.length - 1);
+                              _inputTextFieldController.value =
+                                  TextEditingValue(text: text);
+                              _updateAmoutValue(text);
+                            }
                           }
-                        }
+                        },
+                      ),
+                      highlightColor: Colors.transparent,
+                      splashColor: Colors.transparent,
+                      onLongPress: () {
+                        _inputTextFieldController.clear();
+                        _updateAmoutValue('');
                       },
                     ),
-                    (enableClear)
-                        ? IconButton(
-                            icon: Icon(Icons.clear),
-                            padding: EdgeInsets.all(12.0),
-                            iconSize: 32.0 * appSettings.scaleWidth,
-                            onPressed: () {
-                              _inputTextFieldController.clear();
-                              _updateAmoutValue('');
-                            },
-                          )
-                        : Container(),
                   ],
                 ),
               ],
