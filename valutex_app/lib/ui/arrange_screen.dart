@@ -152,7 +152,7 @@ class Item extends StatelessWidget {
         child: CurrencyDraft(
           flagCode: data.flagCode,
           detail1: data.countryNameTr,
-          detail2: data.currencyNameTr,
+          detail2: data.currencyNameTr + ' (' + data.currencyCode + ')',
           tailWidget: Padding(
             padding: EdgeInsets.all(10.0),
             child: Icon(

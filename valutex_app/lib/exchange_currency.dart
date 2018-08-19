@@ -91,7 +91,7 @@ class ExchangeCurrency {
   set loadCountryList(List json) {
     json.forEach((entry) {
       if (entry['currencySymbol'] == null)
-        debugPrint('${entry['countryName']} has no symbol');
+        debugPrint('${entry['countryIndex']} has no symbol');
       try {
         _countryList.add(CountryDetails(
           countryIndex: entry['countryIndex'],
@@ -108,7 +108,7 @@ class ExchangeCurrency {
           real: entry['real'],
         ));
       } catch (e) {
-        debugPrint("Error ${entry['countryName']}");
+        debugPrint("Error ${entry['countryIndex']}");
       }
     });
   }

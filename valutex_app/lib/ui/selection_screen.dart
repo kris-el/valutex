@@ -76,7 +76,7 @@ class _SelectionScreenState extends State<SelectionScreen> {
         _currencyWidgets.add(CurrencyDraft(
           flagCode: country.flagCode,
           detail1: country.countryNameTr,
-          detail2: country.currencyNameTr,
+          detail2: country.currencyNameTr + ' (' + country.currencyCode + ')',
           tailWidget: InkWell(
             borderRadius: BorderRadius.circular(18.0),
             onTap: () {
