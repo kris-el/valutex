@@ -42,7 +42,6 @@ class Keypad extends StatelessWidget {
     int cCode = buttons[itemIndex].codeUnitAt(0);
     String text = activeTextFieldController.text;
 
-    debugPrint('p ${buttons[itemIndex]}');
     if ((cCode >= '0'.codeUnitAt(0)) && (cCode <= '9'.codeUnitAt(0))) {
       if (maxLength != null) {
         String digits = text;

@@ -29,7 +29,8 @@ class CurrencyDraft extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final countryBox = Hero(
-      tag: (label != null) ? 'f'+label : 'hero-flag-' + flagCode.toLowerCase(),
+      tag:
+          (label != null) ? 'f' + label : 'hero-flag-' + flagCode.toLowerCase(),
       child: Container(
         color: Colors.transparent,
         child: Image.asset(
@@ -39,28 +40,36 @@ class CurrencyDraft extends StatelessWidget {
     );
 
     final detailsBox = Expanded(
-      child: Container(
+      child: Hero(
         // -- Hero -- should be used when got fix transition
-        // tag: (label != null) ? 'd'+label : 'hero-flag-' + flagCode.toLowerCase(),
+        tag: (label != null)
+            ? 'd' + label
+            : 'hero-flag-' + flagCode.toLowerCase(),
         child: Padding(
           padding: EdgeInsets.all(4.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text(
-                detail1,
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18.0 * appSettings.scaleWidth),
-                textAlign: TextAlign.left,
+              Material(
+                color: Colors.transparent,
+                child: Text(
+                  detail1,
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18.0 * appSettings.scaleWidth),
+                  textAlign: TextAlign.left,
+                ),
               ),
               Container(
                 height: 6.0,
               ),
-              Text(
-                detail2,
-                style: TextStyle(fontSize: 14.0 * appSettings.scaleWidth),
+              Material(
+                color: Colors.transparent,
+                child: Text(
+                  detail2,
+                  style: TextStyle(fontSize: 14.0 * appSettings.scaleWidth),
+                ),
               ),
             ],
           ),

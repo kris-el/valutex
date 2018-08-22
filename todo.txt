@@ -2,15 +2,15 @@
 Test localization th, search and display
 Sort coutries by Language specific Thai
 
-Access api to get rates with authentication only
-
 Feature discovery tutorial
-
-Swipe to increase or decrease the amount
 
 Implement HomeDrawer 
 - rate on the store
 - share this app
+
+Access api to get rates with authentication only
+
+Swipe to increase or decrease the amount
 
 Load assests, shared pref, before UI
 
