@@ -72,7 +72,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "settingsTitleUseDarkTheme": "ใช้ธีมสีดำ",
+  "settingsTitleUseDarkTheme": "ใช้ธีมมืด",
   "@settingsTitleUseDarkTheme": {
     "description": "Settings title: Use dark theme",
     "type": "text",
@@ -156,7 +156,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "settingsMsgboxBodyAppReset": "คุณต้องการลบแอพพลิเคชั่นทั้งหมดหรือไม่?\n\n้าคุณต้องการทำต่อ คุณจะสูญเสียการตั้งค่าทั้งหมด, แอพพลิเคชั่นจะกลับสู่สถานะแรกเริ่ม",
+  "settingsMsgboxBodyAppReset": "คุณต้องการลบแอพพลิเคชั่นทั้งหมดหรือไม่?\n\nถ้าคุณต้องการทำต่อ คุณจะสูญเสียการตั้งค่าทั้งหมด, แอพพลิเคชั่นจะกลับสู่สถานะแรกเริ่ม",
   "@settingsMsgboxBodyAppReset": {
     "description": "Settings messagebox text: App reset",
     "type": "text",

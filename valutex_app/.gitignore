@@ -1,11 +1,10 @@
-.DS_Store
 .dart_tool/
-
-.packages
 .pub/
-
 build/
+.idea/
 
+.DS_Store
+.packages
 .flutter-plugins
 
 key.properties

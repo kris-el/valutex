@@ -37,7 +37,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "msgboxActionContinue" : MessageLookupByLibrary.simpleMessage("ต่อไป"),
     "screenTitleArrangeCurrencies" : MessageLookupByLibrary.simpleMessage("จัดเรียงรายการโปรด"),
     "screenTitleSetAmount" : MessageLookupByLibrary.simpleMessage("ใส่จำนวนเงิน"),
-    "settingsMsgboxBodyAppReset" : MessageLookupByLibrary.simpleMessage("คุณต้องการลบแอพพลิเคชั่นทั้งหมดหรือไม่?\n\n้าคุณต้องการทำต่อ คุณจะสูญเสียการตั้งค่าทั้งหมด, แอพพลิเคชั่นจะกลับสู่สถานะแรกเริ่ม"),
+    "settingsMsgboxBodyAppReset" : MessageLookupByLibrary.simpleMessage("คุณต้องการลบแอพพลิเคชั่นทั้งหมดหรือไม่?\n\nถ้าคุณต้องการทำต่อ คุณจะสูญเสียการตั้งค่าทั้งหมด, แอพพลิเคชั่นจะกลับสู่สถานะแรกเริ่ม"),
     "settingsMsgboxBodyDataCleared" : MessageLookupByLibrary.simpleMessage("ปิดและเปิดแอปพลิเคชั่นอีกครั้ง"),
     "settingsMsgboxTitleDataCleared" : MessageLookupByLibrary.simpleMessage("ล้างข้อมูลแล้ว"),
     "settingsSubtitleAppReset" : MessageLookupByLibrary.simpleMessage("ล้างข้อมูลทั้งหมดของแอปพลิเคชั่น"),
@@ -51,7 +51,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "settingsTitleExtraPrecision" : MessageLookupByLibrary.simpleMessage("ความแม่นยำสูง"),
     "settingsTitleFictionalCountries" : MessageLookupByLibrary.simpleMessage("ประเทศสมมติ"),
     "settingsTitleLimitInput" : MessageLookupByLibrary.simpleMessage("จำกัดการใส่ข้อมูลตัวเลขเต็มจำนวน"),
-    "settingsTitleUseDarkTheme" : MessageLookupByLibrary.simpleMessage("ใช้ธีมสีดำ"),
+    "settingsTitleUseDarkTheme" : MessageLookupByLibrary.simpleMessage("ใช้ธีมมืด"),
     "updated" : MessageLookupByLibrary.simpleMessage("อัปเดต")
   };
 }

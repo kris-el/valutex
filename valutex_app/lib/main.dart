@@ -56,10 +56,15 @@ class ValutexApp extends StatelessWidget {
 }
 
 /*
-[2.1.1] #11
+[2.1.2] #?
+Feature discovery tutorial
+
+[2.1.1] #12
+Fixed hero animation
+Long press to clear input
 Localize country data on server side
 Display localized info
-Localization IT, TH
+Localization IT, TH, VN
 Set notation accordingly to system language
 
 [2.1.0] #10
