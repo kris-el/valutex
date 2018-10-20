@@ -43,7 +43,7 @@ class AboutScreen extends StatelessWidget {
                 ),
                 Container(height: 8.0),
                 Text(
-                  'By Christian Grassi',
+                  'by Christian Grassi',
                   style: TextStyle(fontSize: 14.0, color: Colors.blueGrey[700]),
                 ),
               ],

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'currency_draft.dart';
-import '../reorderable_list.dart';
 import '../exchange_currency.dart';
 import '../localization.dart';
 
@@ -99,9 +98,9 @@ class _ArrangeScreenState extends State<ArrangeScreen> {
     final body = Column(
       children: <Widget>[
         Expanded(
-          child: ReorderableList(
+          child: ReorderableListView(
             onReorder: _reorderCallback,
-            child: ListView.builder(
+            children: ListView.builder(
               itemCount: _items.length,
               itemBuilder: (BuildContext c, index) => Item(
                   data: _items[index],

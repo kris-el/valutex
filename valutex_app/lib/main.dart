@@ -56,7 +56,7 @@ class ValutexApp extends StatelessWidget {
 }
 
 /*
-[2.1.2] #?
+[2.1.2] #13
 Feature discovery tutorial
 
 [2.1.1] #12
