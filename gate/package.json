@@ -30,7 +30,7 @@
     "jsonwebtoken": "^8.2.2",
     "loadsh": "^1.0.1",
     "mongoose": "^5.6.4",
-    "npm": "^6.10.1",
+    "npm": "^6.13.4",
     "request": "^2.87.0",
     "validator": "^10.2.0",
     "yargs": "^11.0.0"
